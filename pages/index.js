@@ -1,5 +1,5 @@
 import styles from 'styles/Home.module.css'
-import {Header, Section} from 'components'
+import { Button, Header, Section } from 'components'
 
 export default function Home() {
   const Paragraph = ({children, title}) => (
@@ -33,6 +33,7 @@ export default function Home() {
         Commit is currently in closed-beta. Apply now to be a part of the
         community soon.
       </Section>
+      <Button>Apply To Join Us</Button>
     </div>
   )
 }
