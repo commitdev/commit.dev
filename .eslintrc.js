@@ -35,6 +35,7 @@ const rules = {
   'react/jsx-indent-props': [2, 2],
   'react/no-unescaped-entities': 'off',
   'react/react-in-jsx-scope': 'off',
+  'react/require-default-props': 'off', // TODO turn back on
   'comma-dangle': ['error', 'always-multiline'],
   semi: ['error', 'never'],
   quotes: ['error', 'single'],

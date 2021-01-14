@@ -1,12 +1,6 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const Header = styled.h1`
-  position: absolute;
-  left: 9.17%;
-  right: 50.83%;
-  top: 26.89%;
-  bottom: 53.56%;
-
   font-family: Montserrat;
   font-style: normal;
   font-weight: 800;
@@ -14,6 +8,16 @@ const Header = styled.h1`
   line-height: 88px;
 
   color: #ffffff;
+
+  ${(props) =>
+    props.contentTitle &&
+    css`
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #54ffff;
+    `}
 `
 
 export default Header
