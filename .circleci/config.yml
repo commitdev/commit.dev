@@ -1,0 +1,49 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.1.0
+
+variables:
+  - &workspace /home/circleci/project
+  - &build_image circleci/node:14.1.0-browsers
+
+jobs:
+  checkout_code:
+    docker:
+      - image: *build_image
+    working_directory: *workspace
+    steps:
+      - checkout
+      - node/install-packages:
+          cache-path: ./node_modules
+          app-dir: .
+      - persist_to_workspace:
+          root: *workspace
+          paths:
+            - .
+
+  build:
+    docker:
+      - image: *build_image
+    working_directory: *workspace
+    parameters:
+    steps:
+      - attach_workspace:
+          at: *workspace
+      - run:
+          name: Build SPA 
+          command: npm run build
+
+workflows:
+  version: 2
+
+  feature_branch:
+    jobs:
+      - checkout_code:
+          filters:
+            branches:
+              ignore:
+                - master
+      - build:
+          name: build_feature
+          requires:
+            - checkout_code
