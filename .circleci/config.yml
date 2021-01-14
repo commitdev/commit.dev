@@ -30,7 +30,7 @@ jobs:
       - attach_workspace:
           at: *workspace
       - run:
-          name: Build SPA 
+          name: Build App
           command: npm run build
 
 workflows:
