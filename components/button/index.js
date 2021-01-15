@@ -7,7 +7,7 @@ const Button = styled.button`
   left: 859px;
   top: 771px;
 
-  background: linear-gradient(90.03deg, #FF68BA 0.39%, #EDC281 99.97%);
+  background: linear-gradient(90.03deg, #ff68ba 0.39%, #edc281 99.97%);
   border-radius: 48px;
   font-family: Montserrat;
   font-style: normal;
@@ -16,6 +16,6 @@ const Button = styled.button`
   line-height: 29px;
   text-align: center;
   color: #010242;
-`;
+`
 
 export default Button

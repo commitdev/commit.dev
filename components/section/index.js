@@ -6,8 +6,8 @@ const Section = styled.p`
   font-weight: 500;
   font-size: 21px;
   line-height: 36px;
-  
-  color: #FFFFFF;
+
+  color: #ffffff;
 `
 
 export default Section

@@ -1,5 +1,5 @@
-import { Button, Header, Section } from "components"
-import styles from "styles/Home.module.css"
+import { Button, Header, Section } from 'components'
+import styles from 'styles/Home.module.css'
 
 export default function Home() {
   const Paragraph = ({ children, title }) => (

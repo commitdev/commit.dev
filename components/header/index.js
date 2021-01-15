@@ -13,7 +13,7 @@ const Header = styled.h1`
   font-size: 72px;
   line-height: 88px;
 
-  color: #FFFFFF;
+  color: #ffffff;
 `
 
 export default Header

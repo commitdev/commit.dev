@@ -29,8 +29,8 @@
   "scripts": {
     "build": "next build && next export",
     "dev": "next dev",
-    "format": "prettier-eslint --eslint-config-path ./.eslintrc.js --write $PWD'/pages/*.js'",
-    "lint": "export BABEL_ENV=development && eslint --ignore-path .gitignore pages",
+    "format": "prettier-eslint --eslint-config-path ./.eslintrc.js --write $PWD'/**/*.js'",
+    "lint": "eslint .",
     "start": "next start"
   },
   "version": "0.1.0"

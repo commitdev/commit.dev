@@ -35,7 +35,9 @@ const rules = {
   'react/jsx-indent-props': [2, 2],
   'react/no-unescaped-entities': 'off',
   'react/react-in-jsx-scope': 'off',
+  'comma-dangle': ['error', 'always-multiline'],
   semi: ['error', 'never'],
+  quotes: ['error', 'single'],
   strict: ['error', 'global'],
   'unicorn/filename-case': 'error',
   requireConfigFile: 0,
@@ -46,10 +48,7 @@ const otherConfigs = {
     browser: true,
     es6: true,
   },
-  extends: [
-    'airbnb',
-    'prettier',
-  ],
+  extends: ['airbnb', 'prettier'],
   parserOptions: {
     ecmaVersion: 2021,
     requireConfigFile: false,
@@ -61,7 +60,7 @@ const otherConfigs = {
         paths: ['.'],
       },
     },
-  }
+  },
 }
 
 module.exports = {
