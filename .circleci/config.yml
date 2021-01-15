@@ -20,7 +20,14 @@ jobs:
           root: *workspace
           paths:
             - .
-
+  test_lint:
+    docker:
+      - image: *build_image
+    working_directory: *workspace
+    steps:
+      - attach_workspace:
+          at: *workspace
+      - run: npm run lint
   build:
     docker:
       - image: *build_image
@@ -43,6 +50,9 @@ workflows:
             branches:
               ignore:
                 - master
+      - test_lint: 
+          requires: 
+            - checkout_code
       - build:
           name: build_feature
           requires:
