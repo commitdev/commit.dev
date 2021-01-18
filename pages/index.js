@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
   Button,
   Input,
@@ -10,6 +11,29 @@ import {
 import styles from 'styles/Home.module.css'
 
 export default function Home() {
+  const [state, setState] = useState({
+    email: '',
+    info: '',
+    name: '',
+  })
+
+  const onChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value })
+  }
+
+  const onClick = async (e) => {
+    e.preventDefault()
+    const res = await fetch(process.env.NEXT_PUBLIC_HELIX_HOST, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(state),
+    })
+    return res.json()
+  }
+
   return (
     <>
       <div className={`${styles.container} flex-column`}>
@@ -51,28 +75,40 @@ export default function Home() {
                 <br />
                 Apply now to be a part of the community soon.
               </Section>
-              <Input
-                {...{
-                  placeholder: 'Name',
-                }}
-              />
-              <Input
-                {...{
-                  placeholder: 'E-mail',
-                }}
-              />
-              <Input
-                {...{
-                  placeholder: 'LinkedIn (Optional)',
-                }}
-              />
-              <TextArea
-                {...{
-                  placeholder:
-                    'Let us know where to learn more about you\n(Ex. Website, blog, youtube, etc)',
-                }}
-              />
-              <Button>APPLY TO JOIN</Button>
+              <form>
+                <Input
+                  {...{
+                    className: styles.input,
+                    name: 'name',
+                    onChange,
+                    placeholder: 'Name',
+                    value: state.name,
+                  }}
+                />
+                <Input
+                  {...{
+                    className: styles.input,
+                    name: 'email',
+                    onChange,
+                    placeholder: 'E-mail',
+                    type: 'email',
+                    value: state.email,
+                  }}
+                />
+                <TextArea
+                  {...{
+                    className: styles.input,
+                    name: 'info',
+                    onChange,
+                    placeholder:
+                      'Let us know where to learn more about you\n(Ex. Website, blog, youtube, etc)',
+                    value: state.info,
+                  }}
+                />
+                <Button {...{ className: styles.button, onClick }}>
+                  APPLY TO JOIN
+                </Button>
+              </form>
             </div>
           </div>
         </div>
