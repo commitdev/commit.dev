@@ -28,7 +28,7 @@
   "license": "ISC",
   "name": "commit.dev",
   "scripts": {
-    "build": "next build && next export -o docs && touch ./docs/.nojekyll",
+    "build": "next build && next export -o docs && touch ./docs/.nojekyll && touch ./docs/CNAME && echo 'landing.commit-staging.dev' >> ./docs/CNAME",
     "deploy": "npm run build && git add docs && git commit -m \"Staging deployment @`date +'%Y-%m-%d'`\" && git push origin main",
     "dev": "next dev",
     "format": "prettier-eslint --eslint-config-path ./.eslintrc.js --write $PWD'/**/*.js'",
