@@ -2,14 +2,13 @@ import { Button, Input, Header, Paragraph, Section, TextArea } from 'components'
 import styles from 'styles/Home.module.css'
 
 export default function Home() {
-  const prefix = process.env.NODE_ENV === 'production' ? '/commit.dev-proto' : ''
   return (
     <>
       <div className={styles.container}>
         <div className={styles.imgContainer}>
           <img
             className={styles.logo}
-            src={`${prefix}/commit-logo-white.svg`}
+            src="/commit-logo-white.svg"
             alt="Commit Logo"
           />
         </div>
