@@ -1,17 +1,19 @@
-import { Button, Input, Header, Paragraph, Section, TextArea } from 'components'
+import {
+  Button,
+  Input,
+  Header,
+  Paragraph,
+  Section,
+  SiteHeader,
+  TextArea,
+} from 'components'
 import styles from 'styles/Home.module.css'
 
 export default function Home() {
   return (
     <>
-      <div className={styles.container}>
-        <div className={styles.imgContainer}>
-          <img
-            className={styles.logo}
-            src="/commit-logo-white.svg"
-            alt="Commit Logo"
-          />
-        </div>
+      <div className={`${styles.container} flex-column`}>
+        <SiteHeader />
         <div className={styles.contentContainer}>
           <div className="flex-row center-xs start-md flexContainer col-xs-12 col-md-offset-1">
             <div className="col-md-4">

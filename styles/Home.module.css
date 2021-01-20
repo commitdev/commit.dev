@@ -2,12 +2,7 @@
   min-height: 100vh;
   padding: 0 0.5rem;
   background: linear-gradient(68.66deg, #0f1011 0%, #010242 100%);
-}
-
-.logo {
-  width: 211px;
-  height: 45px;
-  margin: 1rem;
+  overflow: hidden;
 }
 
 .closedBetaSection {
@@ -33,13 +28,6 @@
 }
 
 @media (max-width: 768px) {
-  .imgContainer {
-    position: relative;
-    width: 148px;
-    height: 31.54px;
-    left: 109px;
-    top: 0px;
-  }
   .grid {
     width: 100%;
     flex-direction: column;
