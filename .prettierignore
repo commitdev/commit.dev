@@ -1,0 +1,7 @@
+/.next/
+/.circleci/
+/node_modules/
+/out/
+/docs/
+/public/
+/styles/
