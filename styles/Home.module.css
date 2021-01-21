@@ -56,6 +56,11 @@
   outline: none;
 }
 
+.blogLink {
+  color: #00eeff;
+  text-decoration: 'underline #00eeff solid';
+}
+
 @media only screen and (max-width: 767px) {
   .benefitTitle,
   .benefitText {

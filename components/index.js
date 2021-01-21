@@ -1,4 +1,5 @@
 export { default as Button } from './button'
+export { default as Form } from './form'
 export { default as Input } from './input'
 export { default as PageHeading } from './page-heading'
 export { default as SectionText } from './section-text'

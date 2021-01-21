@@ -29,6 +29,7 @@ const StyledHeader = styled.header`
 
   & .header-links a {
     margin: 0 ${rem('24px')};
+    text-decoration: none;
 
     &:first-of-type {
       margin-left: 0;
