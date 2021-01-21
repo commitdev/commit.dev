@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import {
   Button,
   Input,
@@ -7,7 +6,8 @@ import {
   SiteHeader,
   TextArea,
 } from 'components'
-import styles from 'styles/home.module.css'
+import { useState } from 'react'
+import styles from 'styles/Home.module.css'
 
 export default function Home() {
   const [state, setState] = useState({
