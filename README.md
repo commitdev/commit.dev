@@ -9,7 +9,7 @@ You can find our staging website [here](https://landing.commit-staging.dev/).
 
 <img align="right" width="100" src="./docs/fork.png" alt="fork this repository" />
 
-For this repository by clicking on the fork button on the top of this page. This will create a copy of this repository in your account.
+Fork this repository by clicking on the fork button on the top of this page. This will create a copy of this repository in your account.
 
 ## Clone the repository
 
@@ -20,7 +20,8 @@ Now clone the forked repository to your machine. Go to your Github account, open
 Open a terminal and run the following git command:
 
 ```
-git clone "url you just copied
+git clone "url you just copied"
+
 ```
 
 where "url you just copied" (without the quotation marks) is the url to this repository (your fork of this project). See the previous steps to obtain the url.
