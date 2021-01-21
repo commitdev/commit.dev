@@ -2,13 +2,12 @@ import { useState } from 'react'
 import {
   Button,
   Input,
-  Header,
-  Paragraph,
-  Section,
+  PageHeading,
+  SectionText,
   SiteHeader,
   TextArea,
 } from 'components'
-import styles from 'styles/Home.module.css'
+import styles from 'styles/home.module.css'
 
 export default function Home() {
   const [state, setState] = useState({
@@ -40,41 +39,34 @@ export default function Home() {
         <SiteHeader />
         <div className={styles.contentContainer}>
           <div className="flex-row center-xs start-md flexContainer col-xs-12 col-md-offset-1">
-            <div className="col-md-4">
-              <Header>Take control of your career</Header>
+            <div className="col-md-5">
+              <PageHeading>Take control of your career</PageHeading>
 
-              <Paragraph
-                {...{
-                  title: 'Connect',
-                }}
-              >
+              <h2 className={styles.benefitTitle}>Connect</h2>
+              <p className={styles.benefitText}>
                 Build meaningful relationships in a distributed community of
                 Software Engineers
-              </Paragraph>
-              <Paragraph
-                {...{
-                  title: 'Explore',
-                }}
-              >
+              </p>
+
+              <h2 className={styles.benefitTitle}>Explore</h2>
+              <p className={styles.benefitText}>
                 Get matched with challenging projects at exciting Silicon Valley
                 startups and build impactful products
-              </Paragraph>
-              <Paragraph
-                {...{
-                  title: 'Elevate',
-                }}
-              >
+              </p>
+
+              <h2 className={styles.benefitTitle}>Elevate</h2>
+              <p className={styles.benefitText}>
                 Refine or expand your expertise through hands-on projects,
                 peer-to-peer coaching and professional development opportunities
-              </Paragraph>
+              </p>
             </div>
 
-            <div className="col-md-4 col-md-offset-3">
-              <Section className={styles.closedBetaSection}>
+            <div className="col-md-5 col-md-offset-1">
+              <SectionText>
                 Commit is currently in closed-beta.
                 <br />
                 Apply now to be a part of the community soon.
-              </Section>
+              </SectionText>
               <form>
                 <Input
                   {...{
