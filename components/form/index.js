@@ -129,7 +129,14 @@ const Form = () => {
               value: state.info,
             }}
           />
-          <Button {...{ className: styles.button, onClick }}>
+          <Button
+            {...{
+              className: styles.button,
+              'data-test-id': 'button',
+              id: 'button',
+              onClick,
+            }}
+          >
             APPLY TO JOIN
           </Button>
         </form>

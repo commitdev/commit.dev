@@ -16,7 +16,7 @@ export default function Home() {
                 <br />
                 Apply now to be a part of the community soon.
               </SectionText>
-              
+
               <h2 className={styles.benefitTitle}>Connect</h2>
               <p className={styles.benefitText}>
                 Build meaningful relationships in a distributed community of

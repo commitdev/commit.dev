@@ -40,6 +40,19 @@ jobs:
           name: Build App
           command: npm run build
 
+  e2e:
+    docker:
+      - image: cimg/node:14.14-browsers
+    working_directory: *workspace
+    steps:
+      - attach_workspace:
+          at: *workspace
+      - run:
+          name: Running landing page e2e test
+          command: npm run e2e
+      - store_artifacts:
+          path: /home/circleci/project/.screenshots
+
 workflows:
   version: 2
 
@@ -49,11 +62,23 @@ workflows:
           filters:
             branches:
               ignore:
-                - master
+                - main
       - test_lint:
           requires:
             - checkout_code
       - build:
           name: build_feature
+          requires:
+            - checkout_code
+
+  main:
+    jobs:
+      - checkout_code:
+          filters:
+            branches:
+              only:
+                - main
+      - e2e:
+          context: test-envs
           requires:
             - checkout_code
