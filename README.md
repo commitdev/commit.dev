@@ -4,7 +4,11 @@ Marketing website for Commit (commit.dev).
 You can find our staging website [here](https://landing.commit-staging.dev/).
 # How to Contribute
 
-
+## Prerequisites
+    1. Git
+    2. A fork of the repo (for any contributions)
+    3. A clone of the `commit.dev-proto` on your local machine
+    4. Npm
 ## Fork this repository
 
 <img align="right" width="100" src="./docs/fork.png" alt="fork this repository" />
@@ -44,7 +48,7 @@ git clone git@github.com:this-is-you/commit.dev-proto.git
 
 where `this-is-you` is your Github username. Here you're copying the contents of the commit.dev-proto repository on Github to your computer.
 
-## Create a branch
+## Create a branch and installation
 
 Change to the repository directory on your computer (if you are not already there):
 
@@ -52,11 +56,18 @@ Change to the repository directory on your computer (if you are not already ther
 cd commit.dev-proto
 ```
 
+Run `npm` to install the website's npm dependencies
+
+```
+npm install
+```
+
 Now create a branch using the `git checkout` command:
 
 ```
 git checkout -b your-new-branch-name
 ```
+
 
 ## Make necessary changes and commit those changes
 
