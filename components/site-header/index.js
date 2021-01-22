@@ -1,15 +1,30 @@
 import { rem } from 'polished'
 import styled from 'styled-components'
 
+const SiteHeader = () => (
+  <StyledHeader>
+    <img className="logo" src="/commit-logo.svg" alt="Commit Logo" />
+    <nav>
+      <a
+        className="nav-link"
+        href="https://blog.commit.dev/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Blog
+      </a>
+    </nav>
+  </StyledHeader>
+)
+
 const StyledHeader = styled.header`
-  font-family: Montserrat;
+  position: sticky;
+  top: 0;
   font-size: ${rem('18px')};
-  font-style: normal;
   font-weight: 500;
   line-height: ${rem('36px')};
   letter-spacing: 0em;
   text-align: left;
-  color: #ffffff;
 
   display: flex;
   align-items: center;
@@ -27,27 +42,10 @@ const StyledHeader = styled.header`
     }
   }
 
-  & .header-links a {
-    margin: 0 ${rem('24px')};
+  .nav-link {
+    color: #fff;
     text-decoration: none;
-
-    &:first-of-type {
-      margin-left: 0;
-    }
-    &:last-of-type {
-      margin-right: 0;
-    }
   }
 `
-
-// TODO: update blog to <Link/> with proper href once that's added to new site
-const SiteHeader = () => (
-  <StyledHeader className="col-md-12">
-    <img className="logo" src="/commit-logo-white.svg" alt="Commit Logo" />
-    <nav className="header-links">
-      <a href="https://blog.commit.dev/">Blog</a>
-    </nav>
-  </StyledHeader>
-)
 
 export default SiteHeader

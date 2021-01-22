@@ -2,11 +2,23 @@ import { CheckCircle } from 'phosphor-react'
 import { rem } from 'polished'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import styles from 'styles/Home.module.css'
 import Button from '../button'
 import Input from '../input'
 import Text from '../text'
 import TextArea from '../textarea'
+
+const SuccessHeader = styled.h2`
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+  margin-left: ${rem('60px')};
+  margin-top: ${rem('-40px')};
+
+  @media only screen and (max-width: 767px) {
+    margin: 0;
+  }
+`
 
 const Form = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
@@ -24,35 +36,20 @@ const Form = () => {
   const onClick = async (e) => {
     e.preventDefault()
     setHasErrors(false)
-    try {
-      const res = await fetch(process.env.NEXT_PUBLIC_HELIX_HOST, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(state),
-      })
-      setIsFormSubmitted(true)
-      return res.json()
-    } catch (err) {
+    const res = await fetch(process.env.NEXT_PUBLIC_HELIX_HOST, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(state),
+    })
+    if (res.status !== 200) {
       return setHasErrors(true)
     }
+    setIsFormSubmitted(true)
+    return res.json()
   }
-
-  const SuccessHeader = styled.h2`
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 36px;
-    margin-left: ${rem('60px')};
-    margin-top: ${rem('-40px')};
-
-    @media only screen and (max-width: 767px) {
-      margin: 0;
-    }
-  `
 
   useEffect(() => {
     setIsFormSubmitted(localStorage.getItem('formSubmitted'))
@@ -72,24 +69,14 @@ const Form = () => {
             weight: 'fill',
           }}
         />
-        <SuccessHeader {...{ className: styles.successHeader }}>
-          Application Sent !
-        </SuccessHeader>
+        <SuccessHeader>Application Sent!</SuccessHeader>
         <Text successText>
           Look out for your inbox! Someone from Commit will be in touch with
           you.
         </Text>
         <Text successText>
           In the meantime take a look at some{' '}
-          <a
-            {...{
-              className: styles.blogLink,
-              href: 'https://blog.commit.dev/',
-            }}
-          >
-            blog posts
-          </a>{' '}
-          from our engineers.
+          <a href="https://blog.commit.dev/">blog posts</a> from our engineers.
         </Text>
       </div>
     ) : (
@@ -102,7 +89,6 @@ const Form = () => {
         <form>
           <Input
             {...{
-              className: styles.input,
               name: 'name',
               onChange,
               placeholder: 'Name',
@@ -111,7 +97,6 @@ const Form = () => {
           />
           <Input
             {...{
-              className: styles.input,
               name: 'email',
               onChange,
               placeholder: 'E-mail',
@@ -121,7 +106,6 @@ const Form = () => {
           />
           <TextArea
             {...{
-              className: styles.input,
               name: 'info',
               onChange,
               placeholder:
@@ -131,13 +115,11 @@ const Form = () => {
           />
           <Button
             {...{
-              className: styles.button,
               'data-test-id': 'button',
-              id: 'button',
               onClick,
             }}
           >
-            APPLY TO JOIN
+            Apply To Join
           </Button>
         </form>
       </>

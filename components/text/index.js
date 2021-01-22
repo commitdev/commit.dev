@@ -1,14 +1,22 @@
 import { rem } from 'polished'
 import styled, { css } from 'styled-components'
 
-const Text = styled.p`
-  font-family: Montserrat;
-  font-style: normal;
+const StyledText = styled.p`
+  font-size: 1rem;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 26px;
+  line-height: 1.625rem;
+  letter-spacing: 0rem;
+  text-align: left;
+  margin-top: 0.25rem;
 
-  color: #ffffff;
+  @media only screen and (max-width: 767px) {
+    text-align: center;
+
+    :last-of-type {
+      margin-bottom: 5.25rem;
+    }
+  }
+
   ${(props) =>
     props.successText &&
     css`
@@ -27,5 +35,7 @@ const Text = styled.p`
       margin-bottom: ${rem('24px')};
     `}
 `
+
+const Text = (props) => <StyledText {...props} />
 
 export default Text
