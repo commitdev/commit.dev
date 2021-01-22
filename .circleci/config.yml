@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@4.1.0
+  aws-s3: circleci/aws-s3@1.0.15
 
 variables:
   - &workspace /home/circleci/project
@@ -33,13 +34,42 @@ jobs:
       - image: *build_image
     working_directory: *workspace
     parameters:
+      helix_host:
+        description: The URI for helix back end
+        type: string
     steps:
       - attach_workspace:
           at: *workspace
       - run:
+          name: Set up env
+          command: echo 'export NEXT_PUBLIC_HELIX_HOST='<< parameters.helix_host >>'' >> $BASH_ENV
+      - run:
           name: Build App
           command: npm run build
+      - persist_to_workspace:
+          root: *workspace
+          paths:
+            - out
 
+  deploy:
+    docker:
+      - image: cimg/python:3.6
+    parameters:
+      bucket:
+        description: The S3 Bucket to sync files to.
+        type: string
+    steps:
+      - attach_workspace:
+          at: *workspace
+      - aws-s3/sync:
+          from: out
+          overwrite: true
+          to: 's3://<< parameters.bucket >>'
+      - run:
+          name: Invalidate Cloudfront
+          command: |
+            export DIST_ID=$(aws cloudfront list-distributions --query "DistributionList.Items[?Aliases.Items[?@=='<< parameters.bucket >>']].Id | [0]" | tr -d '"')
+            aws cloudfront create-invalidation --distribution-id ${DIST_ID} --paths "/*"
   e2e:
     docker:
       - image: cimg/node:14.14-browsers
@@ -68,6 +98,7 @@ workflows:
             - checkout_code
       - build:
           name: build_feature
+          helix_host: ''
           requires:
             - checkout_code
 
@@ -82,3 +113,14 @@ workflows:
           context: test-envs
           requires:
             - checkout_code
+      - build:
+          name: build_feature
+          helix_host: https://api-public.commit-staging.dev/email/apply
+          requires:
+            - checkout_code
+      - deploy:
+          name: Deploy staging
+          bucket: commit-staging.dev
+
+          requires:
+            - build_feature

@@ -33,7 +33,7 @@
   "license": "ISC",
   "name": "commit.dev",
   "scripts": {
-    "build": "next build && next export -o docs && touch ./docs/.nojekyll && touch ./docs/CNAME && echo 'landing.commit-staging.dev' >> ./docs/CNAME",
+    "build": "next build && next export",
     "deploy": "npm run build && git add docs && git commit -m \"Staging deployment @`date +'%Y-%m-%d'`\" && git push origin main",
     "dev": "next dev",
     "e2e": "jest --config .e2e/jest.config.js",
