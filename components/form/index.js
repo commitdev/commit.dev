@@ -34,6 +34,9 @@ const Form = () => {
         body: JSON.stringify(state),
       })
       setIsFormSubmitted(true)
+      if (!res.status === 200) {
+        throw new Error(res.statusText)
+      }
       return res.json()
     } catch (err) {
       return setHasErrors(true)
