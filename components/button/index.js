@@ -17,6 +17,12 @@ const StyledButton = styled.button`
   cursor: pointer;
   text-transform: uppercase;
   font-family: inherit;
+
+  :active,
+  :focus {
+    opacity: 0.7;
+    outline: none;
+  }
 `
 
 export default Button
