@@ -36,19 +36,23 @@ const Form = () => {
   const onClick = async (e) => {
     e.preventDefault()
     setHasErrors(false)
-    const res = await fetch(process.env.NEXT_PUBLIC_HELIX_HOST, {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(state),
-    })
-    if (res.status !== 200) {
+    try {
+      const res = await fetch(process.env.NEXT_PUBLIC_HELIX_HOST, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(state),
+      })
+      if (res.status !== 200) {
+        return setHasErrors(true)
+      }
+      setIsFormSubmitted(true)
+      return res.json()
+    } catch (err) {
       return setHasErrors(true)
     }
-    setIsFormSubmitted(true)
-    return res.json()
   }
 
   useEffect(() => {
