@@ -2,6 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@4.1.0
   aws-s3: circleci/aws-s3@1.0.15
+  queue: eddiewebb/queue@1.3.0
 
 variables:
   - &workspace /home/circleci/project
@@ -34,27 +35,36 @@ jobs:
       - image: *build_image
     working_directory: *workspace
     parameters:
-      helix_host:
-        description: The URI for helix back end
-        type: string
+      config:
+        description: |
+          The config file you want to build the app using.
+          E.g. 'stage' would execute load .env.stage
+        type: enum
+        enum: ['test', 'stage', 'production']
+        default: production
     steps:
       - attach_workspace:
           at: *workspace
       - run:
-          name: Set up env
-          command: echo 'export NEXT_PUBLIC_HELIX_HOST='<< parameters.helix_host >>'' >> $BASH_ENV
-      - run:
           name: Build App
-          command: npm run build
+          command: |
+            npm run build
+            mv out out_<< parameters.config >>
       - persist_to_workspace:
           root: *workspace
           paths:
-            - out
+            - out_<< parameters.config >>
 
   deploy:
     docker:
       - image: cimg/python:3.6
     parameters:
+      config:
+        description: |
+          The config file you want to build the app using.
+          E.g. 'stage' would load .env.stage
+        type: enum
+        enum: ['test', 'stage', 'production']
       bucket:
         description: The S3 Bucket to sync files to.
         type: string
@@ -62,7 +72,7 @@ jobs:
       - attach_workspace:
           at: *workspace
       - aws-s3/sync:
-          from: out
+          from: out_<< parameters.config >>
           overwrite: true
           to: 's3://<< parameters.bucket >>'
       - run:
@@ -98,7 +108,7 @@ workflows:
             - checkout_code
       - build:
           name: build_feature
-          helix_host: ''
+          context: commit-dev-prod
           requires:
             - checkout_code
 
@@ -109,18 +119,41 @@ workflows:
             branches:
               only:
                 - main
-      - e2e:
-          context: test-envs
+      - build:
+          name: build_staging
+          config: stage
+          context: commit-dev-stg
           requires:
             - checkout_code
       - build:
-          name: build_feature
-          helix_host: https://api-public.commit-staging.dev/email/apply
+          name: build_production
+          config: production
+          context: commit-dev-prod
           requires:
             - checkout_code
       - deploy:
-          name: Deploy staging
+          name: deploy_staging
           bucket: commit-staging.dev
-
+          config: stage
           requires:
-            - build_feature
+            - build_staging
+      - e2e:
+          context: test-envs
+          requires:
+            - deploy_staging
+      - wait_for_approval:
+          type: approval
+          requires:
+            - deploy_staging
+      - queue/block_workflow:
+          name: queue_for_production_deploy
+          time: '30'
+          requires:
+            - wait_for_approval
+      - deploy:
+          name: deploy_production
+          bucket: commit.dev
+          config: production
+          requires:
+            - build_production
+            - queue_for_production_deploy
