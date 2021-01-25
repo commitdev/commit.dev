@@ -1,4 +1,6 @@
-import { Button, PageHeading, SectionText, SiteHeader } from 'components'
+// TODO: this will replace pages/index.js eventually. Keeping separate to avoid merge conflicts for now
+
+import { Button, Heading, Text, SiteHeader } from 'components'
 import styles from 'styles/full.module.css'
 
 const Full = () => (
@@ -7,15 +9,15 @@ const Full = () => (
       <SiteHeader />
       <div className={`${styles.sectionContent}`}>
         <div className={styles.heroContent}>
-          <PageHeading className={styles.heroHeading}>
+          <Heading className={styles.heroHeading}>
             We are the community for{' '}
             <span className={styles.highlight}>remote-first</span> Software
             Engineers
-          </PageHeading>
-          <SectionText className={styles.heroText}>
+          </Heading>
+          <Text sectionText className={styles.heroText}>
             Commit is designing the future of work and we're putting Engineers
             at the center.
-          </SectionText>
+          </Text>
           <Button className={styles.heroButton}>Apply to Join Us</Button>
         </div>
         <div className={styles.heroSvg}>

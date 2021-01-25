@@ -30,7 +30,20 @@ const StyledHeading1 = styled.h1`
   line-height: ${rem('80px')};
   letter-spacing: 0rem;
   margin-top: ${rem('12px')};
+
+  @media only screen and (max-width: 1023px) {
+    font-size: ${rem('48px')};
+    line-height: ${rem('60px')};
+  }
+
+  @media only screen and (max-width: 413px) {
+    font-size: ${rem('32px')};
+    line-height: ${rem('40px')};
+  }
 `
+
+// TODO: confirm styles below
+
 const StyledHeading2 = styled.h2`
   font-size: 1.125rem;
   font-weight: 800;
