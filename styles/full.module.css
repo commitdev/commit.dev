@@ -48,17 +48,16 @@
 h1.heroHeading {
   margin-top: 200px;
   margin-bottom: 4.5rem;
-  text-align: left;
 }
 h1.heroHeading .highlight {
   color: #54ffff;
 }
 p.heroText {
-  color: #8493b0;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 2.25rem;
   margin-bottom: 4.5rem;
+  text-align: left;
 }
 button.heroButton {
   max-width: 380px;
@@ -69,8 +68,6 @@ button.heroButton {
     width: 65%;
   }
   h1.heroHeading {
-    font-size: 3rem;
-    line-height: 3.625rem;
     margin-top: 180px;
     margin-bottom: 4.25rem;
   }
@@ -95,8 +92,6 @@ button.heroButton {
     display: none;
   }
   h1.heroHeading {
-    font-size: 2rem;
-    line-height: 2.375rem;
     margin-top: 140px;
     margin-bottom: 3rem;
   }

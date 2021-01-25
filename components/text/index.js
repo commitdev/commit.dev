@@ -2,37 +2,41 @@ import { rem } from 'polished'
 import styled, { css } from 'styled-components'
 
 const StyledText = styled.p`
-  font-size: 1rem;
+  font-size: ${rem('16px')};
   font-weight: 500;
-  line-height: 1.625rem;
+  line-height: ${rem('24px')};
   letter-spacing: 0rem;
   text-align: left;
-  margin-top: 0.25rem;
+  margin-top: ${rem('16px')};
 
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 1023px) {
     text-align: center;
+  }
 
-    :last-of-type {
-      margin-bottom: 5.25rem;
-    }
+  @media only screen and (max-width: 413px) {
+    text-align: center;
   }
 
   ${(props) =>
-    props.successText &&
+    props.sectionText &&
     css`
-      font-weight: normal;
-      font-size: 18px;
+      font-weight: 600;
+      font-size: ${rem('20px')};
+      line-height: ${rem('32px')};
+      text-align: center;
       margin-top: ${rem('24px')};
-      margin-bottom: ${rem('24px')};
-    `}
+      margin-top: ${rem('64px')};
+      color: #8493b0;
 
-  ${(props) =>
-    props.errorText &&
-    css`
-      line-height: 21px;
-      color: #ff4545;
-      margin-top: ${rem('24px')};
-      margin-bottom: ${rem('24px')};
+      @media only screen and (max-width: 1023px) {
+      }
+
+      @media only screen and (max-width: 413px) {
+        font-weight: 700;
+        font-size: ${rem('16px')};
+        line-height: ${rem('24px')};
+        margin-top: ${rem('80px')};
+      }
     `}
 `
 
