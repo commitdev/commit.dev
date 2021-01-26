@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-width: 320px;
   overflow: hidden;
   padding: 0px;
   margin: 0px;
@@ -13,15 +14,36 @@
   padding: 0 120px;
 }
 
+.gridSection {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
 @media only screen and (max-width: 1023px) {
   .sectionContent {
     padding: 0 8%;
+  }
+  .gridSection {
+    max-width: none;
+    margin: 0 20px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .gridSection {
+    grid-template-columns: repeat(8, 1fr);
   }
 }
 
 @media only screen and (max-width: 413px) {
   .sectionContent {
     padding: 0 36px;
+  }
+  .gridSection {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -61,6 +83,7 @@ p.heroText {
 }
 button.heroButton {
   max-width: 380px;
+  margin-bottom: 2em;
 }
 
 @media only screen and (max-width: 1023px) {
@@ -104,5 +127,72 @@ button.heroButton {
   button.heroButton {
     font-size: 1.125rem;
     line-height: 1.375rem;
+  }
+}
+
+/* Features Styles */
+.features {
+  position: relative;
+  padding: 52px 20px 0px 20px;
+}
+.featuresTransition {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 16.875rem;
+  background: #e8edf4;
+  z-index: -1;
+}
+.features .gridSection .feature {
+  grid-column: span 4;
+  background: #ffffff;
+  box-shadow: 0px 0px 12px 8px rgba(140, 140, 140, 0.2);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  margin-bottom: 2.25em;
+}
+.features h2.featureHeading {
+  color: #000000;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+  margin: 1rem 0;
+}
+.features .feature p {
+  font-family: Lato;
+  font-weight: 500;
+  text-align: center;
+  color: #8493b0;
+  margin-top: 0px;
+}
+
+@media only screen and (max-width: 1023px) {
+  .features {
+    padding: 52px 0px 24px 0px;
+  }
+  .features h2.featureHeading {
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .features .gridSection .feature:last-of-type {
+    grid-column: 3 / span 4;
+  }
+}
+
+@media only screen and (max-width: 413px) {
+  .featuresTransition {
+    display: none;
+  }
+  .features .gridSection .feature,
+  .features .gridSection .feature:last-of-type {
+    grid-column: 1 / span 1;
   }
 }

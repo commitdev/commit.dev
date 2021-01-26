@@ -13,10 +13,6 @@ const StyledText = styled.p`
     text-align: center;
   }
 
-  @media only screen and (max-width: 413px) {
-    text-align: center;
-  }
-
   ${(props) =>
     props.sectionText &&
     css`
