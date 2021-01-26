@@ -130,6 +130,66 @@ const Full = () => (
         </div>
       </div>
     </section>
+    <section className={styles.articles}>
+      <Heading variant={Heading.VARIANT.h3} className={styles.articlesHeading}>
+        Featured Articles
+      </Heading>
+      <div className={styles.gridSection}>
+        <article className={styles.article}>
+          <img
+            alt="Person looking at computer monitor"
+            className={styles.articleImage}
+            src="https://images.squarespace-cdn.com/content/v1/5f4684f36c19da23fdd59c85/1598473251006-4KT5NZKG6HZ4QNDHHZW2/ke17ZwdGBToddI8pDm48kHwwVVpIDEotO6whwf-ctoFZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxuA20WKTN7UU1ULhIFfAfmu94jb5-jqEUuDrVqpiQJjhwhmweNBLY5iscLK0GPHOg/image-asset.jpeg?format=1500w"
+          />
+          <Heading
+            variant={Heading.VARIANT.h3}
+            className={styles.articleHeading}
+          >
+            My job at Commit is to create an incredible experience for engineers
+          </Heading>
+          <Text className={styles.articleText}>
+            One August in the 1990s, I drove across Canada, with a good friend.
+            I have so many fond memories of the journey: our debates about how
+            to solve the world's problems, the lengthy and...
+          </Text>
+        </article>
+        <article className={styles.article}>
+          <img
+            alt="Lillian Liang"
+            className={styles.articleImage}
+            src="https://images.squarespace-cdn.com/content/v1/5f4684f36c19da23fdd59c85/1598480113274-70E1NCW0SDLUZUQCWJHY/ke17ZwdGBToddI8pDm48kLIrisWvb2_-cyFRWKUEDV1Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpx099H1iDMs77VbX2wfrKeiJKQXeJBnGj7sfPMz3g4_EMrcEmd2uwiGXyEMCd-XMlU/1_SqHzq6uxQVNOFs6kpA2qRQ.jpeg?format=750w"
+          />
+          <Heading
+            variant={Heading.VARIANT.h3}
+            className={styles.articleHeading}
+          >
+            Lillian Liang, Platiq Inc.
+          </Heading>
+          <Text className={styles.articleText}>
+            Lillian Lian is a Commit engineer who joined Plastiq earlier this
+            year. We talked to her about her journey to Commit and Platiq...
+          </Text>
+        </article>
+        <article className={styles.article}>
+          <img
+            alt="Monolith architecture"
+            className={styles.articleImage}
+            src="https://images.squarespace-cdn.com/content/v1/5f4684f36c19da23fdd59c85/1598472138438-XDTENHM2R76HI4FGINTI/ke17ZwdGBToddI8pDm48kE9_mhv_YcEbCKMg5QJWYctZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwzzGHiXH94XbfocoA0XWPmsNQfWO-0JPiDYv4aUHiNi1p5M353PedQlMNUNYUuepY/monolith-1.png?format=1500w"
+          />
+          <Heading
+            variant={Heading.VARIANT.h3}
+            className={styles.articleHeading}
+          >
+            Streaming out the monolith
+          </Heading>
+          <Text className={styles.articleText}>
+            As a monolithic code base builds up over time, it can become harder
+            and harder to maintain, and more difficult to extract data from,
+            especially if...
+          </Text>
+        </article>
+      </div>
+    </section>
   </div>
 )
 

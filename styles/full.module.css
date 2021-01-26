@@ -196,3 +196,77 @@ button.heroButton {
     grid-column: 1 / span 1;
   }
 }
+
+/* Articles Styles */
+.articles {
+  padding: 52px 20px 0px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 88px;
+}
+.articles .articlesHeading {
+  color: #000000;
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 2.75rem;
+  text-transform: uppercase;
+  margin: 0 24px 3rem 24px;
+  text-align: center;
+}
+.articles .gridSection .article {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 2.25rem;
+}
+.articles .article img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.articles .article .articleHeading {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.625rem;
+  margin: 1.25rem 0px;
+  text-align: center;
+}
+.articles .article p.articleText {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+  margin: 0;
+}
+
+@media only screen and (max-width: 1023px) {
+  .articles {
+    padding: 52px 0px 24px 0px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .articles .gridSection .article {
+    margin-bottom: 4.5rem;
+  }
+  .articles .gridSection .article:last-of-type {
+    grid-column: 3 / span 4;
+    margin-bottom: 2.25rem;
+  }
+}
+
+@media only screen and (max-width: 413px) {
+  .articles {
+    margin-top: 36px;
+  }
+  .articles .articlesHeading {
+    font-size: 1.75rem;
+    line-height: 2.125rem;
+  }
+  .articles .gridSection .article,
+  .articles .gridSection .article:last-of-type {
+    grid-column: 1 / span 1;
+  }
+}
