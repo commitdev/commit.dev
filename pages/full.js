@@ -66,7 +66,10 @@ const Full = () => (
               fill="#FF6AB9"
             />
           </svg>
-          <Heading variant="h2" className={styles.featureHeading}>
+          <Heading
+            variant={Heading.VARIANT.h2}
+            className={styles.featureHeading}
+          >
             Connect
           </Heading>
           <Text>
@@ -88,7 +91,10 @@ const Full = () => (
             />
           </svg>
 
-          <Heading variant="h2" className={styles.featureHeading}>
+          <Heading
+            variant={Heading.VARIANT.h2}
+            className={styles.featureHeading}
+          >
             Explore
           </Heading>
           <Text>
@@ -111,7 +117,10 @@ const Full = () => (
             />
           </svg>
 
-          <Heading variant="h2" className={styles.featureHeading}>
+          <Heading
+            variant={Heading.VARIANT.h2}
+            className={styles.featureHeading}
+          >
             Elevate
           </Heading>
           <Text>
