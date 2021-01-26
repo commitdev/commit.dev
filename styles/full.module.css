@@ -196,3 +196,37 @@ button.heroButton {
     grid-column: 1 / span 1;
   }
 }
+
+/* Articles Styles */
+.articles {
+  padding: 52px 20px 0px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 88px;
+}
+.articles .articlesHeading {
+  color: #000000;
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 2.75rem;
+  text-transform: uppercase;
+  margin: 0 24px 3rem 24px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1023px) {
+  .articles {
+    padding: 52px 0px 24px 0px;
+  }
+}
+
+@media only screen and (max-width: 413px) {
+  .articles {
+    margin-top: 36px;
+  }
+  .articles .articlesHeading {
+    font-size: 1.75rem;
+    line-height: 2.125rem;
+  }
+}
