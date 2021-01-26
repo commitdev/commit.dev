@@ -1,6 +1,6 @@
 // TODO: this will replace pages/index.js eventually. Keeping separate to avoid merge conflicts for now
 
-import { Button, Heading, Text, SiteHeader } from 'components'
+import { ArticlePreview, Button, Heading, Text, SiteHeader } from 'components'
 import styles from 'styles/full.module.css'
 
 const Full = () => (
@@ -135,59 +135,32 @@ const Full = () => (
         Featured Articles
       </Heading>
       <div className={styles.gridSection}>
-        <article className={styles.article}>
-          <img
-            alt="Person looking at computer monitor"
-            className={styles.articleImage}
-            src="/person-looking-at-monitor.jpeg"
-          />
-          <Heading
-            variant={Heading.VARIANT.h3}
-            className={styles.articleHeading}
-          >
-            My job at Commit is to create an incredible experience for engineers
-          </Heading>
-          <Text className={styles.articleText}>
-            One August in the 1990s, I drove across Canada, with a good friend.
-            I have so many fond memories of the journey: our debates about how
-            to solve the world's problems, the lengthy and...
-          </Text>
-        </article>
-        <article className={styles.article}>
-          <img
-            alt="Lillian Liang"
-            className={styles.articleImage}
-            src="/lillian-liang.jpeg"
-          />
-          <Heading
-            variant={Heading.VARIANT.h3}
-            className={styles.articleHeading}
-          >
-            Lillian Liang, Platiq Inc.
-          </Heading>
-          <Text className={styles.articleText}>
-            Lillian Lian is a Commit engineer who joined Plastiq earlier this
-            year. We talked to her about her journey to Commit and Platiq...
-          </Text>
-        </article>
-        <article className={styles.article}>
-          <img
-            alt="Monolith architecture"
-            className={styles.articleImage}
-            src="/monolith-diagram.png"
-          />
-          <Heading
-            variant={Heading.VARIANT.h3}
-            className={styles.articleHeading}
-          >
-            Streaming out the monolith
-          </Heading>
-          <Text className={styles.articleText}>
-            As a monolithic code base builds up over time, it can become harder
-            and harder to maintain, and more difficult to extract data from,
-            especially if...
-          </Text>
-        </article>
+        <ArticlePreview
+          imgSrc="/person-looking-at-monitor.jpeg"
+          imgAlt="Person looking at computer monitor"
+          heading="My job at Commit is to create an incredible experience for engineers"
+          text="One August in the 1990s, I drove across Canada, with a good friend.
+          I have so many fond memories of the journey: our debates about how
+          to solve the world's problems, the lengthy and..."
+          link="https://blog.commit.dev/articles/b5i3amkjq2nz7y4apq4jsfd66hudu8"
+        />
+        <ArticlePreview
+          imgSrc="/lillian-liang.jpeg"
+          imgAlt="Lillian Liang"
+          heading="Lillian Liang, Platiq Inc."
+          text="Lillian Lian is a Commit engineer who joined Plastiq earlier this
+          year. We talked to her about her journey to Commit and Platiq..."
+          link="https://blog.commit.dev/articles/committed-to-success-lillian-liang-plastiq-inc"
+        />
+        <ArticlePreview
+          imgSrc="/monolith-diagram.png"
+          imgAlt="Monolith architecture"
+          heading="Streaming out the monolith"
+          text="As a monolithic code base builds up over time, it can become harder
+          and harder to maintain, and more difficult to extract data from,
+          especially if..."
+          link="https://blog.commit.dev/articles/streaming-out-the-monolith"
+        />
       </div>
     </section>
   </div>

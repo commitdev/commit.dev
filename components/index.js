@@ -1,3 +1,4 @@
+export { default as ArticlePreview } from './article-preview'
 export { default as Button } from './button'
 export { default as Form } from './form'
 export { default as Heading } from './heading'
