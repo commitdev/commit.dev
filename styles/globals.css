@@ -4,12 +4,12 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Lato, Montserrat;
+  font-family: Montserrat;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: #54ffff;
+  text-decoration: 'underline';
 }
 
 * {
