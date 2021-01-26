@@ -139,7 +139,7 @@ const Full = () => (
           <img
             alt="Person looking at computer monitor"
             className={styles.articleImage}
-            src="https://images.squarespace-cdn.com/content/v1/5f4684f36c19da23fdd59c85/1598473251006-4KT5NZKG6HZ4QNDHHZW2/ke17ZwdGBToddI8pDm48kHwwVVpIDEotO6whwf-ctoFZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxuA20WKTN7UU1ULhIFfAfmu94jb5-jqEUuDrVqpiQJjhwhmweNBLY5iscLK0GPHOg/image-asset.jpeg?format=1500w"
+            src="/person-looking-at-monitor.jpeg"
           />
           <Heading
             variant={Heading.VARIANT.h3}
@@ -157,7 +157,7 @@ const Full = () => (
           <img
             alt="Lillian Liang"
             className={styles.articleImage}
-            src="https://images.squarespace-cdn.com/content/v1/5f4684f36c19da23fdd59c85/1598480113274-70E1NCW0SDLUZUQCWJHY/ke17ZwdGBToddI8pDm48kLIrisWvb2_-cyFRWKUEDV1Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpx099H1iDMs77VbX2wfrKeiJKQXeJBnGj7sfPMz3g4_EMrcEmd2uwiGXyEMCd-XMlU/1_SqHzq6uxQVNOFs6kpA2qRQ.jpeg?format=750w"
+            src="/lillian-liang.jpeg"
           />
           <Heading
             variant={Heading.VARIANT.h3}
@@ -174,7 +174,7 @@ const Full = () => (
           <img
             alt="Monolith architecture"
             className={styles.articleImage}
-            src="https://images.squarespace-cdn.com/content/v1/5f4684f36c19da23fdd59c85/1598472138438-XDTENHM2R76HI4FGINTI/ke17ZwdGBToddI8pDm48kE9_mhv_YcEbCKMg5QJWYctZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwzzGHiXH94XbfocoA0XWPmsNQfWO-0JPiDYv4aUHiNi1p5M353PedQlMNUNYUuepY/monolith-1.png?format=1500w"
+            src="/monolith-diagram.png"
           />
           <Heading
             variant={Heading.VARIANT.h3}
