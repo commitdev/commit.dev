@@ -8,8 +8,8 @@ import ExploreSvg from 'public/explore.svg'
 import styles from 'styles/full.module.css'
 
 const Full = () => (
-  <div className={`${styles.contentRoot}`}>
-    <section className={styles.hero}>
+  <div className={styles.contentRoot}>
+    <section className={`${styles.hero} ${styles.dark}`}>
       <SiteHeader />
       <div className={`${styles.sectionContent}`}>
         <div className={styles.heroContent}>
@@ -103,6 +103,83 @@ const Full = () => (
           especially if..."
           link="https://blog.commit.dev/articles/streaming-out-the-monolith"
         />
+      </div>
+    </section>
+    <section className={`${styles.about} ${styles.grey}`}>
+      <div className={styles.flexSection}>
+        <Heading variant={Heading.VARIANT.h2} className={styles.aboutHeading}>
+          How it Works
+        </Heading>
+        <div className={styles.aboutDescription}>
+          <Text>
+            Commit provides the space for Software Engineers to build
+            relationships, experience growth at their own pace and establish a
+            deeper network. We hire remote-first Engineers who want to eliminate
+            the risk and the friction of finding and working for startups in
+            Silicon Valley.
+          </Text>
+          <Text>
+            Commit Engineers are matched with startup projects on a three month
+            basis, and if there is a fit with the startup, we facilitate the
+            transition to full time at that company.
+          </Text>
+          <Text>
+            While at Commit, we provide coaching opportunities, professional
+            development and internal projects to help develop our own open
+            source platforms.
+          </Text>
+          <Text>
+            Even after Commit Engineers ‘graduate’ to startups, they remain a
+            member of the Community.
+          </Text>
+        </div>
+      </div>
+    </section>
+    <section className={`${styles.projects} ${styles.dark}`}>
+      <div className={styles.flexSection}>
+        <Heading
+          variant={Heading.VARIANT.h2}
+          className={styles.projectsHeading}
+        >
+          Our Technology
+        </Heading>
+        <Text className={styles.projectsOverview}>
+          The Commit Platform replaces the technical interview with deep
+          backgrounds, matches Software Engineers with relevant startups, and
+          connect Engineers with peers for interest sharing or technical
+          support.
+        </Text>
+        <div className={styles.projectList}>
+          <div className={styles.project}>
+            <Heading
+              variant={Heading.VARIANT.h3}
+              className={styles.projectName}
+            >
+              Commit Zero
+            </Heading>
+            <Text className={styles.projectDescription}>
+              Work on software that is the standard all modern applications will
+              be built on. We’ve developed an internal platform to help
+              technical founders address the countless challenges of developing
+              applications.
+            </Text>
+          </div>
+          <div className={styles.projectDivider} />
+          <div className={styles.project}>
+            <Heading
+              variant={Heading.VARIANT.h3}
+              className={styles.projectName}
+            >
+              Helix
+            </Heading>
+            <Text className={styles.projectDescription}>
+              Contribute to the software that builds the Commit community. Helix
+              is designed to replace the technical interview with deep
+              backgrounds, match Software Engineers with startup projects, and
+              connect Engineers with one another.
+            </Text>
+          </div>
+        </div>
       </div>
     </section>
   </div>
