@@ -24,7 +24,8 @@
   max-width: 1240px;
   margin: 0 auto;
 }
-.blue {
+.dark {
+  color: #ffffff;
   background: linear-gradient(68.66deg, #0f1011 0%, #010242 100%);
 }
 .grey {
@@ -63,11 +64,13 @@
     max-width: none;
     margin: 0 36px;
   }
+  .dark {
+    background: #000000;
+  }
 }
 
 /* Hero Styles */
 .hero {
-  color: #ffffff;
   overflow: hidden;
   min-height: 946px;
 }
@@ -119,7 +122,6 @@ button.heroButton {
 
 @media only screen and (max-width: 413px) {
   .hero {
-    background: #000000;
     min-height: 820px;
   }
   .hero .sectionContent {
@@ -299,6 +301,7 @@ button.heroButton {
   .about .aboutDescription {
     font-size: 1rem;
     line-height: 1.625rem;
+    margin: 0;
   }
 }
 
@@ -326,6 +329,34 @@ button.heroButton {
   color: #8493b0;
   margin: 1.5rem 17% 4rem 17%;
 }
+.projects .projectList {
+  display: flex;
+  flex-direction: row;
+  margin: 0 80px;
+}
+.projectList .project .projectName {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 2.75rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 62px;
+  margin-bottom: 2rem;
+}
+.projectList .project .projectDescription {
+  font-size: 1rem;
+  line-height: 1.625rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.projectList .projectDivider {
+  margin: 0 12%;
+  min-height: 100%;
+  min-width: 4px;
+  max-width: 4px;
+  background: linear-gradient(180deg, #ff68ba 45.83%, #edc281 100%);
+}
 
 @media only screen and (max-width: 1023px) {
   .projects h2.projectsHeading {
@@ -334,6 +365,33 @@ button.heroButton {
   }
   .projects p.projectsOverview {
     margin: 1.5rem 10% 4rem 10%;
+  }
+  .projectList .project {
+    margin-bottom: 3rem;
+  }
+  .projectList .project:last-of-type {
+    margin-bottom: 0;
+  }
+  .projectList .project .projectName {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+  .projectList .project .projectDescription {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .projects .projectList {
+    flex-direction: column;
+    align-items: center;
+  }
+  .projectList .projectDivider {
+    min-height: 154px;
+    max-height: 154px;
+    margin: 0 0 3rem;
   }
 }
 
@@ -345,6 +403,14 @@ button.heroButton {
   .projects p.projectsOverview {
     font-size: 1rem;
     line-height: 1.5rem;
-    margin: 1.5rem 0 4rem 0;
+    margin: 1.5rem 0 5rem 0;
+  }
+  .projects .projectList {
+    margin: 0;
+  }
+  .projectList .project .projectName {
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    margin-bottom: 1.125rem;
   }
 }

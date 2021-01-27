@@ -9,7 +9,7 @@ import styles from 'styles/full.module.css'
 
 const Full = () => (
   <div className={styles.contentRoot}>
-    <section className={`${styles.hero} ${styles.blue}`}>
+    <section className={`${styles.hero} ${styles.dark}`}>
       <SiteHeader />
       <div className={`${styles.sectionContent}`}>
         <div className={styles.heroContent}>
@@ -135,7 +135,7 @@ const Full = () => (
         </div>
       </div>
     </section>
-    <section className={`${styles.projects} ${styles.blue}`}>
+    <section className={`${styles.projects} ${styles.dark}`}>
       <div className={styles.flexSection}>
         <Heading
           variant={Heading.VARIANT.h2}
@@ -149,6 +149,37 @@ const Full = () => (
           connect Engineers with peers for interest sharing or technical
           support.
         </Text>
+        <div className={styles.projectList}>
+          <div className={styles.project}>
+            <Heading
+              variant={Heading.VARIANT.h3}
+              className={styles.projectName}
+            >
+              Commit Zero
+            </Heading>
+            <Text className={styles.projectDescription}>
+              Work on software that is the standard all modern applications will
+              be built on. We’ve developed an internal platform to help
+              technical founders address the countless challenges of developing
+              applications.
+            </Text>
+          </div>
+          <div className={styles.projectDivider} />
+          <div className={styles.project}>
+            <Heading
+              variant={Heading.VARIANT.h3}
+              className={styles.projectName}
+            >
+              Helix
+            </Heading>
+            <Text className={styles.projectDescription}>
+              Contribute to the software that builds the Commit community. Helix
+              is designed to replace the technical interview with deep
+              backgrounds, match Software Engineers with startup projects, and
+              connect Engineers with one another.
+            </Text>
+          </div>
+        </div>
       </div>
     </section>
   </div>
