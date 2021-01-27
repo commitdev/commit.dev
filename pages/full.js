@@ -135,6 +135,22 @@ const Full = () => (
         </div>
       </div>
     </section>
+    <section className={`${styles.projects} ${styles.blue}`}>
+      <div className={styles.flexSection}>
+        <Heading
+          variant={Heading.VARIANT.h2}
+          className={styles.projectsHeading}
+        >
+          Our Technology
+        </Heading>
+        <Text className={styles.projectsOverview}>
+          The Commit Platform replaces the technical interview with deep
+          backgrounds, matches Software Engineers with relevant startups, and
+          connect Engineers with peers for interest sharing or technical
+          support.
+        </Text>
+      </div>
+    </section>
   </div>
 )
 

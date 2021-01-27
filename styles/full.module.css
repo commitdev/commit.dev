@@ -57,6 +57,11 @@
   }
   .gridSection {
     grid-template-columns: repeat(1, 1fr);
+    margin: 0 36px;
+  }
+  .flexSection {
+    max-width: none;
+    margin: 0 36px;
   }
 }
 
@@ -294,5 +299,52 @@ button.heroButton {
   .about .aboutDescription {
     font-size: 1rem;
     line-height: 1.625rem;
+  }
+}
+
+/* Projects styles */
+.projects {
+  padding: 120px 0px 84px;
+}
+.projects .flexSection {
+  flex-direction: column;
+  align-items: center;
+}
+.projects h2.projectsHeading {
+  font-size: 3rem;
+  line-height: 3.75rem;
+  text-align: center;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #54ffff 0.78%, #68b5ff 91.85%);
+  background-clip: text;
+  margin-top: 0px;
+}
+.projects p.projectsOverview {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-align: center;
+  color: #8493b0;
+  margin: 1.5rem 17% 4rem 17%;
+}
+
+@media only screen and (max-width: 1023px) {
+  .projects h2.projectsHeading {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  .projects p.projectsOverview {
+    margin: 1.5rem 10% 4rem 10%;
+  }
+}
+
+@media only screen and (max-width: 413px) {
+  .projects h2.projectsHeading {
+    font-size: 1.75rem;
+    line-height: 2.125rem;
+  }
+  .projects p.projectsOverview {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 1.5rem 0 4rem 0;
   }
 }
