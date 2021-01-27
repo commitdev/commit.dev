@@ -26,6 +26,7 @@
 }
 .dark {
   color: #ffffff;
+  background: #000000;
   background: linear-gradient(68.66deg, #0f1011 0%, #010242 100%);
 }
 .grey {
