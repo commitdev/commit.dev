@@ -8,8 +8,8 @@ import ExploreSvg from 'public/explore.svg'
 import styles from 'styles/full.module.css'
 
 const Full = () => (
-  <div className={`${styles.contentRoot}`}>
-    <section className={styles.hero}>
+  <div className={styles.contentRoot}>
+    <section className={`${styles.hero} ${styles.blue}`}>
       <SiteHeader />
       <div className={`${styles.sectionContent}`}>
         <div className={styles.heroContent}>
@@ -103,6 +103,36 @@ const Full = () => (
           especially if..."
           link="https://blog.commit.dev/articles/streaming-out-the-monolith"
         />
+      </div>
+    </section>
+    <section className={`${styles.about} ${styles.grey}`}>
+      <div className={styles.flexSection}>
+        <Heading variant={Heading.VARIANT.h2} className={styles.aboutHeading}>
+          How it Works
+        </Heading>
+        <div className={styles.aboutDescription}>
+          <Text>
+            Commit provides the space for Software Engineers to build
+            relationships, experience growth at their own pace and establish a
+            deeper network. We hire remote-first Engineers who want to eliminate
+            the risk and the friction of finding and working for startups in
+            Silicon Valley.
+          </Text>
+          <Text>
+            Commit Engineers are matched with startup projects on a three month
+            basis, and if there is a fit with the startup, we facilitate the
+            transition to full time at that company.
+          </Text>
+          <Text>
+            While at Commit, we provide coaching opportunities, professional
+            development and internal projects to help develop our own open
+            source platforms.
+          </Text>
+          <Text>
+            Even after Commit Engineers ‘graduate’ to startups, they remain a
+            member of the Community.
+          </Text>
+        </div>
       </div>
     </section>
   </div>

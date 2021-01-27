@@ -8,12 +8,10 @@
   padding: 0px;
   margin: 0px;
 }
-
 .sectionContent {
   margin: 0 auto;
   padding: 0 120px;
 }
-
 .gridSection {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -21,12 +19,27 @@
   max-width: 1240px;
   margin: 0 auto;
 }
+.flexSection {
+  display: flex;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.blue {
+  background: linear-gradient(68.66deg, #0f1011 0%, #010242 100%);
+}
+.grey {
+  background: #e8edf4;
+}
 
 @media only screen and (max-width: 1023px) {
   .sectionContent {
     padding: 0 8%;
   }
   .gridSection {
+    max-width: none;
+    margin: 0 20px;
+  }
+  .flexSection {
     max-width: none;
     margin: 0 20px;
   }
@@ -49,7 +62,6 @@
 
 /* Hero Styles */
 .hero {
-  background: linear-gradient(68.66deg, #0f1011 0%, #010242 100%);
   color: #ffffff;
   overflow: hidden;
   min-height: 946px;
@@ -204,6 +216,7 @@ button.heroButton {
   flex-direction: column;
   align-items: center;
   margin-top: 88px;
+  margin-bottom: 128px;
 }
 .articles .articlesHeading {
   color: #000000;
@@ -228,5 +241,58 @@ button.heroButton {
   .articles .articlesHeading {
     font-size: 1.75rem;
     line-height: 2.125rem;
+  }
+}
+
+/* About styles */
+.about {
+  padding: 100px 0px;
+}
+.about .flexSection {
+  flex-direction: row;
+}
+.about h2.aboutHeading {
+  font-weight: 800;
+  font-size: 2.625rem;
+  line-height: 3.125rem;
+  text-transform: uppercase;
+  color: #000000;
+  margin-top: 0;
+  margin-left: 17%;
+}
+.about .aboutDescription {
+  margin-left: 24px;
+  margin-right: 17%;
+}
+.about .aboutDescription p:first-of-type {
+  margin-top: 0;
+}
+.about .aboutDescription p:last-of-type {
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 1023px) {
+  .about .flexSection {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about h2.aboutHeading {
+    margin-left: 0;
+    margin-bottom: 2.25rem;
+    text-align: center;
+  }
+  .about .aboutDescription {
+    margin-left: 17%;
+  }
+}
+
+@media only screen and (max-width: 413px) {
+  .about h2.aboutHeading {
+    font-size: 1.75rem;
+    line-height: 2.125rem;
+  }
+  .about .aboutDescription {
+    font-size: 1rem;
+    line-height: 1.625rem;
   }
 }
