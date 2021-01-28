@@ -2,6 +2,7 @@
 
 import { ArticlePreview, Button, Heading, Text, SiteHeader } from 'components'
 import BracketSvg from 'public/bracket.svg'
+import CommitSvg from 'public/commit.svg'
 import ConnectSvg from 'public/connect.svg'
 import ElevateSvg from 'public/elevate.svg'
 import ExploreSvg from 'public/explore.svg'
@@ -243,6 +244,15 @@ const Full = () => (
         </div>
       </div>
     </section>
+    <footer className={`${styles.footer} ${styles.dark}`}>
+      <div className={styles.flexSection}>
+        <Text className={styles.footerText}>
+          Interested in Taking Control of your Career?
+        </Text>
+        <Button className={styles.footerButton}>Apply to Join Us</Button>
+        <img src="/commit-logo.svg" />
+      </div>
+    </footer>
   </div>
 )
 

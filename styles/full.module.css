@@ -495,3 +495,41 @@ button.heroButton {
     max-width: 150px;
   }
 }
+
+/* Footer styles */
+.footer {
+  padding: 150px 0 40px;
+}
+.footer .flexSection {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footer .footerText {
+  font-family: Montserrat;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.875rem;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.footer .footerButton {
+  max-width: 23.75rem;
+  margin-bottom: 200px;
+}
+.footer img {
+  height: 45px;
+}
+
+@media only screen and (max-width: 767px) {
+}
+
+@media only screen and (max-width: 413px) {
+  .footer {
+    padding: 98px 0px 68px;
+  }
+  .footer .footerText {
+    margin-bottom: 3rem;
+  }
+}
