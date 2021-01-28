@@ -182,6 +182,70 @@ const Full = () => (
         </div>
       </div>
     </section>
+    {/* TODO: insert carousel here */}
+    <section className={`${styles.partners} ${styles.grey}`}>
+      <div className={styles.flexSection}>
+        <Heading
+          variant={Heading.VARIANT.h2}
+          className={styles.partnersHeading}
+        >
+          Who We Work With
+        </Heading>
+        <div className={styles.partnersList}>
+          <a href="https://www.procurify.com/" rel="noopener noreferrer">
+            <img
+              className={styles.partnerLogo}
+              alt="Procurify logo"
+              src="/procurify.png"
+            />
+          </a>
+          <a href="https://www.vidyard.com/" rel="noopener noreferrer">
+            <img
+              className={styles.partnerLogo}
+              alt="Vidyard logo"
+              src="/vidyard.png"
+            />
+          </a>
+          <a href="https://www.planworth.co/" rel="noopener noreferrer">
+            <img
+              className={styles.partnerLogo}
+              alt="Planworth logo"
+              src="/planworth.png"
+            />
+          </a>
+          <a href="https://www.dapperlabs.com/" rel="noopener noreferrer">
+            <img
+              className={styles.partnerLogo}
+              alt="Dapper logo"
+              src="/dapper.png"
+            />
+          </a>
+          <a href="https://www.usepatch.com/" rel="noopener noreferrer">
+            <img
+              className={styles.partnerLogo}
+              alt="Patch logo"
+              src="/patch.png"
+            />
+          </a>
+          <a href="https://www.plastiq.com/" rel="noopener noreferrer">
+            <img
+              className={styles.partnerLogo}
+              alt="Plastiq logo"
+              src="/plastiq.png"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer className={`${styles.footer} ${styles.dark}`}>
+      <div className={styles.flexSection}>
+        <Text className={styles.footerText}>
+          Interested in Taking Control of your Career?
+        </Text>
+        <Button className={styles.footerButton}>Apply to Join Us</Button>
+        <img alt="Commit logo" src="/commit-logo.svg" />
+      </div>
+    </footer>
   </div>
 )
 
