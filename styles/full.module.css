@@ -522,9 +522,6 @@ button.heroButton {
   height: 45px;
 }
 
-@media only screen and (max-width: 767px) {
-}
-
 @media only screen and (max-width: 413px) {
   .footer {
     padding: 98px 0px 68px;
