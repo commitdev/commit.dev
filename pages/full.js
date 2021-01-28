@@ -2,16 +2,9 @@
 
 import { ArticlePreview, Button, Heading, Text, SiteHeader } from 'components'
 import BracketSvg from 'public/bracket.svg'
-import CommitSvg from 'public/commit.svg'
 import ConnectSvg from 'public/connect.svg'
 import ElevateSvg from 'public/elevate.svg'
 import ExploreSvg from 'public/explore.svg'
-// import ProcurifyLogo from 'public/procurify.png'
-// import VidyardLogo from 'public/vidyard.png'
-// import PlanworthLogo from 'public/planworth.png'
-// import DapperLogo from 'public/dapper.png'
-// import PatchLogo from 'public/patch.png'
-// import PlastiqLogo from 'public/plastiq.png'
 import styles from 'styles/full.module.css'
 
 const Full = () => (
@@ -250,7 +243,7 @@ const Full = () => (
           Interested in Taking Control of your Career?
         </Text>
         <Button className={styles.footerButton}>Apply to Join Us</Button>
-        <img src="/commit-logo.svg" />
+        <img alt="Commit logo" src="/commit-logo.svg" />
       </div>
     </footer>
   </div>
