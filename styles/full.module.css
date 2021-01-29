@@ -416,6 +416,41 @@ button.heroButton {
   }
 }
 
+/* Testimonials styles */
+.testimonials {
+  padding: 124px 0px 98px;
+}
+.testimonials .flexSection {
+  flex-direction: column;
+  align-items: center;
+}
+.testimonials .testimonialsHeading {
+  color: #000000;
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Montserrat;
+  letter-spacing: 0.1em;
+
+  margin: 0 0 4rem;
+  max-width: 51rem;
+}
+.testimonials .testimonialsHeading:first-of-type {
+  margin-top: 0;
+}
+.testimonials .testimonialsCarousel {
+  margin-top: 4rem;
+}
+
+@media only screen and (max-width: 413px) {
+  .testimonials .testimonialsHeading {
+    font-size: 1.75rem;
+    line-height: 2.125rem;
+    margin-bottom: 2.625rem;
+  }
+}
+
 /* Partners styles */
 .partners {
   padding: 80px 0px;
@@ -428,6 +463,7 @@ button.heroButton {
   color: #000000;
   font-size: 2.25rem;
   line-height: 2.75rem;
+  letter-spacing: 0.1em;
   text-align: center;
   text-transform: uppercase;
   margin-top: 0;

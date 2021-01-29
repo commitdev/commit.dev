@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@glidejs/glide": "^3.4.1",
     "next": "10.0.5",
     "phosphor-react": "^1.1.2",
     "polished": "^4.0.5",

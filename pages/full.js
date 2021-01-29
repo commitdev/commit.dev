@@ -1,10 +1,18 @@
 // TODO: this will replace pages/index.js eventually. Keeping separate to avoid merge conflicts for now
 
-import { ArticlePreview, Button, Heading, Text, SiteHeader } from 'components'
+import {
+  ArticlePreview,
+  Button,
+  Testimonials,
+  Heading,
+  Text,
+  SiteHeader,
+} from 'components'
 import BracketSvg from 'public/bracket.svg'
 import ConnectSvg from 'public/connect.svg'
 import ElevateSvg from 'public/elevate.svg'
 import ExploreSvg from 'public/explore.svg'
+import QuotesSvg from 'public/quotation-marks.svg'
 import styles from 'styles/full.module.css'
 
 const Full = () => (
@@ -182,7 +190,18 @@ const Full = () => (
         </div>
       </div>
     </section>
-    {/* TODO: insert carousel here */}
+    <section className={styles.testimonials}>
+      <div className={styles.flexSection}>
+        <Heading
+          variant={Heading.VARIANT.h2}
+          className={styles.testimonialsHeading}
+        >
+          What Our Engineering Partners Have to Say
+        </Heading>
+        <QuotesSvg />
+        <Testimonials className={styles.testimonialsCarousel} />
+      </div>
+    </section>
     <section className={`${styles.partners} ${styles.grey}`}>
       <div className={styles.flexSection}>
         <Heading
