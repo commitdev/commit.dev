@@ -4,8 +4,8 @@
 
 - [ ] CI is green
 - [ ] Link to any related issues
-- [ ] Recieved at least 1 approval from core members
-- [ ] Made sure that changes are obvious for the reviewer (ex meaningful title and commit messages, comments in code or PR where approprite, screenshots, etc.)
+- [ ] Received at least 1 approval from core members
+- [ ] Made sure that changes are obvious for the reviewer (ex meaningful title and commit messages, comments in code or PR where appropriate, screenshots, etc.)
 
 # What Changed?
 

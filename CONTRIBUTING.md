@@ -6,6 +6,14 @@ The marketing website for Commit is 100% open source! Below you'll find some inf
 
 The coordination of work being done (and to be done) will happen via [Issues in this repository](https://github.com/commitdev/commit.dev/issues). If you're looking for something to work on, this is the place to check.
 
+> ### Working on the new marketing site?
+>
+> While the new site is being developed, we'd like to prevent releasing it onto the commit.dev domain. To do this, we have created a new branch called [`launch`](https://github.com/commitdev/commit.dev/tree/launch) that we are treating as the main branch. Here we will stage all the changes and then, once it is ready to release, we will merge this branch into the main branch.
+>
+> This means that if you're working on changes for the new marketing site, please create your working branches off of this branch and ensure PRs that you create are against this `launch` branch rather than the current `main` branch. You can adjust this when creating the PR by selecting the `launch` branch as the base.
+>
+> <img width="395" alt="Screen Shot 2021-01-29 at 10 42 14 AM" src="https://user-images.githubusercontent.com/5143561/106314621-d5c60f00-621e-11eb-9557-6453fb1d47bb.png">
+
 ## Proposing a Change
 
 If you're fixing a bug, feel free to submit a pull request right away with enough detail around what the bug was. If you've got an idea or something you'd like to change, please submit an issue outlining what it is you'd like to do. This will enable people more familiar with this project to help review this idea, ensure it doesn't conflict with other work, and hash-out any nuances with you, ultimately helping us reach an agreement on your proposal before you put significant effort into it. We're always open to new ideas and suggestions, so please don't be shy if you have an idea.
