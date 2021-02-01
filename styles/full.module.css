@@ -177,10 +177,8 @@ button.heroButton {
   margin-bottom: 2.25em;
 }
 .features h2.featureHeading {
-  color: #000000;
   font-size: 2rem;
   line-height: 2.5rem;
-  text-transform: uppercase;
   margin: 1rem 0;
 }
 .features .feature p {
@@ -227,11 +225,6 @@ button.heroButton {
   margin-bottom: 128px;
 }
 .articles .articlesHeading {
-  color: #000000;
-  font-size: 2.25rem;
-  font-weight: 800;
-  line-height: 2.75rem;
-  text-transform: uppercase;
   margin: 0 24px 3rem 24px;
   text-align: center;
 }
@@ -246,10 +239,6 @@ button.heroButton {
   .articles {
     margin-top: 36px;
   }
-  .articles .articlesHeading {
-    font-size: 1.75rem;
-    line-height: 2.125rem;
-  }
 }
 
 /* About styles */
@@ -260,12 +249,8 @@ button.heroButton {
   flex-direction: row;
 }
 .about h2.aboutHeading {
-  font-weight: 800;
   font-size: 2.625rem;
   line-height: 3.125rem;
-  text-transform: uppercase;
-  color: #000000;
-  margin-top: 0;
   margin-left: 17%;
 }
 .about .aboutDescription {
@@ -295,10 +280,6 @@ button.heroButton {
 }
 
 @media only screen and (max-width: 413px) {
-  .about h2.aboutHeading {
-    font-size: 1.75rem;
-    line-height: 2.125rem;
-  }
   .about .aboutDescription {
     font-size: 1rem;
     line-height: 1.625rem;
@@ -315,13 +296,12 @@ button.heroButton {
   align-items: center;
 }
 .projects h2.projectsHeading {
-  font-size: 3rem;
-  line-height: 3.75rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
   text-align: center;
-  text-transform: uppercase;
+  color: transparent;
   background: linear-gradient(90deg, #54ffff 0.78%, #68b5ff 91.85%);
   background-clip: text;
-  margin-top: 0px;
 }
 .projects p.projectsOverview {
   font-size: 1.25rem;
@@ -425,13 +405,7 @@ button.heroButton {
   align-items: center;
 }
 .testimonials .testimonialsHeading {
-  color: #000000;
-  font-size: 2.25rem;
-  line-height: 2.75rem;
   text-align: center;
-  text-transform: uppercase;
-  font-family: Montserrat;
-  letter-spacing: 0.1em;
 
   margin: 0 0 4rem;
   max-width: 51rem;
@@ -445,8 +419,6 @@ button.heroButton {
 
 @media only screen and (max-width: 413px) {
   .testimonials .testimonialsHeading {
-    font-size: 1.75rem;
-    line-height: 2.125rem;
     margin-bottom: 2.625rem;
   }
 }
@@ -460,13 +432,7 @@ button.heroButton {
   align-items: center;
 }
 .partners .partnersHeading {
-  color: #000000;
-  font-size: 2.25rem;
-  line-height: 2.75rem;
-  letter-spacing: 0.1em;
   text-align: center;
-  text-transform: uppercase;
-  margin-top: 0;
   margin-bottom: 4rem;
 }
 .partners .partnersHeading:first-of-type {
@@ -517,8 +483,6 @@ button.heroButton {
     padding: 64px 0px;
   }
   .partners .partnersHeading {
-    font-size: 1.75rem;
-    line-height: 2.125rem;
     margin-bottom: 2.625rem;
   }
   .partners .partnersList {

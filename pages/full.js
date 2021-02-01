@@ -81,7 +81,7 @@ const Full = () => (
       </div>
     </section>
     <section className={styles.articles}>
-      <Heading variant={Heading.VARIANT.h3} className={styles.articlesHeading}>
+      <Heading variant={Heading.VARIANT.h2} className={styles.articlesHeading}>
         Featured Articles
       </Heading>
       <div className={styles.gridSection}>
@@ -149,7 +149,7 @@ const Full = () => (
           variant={Heading.VARIANT.h2}
           className={styles.projectsHeading}
         >
-          Our Technology
+          The Commit Platform
         </Heading>
         <Text className={styles.projectsOverview}>
           The Commit Platform replaces the technical interview with deep

@@ -25,11 +25,12 @@ Heading.propTypes = {
 }
 
 const StyledHeading1 = styled.h1`
+  font-family: Montserrat;
   font-size: ${rem('64px')};
   font-weight: 800;
   line-height: ${rem('80px')};
   letter-spacing: 0rem;
-  margin-top: ${rem('12px')};
+  margin: 0;
 
   @media only screen and (max-width: 1023px) {
     font-size: ${rem('48px')};
@@ -42,27 +43,32 @@ const StyledHeading1 = styled.h1`
   }
 `
 
-// TODO: confirm styles below
-
 const StyledHeading2 = styled.h2`
-  font-size: 1.125rem;
+  font-family: Montserrat;
+  font-size: ${rem('36px')};
   font-weight: 800;
-  line-height: 1.375rem;
+  line-height: ${rem('44px')};
   letter-spacing: 0.1rem;
-  color: #54ffff;
   text-transform: uppercase;
-  margin-top: 2.625rem;
-  margin-bottom: 0rem;
+  margin: 0;
 
-  :first-of-type {
-    margin-top: 5.25rem;
+  @media only screen and (max-width: 413px) {
+    font-size: ${rem('28px')};
+    line-height: ${rem('34px')};
+    text-align: center;
   }
 `
 
 const StyledHeading3 = styled.h3`
-  font-weight: 500;
-  font-size: ${rem('18px')};
-  margin-bottom: ${rem('42px')};
+  font-family: Montserrat;
+  font-size: ${rem('24px')};
+  font-weight: 700;
+  line-height: ${rem('24px')};
+  margin: 0;
+
+  @media only screen and (max-width: 413px) {
+    text-align: center;
+  }
 `
 
 export default Heading
