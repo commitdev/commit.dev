@@ -1,8 +1,8 @@
 // TODO: this will replace pages/index.js eventually. Keeping separate to avoid merge conflicts for now
 
 import {
+  ApplyLink,
   ArticlePreview,
-  Button,
   Testimonials,
   Heading,
   Text,
@@ -32,7 +32,7 @@ const Full = () => (
             Commit is designing the future of work and we're putting Engineers
             at the center.
           </Text>
-          <Button className={styles.heroButton}>Apply to Join Us</Button>
+          <ApplyLink className={styles.heroLink}>Apply to Join Us</ApplyLink>
         </div>
         <div className={styles.heroSvg}>
           <BracketSvg />
@@ -239,7 +239,7 @@ const Full = () => (
         <Text className={styles.footerText}>
           Interested in Taking Control of your Career?
         </Text>
-        <Button className={styles.footerButton}>Apply to Join Us</Button>
+        <ApplyLink className={styles.footerLink}>Apply to Join Us</ApplyLink>
         <img alt="Commit logo" src="/commit-logo.svg" />
       </div>
     </footer>
