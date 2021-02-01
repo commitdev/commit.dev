@@ -8,7 +8,6 @@ const Root = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 2.25rem;
 
   img {
     width: 100%;
@@ -41,7 +40,7 @@ const Root = styled.div`
 
     &:last-of-type {
       grid-column: 3 / span 4;
-      margin-bottom: 2.25rem;
+      margin-bottom: 0;
     }
   }
 

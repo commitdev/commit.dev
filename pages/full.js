@@ -151,7 +151,7 @@ const Full = () => (
         >
           The Commit Platform
         </Heading>
-        <Text className={styles.projectsOverview}>
+        <Text sectionText className={styles.projectsOverview}>
           The Commit Platform replaces the technical interview with deep
           backgrounds, matches Software Engineers with relevant startups, and
           connect Engineers with peers for interest sharing or technical

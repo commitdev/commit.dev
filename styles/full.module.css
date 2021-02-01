@@ -96,6 +96,7 @@ h1.heroHeading .highlight {
   color: #54ffff;
 }
 p.heroText {
+  font-family: Montserrat;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 2.25rem;
@@ -217,12 +218,11 @@ button.heroButton {
 
 /* Articles Styles */
 .articles {
-  padding: 52px 20px 0px 20px;
+  padding: 0px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 88px;
-  margin-bottom: 128px;
+  margin: 124px 0px;
 }
 .articles .articlesHeading {
   margin: 0 24px 3rem 24px;
@@ -231,13 +231,14 @@ button.heroButton {
 
 @media only screen and (max-width: 1023px) {
   .articles {
-    padding: 52px 0px 24px 0px;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width: 413px) {
   .articles {
     margin-top: 36px;
+    margin-bottom: 79px;
   }
 }
 
@@ -304,10 +305,6 @@ button.heroButton {
   background-clip: text;
 }
 .projects p.projectsOverview {
-  font-size: 1.25rem;
-  line-height: 2rem;
-  text-align: center;
-  color: #8493b0;
   margin: 1.5rem 17% 4rem 17%;
 }
 .projects .projectList {
@@ -382,8 +379,6 @@ button.heroButton {
     line-height: 2.125rem;
   }
   .projects p.projectsOverview {
-    font-size: 1rem;
-    line-height: 1.5rem;
     margin: 1.5rem 0 5rem 0;
   }
   .projects .projectList {

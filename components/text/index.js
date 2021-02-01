@@ -2,6 +2,7 @@ import { rem } from 'polished'
 import styled, { css } from 'styled-components'
 
 const StyledText = styled.p`
+  font-family: lato;
   font-size: ${rem('16px')};
   font-weight: 500;
   line-height: ${rem('24px')};
