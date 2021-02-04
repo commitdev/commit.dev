@@ -3,6 +3,7 @@
 import {
   ApplyLink,
   ArticlePreview,
+  Footer,
   Testimonials,
   Heading,
   Text,
@@ -234,15 +235,7 @@ const Full = () => (
         </div>
       </div>
     </section>
-    <footer className={`${styles.footer} ${styles.dark}`}>
-      <div className={styles.flexSection}>
-        <Text className={styles.footerText}>
-          Interested in Taking Control of your Career?
-        </Text>
-        <ApplyLink className={styles.footerLink}>Apply to Join Us</ApplyLink>
-        <img alt="Commit logo" src="/commit-logo.svg" />
-      </div>
-    </footer>
+    <Footer />
   </div>
 )
 
