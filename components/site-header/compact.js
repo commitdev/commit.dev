@@ -1,9 +1,9 @@
-import { usePrevious } from 'helpers/hooks'
 import { rem } from 'polished'
 import { bool, func, string } from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import styled, { css } from 'styled-components'
+import { usePrevious } from 'helpers/hooks'
 import HamburgerMenu from './hamburger-menu'
 import Links from './links'
 import Logo from './logo'
@@ -124,6 +124,7 @@ const Compact = () => {
     setIsOpen(false)
   }
 
+  // handle focus transfer between buttons when opening and closing
   useEffect(() => {
     if (prevIsOpen === undefined || prevIsOpen === isOpen) {
       // first render or update triggered that does not update isOpen state
@@ -137,6 +138,7 @@ const Compact = () => {
     }
   }, [isOpen])
 
+  // setup listener for screen size changes
   useEffect(() => {
     const mediaWatcher = window.matchMedia('(max-width: 575px)')
     setIsCompactScreen(mediaWatcher.matches)
@@ -144,13 +146,23 @@ const Compact = () => {
     const handleSizeChange = (e) => {
       setIsCompactScreen(e.matches)
     }
-    mediaWatcher.addEventListener('change', handleSizeChange)
 
+    if (mediaWatcher.addEventListener) {
+      mediaWatcher.addEventListener('change', handleSizeChange)
+      return function cleanup() {
+        mediaWatcher.removeEventListener('change', handleSizeChange)
+      }
+    }
+
+    // Backwards compatibility for Safari versions prior to 14. See
+    // https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener#browser_compatibility for details
+    mediaWatcher.addListener(handleSizeChange)
     return function cleanup() {
-      mediaWatcher.removeEventListener('change', handleSizeChange)
+      mediaWatcher.removeListener(handleSizeChange)
     }
   })
 
+  // if screen size changes from compact to standard when overlay is open, close overlay
   useEffect(() => {
     if (
       prevIsCompactScreen === undefined ||
