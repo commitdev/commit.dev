@@ -1,4 +1,5 @@
 import { rem } from 'polished'
+import { bool, func, string } from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import styled, { css } from 'styled-components'
@@ -93,6 +94,12 @@ const NavOverlay = React.forwardRef(
   },
 )
 
+NavOverlay.propTypes = {
+  id: string,
+  isOpen: bool,
+  closeMenu: func,
+}
+
 const Compact = () => {
   const [isOpen, setIsOpen] = useState(false)
   const OpenButtonRef = React.createRef()
@@ -112,8 +119,20 @@ const Compact = () => {
     }
   }, [isOpen])
 
-  const openMenu = () => setIsOpen(!isOpen)
-  const closeMenu = () => setIsOpen(false)
+  const openMenu = () => {
+    if (process.browser) {
+      const Root = document.getElementById('__next')
+      Root.setAttribute('hidden', 'true')
+    }
+    setIsOpen(true)
+  }
+  const closeMenu = () => {
+    if (process.browser) {
+      const Root = document.getElementById('__next')
+      Root.removeAttribute('hidden')
+    }
+    setIsOpen(false)
+  }
 
   return (
     <>
