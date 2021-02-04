@@ -1,7 +1,8 @@
 import { rem } from 'polished'
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import styled, { css } from 'styled-components'
+import { usePrevious } from 'helpers/hooks'
 import HamburgerMenu from './hamburger-menu'
 import Links from './links'
 import Logo from './logo'
@@ -13,7 +14,6 @@ const NavOverlayRoot = styled.div`
   display: none;
   width: 100%;
   height: 0px;
-  padding: 32px 42px;
   top: 0;
   left: 0;
   right: 0;
@@ -41,6 +41,7 @@ const FauxHeader = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding: ${rem('32px')} ${rem('42px')} 0;
 `
 
 const Nav = styled.nav`
@@ -64,32 +65,53 @@ const Nav = styled.nav`
   }
 `
 
-const NavOverlay = ({ id, isOpen, closeMenu, ...props }) => {
-  // Must check for process.browser; Without this, document is undefined because document is not available when nextjs renders this server side
-  if (process.browser) {
-    return ReactDOM.createPortal(
-      <NavOverlayRoot id={id} isOpen={isOpen} {...props}>
-        <FauxHeader>
-          <Logo />
-          <HamburgerMenu
-            isOpen={isOpen}
-            handleClick={closeMenu}
-            ariaControlsId={id}
-          />
-        </FauxHeader>
-        <Nav>
-          <Links />
-        </Nav>
-      </NavOverlayRoot>,
-      document.querySelector('body'),
-    )
-  }
+const NavOverlay = React.forwardRef(
+  ({ id, isOpen, closeMenu, ...props }, ref) => {
+    // Must check for process.browser; Without this, document is undefined because document is not available when nextjs renders this server side
+    if (process.browser) {
+      return ReactDOM.createPortal(
+        <NavOverlayRoot id={id} isOpen={isOpen} {...props}>
+          <FauxHeader>
+            <Logo />
+            <HamburgerMenu
+              isOpen={isOpen}
+              handleClick={closeMenu}
+              ariaControlsId={id}
+              ref={ref}
+              className="close"
+            />
+          </FauxHeader>
+          <Nav>
+            <Links />
+          </Nav>
+        </NavOverlayRoot>,
+        document.querySelector('body'),
+      )
+    }
 
-  return null
-}
+    return null
+  },
+)
 
 const Compact = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const OpenButtonRef = React.createRef()
+  const CloseButtonRef = React.createRef()
+  const prevIsOpen = usePrevious(isOpen)
+
+  useEffect(() => {
+    if (prevIsOpen === undefined || prevIsOpen === isOpen) {
+      // first render or update triggered that does not update isOpen state
+      return
+    }
+
+    if (isOpen) {
+      CloseButtonRef.current && CloseButtonRef.current.focus()
+    } else {
+      OpenButtonRef.current && OpenButtonRef.current.focus()
+    }
+  }, [isOpen])
+
   const openMenu = () => setIsOpen(!isOpen)
   const closeMenu = () => setIsOpen(false)
 
@@ -99,8 +121,15 @@ const Compact = () => {
         isOpen={isOpen}
         handleClick={openMenu}
         ariaControlsId={NAV_ID}
+        ref={OpenButtonRef}
+        className="open"
       />
-      <NavOverlay id={NAV_ID} isOpen={isOpen} closeMenu={closeMenu} />
+      <NavOverlay
+        id={NAV_ID}
+        isOpen={isOpen}
+        closeMenu={closeMenu}
+        ref={CloseButtonRef}
+      />
     </>
   )
 }

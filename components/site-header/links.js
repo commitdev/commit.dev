@@ -7,6 +7,7 @@ const Link = styled.a`
   margin-left: ${rem('32px')};
 `
 
+// TODO: update links once pages exist
 const Standard = () => (
   <>
     <Link href="https://blog.commit.dev/" target="_blank" rel="noreferrer">

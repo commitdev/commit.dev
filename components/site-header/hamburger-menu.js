@@ -1,5 +1,5 @@
-import { rem } from 'polished'
 import { bool, func, string } from 'prop-types'
+import React from 'react'
 import styled, { css } from 'styled-components'
 
 const NOOP = () => {}
@@ -63,15 +63,19 @@ const HamburgerLines = styled.span`
     `}
 `
 
-const HamburgerMenu = ({ isOpen, handleClick = NOOP, ariaControlsId }) => (
-  <HamburgerButton
-    type="button"
-    aria-label="menu"
-    aria-controls={ariaControlsId}
-    onClick={handleClick}
-  >
-    <HamburgerLines active={isOpen} />
-  </HamburgerButton>
+const HamburgerMenu = React.forwardRef(
+  ({ isOpen, handleClick = NOOP, ariaControlsId, ...props }, ref) => (
+    <HamburgerButton
+      type="button"
+      aria-label="menu"
+      aria-controls={ariaControlsId}
+      onClick={handleClick}
+      ref={ref}
+      {...props}
+    >
+      <HamburgerLines active={isOpen} />
+    </HamburgerButton>
+  ),
 )
 
 HamburgerMenu.propTypes = {
