@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Text, ApplyLink } from '../index'
+import { Text, ApplyLink } from 'components'
 
 const FooterContainer = styled.footer`
   padding: 150px 0 40px;
