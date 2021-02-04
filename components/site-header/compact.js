@@ -1,9 +1,9 @@
+import { usePrevious } from 'helpers/hooks'
 import { rem } from 'polished'
 import { bool, func, string } from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import styled, { css } from 'styled-components'
-import { usePrevious } from 'helpers/hooks'
 import HamburgerMenu from './hamburger-menu'
 import Links from './links'
 import Logo from './logo'
@@ -102,9 +102,27 @@ NavOverlay.propTypes = {
 
 const Compact = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [isCompactScreen, setIsCompactScreen] = useState(false)
   const OpenButtonRef = React.createRef()
   const CloseButtonRef = React.createRef()
   const prevIsOpen = usePrevious(isOpen)
+  const prevIsCompactScreen = usePrevious(isCompactScreen)
+
+  const openMenu = () => {
+    if (process.browser) {
+      const Root = document.getElementById('__next')
+      Root.setAttribute('hidden', 'true')
+    }
+    setIsOpen(true)
+  }
+
+  const closeMenu = () => {
+    if (process.browser) {
+      const Root = document.getElementById('__next')
+      Root.removeAttribute('hidden')
+    }
+    setIsOpen(false)
+  }
 
   useEffect(() => {
     if (prevIsOpen === undefined || prevIsOpen === isOpen) {
@@ -119,20 +137,32 @@ const Compact = () => {
     }
   }, [isOpen])
 
-  const openMenu = () => {
-    if (process.browser) {
-      const Root = document.getElementById('__next')
-      Root.setAttribute('hidden', 'true')
+  useEffect(() => {
+    const mediaWatcher = window.matchMedia('(max-width: 575px)')
+    setIsCompactScreen(mediaWatcher.matches)
+
+    const handleSizeChange = (e) => {
+      setIsCompactScreen(e.matches)
     }
-    setIsOpen(true)
-  }
-  const closeMenu = () => {
-    if (process.browser) {
-      const Root = document.getElementById('__next')
-      Root.removeAttribute('hidden')
+    mediaWatcher.addEventListener('change', handleSizeChange)
+
+    return function cleanup() {
+      mediaWatcher.removeEventListener('change', handleSizeChange)
     }
-    setIsOpen(false)
-  }
+  })
+
+  useEffect(() => {
+    if (
+      prevIsCompactScreen === undefined ||
+      prevIsCompactScreen === isCompactScreen
+    ) {
+      return
+    }
+
+    if (!isCompactScreen && isOpen) {
+      closeMenu()
+    }
+  }, [isCompactScreen])
 
   return (
     <>
