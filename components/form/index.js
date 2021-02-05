@@ -23,7 +23,7 @@ const SuccessHeader = styled.h2`
 
 const Form = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [hasErrors, setHasErrors] = useState(false)
   const [state, setState] = useState({
     email: '',
@@ -37,7 +37,7 @@ const Form = () => {
 
   const onClick = async (e) => {
     e.preventDefault()
-    setIsLoading(true)
+    setIsSubmitting(true)
     setHasErrors(false)
     try {
       const res = await fetch(process.env.NEXT_PUBLIC_HELIX_HOST, {
@@ -56,7 +56,7 @@ const Form = () => {
     } catch (err) {
       setHasErrors(true)
     } finally {
-      setIsLoading(false)
+      setIsSubmitting(false)
     }
   }
 
@@ -96,7 +96,7 @@ const Form = () => {
           </Text>
         )}
         <LoaderContainer>
-          {isLoading && <Loader />}
+          {isSubmitting && <Loader />}
           <form>
             <Input
               {...{
@@ -127,7 +127,7 @@ const Form = () => {
             <Button
               {...{
                 'data-test-id': 'button',
-                disabled: isLoading,
+                disabled: isSubmitting,
                 onClick,
               }}
             >
