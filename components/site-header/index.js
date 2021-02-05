@@ -1,21 +1,8 @@
 import { rem } from 'polished'
 import styled from 'styled-components'
-
-const SiteHeader = () => (
-  <StyledHeader>
-    <img className="logo" src="/commit-logo.svg" alt="Commit Logo" />
-    <nav>
-      <a
-        className="nav-link"
-        href="https://blog.commit.dev/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Blog
-      </a>
-    </nav>
-  </StyledHeader>
-)
+import CompactMenu from './compact'
+import Logo from './logo'
+import StandardMenu from './standard'
 
 const StyledHeader = styled.header`
   position: sticky;
@@ -34,18 +21,14 @@ const StyledHeader = styled.header`
   @media only screen and (max-width: 575px) {
     margin: ${rem('32px')} ${rem('42px')} 0;
   }
-
-  .logo {
-    width: ${rem('212px')};
-    @media only screen and (max-width: 575px) {
-      width: ${rem('148px')};
-    }
-  }
-
-  .nav-link {
-    color: #fff;
-    text-decoration: none;
-  }
 `
+
+const SiteHeader = () => (
+  <StyledHeader>
+    <Logo />
+    <StandardMenu />
+    <CompactMenu />
+  </StyledHeader>
+  )
 
 export default SiteHeader
