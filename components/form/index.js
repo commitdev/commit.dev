@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Button from '../button'
 import Input from '../input'
+import { Loader, LoaderContainer } from '../loader'
 import Text from '../text'
 import TextArea from '../textarea'
 
@@ -22,6 +23,7 @@ const SuccessHeader = styled.h2`
 
 const Form = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const [hasErrors, setHasErrors] = useState(false)
   const [state, setState] = useState({
     email: '',
@@ -35,6 +37,7 @@ const Form = () => {
 
   const onClick = async (e) => {
     e.preventDefault()
+    setIsLoading(true)
     setHasErrors(false)
     try {
       const res = await fetch(process.env.NEXT_PUBLIC_HELIX_HOST, {
@@ -45,13 +48,15 @@ const Form = () => {
         },
         body: JSON.stringify(state),
       })
-      if (res.status !== 200) {
-        return setHasErrors(true)
+      if (res.status === 200) {
+        setIsFormSubmitted(true)
+      } else {
+        setHasErrors(true)
       }
-      setIsFormSubmitted(true)
-      return res.json()
     } catch (err) {
-      return setHasErrors(true)
+      setHasErrors(true)
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -90,42 +95,46 @@ const Form = () => {
             Woops, the application failed to send. Please try again.
           </Text>
         )}
-        <form>
-          <Input
-            {...{
-              name: 'name',
-              onChange,
-              placeholder: 'Name',
-              value: state.name,
-            }}
-          />
-          <Input
-            {...{
-              name: 'email',
-              onChange,
-              placeholder: 'E-mail',
-              type: 'email',
-              value: state.email,
-            }}
-          />
-          <TextArea
-            {...{
-              name: 'info',
-              onChange,
-              placeholder:
-                'Let us know where to learn more about you\n(Ex. Website, blog, youtube, etc)',
-              value: state.info,
-            }}
-          />
-          <Button
-            {...{
-              'data-test-id': 'button',
-              onClick,
-            }}
-          >
-            Apply To Join
-          </Button>
-        </form>
+        <LoaderContainer>
+          {isLoading && <Loader />}
+          <form>
+            <Input
+              {...{
+                name: 'name',
+                onChange,
+                placeholder: 'Name',
+                value: state.name,
+              }}
+            />
+            <Input
+              {...{
+                name: 'email',
+                onChange,
+                placeholder: 'E-mail',
+                type: 'email',
+                value: state.email,
+              }}
+            />
+            <TextArea
+              {...{
+                name: 'info',
+                onChange,
+                placeholder:
+                  'Let us know where to learn more about you\n(Ex. Website, blog, youtube, etc)',
+                value: state.info,
+              }}
+            />
+            <Button
+              {...{
+                'data-test-id': 'button',
+                disabled: isLoading,
+                onClick,
+              }}
+            >
+              Apply To Join
+            </Button>
+          </form>
+        </LoaderContainer>
       </>
     )
 
