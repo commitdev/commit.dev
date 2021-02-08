@@ -6,6 +6,10 @@ import styles from 'styles/Home.module.css'
 const LinkContainer = styled(Text)`
   margin-top: ${rem('8px')};
   margin-bottom: ${rem('42px')};
+
+  a {
+    color: #ff6ab9;
+  }
 `
 
 export default function Home() {
