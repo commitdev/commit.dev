@@ -21,6 +21,11 @@ const SuccessHeader = styled.h2`
   }
 `
 
+const LinkContainer = styled(Text)`
+  margin-top: ${rem('16px')};
+  text-align: center;
+`
+
 const Form = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -133,6 +138,15 @@ const Form = () => {
             >
               Apply To Join
             </Button>
+            <LinkContainer>
+              <a
+                href="https://www.notion.so/Commit-for-Software-Engineers-6608ecb933da4e449c16e67834ec0f4e"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Why you should apply today
+              </a>
+            </LinkContainer>
           </form>
         </LoaderContainer>
       </>
