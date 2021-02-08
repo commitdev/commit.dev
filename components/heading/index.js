@@ -29,7 +29,7 @@ const StyledHeading1 = styled.h1`
   font-weight: 800;
   line-height: ${rem('80px')};
   letter-spacing: 0rem;
-  margin-top: ${rem('12px')};
+  margin-top: ${rem('-14px')};
 `
 const StyledHeading2 = styled.h2`
   font-size: 1.125rem;
@@ -49,7 +49,6 @@ const StyledHeading2 = styled.h2`
 const StyledHeading3 = styled.h3`
   font-weight: 500;
   font-size: ${rem('18px')};
-  margin-bottom: ${rem('42px')};
 `
 
 export default Heading
