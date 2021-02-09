@@ -93,6 +93,7 @@ workflows:
             branches:
               ignore:
                 - main
+                - launch
       - test_lint:
           requires:
             - checkout_code
