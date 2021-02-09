@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const FadeOut = styled.div`
   display: inline-block;
-  animation: ${(props) => (props.show ? 'none' : 'fadeOut 1s linear')};
+  animation: ${(props) => (props.show ? 'none' : 'fadeOut 0.5s linear')};
   opacity: ${(props) => (props.show ? 1 : 0)};
   @keyframes fadeOut {
     0% {
@@ -15,7 +15,7 @@ const FadeOut = styled.div`
 `
 
 const FadeIn = styled.div`
-  animation: fadeIn 1s linear;
+  animation: fadeIn 0.5s linear;
   opacity: ${(props) => (props.show ? 1 : 0)};
   display: ${(props) => (props.show ? 'inline-block' : 'none')};
 

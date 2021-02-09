@@ -1,5 +1,16 @@
+import { rem } from 'polished'
+import styled from 'styled-components'
 import { Form, Heading, SiteHeader, Text } from 'components'
 import styles from 'styles/Home.module.css'
+
+const LinkContainer = styled(Text)`
+  margin-top: ${rem('8px')};
+  margin-bottom: ${rem('42px')};
+
+  a {
+    color: #ff6ab9;
+  }
+`
 
 export default function Home() {
   return (
@@ -35,6 +46,15 @@ export default function Home() {
               Commit is currently in closed-beta. Apply now to be a part of the
               community soon.
             </Heading>
+            <LinkContainer>
+              <a
+                href="https://www.notion.so/Commit-for-Software-Engineers-6608ecb933da4e449c16e67834ec0f4e"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Why you should apply today
+              </a>
+            </LinkContainer>
             <Form />
           </div>
         </div>
