@@ -119,7 +119,7 @@ workflows:
             branches:
               ignore:
                 - main
-                - setup-deployment-for-launch
+                - launch
       - test_lint:
           requires:
             - checkout_code
@@ -151,13 +151,13 @@ workflows:
           requires:
             - build_feature
 
-  setup-deployment-for-launch:
+  launch:
     jobs:
       - checkout_code:
           filters:
             branches:
               only:
-                - setup-deployment-for-launch
+                - launch
       - e2e:
           context: test-envs
           requires:
