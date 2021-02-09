@@ -93,7 +93,7 @@ workflows:
             branches:
               ignore:
                 - main
-                - launch
+                - setup-deployment-for-launch
       - test_lint:
           requires:
             - checkout_code
@@ -126,13 +126,13 @@ workflows:
           requires:
             - build_feature
 
-  launch:
+  setup-deployment-for-launch:
     jobs:
       - checkout_code:
           filters:
             branches:
               only:
-                - launch
+                - setup-deployment-for-launch
       - e2e:
           context: test-envs
           requires:
@@ -143,7 +143,7 @@ workflows:
           requires:
             - checkout_code
       - deploy:
-          name: Deploy staging
+          name: deploy_staging
           bucket: launch.commit-staging.dev
 
           requires:
