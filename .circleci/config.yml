@@ -70,6 +70,29 @@ jobs:
           command: |
             export DIST_ID=$(aws cloudfront list-distributions --query "DistributionList.Items[?Aliases.Items[?@=='<< parameters.bucket >>']].Id | [0]" | tr -d '"')
             aws cloudfront create-invalidation --distribution-id ${DIST_ID} --paths "/*"
+  modified_deploy:
+    docker:
+      - image: cimg/python:3.6
+    parameters:
+      bucket:
+        description: The S3 Bucket to sync files to.
+        type: string
+    steps:
+      - attach_workspace:
+          at: *workspace
+      - aws-s3/sync:
+          from: out
+          overwrite: true
+          to: 's3://<< parameters.bucket >>'
+      - aws-s3/copy:
+          arguments: '--content-type "text/html"'
+          from: out/full
+          to: 's3://<< parameters.bucket >>'
+      - run:
+          name: Invalidate Cloudfront
+          command: |
+            export DIST_ID=$(aws cloudfront list-distributions --query "DistributionList.Items[?Aliases.Items[?@=='<< parameters.bucket >>']].Id | [0]" | tr -d '"')
+            aws cloudfront create-invalidation --distribution-id ${DIST_ID} --paths "/*"
   e2e:
     docker:
       - image: cimg/node:14.14-browsers
@@ -122,7 +145,6 @@ workflows:
       - deploy:
           name: Deploy staging
           bucket: commit-staging.dev
-
           requires:
             - build_feature
 
@@ -142,9 +164,8 @@ workflows:
           helix_host: https://api-public.commit-staging.dev/email/apply
           requires:
             - checkout_code
-      - deploy:
+      - modified_deploy:
           name: deploy_staging
           bucket: launch.commit-staging.dev
-
           requires:
             - build_feature
