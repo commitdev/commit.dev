@@ -124,3 +124,26 @@ workflows:
 
           requires:
             - build_feature
+
+  launch:
+    jobs:
+      - checkout_code:
+          filters:
+            branches:
+              only:
+                - launch
+      - e2e:
+          context: test-envs
+          requires:
+            - checkout_code
+      - build:
+          name: build_feature
+          helix_host: https://api-public.commit-staging.dev/email/apply
+          requires:
+            - checkout_code
+      - deploy:
+          name: Deploy staging
+          bucket: launch.commit-staging.dev
+
+          requires:
+            - build_feature
