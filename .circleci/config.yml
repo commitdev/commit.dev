@@ -84,6 +84,9 @@ jobs:
           from: out
           overwrite: true
           to: 's3://<< parameters.bucket >>'
+      - run:
+          name: Rename page HTML files
+          command: ./scripts/modify-deploy-files.sh
       - aws-s3/copy:
           arguments: '--content-type "text/html"'
           from: out/full

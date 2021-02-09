@@ -35,7 +35,7 @@
   "license": "ISC",
   "name": "commit.dev",
   "scripts": {
-    "build": "next build && next export && ./scripts/modify-deploy-files.sh",
+    "build": "next build && next export",
     "deploy": "npm run build && git add docs && git commit -m \"Staging deployment @`date +'%Y-%m-%d'`\" && git push origin main",
     "dev": "next dev",
     "e2e": "jest --config .e2e/jest.config.js",
