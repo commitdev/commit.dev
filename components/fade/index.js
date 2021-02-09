@@ -29,6 +29,4 @@ const FadeIn = styled.div`
   }
 `
 
-const Fade = styled.div``
-
 export { FadeIn, FadeOut }
