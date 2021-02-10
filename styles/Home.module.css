@@ -15,17 +15,17 @@
   padding: 50px 0;
 }
 
-@media only screen and (min-width: 767px) {
+.contentSection {
+  padding: 0 5%;
+}
+
+@media only screen and (min-width: 1023px) {
   .contentContainer {
     display: flex;
   }
 }
 
-.contentSection {
-  padding: 0 5%;
-}
-
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1023px) {
   .container {
     text-align: center;
   }
