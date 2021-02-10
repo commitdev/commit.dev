@@ -83,7 +83,7 @@ const NavOverlay = React.forwardRef(
             />
           </FauxHeader>
           <Nav>
-            <Links />
+            <Links onClick={closeMenu} />
           </Nav>
         </NavOverlayRoot>,
         document.querySelector('body'),

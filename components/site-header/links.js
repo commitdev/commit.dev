@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import { rem } from 'polished'
+import { func } from 'prop-types'
 import styled from 'styled-components'
+
+const NOOP = () => {}
 
 const Anchor = styled.a`
   color: #fff;
@@ -10,18 +13,36 @@ const Anchor = styled.a`
 `
 
 // TODO: update links once pages exist
-const Standard = () => (
+const Links = ({ onClick }) => (
   <>
     <Link href="/about" passHref>
-      <Anchor>About</Anchor>
+      <Anchor onClick={onClick}>About</Anchor>
     </Link>
-    <Anchor href="https://blog.commit.dev/" target="_blank" rel="noreferrer">
+    <Anchor
+      onClick={onClick}
+      href="https://blog.commit.dev/"
+      target="_blank"
+      rel="noreferrer"
+    >
       Blog
     </Anchor>
-    <Anchor href="https://blog.commit.dev/" target="_blank" rel="noreferrer">
+    <Anchor
+      onClick={onClick}
+      href="https://blog.commit.dev/"
+      target="_blank"
+      rel="noreferrer"
+    >
       Startups
     </Anchor>
   </>
 )
 
-export default Standard
+Links.propTypes = {
+  onClick: func,
+}
+
+Links.defaultProps = {
+  onClick: NOOP,
+}
+
+export default Links
