@@ -89,8 +89,8 @@ const Home = () => (
         <ArticlePreview
           imgSrc="/lillian-liang.jpeg"
           imgAlt="Lillian Liang"
-          heading="Lillian Liang, Platiq Inc."
-          text="Lillian Lian is a Commit engineer who joined Plastiq earlier this
+          heading="Lillian Liang, Plastiq Inc."
+          text="Lillian Liang is a Commit engineer who joined Plastiq earlier this
           year. We talked to her about her journey to Commit and Platiq..."
           link="https://blog.commit.dev/articles/committed-to-success-lillian-liang-plastiq-inc"
         />
