@@ -12,7 +12,7 @@ import ConnectSvg from 'public/connect.svg'
 import ElevateSvg from 'public/elevate.svg'
 import ExploreSvg from 'public/explore.svg'
 import QuotesSvg from 'public/quotation-marks.svg'
-import styles from 'styles/home.module.css'
+import styles from 'styles/Home.module.css'
 
 const { h2, h3 } = Heading.VARIANT
 
