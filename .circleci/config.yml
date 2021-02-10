@@ -89,7 +89,7 @@ jobs:
           command: ./scripts/modify-deploy-files.sh
       - aws-s3/copy:
           arguments: '--content-type "text/html"'
-          from: out/full
+          from: out/about
           to: 's3://<< parameters.bucket >>'
       - run:
           name: Invalidate Cloudfront

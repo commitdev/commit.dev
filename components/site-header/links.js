@@ -1,24 +1,26 @@
+import Link from 'next/link'
 import { rem } from 'polished'
 import styled from 'styled-components'
 
-const Link = styled.a`
+const Anchor = styled.a`
   color: #fff;
   text-decoration: none;
   margin-left: ${rem('32px')};
+  cursor: pointer;
 `
 
 // TODO: update links once pages exist
 const Standard = () => (
   <>
-    <Link href="https://blog.commit.dev/" target="_blank" rel="noreferrer">
-      About
+    <Link href="/about" passHref>
+      <Anchor>About</Anchor>
     </Link>
-    <Link href="https://blog.commit.dev/" target="_blank" rel="noreferrer">
+    <Anchor href="https://blog.commit.dev/" target="_blank" rel="noreferrer">
       Blog
-    </Link>
-    <Link href="https://blog.commit.dev/" target="_blank" rel="noreferrer">
+    </Anchor>
+    <Anchor href="https://blog.commit.dev/" target="_blank" rel="noreferrer">
       Startups
-    </Link>
+    </Anchor>
   </>
 )
 
