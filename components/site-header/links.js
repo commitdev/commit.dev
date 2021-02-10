@@ -6,7 +6,6 @@ import styled from 'styled-components'
 const NOOP = () => {}
 
 const Anchor = styled.a`
-  color: #fff;
   text-decoration: none;
   margin-left: ${rem('32px')};
   cursor: pointer;

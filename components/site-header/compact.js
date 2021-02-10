@@ -1,9 +1,10 @@
+import { usePrevious } from 'helpers/hooks'
 import { rem } from 'polished'
-import { bool, func, string } from 'prop-types'
+import { bool, func, string, oneOf } from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import styled, { css } from 'styled-components'
-import { usePrevious } from 'helpers/hooks'
+import { COLOR_VARIATIONS } from './constants'
 import HamburgerMenu from './hamburger-menu'
 import Links from './links'
 import Logo from './logo'
@@ -100,7 +101,7 @@ NavOverlay.propTypes = {
   closeMenu: func,
 }
 
-const Compact = () => {
+const Compact = ({ variation }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [isCompactScreen, setIsCompactScreen] = useState(false)
   const OpenButtonRef = React.createRef()
@@ -179,6 +180,7 @@ const Compact = () => {
   return (
     <>
       <HamburgerMenu
+        variation={variation}
         isOpen={isOpen}
         handleClick={openMenu}
         ariaControlsId={NAV_ID}
@@ -193,6 +195,12 @@ const Compact = () => {
       />
     </>
   )
+}
+
+Compact.propTypes = {
+  variation: oneOf(
+    Object.keys(COLOR_VARIATIONS).map((k) => COLOR_VARIATIONS[k]),
+  ),
 }
 
 export default Compact

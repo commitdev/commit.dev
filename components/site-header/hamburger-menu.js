@@ -1,6 +1,7 @@
-import { bool, func, string } from 'prop-types'
+import { bool, func, string, oneOf } from 'prop-types'
 import React from 'react'
 import styled, { css } from 'styled-components'
+import { COLOR_VARIATIONS } from './constants'
 
 const NOOP = () => {}
 
@@ -32,7 +33,8 @@ const HamburgerLines = styled.span`
     width: 40px;
     height: 3px;
     border-radius: 3px;
-    background-color: #ffffff;
+    background-color: ${(p) =>
+      p.variation === COLOR_VARIATIONS.dark ? '#ffffff' : '#010242'};
     left: 0;
   }
 
@@ -64,7 +66,10 @@ const HamburgerLines = styled.span`
 `
 
 const HamburgerMenu = React.forwardRef(
-  ({ isOpen, handleClick = NOOP, ariaControlsId, ...props }, ref) => (
+  (
+    { isOpen, handleClick = NOOP, ariaControlsId, variation, ...props },
+    ref,
+  ) => (
     <HamburgerButton
       type="button"
       aria-label="menu"
@@ -73,7 +78,7 @@ const HamburgerMenu = React.forwardRef(
       ref={ref}
       {...props}
     >
-      <HamburgerLines active={isOpen} />
+      <HamburgerLines active={isOpen} variation={variation} />
     </HamburgerButton>
   ),
 )
@@ -82,6 +87,13 @@ HamburgerMenu.propTypes = {
   isOpen: bool,
   handleClick: func,
   ariaControlsId: string,
+  variation: oneOf(
+    Object.keys(COLOR_VARIATIONS).map((k) => COLOR_VARIATIONS[k]),
+  ),
+}
+
+HamburgerMenu.defaultProps = {
+  variation: COLOR_VARIATIONS.dark,
 }
 
 export default HamburgerMenu
