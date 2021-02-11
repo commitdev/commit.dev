@@ -3,9 +3,9 @@ import React from 'react'
 import { bool, func, string, oneOf } from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { COLOR_VARIATIONS } from './constants'
+import { NOOP } from 'helpers/utils'
 
-const NOOP = () => {}
+import { COLOR_VARIATIONS } from './constants'
 
 const HamburgerButton = styled.button`
   display: none;
