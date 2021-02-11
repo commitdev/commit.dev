@@ -26,7 +26,7 @@ const Anchor = styled.a`
 
 const Logo = ({ variation }) => (
   <Link href="/" passHref>
-    <Anchor>
+    <Anchor aria-label="Home">
       <LogoImg
         src={
           variation === COLOR_VARIATIONS.dark
