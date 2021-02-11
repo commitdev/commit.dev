@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { rem } from 'polished'
 import { oneOf } from 'prop-types'
 import styled from 'styled-components'
@@ -18,25 +19,32 @@ const SmallLogoImg = styled.img`
   }
 `
 
+const Anchor = styled.a`
+  text-decoration: none;
+  cursor: pointer;
+`
+
 const Logo = ({ variation }) => (
-  <>
-    <LogoImg
-      src={
-        variation === COLOR_VARIATIONS.dark
-          ? '/commit-logo.svg'
-          : '/commit-logo-dark.svg'
-      }
-      alt="Commit Logo"
-    />
-    <SmallLogoImg
-      src={
-        variation === COLOR_VARIATIONS.dark
-          ? '/commit-logo-small.svg'
-          : '/commit-logo-small-dark.svg'
-      }
-      alt="Commit Logo"
-    />
-  </>
+  <Link href="/" passHref>
+    <Anchor>
+      <LogoImg
+        src={
+          variation === COLOR_VARIATIONS.dark
+            ? '/commit-logo.svg'
+            : '/commit-logo-dark.svg'
+        }
+        alt="Commit Logo"
+      />
+      <SmallLogoImg
+        src={
+          variation === COLOR_VARIATIONS.dark
+            ? '/commit-logo-small.svg'
+            : '/commit-logo-small-dark.svg'
+        }
+        alt="Commit Logo"
+      />
+    </Anchor>
+  </Link>
 )
 
 Logo.propTypes = {
