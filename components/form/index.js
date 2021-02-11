@@ -3,6 +3,7 @@ import { rem } from 'polished'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Button from '../button'
+import { FadeIn, FadeOut } from '../fade'
 import Input from '../input'
 import { Loader, LoaderContainer } from '../loader'
 import Text from '../text'
@@ -22,7 +23,7 @@ const SuccessHeader = styled.h2`
 `
 
 const Form = () => {
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(true)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [hasErrors, setHasErrors] = useState(false)
   const [state, setState] = useState({
@@ -49,7 +50,7 @@ const Form = () => {
         body: JSON.stringify(state),
       })
       if (res.status === 200) {
-        setIsFormSubmitted(true)
+        setIsSubmitted(true)
       } else {
         setHasErrors(true)
       }
@@ -61,16 +62,16 @@ const Form = () => {
   }
 
   useEffect(() => {
-    setIsFormSubmitted(localStorage.getItem('formSubmitted'))
+    setIsSubmitted(localStorage.getItem('formSubmitted') === 'true')
   }, [])
 
   useEffect(() => {
-    localStorage.setItem('formSubmitted', isFormSubmitted)
-  }, [isFormSubmitted])
+    localStorage.setItem('formSubmitted', isSubmitted)
+  }, [isSubmitted])
 
-  const renderForm = () =>
-    isFormSubmitted === true ? (
-      <div>
+  const renderForm = () => (
+    <div>
+      <FadeIn show={isSubmitted}>
         <CheckCircle
           {...{
             color: '#FF68BA',
@@ -87,56 +88,61 @@ const Form = () => {
           In the meantime take a look at some{' '}
           <a href="https://blog.commit.dev/">blog posts</a> from our engineers.
         </Text>
-      </div>
-    ) : (
+      </FadeIn>
       <>
-        {hasErrors && (
+        <FadeIn show={hasErrors}>
           <Text errorText>
             Woops, the application failed to send. Please try again.
           </Text>
-        )}
+        </FadeIn>
+
         <LoaderContainer>
-          {isSubmitting && <Loader />}
-          <form>
-            <Input
-              {...{
-                name: 'name',
-                onChange,
-                placeholder: 'Name',
-                value: state.name,
-              }}
-            />
-            <Input
-              {...{
-                name: 'email',
-                onChange,
-                placeholder: 'E-mail',
-                type: 'email',
-                value: state.email,
-              }}
-            />
-            <TextArea
-              {...{
-                name: 'info',
-                onChange,
-                placeholder:
-                  'Let us know where to learn more about you\n(Ex. Website, blog, youtube, etc)',
-                value: state.info,
-              }}
-            />
-            <Button
-              {...{
-                'data-test-id': 'button',
-                disabled: isSubmitting,
-                onClick,
-              }}
-            >
-              Apply To Join
-            </Button>
-          </form>
+          <Loader show={isSubmitting} />
+          {!isSubmitted && (
+            <FadeOut show={!isSubmitting}>
+              <form>
+                <Input
+                  {...{
+                    name: 'name',
+                    onChange,
+                    placeholder: 'Name',
+                    value: state.name,
+                  }}
+                />
+                <Input
+                  {...{
+                    name: 'email',
+                    onChange,
+                    placeholder: 'E-mail',
+                    type: 'email',
+                    value: state.email,
+                  }}
+                />
+                <TextArea
+                  {...{
+                    name: 'info',
+                    onChange,
+                    placeholder:
+                      'Let us know where to learn more about you\n(Ex. Website, blog, youtube, etc)',
+                    value: state.info,
+                  }}
+                />
+                <Button
+                  {...{
+                    'data-test-id': 'button',
+                    disabled: isSubmitting,
+                    onClick,
+                  }}
+                >
+                  Apply To Join
+                </Button>
+              </form>
+            </FadeOut>
+          )}
         </LoaderContainer>
       </>
-    )
+    </div>
+  )
 
   return renderForm()
 }

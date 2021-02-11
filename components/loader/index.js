@@ -9,6 +9,8 @@ const LoaderContainer = styled.div`
 `
 
 const StyledLoader = styled.div`
+  opacity: ${(props) => (props.show ? 1 : 0)};
+  transition: opacity 0.5s linear;
   animation: rotate 1s infinite;
   position: fixed;
   margin-top: -75px;
