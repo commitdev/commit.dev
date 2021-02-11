@@ -1,6 +1,8 @@
 import { rem } from 'polished'
+import { oneOf } from 'prop-types'
 import styled from 'styled-components'
 import CompactMenu from './compact'
+import { COLOR_VARIATIONS } from './constants'
 import Logo from './logo'
 import StandardMenu from './standard'
 
@@ -23,12 +25,24 @@ const StyledHeader = styled.header`
   }
 `
 
-const SiteHeader = () => (
+const SiteHeader = ({ variation }) => (
   <StyledHeader>
-    <Logo />
-    <StandardMenu />
-    <CompactMenu />
+    <Logo variation={variation} />
+    <StandardMenu variation={variation} />
+    <CompactMenu variation={variation} />
   </StyledHeader>
-  )
+)
+
+SiteHeader.VARIATIONS = COLOR_VARIATIONS
+
+SiteHeader.propTypes = {
+  variation: oneOf(
+    Object.keys(COLOR_VARIATIONS).map((k) => COLOR_VARIATIONS[k]),
+  ),
+}
+
+SiteHeader.defaultProps = {
+  variation: COLOR_VARIATIONS.dark,
+}
 
 export default SiteHeader

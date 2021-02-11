@@ -4,7 +4,7 @@ import styles from 'styles/about.module.css'
 const About = () => (
   <div className={styles.contentRoot}>
     <section className={`${styles.hero}`}>
-      <SiteHeader />
+      <SiteHeader variation={SiteHeader.VARIATIONS.light} />
       <div className={`${styles.sectionContent}`}>
         <div className={styles.heroContent}>
           <Heading className={styles.heroHeading}>
