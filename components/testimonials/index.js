@@ -1,7 +1,9 @@
+import { useEffect } from 'react'
+
 import Glide from '@glidejs/glide'
 import { rem } from 'polished'
-import { useEffect } from 'react'
 import styled from 'styled-components'
+
 import Slide from './slide'
 import '@glidejs/glide/dist/css/glide.core.min.css'
 import '@glidejs/glide/dist/css/glide.theme.min.css'

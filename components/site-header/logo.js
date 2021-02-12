@@ -1,6 +1,7 @@
 import { rem } from 'polished'
 import { oneOf } from 'prop-types'
 import styled from 'styled-components'
+
 import { COLOR_VARIATIONS } from './constants'
 
 const LogoImg = styled.img`

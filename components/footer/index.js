@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { Text, ApplyLink } from 'components'
 
 const FooterContainer = styled.footer`
