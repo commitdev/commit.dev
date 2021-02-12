@@ -1,5 +1,6 @@
 import { string } from 'prop-types'
 import styled from 'styled-components'
+
 import { Heading, Text } from 'components'
 
 const Root = styled.div`

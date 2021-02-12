@@ -1,6 +1,7 @@
 import { rem } from 'polished'
 import { string } from 'prop-types'
 import styled from 'styled-components'
+
 import { Heading, Text } from 'components'
 
 const IMG_WIDTH = '280px'

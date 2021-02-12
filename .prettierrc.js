@@ -1,4 +1,4 @@
-const rules  = {
+const rules = {
   printWidth: 80,
   singleQuote: true,
   trailingComma: 'all',
@@ -6,7 +6,7 @@ const rules  = {
   jsxBracketSameLine: false,
   parser: 'babel',
   semi: false,
-};
+}
 module.exports = {
-    rules
+  rules,
 }

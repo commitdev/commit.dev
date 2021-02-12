@@ -1,9 +1,12 @@
+import React, { useEffect, useState } from 'react'
+
 import { rem } from 'polished'
 import { bool, func, string, oneOf } from 'prop-types'
-import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import styled, { css } from 'styled-components'
+
 import { usePrevious } from 'helpers/hooks'
+
 import { COLOR_VARIATIONS } from './constants'
 import HamburgerMenu from './hamburger-menu'
 import Links from './links'

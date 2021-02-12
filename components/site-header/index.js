@@ -1,6 +1,7 @@
 import { rem } from 'polished'
 import { oneOf } from 'prop-types'
 import styled from 'styled-components'
+
 import CompactMenu from './compact'
 import { COLOR_VARIATIONS } from './constants'
 import Logo from './logo'

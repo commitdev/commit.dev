@@ -1,7 +1,9 @@
+import { useEffect, useState } from 'react'
+
 import { CheckCircle } from 'phosphor-react'
 import { rem } from 'polished'
-import { useEffect, useState } from 'react'
 import styled from 'styled-components'
+
 import Button from '../button'
 import Input from '../input'
 import Text from '../text'

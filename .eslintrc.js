@@ -6,7 +6,31 @@ const rules = {
     'error',
     {
       groups: ['builtin', 'external', 'internal'],
-      'newlines-between': 'never',
+      pathGroups: [
+        {
+          pattern: 'react',
+          group: 'external',
+          position: 'before',
+        },
+        {
+          pattern: 'components',
+          group: 'internal',
+        },
+        {
+          pattern: 'pages/**',
+          group: 'internal',
+        },
+        {
+          pattern: 'helpers/**',
+          group: 'internal',
+        },
+        {
+          pattern: 'styles/**',
+          group: 'internal',
+        },
+      ],
+      pathGroupsExcludedImportTypes: ['react'],
+      'newlines-between': 'always',
       alphabetize: {
         order: 'asc',
         caseInsensitive: true,

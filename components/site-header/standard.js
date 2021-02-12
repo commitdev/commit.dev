@@ -1,5 +1,6 @@
 import { oneOf } from 'prop-types'
 import styled from 'styled-components'
+
 import { COLOR_VARIATIONS } from './constants'
 import Links from './links'
 
