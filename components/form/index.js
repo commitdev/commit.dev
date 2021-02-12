@@ -9,6 +9,14 @@ import { Loader, LoaderContainer } from '../loader'
 import Text from '../text'
 import TextArea from '../textarea'
 
+const FormContainer = styled.div`
+  width: 33vw;
+  @media only screen and (max-width: 1023px) {
+    width: auto;
+  }
+  height: 100vh;
+`
+
 const SuccessHeader = styled.h2`
   font-family: Montserrat;
   font-weight: bold;
@@ -70,7 +78,7 @@ const Form = () => {
   }, [isSubmitted])
 
   const renderForm = () => (
-    <div>
+    <FormContainer>
       <FadeIn show={isSubmitted}>
         <CheckCircle
           {...{
@@ -141,7 +149,7 @@ const Form = () => {
           )}
         </LoaderContainer>
       </>
-    </div>
+    </FormContainer>
   )
 
   return renderForm()
