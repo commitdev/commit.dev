@@ -1,5 +1,4 @@
 const rules = {
-  // import/exports
   'import/exports-last': 'error',
   'import/prefer-default-export': 'off',
   'import/order': [
@@ -7,10 +6,6 @@ const rules = {
     {
       groups: ['builtin', 'external', 'internal'],
       'newlines-between': 'never',
-      alphabetize: {
-        order: 'asc',
-        caseInsensitive: true,
-      },
     },
   ],
   'no-async-promise-executor': 'off',
