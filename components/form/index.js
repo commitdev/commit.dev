@@ -22,11 +22,20 @@ const SuccessHeader = styled.h2`
   font-weight: bold;
   font-size: 24px;
   line-height: 36px;
-  margin-left: ${rem('60px')};
-  margin-top: ${rem('-40px')};
+  margin-left: ${rem('23px')};
 
   @media only screen and (max-width: 767px) {
     margin: 0;
+  }
+`
+
+const SuccessHeaderContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  @media only screen and (max-width: 1023px) {
+    width: 50%;
+    margin: 0 auto;
   }
 `
 
@@ -80,14 +89,16 @@ const Form = () => {
   const renderForm = () => (
     <FormContainer>
       <FadeIn show={isSubmitted}>
-        <CheckCircle
-          {...{
-            color: '#FF68BA',
-            size: rem('37px'),
-            weight: 'fill',
-          }}
-        />
-        <SuccessHeader>Application Sent!</SuccessHeader>
+        <SuccessHeaderContainer>
+          <CheckCircle
+            {...{
+              color: '#FF68BA',
+              size: rem('37px'),
+              weight: 'fill',
+            }}
+          />
+          <SuccessHeader>Application Sent!</SuccessHeader>
+        </SuccessHeaderContainer>
         <Text successText>
           Look out for your inbox! Someone from Commit will be in touch with
           you.
