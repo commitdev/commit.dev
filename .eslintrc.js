@@ -17,6 +17,10 @@ const rules = {
           group: 'internal',
         },
         {
+          pattern: 'components/**',
+          group: 'internal',
+        },
+        {
           pattern: 'pages/**',
           group: 'internal',
         },

@@ -1,6 +1,8 @@
 import { rem } from 'polished'
 import styled, { css } from 'styled-components'
 
+import { DESKTOP_SIZE, MOBILE_SIZE } from 'styles/constants'
+
 const StyledText = styled.p`
   font-family: lato;
   font-size: ${rem('16px')};
@@ -10,7 +12,7 @@ const StyledText = styled.p`
   text-align: left;
   margin-top: ${rem('16px')};
 
-  @media only screen and (max-width: 1023px) {
+  @media only screen and (max-width: ${DESKTOP_SIZE}) {
     text-align: center;
   }
 
@@ -25,10 +27,10 @@ const StyledText = styled.p`
       margin-top: ${rem('64px')};
       color: #8493b0;
 
-      @media only screen and (max-width: 1023px) {
+      @media only screen and (max-width: ${DESKTOP_SIZE}) {
       }
 
-      @media only screen and (max-width: 413px) {
+      @media only screen and (max-width: ${MOBILE_SIZE}) {
         font-weight: 700;
         font-size: ${rem('16px')};
         line-height: ${rem('24px')};

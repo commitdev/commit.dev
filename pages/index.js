@@ -1,7 +1,9 @@
 import {
   ApplyLink,
   ArticlePreview,
+  CompanyLogo,
   Footer,
+  LogoSection,
   Testimonials,
   Heading,
   Text,
@@ -182,57 +184,38 @@ const Home = () => (
         <Testimonials className={styles.testimonialsCarousel} />
       </div>
     </section>
-    <section className={`${styles.partners} ${styles.grey}`}>
-      <div className={styles.flexSection}>
-        <Heading variant={h2} className={styles.partnersHeading}>
-          Who We Work With
-        </Heading>
-        <div className={styles.partnersList}>
-          <a href="https://www.procurify.com/" rel="noopener noreferrer">
-            <img
-              className={styles.partnerLogo}
-              alt="Procurify logo"
-              src="/procurify.png"
-            />
-          </a>
-          <a href="https://www.vidyard.com/" rel="noopener noreferrer">
-            <img
-              className={styles.partnerLogo}
-              alt="Vidyard logo"
-              src="/vidyard.png"
-            />
-          </a>
-          <a href="https://www.planworth.co/" rel="noopener noreferrer">
-            <img
-              className={styles.partnerLogo}
-              alt="Planworth logo"
-              src="/planworth.png"
-            />
-          </a>
-          <a href="https://www.dapperlabs.com/" rel="noopener noreferrer">
-            <img
-              className={styles.partnerLogo}
-              alt="Dapper logo"
-              src="/dapper.png"
-            />
-          </a>
-          <a href="https://www.usepatch.com/" rel="noopener noreferrer">
-            <img
-              className={styles.partnerLogo}
-              alt="Patch logo"
-              src="/patch.png"
-            />
-          </a>
-          <a href="https://www.plastiq.com/" rel="noopener noreferrer">
-            <img
-              className={styles.partnerLogo}
-              alt="Plastiq logo"
-              src="/plastiq.png"
-            />
-          </a>
-        </div>
-      </div>
-    </section>
+    <LogoSection title="Who We Work With">
+      <CompanyLogo 
+        url="https://www.procurify.com/"
+        alt="Procurify logo"
+        logoSrc="/procurify.png"
+      />
+      <CompanyLogo
+        url="https://www.vidyard.com/" 
+        alt="Vidyard logo"
+        logoSrc="/vidyard.png"
+      />
+      <CompanyLogo 
+        url="https://www.planworth.co/"
+        alt="Planworth logo"
+        logoSrc="/planworth.png"
+      />
+      <CompanyLogo 
+        url="https://www.dapperlabs.com/"
+        alt="Dapper logo"
+        logoSrc="/dapper.png"
+      />
+      <CompanyLogo
+        url="https://www.usepatch.com/"
+        alt="Patch logo"
+        logoSrc="/patch.png"
+      />
+      <CompanyLogo 
+        url="https://www.plastiq.com/"
+        alt="Plastiq logo"
+        logoSrc="/plastiq.png"
+      />
+    </LogoSection>
     <Footer />
   </div>
 )

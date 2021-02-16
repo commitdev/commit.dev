@@ -1,6 +1,8 @@
 import { rem } from 'polished'
 import styled from 'styled-components'
 
+import { MOBILE_SIZE } from 'styles/constants'
+
 const Button = (props) => <StyledButton {...props} />
 
 const StyledButton = styled.button`
@@ -25,7 +27,7 @@ const StyledButton = styled.button`
     outline: none;
   }
 
-  @media only screen and (max-width: 413px) {
+  @media only screen and (max-width: ${MOBILE_SIZE}) {
     font-size: ${rem('18px')};
     line-height: ${rem('22px')};
   }

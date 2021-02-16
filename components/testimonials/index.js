@@ -4,7 +4,10 @@ import Glide from '@glidejs/glide'
 import { rem } from 'polished'
 import styled from 'styled-components'
 
+import { MOBILE_SIZE } from 'styles/constants'
+
 import Slide from './slide'
+
 import '@glidejs/glide/dist/css/glide.core.min.css'
 import '@glidejs/glide/dist/css/glide.theme.min.css'
 
@@ -52,7 +55,7 @@ const DotButton = styled.button`
     transform: scale(1.25);
   }
 
-  @media only screen and (max-width: 413px) {
+  @media only screen and (max-width: ${MOBILE_SIZE}) {
     height: ${DOT_SIZE_MOBILE};
     width: ${DOT_SIZE_MOBILE};
   }
@@ -76,7 +79,7 @@ const Testimonials = () => {
               imgAlt="Clara Tsang"
               heading="Clara Tsang"
               subHeading="Commit Engineering Partner"
-              text="Commit offers me a flexible working situation where | get to work on a wide spread of projects to build my career. It’s an amazing opportunity to learn from such a great community of engineers and choose from projects and technologies that actually interest me and can lead to exciting long term opportunities."
+              text="Commit offers me a flexible working situation where I get to work on a wide spread of projects to build my career. It’s an amazing opportunity to learn from such a great community of engineers and choose from projects and technologies that actually interest me and can lead to exciting long term opportunities."
             />
           </li>
           <li className="glide__slide">

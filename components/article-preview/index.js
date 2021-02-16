@@ -2,6 +2,7 @@ import { string } from 'prop-types'
 import styled from 'styled-components'
 
 import { Heading, Text } from 'components'
+import { TABLET_SIZE, MOBILE_SIZE } from 'styles/constants'
 
 const Root = styled.div`
   grid-column: span 4;
@@ -36,7 +37,7 @@ const Root = styled.div`
     margin: 0;
   }
 
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: ${TABLET_SIZE}) {
     margin-bottom: 4.5rem;
 
     &:last-of-type {
@@ -45,7 +46,7 @@ const Root = styled.div`
     }
   }
 
-  @media only screen and (max-width: 413px) {
+  @media only screen and (max-width: ${MOBILE_SIZE}) {
     grid-column: 1 / span 1;
 
     &:last-of-type {

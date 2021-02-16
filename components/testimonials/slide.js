@@ -3,6 +3,7 @@ import { string } from 'prop-types'
 import styled from 'styled-components'
 
 import { Heading, Text } from 'components'
+import { DESKTOP_SIZE, TABLET_SIZE, MOBILE_SIZE } from 'styles/constants'
 
 const IMG_WIDTH = '280px'
 const IMG_HEIGHT = '200px'
@@ -11,16 +12,16 @@ const Root = styled.div`
   display: flex;
   margin: 0 17%;
 
-  @media only screen and (max-width: 1023px) {
+  @media only screen and (max-width: ${DESKTOP_SIZE}) {
     margin: 0 10%;
   }
 
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: ${TABLET_SIZE}) {
     flex-direction: column;
     align-items: center;
   }
 
-  @media only screen and (max-width: 413px) {
+  @media only screen and (max-width: ${MOBILE_SIZE}) {
     margin: 0;
   }
 `
@@ -51,13 +52,13 @@ const Content = styled.div`
     text-align: left;
   }
 
-  @media only screen and (max-width: 1023px) {
+  @media only screen and (max-width: ${DESKTOP_SIZE}) {
     p {
       text-align: left;
     }
   }
 
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: ${TABLET_SIZE}) {
     align-items: center;
 
     h3 {

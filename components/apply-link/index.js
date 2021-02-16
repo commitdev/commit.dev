@@ -1,6 +1,8 @@
 import { rem } from 'polished'
 import styled from 'styled-components'
 
+import { MOBILE_SIZE } from 'styles/constants'
+
 const StyledLink = styled.a`
   display: block;
   background: #ff68ba;
@@ -24,7 +26,7 @@ const StyledLink = styled.a`
     outline: none;
   }
 
-  @media only screen and (max-width: 413px) {
+  @media only screen and (max-width: ${MOBILE_SIZE}) {
     font-size: ${rem('18px')};
     line-height: ${rem('22px')};
     padding: ${rem('16px')};
