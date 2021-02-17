@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { Text, ApplyLink } from 'components'
+import { DESKTOP_SIZE, MOBILE_SIZE } from 'styles/constants'
 
 const FooterContainer = styled.footer`
   padding: 150px 0 40px;
@@ -8,7 +9,7 @@ const FooterContainer = styled.footer`
   background: #000000;
   background: linear-gradient(68.66deg, #0f1011 0%, #010242 100%);
 
-  @media only screen and (max-width: 413px) {
+  @media only screen and (max-width: ${MOBILE_SIZE}) {
     padding: 98px 0px 68px;
     background: #000000;
   }
@@ -22,7 +23,7 @@ const FooterContainer = styled.footer`
     text-align: center;
     margin-bottom: 4rem;
 
-    @media only screen and (max-width: 413px) {
+    @media only screen and (max-width: ${MOBILE_SIZE}) {
       margin-bottom: 3rem;
     }
   }
@@ -45,12 +46,12 @@ const FlexSection = styled.div`
   max-width: 1240px;
   margin: 0 auto;
 
-  @media only screen and (max-width: 1023px) {
+  @media only screen and (max-width: ${DESKTOP_SIZE}) {
     max-width: none;
     margin: 0 20px;
   }
 
-  @media only screen and (max-width: 413px) {
+  @media only screen and (max-width: ${MOBILE_SIZE}) {
     max-width: none;
     margin: 0 36px;
   }

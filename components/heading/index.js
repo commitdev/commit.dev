@@ -2,6 +2,8 @@ import { rem } from 'polished'
 import { string } from 'prop-types'
 import styled from 'styled-components'
 
+import { DESKTOP_SIZE, MOBILE_SIZE } from 'styles/constants'
+
 const VARIANT = Object.freeze({
   h2: 'h2',
   h3: 'h3',
@@ -32,12 +34,12 @@ const StyledHeading1 = styled.h1`
   letter-spacing: 0rem;
   margin: 0;
 
-  @media only screen and (max-width: 1023px) {
+  @media only screen and (max-width: ${DESKTOP_SIZE}) {
     font-size: ${rem('48px')};
     line-height: ${rem('60px')};
   }
 
-  @media only screen and (max-width: 413px) {
+  @media only screen and (max-width: ${MOBILE_SIZE}) {
     font-size: ${rem('32px')};
     line-height: ${rem('40px')};
   }
@@ -52,7 +54,7 @@ const StyledHeading2 = styled.h2`
   text-transform: uppercase;
   margin: 0;
 
-  @media only screen and (max-width: 413px) {
+  @media only screen and (max-width: ${MOBILE_SIZE}) {
     font-size: ${rem('28px')};
     line-height: ${rem('34px')};
     text-align: center;
@@ -66,7 +68,7 @@ const StyledHeading3 = styled.h3`
   line-height: ${rem('24px')};
   margin: 0;
 
-  @media only screen and (max-width: 413px) {
+  @media only screen and (max-width: ${MOBILE_SIZE}) {
     text-align: center;
   }
 `
