@@ -1,6 +1,8 @@
 import { oneOf } from 'prop-types'
 import styled from 'styled-components'
 
+import { COMPACT_SIZE } from 'styles/constants'
+
 import { COLOR_VARIATIONS } from './constants'
 import Links from './links'
 
@@ -9,7 +11,7 @@ const Nav = styled.nav`
     color: ${(p) =>
       p.variation === COLOR_VARIATIONS.dark ? '#ffffff' : '#010242'};
   }
-  @media only screen and (max-width: 575px) {
+  @media only screen and (max-width: ${COMPACT_SIZE}) {
     display: none;
   }
 `

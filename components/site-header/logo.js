@@ -3,12 +3,14 @@ import { rem } from 'polished'
 import { oneOf } from 'prop-types'
 import styled from 'styled-components'
 
+import { COMPACT_SIZE } from 'styles/constants'
+
 import { COLOR_VARIATIONS } from './constants'
 
 const LogoImg = styled.img`
   width: ${rem('212px')};
 
-  @media only screen and (max-width: 575px) {
+  @media only screen and (max-width: ${COMPACT_SIZE}) {
     display: none;
   }
 `
