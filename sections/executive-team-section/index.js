@@ -49,7 +49,9 @@ const AvatarList = styled.div`
 const LinkButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-self: flex-end;
   margin-top: ${rem('24px')};
+  margin-bottom: ${rem('32px')};
 `
 
 const LinkButton = styled.button`
@@ -131,20 +133,20 @@ const ExecutiveTeamSection = () => {
           {peopleToShow.map((person) => (
             <ExecutiveAvatar {...person} key={person.name} />
           ))}
+          {isCompactScreen && (
+            <LinkButtonContainer>
+              <LinkButton
+                onClick={() => setShowAllPeople(!showAllPeople)}
+                type="button"
+              >
+                <LinkButtonTextContainer>
+                  {showAllPeople ? 'Whole Team' : 'Collapse'}
+                </LinkButtonTextContainer>
+                {showAllPeople ? <ChevronSvg /> : <InvertedChevronSvg />}
+              </LinkButton>
+            </LinkButtonContainer>
+          )}
         </AvatarList>
-        {isCompactScreen && (
-          <LinkButtonContainer>
-            <LinkButton
-              onClick={() => setShowAllPeople(!showAllPeople)}
-              type="button"
-            >
-              <LinkButtonTextContainer>
-                {showAllPeople ? 'Whole Team' : 'Collapse'}
-              </LinkButtonTextContainer>
-              {showAllPeople ? <ChevronSvg /> : <InvertedChevronSvg />}
-            </LinkButton>
-          </LinkButtonContainer>
-        )}
       </FlexSectionContents>
     </StyledSection>
   )
