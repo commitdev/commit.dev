@@ -3,7 +3,6 @@ import {
   ArticlePreview,
   CompanyLogo,
   Footer,
-  LogoSection,
   Testimonials,
   Heading,
   Text,
@@ -14,6 +13,7 @@ import ConnectSvg from 'public/connect.svg'
 import ElevateSvg from 'public/elevate.svg'
 import ExploreSvg from 'public/explore.svg'
 import QuotesSvg from 'public/quotation-marks.svg'
+import { LogoSection } from 'sections'
 import styles from 'styles/Home.module.css'
 
 const { h2, h3 } = Heading.VARIANT
@@ -185,22 +185,22 @@ const Home = () => (
       </div>
     </section>
     <LogoSection title="Who We Work With">
-      <CompanyLogo 
+      <CompanyLogo
         url="https://www.procurify.com/"
         alt="Procurify logo"
         logoSrc="/procurify.png"
       />
       <CompanyLogo
-        url="https://www.vidyard.com/" 
+        url="https://www.vidyard.com/"
         alt="Vidyard logo"
         logoSrc="/vidyard.png"
       />
-      <CompanyLogo 
+      <CompanyLogo
         url="https://www.planworth.co/"
         alt="Planworth logo"
         logoSrc="/planworth.png"
       />
-      <CompanyLogo 
+      <CompanyLogo
         url="https://www.dapperlabs.com/"
         alt="Dapper logo"
         logoSrc="/dapper.png"
@@ -210,7 +210,7 @@ const Home = () => (
         alt="Patch logo"
         logoSrc="/patch.png"
       />
-      <CompanyLogo 
+      <CompanyLogo
         url="https://www.plastiq.com/"
         alt="Plastiq logo"
         logoSrc="/plastiq.png"

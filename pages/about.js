@@ -1,12 +1,11 @@
 import {
   CompanyLogo,
-  ExecutiveTeamSection,
   Heading,
   Text,
   Footer,
   SiteHeader,
-  LogoSection,
 } from 'components'
+import { ExecutiveTeamSection, LogoSection } from 'sections'
 import styles from 'styles/about.module.css'
 
 const { small: SMALL_LOGO } = CompanyLogo.SIZE

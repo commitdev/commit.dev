@@ -2,7 +2,7 @@ import React from 'react'
 
 import styled from 'styled-components'
 
-import { Heading, Text } from 'components'
+import { Heading } from 'components'
 import { FlexSectionContents } from 'components/layout'
 import { DESKTOP_SIZE, MOBILE_SIZE } from 'styles/constants'
 

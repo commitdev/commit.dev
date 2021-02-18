@@ -25,11 +25,19 @@ const rules = {
           group: 'internal',
         },
         {
+          pattern: 'sections',
+          group: 'internal',
+        },
+        {
           pattern: 'helpers/**',
           group: 'internal',
         },
         {
           pattern: 'styles/**',
+          group: 'internal',
+        },
+        {
+          pattern: 'public/**',
           group: 'internal',
         },
       ],
