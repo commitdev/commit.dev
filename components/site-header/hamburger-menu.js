@@ -4,6 +4,7 @@ import { bool, func, string, oneOf } from 'prop-types'
 import styled, { css } from 'styled-components'
 
 import { NOOP } from 'helpers/utils'
+import { COMPACT_SIZE } from 'styles/constants'
 
 import { COLOR_VARIATIONS } from './constants'
 
@@ -16,7 +17,7 @@ const HamburgerButton = styled.button`
   width: 48px;
   height: 48px;
 
-  @media only screen and (max-width: 575px) {
+  @media only screen and (max-width: ${COMPACT_SIZE}) {
     display: inline-block;
     align-self: flex-end;
   }

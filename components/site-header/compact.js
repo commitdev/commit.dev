@@ -5,7 +5,7 @@ import { bool, func, string, oneOf } from 'prop-types'
 import ReactDOM from 'react-dom'
 import styled, { css } from 'styled-components'
 
-import { usePrevious } from 'helpers/hooks'
+import { usePrevious, useIsCompactScreen } from 'helpers/hooks'
 
 import { COLOR_VARIATIONS } from './constants'
 import HamburgerMenu from './hamburger-menu'
@@ -106,7 +106,7 @@ NavOverlay.propTypes = {
 
 const Compact = ({ variation }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [isCompactScreen, setIsCompactScreen] = useState(false)
+  const isCompactScreen = useIsCompactScreen()
   const OpenButtonRef = React.createRef()
   const CloseButtonRef = React.createRef()
   const prevIsOpen = usePrevious(isOpen)
@@ -141,30 +141,6 @@ const Compact = ({ variation }) => {
       OpenButtonRef.current && OpenButtonRef.current.focus()
     }
   }, [isOpen])
-
-  // setup listener for screen size changes
-  useEffect(() => {
-    const mediaWatcher = window.matchMedia('(max-width: 575px)')
-    setIsCompactScreen(mediaWatcher.matches)
-
-    const handleSizeChange = (e) => {
-      setIsCompactScreen(e.matches)
-    }
-
-    if (mediaWatcher.addEventListener) {
-      mediaWatcher.addEventListener('change', handleSizeChange)
-      return function cleanup() {
-        mediaWatcher.removeEventListener('change', handleSizeChange)
-      }
-    }
-
-    // Backwards compatibility for Safari versions prior to 14. See
-    // https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener#browser_compatibility for details
-    mediaWatcher.addListener(handleSizeChange)
-    return function cleanup() {
-      mediaWatcher.removeListener(handleSizeChange)
-    }
-  })
 
   // if screen size changes from compact to standard when overlay is open, close overlay
   useEffect(() => {

@@ -2,6 +2,8 @@ import { rem } from 'polished'
 import { oneOf } from 'prop-types'
 import styled from 'styled-components'
 
+import { COMPACT_SIZE } from 'styles/constants'
+
 import CompactMenu from './compact'
 import { COLOR_VARIATIONS } from './constants'
 import Logo from './logo'
@@ -21,7 +23,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
 
   margin: ${rem('32px')} ${rem('48px')} 0;
-  @media only screen and (max-width: 575px) {
+  @media only screen and (max-width: ${COMPACT_SIZE}) {
     margin: ${rem('32px')} ${rem('42px')} 0;
   }
 `

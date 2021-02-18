@@ -4,8 +4,8 @@ import {
   Text,
   Footer,
   SiteHeader,
-  LogoSection,
 } from 'components'
+import { ExecutiveTeamSection, LogoSection } from 'sections'
 import styles from 'styles/about.module.css'
 
 const { small: SMALL_LOGO } = CompanyLogo.SIZE
@@ -28,6 +28,7 @@ const About = () => (
           </Text>
         </div>
       </div>
+      <ExecutiveTeamSection />
       <LogoSection
         title="Our Software Engineers"
         description="We’ve built successful startups, we’ve built large scale systems, we know what it takes to balance speed and quality. We’re creative, we’re entrepreneurial, we apply lean startup and agile best practices to projects we’re passionate about."
