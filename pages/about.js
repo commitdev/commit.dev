@@ -1,5 +1,9 @@
 import { CompanyLogo, Heading, Text, Footer, SiteHeader } from 'components'
-import { ExecutiveTeamSection, LogoSection } from 'sections'
+import {
+  DiversityAndInclusionSection,
+  ExecutiveTeamSection,
+  LogoSection,
+} from 'sections'
 import styles from 'styles/about.module.css'
 
 const { small: SMALL_LOGO } = CompanyLogo.SIZE
@@ -22,6 +26,7 @@ const About = () => (
           </Text>
         </div>
       </div>
+      <DiversityAndInclusionSection />
       <ExecutiveTeamSection />
       <LogoSection
         title="Our Software Engineers"

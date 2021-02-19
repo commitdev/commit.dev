@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react'
 
-import { COMPACT_SIZE } from 'styles/constants'
-
 // setup listener for screen size changes
-const useIsCompactScreen = () => {
+const useIsMaxScreenSize = (screenSize) => {
   const [isCompactScreen, setIsCompactScreen] = useState(false)
   useEffect(() => {
-    const mediaWatcher = window.matchMedia(`(max-width: ${COMPACT_SIZE})`)
+    const mediaWatcher = window.matchMedia(`(max-width: ${screenSize})`)
     setIsCompactScreen(mediaWatcher.matches)
 
     const handleSizeChange = (e) => {
@@ -31,4 +29,4 @@ const useIsCompactScreen = () => {
   return isCompactScreen
 }
 
-export default useIsCompactScreen
+export default useIsMaxScreenSize
