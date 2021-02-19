@@ -123,7 +123,9 @@ const Home = () => (
           <Text>
             Commit Engineers are matched with startup projects on a three month
             basis, and if there is a fit with the startup, we facilitate the
-            transition to full time at that company.
+            transition to full time at that company. Otherwise, there is no
+            obligation to join and you can get matched with a new startup
+            instead.
           </Text>
           <Text>
             While at Commit, we provide coaching opportunities, professional
@@ -132,7 +134,8 @@ const Home = () => (
           </Text>
           <Text>
             Even after Commit Engineers ‘graduate’ to startups, they remain a
-            member of the Community.
+            member of the Community so they can continue to tap into the
+            knowledge base and join craft, skills or interest based groups.
           </Text>
         </div>
       </div>
