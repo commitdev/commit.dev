@@ -10,33 +10,21 @@ const SIZE = Object.freeze({
   large: 'large',
 })
 
-const getSize = (variant) => {
-  switch (variant) {
-    case SIZE.large:
-      return '256px'
-    case SIZE.small:
-      return '220px'
-    default:
-      return '256px'
-  }
-}
+const SIZE_PERCENT = Object.freeze({
+  small: 25,
+  large: 33,
+})
+
+const getSize = (variant) => SIZE_PERCENT[variant] ?? SIZE_PERCENT.large
 
 const Anchor = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-`
-
-const StyledImg = styled.img`
-  padding: 24px;
+  flex-grow: ${(props) => getSize(props.size) / 100};
+  max-width: ${(props) => getSize(props.size)}%;
   min-width: 180px;
-  width: 30%;
-  max-width: ${(props) => getSize(props.size)};
-  margin: 24px 0px;
-  opacity: 0.5;
-  :hover {
-    opacity: 0.75;
-  }
+  padding: 36px;
 
   @media only screen and (max-width: ${DESKTOP_SIZE}) {
     margin: 0;
@@ -54,9 +42,17 @@ const StyledImg = styled.img`
   }
 `
 
+const StyledImg = styled.img`
+  max-width: 100%;
+  opacity: 0.5;
+  :hover {
+    opacity: 0.75;
+  }
+`
+
 const CompanyLogo = ({ url, logoSrc, alt, size }) => (
-  <Anchor href={url} rel="noopener noreferrer">
-    <StyledImg alt={alt} src={logoSrc} size={size} />
+  <Anchor href={url} rel="noopener noreferrer" size={size}>
+    <StyledImg alt={alt} src={logoSrc} />
   </Anchor>
 )
 
