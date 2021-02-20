@@ -5,6 +5,7 @@ import {
   Footer,
   Testimonials,
   Heading,
+  HighlightedText,
   Text,
   SiteHeader,
 } from 'components'
@@ -26,8 +27,7 @@ const Home = () => (
         <div className={styles.heroContent}>
           <Heading className={styles.heroHeading}>
             We are the community for{' '}
-            <span className={styles.highlight}>remote-first</span> Software
-            Engineers
+            <HighlightedText>remote-first</HighlightedText> Software Engineers
           </Heading>
           <Text sectionText className={styles.heroText}>
             Commit is designing the future of work and we're putting Engineers
