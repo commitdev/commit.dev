@@ -1,10 +1,4 @@
-import {
-  CompanyLogo,
-  Heading,
-  Text,
-  Footer,
-  SiteHeader,
-} from 'components'
+import { CompanyLogo, Heading, Text, Footer, SiteHeader } from 'components'
 import { ExecutiveTeamSection, LogoSection } from 'sections'
 import styles from 'styles/about.module.css'
 
