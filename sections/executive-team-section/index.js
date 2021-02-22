@@ -5,9 +5,9 @@ import styled from 'styled-components'
 
 import { Heading } from 'components'
 import { FlexSectionContents } from 'components/layout'
-import { useIsCompactScreen } from 'helpers/hooks'
+import { useIsMaxScreenSize } from 'helpers/hooks'
 import ChevronSvg from 'public/chevron.svg'
-import { DESKTOP_SIZE, MOBILE_SIZE } from 'styles/constants'
+import { DESKTOP_SIZE, MOBILE_SIZE, COMPACT_SIZE } from 'styles/constants'
 
 import ExecutiveAvatar from './executive-avatar'
 
@@ -119,7 +119,7 @@ const people = [
 ]
 
 const ExecutiveTeamSection = () => {
-  const isCompactScreen = useIsCompactScreen()
+  const isCompactScreen = useIsMaxScreenSize(COMPACT_SIZE)
   const [showAllPeople, setShowAllPeople] = useState(false)
 
   const peopleToShow =

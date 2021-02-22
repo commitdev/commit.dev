@@ -1,2 +1,2 @@
 export { default as usePrevious } from './use-previous'
-export { default as useIsCompactScreen } from './use-is-compact-screen'
+export { default as useIsMaxScreenSize } from './use-is-max-screen-size'

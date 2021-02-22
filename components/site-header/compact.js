@@ -5,7 +5,8 @@ import { bool, func, string, oneOf } from 'prop-types'
 import ReactDOM from 'react-dom'
 import styled, { css } from 'styled-components'
 
-import { usePrevious, useIsCompactScreen } from 'helpers/hooks'
+import { usePrevious, useIsMaxScreenSize } from 'helpers/hooks'
+import { COMPACT_SIZE } from 'styles/constants'
 
 import { COLOR_VARIATIONS } from './constants'
 import HamburgerMenu from './hamburger-menu'
@@ -106,7 +107,7 @@ NavOverlay.propTypes = {
 
 const Compact = ({ variation }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const isCompactScreen = useIsCompactScreen()
+  const isCompactScreen = useIsMaxScreenSize(COMPACT_SIZE)
   const OpenButtonRef = React.createRef()
   const CloseButtonRef = React.createRef()
   const prevIsOpen = usePrevious(isOpen)
