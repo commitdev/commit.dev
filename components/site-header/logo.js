@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import { rem } from 'polished'
-import { oneOf } from 'prop-types'
+import { oneOf, func } from 'prop-types'
 import styled from 'styled-components'
 
+import { NOOP } from 'helpers/utils'
 import { COMPACT_SIZE } from 'styles/constants'
 
 import { COLOR_VARIATIONS } from './constants'
@@ -53,10 +54,12 @@ Logo.propTypes = {
   variation: oneOf(
     Object.keys(COLOR_VARIATIONS).map((k) => COLOR_VARIATIONS[k]),
   ),
+  closeMenu: func,
 }
 
 Logo.defaultProps = {
   variation: COLOR_VARIATIONS.dark,
+  closeMenu: NOOP,
 }
 
 export default Logo

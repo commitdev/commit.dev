@@ -78,7 +78,7 @@ const NavOverlay = React.forwardRef(
       return ReactDOM.createPortal(
         <NavOverlayRoot id={id} isOpen={isOpen} {...props}>
           <FauxHeader>
-            <Logo closeMenu={closeMenu}/>
+            <Logo closeMenu={closeMenu} />
             <HamburgerMenu
               isOpen={isOpen}
               handleClick={closeMenu}
