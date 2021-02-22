@@ -26,9 +26,9 @@ const Anchor = styled.a`
   cursor: pointer;
 `
 
-const Logo = ({ variation }) => (
+const Logo = ({ variation, closeMenu }) => (
   <Link href="/" passHref>
-    <Anchor aria-label="Home">
+    <Anchor aria-label="Home" onClick={closeMenu}>
       <LogoImg
         src={
           variation === COLOR_VARIATIONS.dark

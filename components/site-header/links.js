@@ -9,10 +9,10 @@ const Anchor = styled.a`
 `
 
 // TODO: update links once pages exist
-const Links = () => (
+const Links = ({ closeMenu }) => (
   <>
     <Link href="/about" passHref>
-      <Anchor>About</Anchor>
+      <Anchor onClick={closeMenu}>About</Anchor>
     </Link>
     <Anchor href="https://blog.commit.dev/" target="_blank" rel="noreferrer">
       Blog
