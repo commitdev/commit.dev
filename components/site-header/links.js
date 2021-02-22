@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import { rem } from 'polished'
+import { func } from 'prop-types'
 import styled from 'styled-components'
+
+import { NOOP } from 'helpers/utils'
 
 const Anchor = styled.a`
   text-decoration: none;
@@ -23,8 +26,12 @@ const Links = ({ closeMenu }) => (
   </>
 )
 
-Links.propTypes = {}
+Links.propTypes = {
+  closeMenu: func,
+}
 
-Links.defaultProps = {}
+Links.defaultProps = {
+  closeMenu: NOOP,
+}
 
 export default Links
