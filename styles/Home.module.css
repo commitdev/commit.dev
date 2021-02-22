@@ -15,9 +15,14 @@
 .gridSection {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  column-gap: 24px;
+  column-gap: 72px;
   max-width: 1240px;
   margin: 0 auto;
+}
+@media only screen and (max-width: 1023px) {
+  .gridSection {
+    column-gap: 24px;
+  }
 }
 .flexSection {
   display: flex;
