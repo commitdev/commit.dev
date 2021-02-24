@@ -7,6 +7,10 @@ import styled from 'styled-components'
 import { Button, Input, Text, TextArea } from 'components'
 import { TABLET_SIZE } from 'styles/constants'
 
+const FormContainer = styled.div`
+  max-width: 480px;
+`
+
 const SuccessHeader = styled.h2`
   font-family: Montserrat;
   font-weight: bold;
@@ -65,7 +69,7 @@ const Form = () => {
 
   const renderForm = () =>
     isFormSubmitted === true ? (
-      <div>
+      <FormContainer>
         <CheckCircle
           {...{
             color: '#FF68BA',
@@ -82,9 +86,9 @@ const Form = () => {
           In the meantime take a look at some{' '}
           <a href="https://blog.commit.dev/">blog posts</a> from our engineers.
         </Text>
-      </div>
+      </FormContainer>
     ) : (
-      <>
+      <FormContainer>
         {hasErrors && (
           <Text errorText>
             Woops, the application failed to send. Please try again.
@@ -126,7 +130,7 @@ const Form = () => {
             Apply To Join
           </Button>
         </form>
-      </>
+      </FormContainer>
     )
 
   return renderForm()

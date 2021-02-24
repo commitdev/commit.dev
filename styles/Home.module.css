@@ -1,13 +1,4 @@
 /* Shared Styles */
-.contentRoot {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  min-width: 320px;
-  overflow: hidden;
-  padding: 0px;
-  margin: 0px;
-}
 .sectionContent {
   margin: 0 auto;
   padding: 0 120px;
