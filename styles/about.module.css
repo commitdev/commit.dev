@@ -17,7 +17,6 @@
 }
 .dark {
   color: #ffffff;
-  background: #000000;
   background: linear-gradient(68.66deg, #0f1011 0%, #010242 100%);
 }
 .grey {
@@ -38,13 +37,13 @@
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 677px) {
   .gridSection {
     grid-template-columns: repeat(8, 1fr);
   }
 }
 
-@media only screen and (max-width: 413px) {
+@media only screen and (max-width: 449px) {
   .sectionContent {
     padding: 0 36px;
   }
@@ -55,9 +54,6 @@
   .flexSection {
     max-width: none;
     margin: 0 36px;
-  }
-  .dark {
-    background: #000000;
   }
 }
 
@@ -104,7 +100,7 @@ p.heroText {
   }
 }
 
-@media only screen and (max-width: 413px) {
+@media only screen and (max-width: 449px) {
   .hero {
     min-height: 820px;
   }

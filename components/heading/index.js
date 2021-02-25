@@ -2,7 +2,7 @@ import { rem } from 'polished'
 import { string } from 'prop-types'
 import styled from 'styled-components'
 
-import { DESKTOP_SIZE, MOBILE_SIZE } from 'styles/constants'
+import { TABLET_LARGE_SIZE, MOBILE_SIZE } from 'styles/constants'
 
 const VARIANT = Object.freeze({
   h2: 'h2',
@@ -34,7 +34,7 @@ const StyledHeading1 = styled.h1`
   letter-spacing: 0rem;
   margin: 0;
 
-  @media only screen and (max-width: ${DESKTOP_SIZE}) {
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     font-size: ${rem('48px')};
     line-height: ${rem('60px')};
   }

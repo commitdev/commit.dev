@@ -4,7 +4,7 @@ import { rem } from 'polished'
 import { string } from 'prop-types'
 import styled from 'styled-components'
 
-import { COMPACT_SIZE } from 'styles/constants'
+import { TABLET_SMALL_SIZE } from 'styles/constants'
 
 const Container = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ const Container = styled.div`
   align-items: center;
   padding: ${rem('32px')};
 
-  @media only screen and (max-width: ${COMPACT_SIZE}) {
+  @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
     padding: ${rem('32px')} ${rem('10px')};
   }
 `

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { Heading, SiteHeader, Form } from 'components'
 import { ContentRoot } from 'components/layout'
-import { DESKTOP_SIZE, MOBILE_SIZE } from 'styles/constants'
+import { MOBILE_SIZE, TABLET_LARGE_SIZE } from 'styles/constants'
 
 const HeroSection = styled.section`
   color: #ffffff;
@@ -20,7 +20,7 @@ const Content = styled.div`
   align-items: center;
   height: 100%;
   margin: 5rem 8rem 4.25rem;
-  @media only screen and (max-width: ${DESKTOP_SIZE}) {
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     margin: 5rem 5rem 4.25rem;
   }
 

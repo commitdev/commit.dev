@@ -5,23 +5,28 @@ import styled from 'styled-components'
 
 import { NOOP } from 'helpers/utils'
 
+import { MOBILE_SIZE } from '../../styles/constants'
+
 const Anchor = styled.a`
   text-decoration: none;
   margin-left: ${rem('32px')};
   cursor: pointer;
+  @media only screen and (max-width: ${MOBILE_SIZE}) {
+    margin-left: 0;
+  }
 `
 
 // TODO: update links once pages exist
 const Links = ({ closeMenu }) => (
   <>
     <Link href="/about" passHref>
-      <Anchor onClick={closeMenu}>About</Anchor>
+      <Anchor onClick={closeMenu}>ABOUT</Anchor>
     </Link>
     <Anchor href="https://blog.commit.dev/" target="_blank" rel="noreferrer">
-      Blog
+      BLOG
     </Anchor>
     <Anchor href="https://blog.commit.dev/" target="_blank" rel="noreferrer">
-      Startups
+      STARTUPS
     </Anchor>
   </>
 )

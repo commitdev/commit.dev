@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 import { Heading, Text } from 'components'
 import { useIsMaxScreenSize } from 'helpers/hooks'
-import { DESKTOP_SIZE } from 'styles/constants'
+import { TABLET_LARGE_SIZE } from 'styles/constants'
 
 const IMAGE_BREAKPOINT = '839px'
 
@@ -44,7 +44,7 @@ const TextContainer = styled.div`
   padding: ${rem('101px')} ${rem('80px')} ${rem('101px')} ${rem('70px')};
   background: linear-gradient(61.68deg, #ff68ba 2.29%, #edc281 100.63%);
 
-  @media only screen and (max-width: ${DESKTOP_SIZE}) {
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     align-items: center;
     padding: ${rem('48px')} ${rem('24px')};
   }
