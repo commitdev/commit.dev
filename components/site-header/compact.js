@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom'
 import styled, { css } from 'styled-components'
 
 import { usePrevious, useIsMaxScreenSize } from 'helpers/hooks'
-import { COMPACT_SIZE } from 'styles/constants'
+import { TABLET_SMALL_SIZE } from 'styles/constants'
 
 import { COLOR_VARIATIONS } from './constants'
 import HamburgerMenu from './hamburger-menu'
@@ -24,7 +24,7 @@ const NavOverlayRoot = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #000000;
+  background: linear-gradient(68.66deg, #0f1011 0%, #010242 100%);
   color: #ffffff;
   flex-direction: column;
   align-items: center;
@@ -37,7 +37,7 @@ const NavOverlayRoot = styled.div`
       height: 100%;
     `}
 
-  @media only screen and (min-width: 576px) {
+  @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
     display: none;
     height: 0px;
   }
@@ -48,27 +48,38 @@ const FauxHeader = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: ${rem('32px')} ${rem('42px')} 0;
+  @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
+    line-height: 0.5;
+    padding: ${rem('24px')} ${rem('24px')} 0;
+  }
 `
 
 const Nav = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-end;
   height: 100%;
   width: 100%;
+  padding-left: ${rem('36px')};
+  padding-right: ${rem('36px')};
 
   & a {
     color: #fff;
     text-decoration: none;
-    margin-top: ${rem('8px')};
-    font-size: ${rem('36px')};
-    line-height: ${rem('60px')};
+    margin-top: ${rem('36px')};
+    font-size: ${rem('48px')};
+    line-height: ${rem('58.51px')};
+    font-weight: 800;
 
     &:first-of-type {
       margin-top: 16px;
     }
   }
+`
+const BurgerMenu = styled(HamburgerMenu)`
+  margin-top: auto;
+  margin-bottom: auto;
 `
 
 const NavOverlay = React.forwardRef(
@@ -79,7 +90,7 @@ const NavOverlay = React.forwardRef(
         <NavOverlayRoot id={id} isOpen={isOpen} {...props}>
           <FauxHeader>
             <Logo closeMenu={closeMenu} />
-            <HamburgerMenu
+            <BurgerMenu
               isOpen={isOpen}
               handleClick={closeMenu}
               ariaControlsId={id}
@@ -107,7 +118,7 @@ NavOverlay.propTypes = {
 
 const Compact = ({ variation }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const isCompactScreen = useIsMaxScreenSize(COMPACT_SIZE)
+  const isCompactScreen = useIsMaxScreenSize(TABLET_SMALL_SIZE)
   const OpenButtonRef = React.createRef()
   const CloseButtonRef = React.createRef()
   const prevIsOpen = usePrevious(isOpen)
@@ -159,7 +170,7 @@ const Compact = ({ variation }) => {
 
   return (
     <>
-      <HamburgerMenu
+      <BurgerMenu
         variation={variation}
         isOpen={isOpen}
         handleClick={openMenu}

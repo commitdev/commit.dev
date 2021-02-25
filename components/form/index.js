@@ -5,7 +5,7 @@ import { rem } from 'polished'
 import styled from 'styled-components'
 
 import { Button, Input, Text, TextArea } from 'components'
-import { TABLET_SIZE } from 'styles/constants'
+import { TABLET_SMALL_SIZE } from 'styles/constants'
 
 const SuccessHeader = styled.h2`
   font-family: Montserrat;
@@ -15,7 +15,7 @@ const SuccessHeader = styled.h2`
   margin-left: ${rem('60px')};
   margin-top: ${rem('-40px')};
 
-  @media only screen and (max-width: ${TABLET_SIZE}) {
+  @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
     margin: 0;
   }
 `

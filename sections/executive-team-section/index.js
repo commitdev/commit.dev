@@ -7,7 +7,11 @@ import { Heading } from 'components'
 import { FlexSectionContents } from 'components/layout'
 import { useIsMaxScreenSize } from 'helpers/hooks'
 import ChevronSvg from 'public/chevron.svg'
-import { DESKTOP_SIZE, MOBILE_SIZE, COMPACT_SIZE } from 'styles/constants'
+import {
+  TABLET_LARGE_SIZE,
+  MOBILE_SIZE,
+  TABLET_SMALL_SIZE,
+} from 'styles/constants'
 
 import ExecutiveAvatar from './executive-avatar'
 
@@ -37,7 +41,7 @@ const AvatarList = styled.div`
   margin: 0 120px;
   padding-top: 24px;
 
-  @media only screen and (max-width: ${DESKTOP_SIZE}) {
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     margin: 0 10%;
   }
 
@@ -119,7 +123,7 @@ const people = [
 ]
 
 const ExecutiveTeamSection = () => {
-  const isCompactScreen = useIsMaxScreenSize(COMPACT_SIZE)
+  const isCompactScreen = useIsMaxScreenSize(TABLET_SMALL_SIZE)
   const [showAllPeople, setShowAllPeople] = useState(false)
 
   const peopleToShow =

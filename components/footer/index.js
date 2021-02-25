@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { Text, ApplyLink } from 'components'
-import { DESKTOP_SIZE, MOBILE_SIZE } from 'styles/constants'
+import { TABLET_LARGE_SIZE, MOBILE_SIZE } from 'styles/constants'
 
 const FooterContainer = styled.footer`
   padding: 150px 0 40px;
@@ -11,7 +11,6 @@ const FooterContainer = styled.footer`
 
   @media only screen and (max-width: ${MOBILE_SIZE}) {
     padding: 98px 0px 68px;
-    background: #000000;
   }
 
   p {
@@ -46,7 +45,7 @@ const FlexSection = styled.div`
   max-width: 1240px;
   margin: 0 auto;
 
-  @media only screen and (max-width: ${DESKTOP_SIZE}) {
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     max-width: none;
     margin: 0 20px;
   }

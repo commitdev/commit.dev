@@ -31,7 +31,6 @@
 }
 .dark {
   color: #ffffff;
-  background: #000000;
   background: linear-gradient(68.66deg, #0f1011 0%, #010242 100%);
 }
 .grey {
@@ -52,13 +51,13 @@
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 677px) {
   .gridSection {
     grid-template-columns: repeat(8, 1fr);
   }
 }
 
-@media only screen and (max-width: 413px) {
+@media only screen and (max-width: 449px) {
   .sectionContent {
     padding: 0 36px;
   }
@@ -69,9 +68,6 @@
   .flexSection {
     max-width: none;
     margin: 0 36px;
-  }
-  .dark {
-    background: #000000;
   }
 }
 
@@ -124,7 +120,7 @@ a.heroLink {
   }
 }
 
-@media only screen and (max-width: 413px) {
+@media only screen and (max-width: 449px) {
   .hero {
     min-height: 820px;
   }
@@ -202,13 +198,13 @@ a.heroLink {
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 677px) {
   .features .gridSection .feature:last-of-type {
     grid-column: 3 / span 4;
   }
 }
 
-@media only screen and (max-width: 413px) {
+@media only screen and (max-width: 449px) {
   .featuresTransition {
     display: none;
   }
@@ -237,7 +233,7 @@ a.heroLink {
   }
 }
 
-@media only screen and (max-width: 413px) {
+@media only screen and (max-width: 449px) {
   .articles {
     margin-top: 36px;
     margin-bottom: 79px;
@@ -282,7 +278,7 @@ a.heroLink {
   }
 }
 
-@media only screen and (max-width: 413px) {
+@media only screen and (max-width: 449px) {
   .about .aboutDescription {
     font-size: 1rem;
     line-height: 1.625rem;
@@ -363,7 +359,7 @@ a.heroLink {
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 677px) {
   .projects .projectList {
     flex-direction: column;
     align-items: center;
@@ -375,7 +371,7 @@ a.heroLink {
   }
 }
 
-@media only screen and (max-width: 413px) {
+@media only screen and (max-width: 449px) {
   .projects h2.projectsHeading {
     font-size: 1.75rem;
     line-height: 2.125rem;
@@ -414,7 +410,7 @@ a.heroLink {
   margin-top: 4rem;
 }
 
-@media only screen and (max-width: 413px) {
+@media only screen and (max-width: 449px) {
   .testimonials .testimonialsHeading {
     margin-bottom: 2.625rem;
   }

@@ -4,20 +4,20 @@ import { oneOf, func } from 'prop-types'
 import styled from 'styled-components'
 
 import { NOOP } from 'helpers/utils'
-import { COMPACT_SIZE } from 'styles/constants'
+import { TABLET_SMALL_SIZE } from 'styles/constants'
 
 import { COLOR_VARIATIONS } from './constants'
 
 const LogoImg = styled.img`
   width: ${rem('212px')};
 
-  @media only screen and (max-width: ${COMPACT_SIZE}) {
+  @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
     display: none;
   }
 `
 
 const SmallLogoImg = styled.img`
-  @media only screen and (min-width: 576px) {
+  @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
     display: none;
   }
 `

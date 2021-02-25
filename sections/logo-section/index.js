@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 import { Heading, Text } from 'components'
 import { FlexSectionContents } from 'components/layout'
-import { DESKTOP_SIZE, MOBILE_SIZE } from 'styles/constants'
+import { TABLET_LARGE_SIZE, MOBILE_SIZE } from 'styles/constants'
 
 const { h2 } = Heading.VARIANT
 
@@ -26,7 +26,7 @@ const LogoContainer = styled.div`
   flex-wrap: wrap;
   margin: 0 120px;
 
-  @media only screen and (max-width: ${DESKTOP_SIZE}) {
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     margin: 0 10%;
   }
 

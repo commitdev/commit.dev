@@ -3,7 +3,7 @@ import React from 'react'
 import { oneOf, string } from 'prop-types'
 import styled from 'styled-components'
 
-import { DESKTOP_SIZE, TABLET_SIZE, MOBILE_SIZE } from 'styles/constants'
+import { TABLET_LARGE_SIZE, MOBILE_SIZE } from 'styles/constants'
 
 const SIZE = Object.freeze({
   small: 'small',
@@ -26,11 +26,9 @@ const Anchor = styled.a`
   min-width: 180px;
   padding: 36px;
 
-  @media only screen and (max-width: ${DESKTOP_SIZE}) {
-    margin: 0;
-  }
+  margin: 0;
 
-  @media only screen and (max-width: ${TABLET_SIZE}) {
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     padding: 12px;
   }
 
