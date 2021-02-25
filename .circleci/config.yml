@@ -2,6 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@4.1.0
   aws-s3: circleci/aws-s3@1.0.15
+  queue: eddiewebb/queue@1.3.0
 
 variables:
   - &workspace /home/circleci/project
@@ -141,7 +142,7 @@ workflows:
           requires:
             - checkout_code
       - build:
-          name: build_feature
+          name: build_staging
           helix_host: https://api-public.commit-staging.dev/email/apply
           requires:
             - checkout_code
@@ -149,7 +150,28 @@ workflows:
           name: Deploy staging
           bucket: commit-staging.dev
           requires:
-            - build_feature
+            - build_stating
+      - build:
+          name: build_production
+          helix_host: https://api-public.commit.dev/email/apply
+          requires:
+            - checkout_code
+      - wait_for_approval:
+          type: approval
+          requires:
+            - deploy_staging
+            - build_production
+      - queue/block_workflow:
+          name: queue_for_production_deploy
+          time: '30'
+          requires:
+            - wait_for_approval
+      - deploy:
+          name: deploy_production
+          bucket: commit.dev
+          requires:
+            - build_production
+            - queue_for_production_deploy
 
   launch:
     jobs:
