@@ -4,7 +4,7 @@ import { string, arrayOf, element } from 'prop-types'
 import styled from 'styled-components'
 
 import { Heading, Text } from 'components'
-import { FlexSectionContents } from 'components/layout'
+import { FlexSectionContent } from 'components/layout'
 import { TABLET_LARGE_SIZE, MOBILE_SIZE } from 'styles/constants'
 
 const { h2 } = Heading.VARIANT
@@ -51,13 +51,13 @@ const TextContainer = styled.div`
 
 const LogoSection = ({ title, description, children }) => (
   <StyledSection>
-    <FlexSectionContents>
+    <FlexSectionContent>
       <StyledHeading variant={h2}>{title}</StyledHeading>
       <TextContainer>
         <Text>{description}</Text>
       </TextContainer>
       <LogoContainer>{children}</LogoContainer>
-    </FlexSectionContents>
+    </FlexSectionContent>
   </StyledSection>
 )
 

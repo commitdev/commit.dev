@@ -4,7 +4,7 @@ import { rem } from 'polished'
 import styled from 'styled-components'
 
 import { Heading } from 'components'
-import { FlexSectionContents } from 'components/layout'
+import { FlexSectionContent } from 'components/layout'
 import { useIsMaxScreenSize } from 'helpers/hooks'
 import ChevronSvg from 'public/chevron.svg'
 import {
@@ -131,7 +131,7 @@ const ExecutiveTeamSection = () => {
 
   return (
     <StyledSection>
-      <FlexSectionContents>
+      <FlexSectionContent>
         <StyledHeading variant={h2}>Our Executive Team</StyledHeading>
         <AvatarList>
           {peopleToShow.map((person) => (
@@ -151,7 +151,7 @@ const ExecutiveTeamSection = () => {
             </LinkButtonContainer>
           )}
         </AvatarList>
-      </FlexSectionContents>
+      </FlexSectionContent>
     </StyledSection>
   )
 }

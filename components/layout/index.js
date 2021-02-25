@@ -1,1 +1,2 @@
-export { default as FlexSectionContents } from './flex-section'
+export { default as ContentRoot } from './content-root'
+export { default as FlexSectionContent } from './flex-section-content'

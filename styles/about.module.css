@@ -1,13 +1,4 @@
 /* Shared Styles */
-.contentRoot {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  min-width: 320px;
-  overflow: hidden;
-  padding: 0px;
-  margin: 0px;
-}
 .sectionContent {
   margin: 0 auto;
   padding: 0 120px;
@@ -80,27 +71,32 @@
   justify-content: space-between;
 }
 h1.heroHeading {
-  font-size: 3rem;
-  line-height: 3.75rem;
+  font-size: 4rem;
+  line-height: 4.75rem;
   margin-top: 200px;
   margin-bottom: 4.5rem;
 }
 p.heroText {
-  font-family: Montserrat;
+  font-family: Lato;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 2.25rem;
-  margin-bottom: 4.5rem;
+  margin-bottom: 8.75rem;
   text-align: left;
 }
 
 @media only screen and (max-width: 1023px) {
   .heroContent {
-    width: 65%;
+    width: 75%;
   }
   h1.heroHeading {
+    font-size: 3rem;
+    line-height: 3.75rem;
     margin-top: 180px;
     margin-bottom: 4.25rem;
+  }
+  p.heroText {
+    margin-bottom: 9.75rem;
   }
 }
 
@@ -115,6 +111,8 @@ p.heroText {
     width: initial;
   }
   h1.heroHeading {
+    font-size: 2rem;
+    line-height: 3rem;
     margin-top: 140px;
     margin-bottom: 3rem;
   }
@@ -122,6 +120,7 @@ p.heroText {
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 2rem;
-    margin-bottom: 3rem;
+    margin-top: 0;
+    margin-bottom: 4rem;
   }
 }
