@@ -10,8 +10,12 @@ import { TABLET_LARGE_SIZE, MOBILE_SIZE } from 'styles/constants'
 const { h2 } = Heading.VARIANT
 
 const StyledSection = styled.section`
-  padding: 80px 0;
+  padding: 140px 0;
   background: #e8edf4;
+
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
+    padding: 80px 0;
+  }
 
   @media only screen and (max-width: ${MOBILE_SIZE}) {
     padding: 64px 0px;
