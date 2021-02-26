@@ -22,21 +22,20 @@ const Container = styled.div`
 `
 
 const ImageContainer = styled.div`
-  flex-grow: 1;
-  flex-shrink: 0;
+  width: 50%;
   @media only screen and (max-width: ${IMAGE_BREAKPOINT}) {
     width: 100%;
   }
 `
 
 const Image = styled.img`
-  max-width: 100%;
-  @media only screen and (max-width: ${IMAGE_BREAKPOINT}) {
-    width: 100%;
-  }
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 `
 
 const TextContainer = styled.div`
+  width: 50%;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -56,7 +55,16 @@ const TextContainer = styled.div`
   }
 `
 
-const StyledHeading = styled(Heading)``
+const StyledHeading = styled(Heading)`
+  text-align: center;
+  margin-bottom: ${rem('26px')};
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
+    margin-bottom: ${rem('32px')};
+  }
+  @media only screen and (max-width: ${IMAGE_BREAKPOINT}) {
+    margin-bottom: ${rem('26px')};
+  }
+`
 
 const DiversityAndInclusionSection = () => {
   const isCompactScreen = useIsMaxScreenSize(IMAGE_BREAKPOINT)
