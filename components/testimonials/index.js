@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
 
 import Glide from '@glidejs/glide'
+import { CaretLeft, CaretRight } from 'phosphor-react'
 import { rem } from 'polished'
 import styled from 'styled-components'
 
-import { MOBILE_SIZE } from 'styles/constants'
+import { MOBILE_SIZE, TABLET_LARGE_SIZE } from 'styles/constants'
 
 import Slide from './slide'
 
@@ -13,6 +14,7 @@ import '@glidejs/glide/dist/css/glide.theme.min.css'
 
 const DOT_SIZE = rem('18px')
 const DOT_SIZE_MOBILE = rem('24px')
+const CARET_SIZE = rem('37px')
 
 const Root = styled.div`
   margin-top: ${rem('64px')};
@@ -34,6 +36,42 @@ const ControlDots = styled.div`
   justify-content: center;
   width: 100%;
   position: relative;
+`
+
+const ArrowButtons = styled.div``
+
+const ArrowButton = styled.button`
+  background: transparent;
+  border: 0;
+  color: rgba(255, 104, 186, 0.5);
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.glide__bullet--active {
+    background: transparent;
+  }
+
+  &:hover {
+    color: rgba(255, 104, 186, 1);
+  }
+
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
+    display: none;
+  }
+`
+
+const LeftArrowButton = styled(ArrowButton)`
+  position: absolute;
+  top: 81.5px;
+`
+
+const RightArrowButton = styled(ArrowButton)`
+  position: absolute;
+  right: 0;
+  top: 81.5px;
 `
 
 const DotButton = styled.button`
@@ -102,6 +140,14 @@ const Testimonials = () => {
           </li>
         </ul>
       </Track>
+      <ArrowButtons data-glide-el="controls[nav]">
+        <LeftArrowButton aria-label="Previous" data-glide-dir="<">
+          <CaretLeft size={CARET_SIZE} />
+        </LeftArrowButton>
+        <RightArrowButton aria-label="Next" data-glide-dir=">">
+          <CaretRight size={CARET_SIZE} />
+        </RightArrowButton>
+      </ArrowButtons>
       <ControlDots data-glide-el="controls[nav]">
         <DotButton
           type="button"
