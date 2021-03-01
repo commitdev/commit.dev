@@ -124,7 +124,7 @@ const ExecutiveTeamSection = () => {
   const [showAllPeople, setShowAllPeople] = useState(false)
 
   const peopleToShow =
-    isCompactScreen && showAllPeople ? people.slice(0, 2) : people
+    isCompactScreen && showAllPeople ? people : people.slice(0, 2)
 
   return (
     <StyledSection>
@@ -141,9 +141,9 @@ const ExecutiveTeamSection = () => {
                 type="button"
               >
                 <LinkButtonTextContainer>
-                  {showAllPeople ? 'Whole Team' : 'Collapse'}
+                  {showAllPeople ? 'Collapse' : 'Whole Team'}
                 </LinkButtonTextContainer>
-                {showAllPeople ? <ChevronSvg /> : <InvertedChevronSvg />}
+                {showAllPeople ? <InvertedChevronSvg /> : <ChevronSvg />}
               </LinkButton>
             </LinkButtonContainer>
           )}
