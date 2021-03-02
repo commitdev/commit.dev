@@ -140,40 +140,82 @@ const Home = () => (
         </div>
       </div>
     </section>
-    <section className={`${styles.projects} ${styles.dark}`}>
-      <div className={styles.flexSection}>
-        <Heading variant={h2} className={styles.projectsHeading}>
-          The Commit Platform
-        </Heading>
-        <Text sectionText className={styles.projectsOverview}>
-          The Commit Platform replaces the technical interview with deep
-          backgrounds, matches Software Engineers with relevant startups, and
-          connect Engineers with peers for interest sharing or technical
-          support.
-        </Text>
-        <div className={styles.projectList}>
-          <div className={styles.project}>
-            <Heading variant={h3} className={styles.projectName}>
-              Commit Zero
-            </Heading>
-            <Text className={styles.projectDescription}>
-              Work on software that is the standard all modern applications will
-              be built on. We’ve developed an internal platform to help
-              technical founders address the countless challenges of developing
-              applications.
-            </Text>
+    <section className={styles.platform}>
+      <div className={styles.platformContainer}>
+        <div className={styles.platformTopRow}>
+          <Heading variant={h2} className={styles.platformHeading}>
+            The Commit Platform
+          </Heading>
+          <Text sectionText>
+            The Commit Platform replaces the technical interview with deep backgrounds, 
+            matches Software Engineers with relevant startups, and connect Engineers 
+            with peers for interest sharing or technical support.
+          </Text>
+        </div>
+        <div className={styles.platformFlex}>
+          <div className={styles.gridSection}>
+            <div className={styles.profileColumnLeft}>
+              <picture>
+                <source
+                  media="(min-width:770px) and (max-width:1200px)"
+                  srcset="/platform-laptop-tablet.png"
+                />
+                <source
+                  media="(min-width:1201px)"
+                  srcset="/platform-laptop-desktop.png"
+                />
+                <img
+                  src="/platform-laptop-mobile.png"
+                  alt="Unicorn Pool Float"
+                  class={styles.platformImage}
+                />
+              </picture>
+            </div>
+            <div className={styles.profileColumnRight}>
+              <Heading variant={h3} className={styles.platformTitle}>
+                Platform profile
+              </Heading>
+              <Text sectionText className={styles.platformDescription}>
+                Get the latest community events, news and updates. Most importantly, begin to look for startup 
+                opportunities recommended specifically for you. This is also where engineers begin to 
+                connect with their peers and join interest-based groups.
+              </Text>
+            </div>
           </div>
-          <div className={styles.projectDivider} />
-          <div className={styles.project}>
-            <Heading variant={h3} className={styles.projectName}>
-              Helix
-            </Heading>
-            <Text className={styles.projectDescription}>
-              Contribute to the software that builds the Commit community. Helix
-              is designed to replace the technical interview with deep
-              backgrounds, match Software Engineers with startup projects, and
-              connect Engineers with one another.
-            </Text>
+          <div className={`${styles.gridSection} ${styles.opportunitiesRow}`}>
+            <div className={styles.opportunitiesColumnLeft}>
+              <picture>
+                <source
+                  media="(min-width:770px) and (max-width:1200px)"
+                  srcset="/opportunities-laptop-tablet.png"
+                />
+                <source
+                  media="(min-width:1201px)"
+                  srcset="/opportunities-laptop-desktop.png"
+                />
+                <img
+                  src="/opportunities-laptop-mobile.png"
+                  alt="Unicorn Pool Float"
+                  className={styles.platformImage}
+                />
+              </picture>
+            </div>
+            <div class={styles.opportunitiesColumnRight}>
+              <Heading variant={h3} className={styles.platformTitle}>
+                Opportunities
+              </Heading>
+              <Text sectionText className={styles.platformDescription}>
+                Commit engineers don't apply to startups. Instead, startups
+                apply to our engineers.
+                <br />
+                <br />
+                Our team works tirelessly to match engineers with the top
+                opportunities based on their skill set, interests, and career
+                goals. Engineers can browse new recommendations one by one, and
+                dig into each individual opportunities, with detailed and
+                insightful information we've gathered.
+              </Text>
+            </div>
           </div>
         </div>
       </div>
