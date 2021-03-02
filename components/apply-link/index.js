@@ -8,8 +8,8 @@ const StyledLink = styled.a`
   display: block;
   background: #ff68ba;
   background: linear-gradient(90.03deg, #ff68ba 0.39%, #edc281 99.97%);
-  width: fit-content;
-  padding: ${rem('16px')} ${rem('70px')};
+  width: 316px;
+  padding: ${rem('15px')} ${rem('42px')};
   border: 0;
   border-radius: 48px;
   font-weight: bold;
@@ -21,6 +21,21 @@ const StyledLink = styled.a`
   text-transform: uppercase;
   text-decoration-line: none;
   font-family: inherit;
+
+  :hover {
+    background: linear-gradient(
+      90.03deg,
+      rgba(255, 104, 186, 0.25) 0.39%,
+      rgba(237, 194, 129, 0.25) 99.97%
+    );
+    color: white;
+    span {
+      display: none;
+    }
+    :before {
+      content: 'apply ( join ) ;';
+    }
+  }
 
   :active,
   :focus {
@@ -39,7 +54,7 @@ const StyledLink = styled.a`
 const ApplyLink = (props) => (
   <Link href="/apply" passHref>
     <StyledLink rel="noopener" {...props}>
-      Apply to Join Us
+      <span>Apply to Join Us</span>
     </StyledLink>
   </Link>
 )
