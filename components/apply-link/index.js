@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { rem } from 'polished'
 import styled from 'styled-components'
 
@@ -18,6 +19,7 @@ const StyledLink = styled.a`
   color: #010242;
   cursor: pointer;
   text-transform: uppercase;
+  text-decoration-line: none;
   font-family: inherit;
 
   :active,
@@ -34,11 +36,12 @@ const StyledLink = styled.a`
   }
 `
 
-// TODO: add href once page exists
 const ApplyLink = (props) => (
-  <StyledLink rel="noopener" {...props}>
-    Apply to Join Us
-  </StyledLink>
+  <Link href="/apply" passHref>
+    <StyledLink rel="noopener" {...props}>
+      Apply to Join Us
+    </StyledLink>
+  </Link>
 )
 
 export default ApplyLink

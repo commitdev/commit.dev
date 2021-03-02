@@ -1,4 +1,3 @@
-export const DESKTOP_SIZE = '1023px'
-export const TABLET_SIZE = '767px'
-export const MOBILE_SIZE = '413px'
-export const COMPACT_SIZE = '575px'
+export const TABLET_LARGE_SIZE = '1023px'
+export const TABLET_SMALL_SIZE = '677px'
+export const MOBILE_SIZE = '449px'

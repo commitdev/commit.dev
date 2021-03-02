@@ -4,29 +4,29 @@ import { rem } from 'polished'
 import styled from 'styled-components'
 
 import { Heading } from 'components'
-import { FlexSectionContents } from 'components/layout'
+import { FlexSectionContent } from 'components/layout'
 import { useIsMaxScreenSize } from 'helpers/hooks'
 import ChevronSvg from 'public/chevron.svg'
-import { DESKTOP_SIZE, MOBILE_SIZE, COMPACT_SIZE } from 'styles/constants'
+import {
+  TABLET_LARGE_SIZE,
+  MOBILE_SIZE,
+  TABLET_SMALL_SIZE,
+} from 'styles/constants'
 
 import ExecutiveAvatar from './executive-avatar'
 
 const { h2 } = Heading.VARIANT
 
 const StyledSection = styled.section`
-  padding: 80px 0;
+  padding: ${rem('164px')} 0;
 
-  @media only screen and (max-width: ${MOBILE_SIZE}) {
-    padding: 64px 0px;
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
+    padding: ${rem('124px')} 0;
   }
 `
 
 const StyledHeading = styled((props) => <Heading {...props} />)`
   text-align: center;
-
-  @media only screen and (max-width: ${MOBILE_SIZE}) {
-    margin-bottom: 2.625rem;
-  }
 `
 
 const AvatarList = styled.div`
@@ -35,13 +35,14 @@ const AvatarList = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 120px;
-  padding-top: 24px;
+  padding-top: ${rem('108px')};
 
-  @media only screen and (max-width: ${DESKTOP_SIZE}) {
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     margin: 0 10%;
   }
 
   @media only screen and (max-width: ${MOBILE_SIZE}) {
+    padding-top: ${rem('42px')};
     margin: 0;
   }
 `
@@ -119,15 +120,15 @@ const people = [
 ]
 
 const ExecutiveTeamSection = () => {
-  const isCompactScreen = useIsMaxScreenSize(COMPACT_SIZE)
+  const isCompactScreen = useIsMaxScreenSize(TABLET_SMALL_SIZE)
   const [showAllPeople, setShowAllPeople] = useState(false)
 
   const peopleToShow =
-    isCompactScreen && showAllPeople ? people.slice(0, 2) : people
+    isCompactScreen && showAllPeople ? people : people.slice(0, 2)
 
   return (
     <StyledSection>
-      <FlexSectionContents>
+      <FlexSectionContent>
         <StyledHeading variant={h2}>Our Executive Team</StyledHeading>
         <AvatarList>
           {peopleToShow.map((person) => (
@@ -140,14 +141,14 @@ const ExecutiveTeamSection = () => {
                 type="button"
               >
                 <LinkButtonTextContainer>
-                  {showAllPeople ? 'Whole Team' : 'Collapse'}
+                  {showAllPeople ? 'Collapse' : 'Whole Team'}
                 </LinkButtonTextContainer>
-                {showAllPeople ? <ChevronSvg /> : <InvertedChevronSvg />}
+                {showAllPeople ? <InvertedChevronSvg /> : <ChevronSvg />}
               </LinkButton>
             </LinkButtonContainer>
           )}
         </AvatarList>
-      </FlexSectionContents>
+      </FlexSectionContent>
     </StyledSection>
   )
 }

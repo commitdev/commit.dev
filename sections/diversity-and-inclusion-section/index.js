@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 import { Heading, Text } from 'components'
 import { useIsMaxScreenSize } from 'helpers/hooks'
-import { DESKTOP_SIZE } from 'styles/constants'
+import { TABLET_LARGE_SIZE } from 'styles/constants'
 
 const IMAGE_BREAKPOINT = '839px'
 
@@ -22,21 +22,20 @@ const Container = styled.div`
 `
 
 const ImageContainer = styled.div`
-  flex-grow: 1;
-  flex-shrink: 0;
+  width: 50%;
   @media only screen and (max-width: ${IMAGE_BREAKPOINT}) {
     width: 100%;
   }
 `
 
 const Image = styled.img`
-  max-width: 100%;
-  @media only screen and (max-width: ${IMAGE_BREAKPOINT}) {
-    width: 100%;
-  }
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 `
 
 const TextContainer = styled.div`
+  width: 50%;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -44,7 +43,7 @@ const TextContainer = styled.div`
   padding: ${rem('101px')} ${rem('80px')} ${rem('101px')} ${rem('70px')};
   background: linear-gradient(61.68deg, #ff68ba 2.29%, #edc281 100.63%);
 
-  @media only screen and (max-width: ${DESKTOP_SIZE}) {
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     align-items: center;
     padding: ${rem('48px')} ${rem('24px')};
   }
@@ -56,7 +55,16 @@ const TextContainer = styled.div`
   }
 `
 
-const StyledHeading = styled(Heading)``
+const StyledHeading = styled(Heading)`
+  text-align: center;
+  margin-bottom: ${rem('26px')};
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
+    margin-bottom: ${rem('32px')};
+  }
+  @media only screen and (max-width: ${IMAGE_BREAKPOINT}) {
+    margin-bottom: ${rem('26px')};
+  }
+`
 
 const DiversityAndInclusionSection = () => {
   const isCompactScreen = useIsMaxScreenSize(IMAGE_BREAKPOINT)
