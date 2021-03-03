@@ -283,106 +283,133 @@ a.heroLink {
   }
 }
 
-/* Projects styles */
-.projects {
-  padding: 120px 0px 84px;
+/* Platform styles */
+
+.platform {
+  padding: 84px 0px 130px 0px;
+  background: linear-gradient(49.1deg, #0f1011 26.79%, #010242 86.47%);
 }
-.projects .flexSection {
+
+.platform .platformContainer {
+  margin: 0 36px;
+}
+
+.platform .platformTopRow {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 36px;
+}
+
+.platform .platformTopRow p {
+  margin-top: 24px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.platform .platformFlex {
+  display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
-.projects h2.projectsHeading {
+
+.platform h2.platformHeading {
   font-size: 2rem;
   line-height: 2.5rem;
   text-align: center;
   color: transparent;
-  background: linear-gradient(90deg, #54ffff 0.78%, #68b5ff 91.85%);
+  background: linear-gradient(234.45deg, #12c6ff 0%, #6184c9 68.23%);
   background-clip: text;
 }
-.projects p.projectsOverview {
-  margin: 1.5rem 17% 4rem 17%;
+
+.platform .gridSection {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 36px 0;
 }
-.projects .projectList {
-  display: flex;
-  flex-direction: row;
-  margin: 0 80px;
+
+.platform .gridSection img {
+  width: 100%;
 }
-.projectList .project .projectName {
-  font-size: 2.25rem;
-  font-weight: 800;
-  line-height: 2.75rem;
-  letter-spacing: 0.1em;
+
+.platform .platformTitle {
   text-align: center;
+  color: white;
   text-transform: uppercase;
-  margin-top: 62px;
-  margin-bottom: 2rem;
-}
-.projectList .project .projectDescription {
-  font-size: 1rem;
-  line-height: 1.625rem;
-  text-align: center;
-  margin-bottom: 4rem;
-}
-.projectList .projectDivider {
-  margin: 0 12%;
-  min-height: 100%;
-  min-width: 4px;
-  max-width: 4px;
-  background: linear-gradient(180deg, #ff68ba 45.83%, #edc281 100%);
+  margin: 24px 0;
 }
 
-@media only screen and (max-width: 1023px) {
-  .projects h2.projectsHeading {
-    font-size: 2rem;
-    line-height: 2.5rem;
-  }
-  .projects p.projectsOverview {
-    margin: 1.5rem 10% 4rem 10%;
-  }
-  .projectList .project {
-    margin-bottom: 3rem;
-  }
-  .projectList .project:last-of-type {
-    margin-bottom: 0;
-  }
-  .projectList .project .projectName {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-  }
-  .projectList .project .projectDescription {
-    margin-bottom: 0;
-  }
+.platform .platformDescription {
+  margin: 0;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
 }
 
-@media only screen and (max-width: 677px) {
-  .projects .projectList {
-    flex-direction: column;
-    align-items: center;
-  }
-  .projectList .projectDivider {
-    min-height: 154px;
-    max-height: 154px;
-    margin: 0 0 3rem;
-  }
+.platform .profileColumnLeft {
+  margin: 0 auto;
 }
 
-@media only screen and (max-width: 449px) {
-  .projects h2.projectsHeading {
-    font-size: 1.75rem;
-    line-height: 2.125rem;
+.platform .opportunitiesColumnLeft {
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 770px) {
+  .platform .gridSection {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 72px;
+    max-width: 1200px;
+    margin: 0 -36px;
+    width: 100%;
   }
-  .projects p.projectsOverview {
-    margin: 1.5rem 0 5rem 0;
+
+  .platform .gridSection.opportunitiesRow {
+    align-self: flex-end;
   }
-  .projects .projectList {
+
+  .platform .profileColumnLeft {
+    grid-column: span 7;
     margin: 0;
   }
-  .projectList .project .projectName {
-    font-size: 1.5rem;
-    line-height: 1.875rem;
-    margin-bottom: 1.125rem;
+
+  .platform .profileColumnRight {
+    grid-column: span 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .platform .profileColumnRight p {
+    text-align: left;
+    margin: 32px 0;
+  }
+
+  .platform .opportunitiesColumnLeft {
+    grid-column: span 7;
+    order: 2;
+    margin: 0;
+  }
+
+  .platform .opportunitiesColumnRight {
+    grid-column: span 5;
+    display: flex;
+
+  .platform .opportunitiesColumnRight h3 {
+    color: white;
+    text-transform: uppercase;
+
+  .platform .opportunitiesColumnRight p {
+    margin: 32px 0;
+  }
+
+  .platform .opportunitiesColumnRight p {
+    text-align: left;
   }
 }
 
