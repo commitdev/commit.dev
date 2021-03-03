@@ -174,7 +174,7 @@ const Home = () => (
             </div>
             <div className={styles.profileColumnRight}>
               <Heading variant={h3} className={styles.platformTitle}>
-                Platform profile 
+                Platform profile
               </Heading>
               <Text sectionText className={styles.platformDescription}>
                 Get the latest community events, news and updates. Most importantly, begin to look for startup 
