@@ -9,6 +9,7 @@ import {
   Text,
   SiteHeader,
 } from 'components'
+import { ContentRoot } from 'components/layout'
 import BracketSvg from 'public/bracket.svg'
 import ConnectSvg from 'public/connect.svg'
 import ElevateSvg from 'public/elevate.svg'
@@ -20,7 +21,7 @@ import styles from 'styles/Home.module.css'
 const { h2, h3 } = Heading.VARIANT
 
 const Home = () => (
-  <div className={styles.contentRoot}>
+  <ContentRoot>
     <section className={`${styles.hero} ${styles.dark}`}>
       <SiteHeader />
       <div className={`${styles.sectionContent}`}>
@@ -262,7 +263,7 @@ const Home = () => (
       />
     </LogoSection>
     <Footer />
-  </div>
+  </ContentRoot>
 )
 
 export default Home
