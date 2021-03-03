@@ -147,7 +147,7 @@ workflows:
           requires:
             - checkout_code
       - deploy:
-          name: Deploy staging
+          name: deploy_staging
           bucket: commit-staging.dev
           requires:
             - build_staging
