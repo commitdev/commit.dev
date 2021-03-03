@@ -399,10 +399,14 @@ a.heroLink {
   .platform .opportunitiesColumnRight {
     grid-column: span 5;
     display: flex;
-
+    flex-direction: column;
+  }
+  
   .platform .opportunitiesColumnRight h3 {
     color: white;
     text-transform: uppercase;
+    text-align: left;
+  }
 
   .platform .opportunitiesColumnRight p {
     margin: 32px 0;
