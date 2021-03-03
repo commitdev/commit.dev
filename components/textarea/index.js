@@ -3,12 +3,14 @@ import styled from 'styled-components'
 const StyledTextArea = styled.textarea`
   width: 100%;
   border: 0;
-  padding: 1.2rem 2rem;
-  background: rgba(236, 236, 236, 0.2);
-  border-radius: 24px;
+  padding: 24px;
+  background: rgba(236, 236, 236, 0.1);
+  border-radius: 4px;
   margin-bottom: 2rem;
-  font-weight: 500;
-  font-size: 18px;
+  font-family: lato;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
   text-align: left;
   color: inherit;
   font-family: inherit;

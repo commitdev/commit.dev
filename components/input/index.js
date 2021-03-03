@@ -5,12 +5,14 @@ const Input = (props) => <StyledInput {...props} />
 const StyledInput = styled.input`
   width: 100%;
   border: 0;
-  padding: 1.2rem 2rem;
-  background: rgba(236, 236, 236, 0.2);
-  border-radius: 24px;
+  padding: 6px 24px;
+  background: rgba(236, 236, 236, 0.1);
+  border-radius: 4px;
   margin-bottom: 2rem;
-  font-weight: 500;
+  font-family: lato;
+  font-weight: 400;
   font-size: 18px;
+  line-height: 36px;
   text-align: left;
   color: inherit;
   font-family: inherit;
