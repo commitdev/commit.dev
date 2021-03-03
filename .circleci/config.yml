@@ -150,7 +150,7 @@ workflows:
           name: Deploy staging
           bucket: commit-staging.dev
           requires:
-            - build_stating
+            - build_staging
       - build:
           name: build_production
           helix_host: https://api-public.commit.dev/email/apply
