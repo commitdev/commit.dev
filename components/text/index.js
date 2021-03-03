@@ -20,7 +20,8 @@ const StyledText = styled.p`
     props.successText &&
     css`
       font-weight: normal;
-      font-size: 18px;
+      font-size: 21px;
+      line-height: 26px;
       margin-top: ${rem('24px')};
       margin-bottom: ${rem('24px')};
     `}
@@ -28,7 +29,8 @@ const StyledText = styled.p`
   ${(props) =>
     props.errorText &&
     css`
-      line-height: 21px;
+      font-size: 21px;
+      line-height: 26px;
       color: #ff4545;
       margin-top: ${rem('24px')};
       margin-bottom: ${rem('24px')};
