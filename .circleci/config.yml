@@ -51,27 +51,7 @@ jobs:
           root: *workspace
           paths:
             - out
-
   deploy:
-    docker:
-      - image: cimg/python:3.6
-    parameters:
-      bucket:
-        description: The S3 Bucket to sync files to.
-        type: string
-    steps:
-      - attach_workspace:
-          at: *workspace
-      - aws-s3/sync:
-          from: out
-          overwrite: true
-          to: 's3://<< parameters.bucket >>'
-      - run:
-          name: Invalidate Cloudfront
-          command: |
-            export DIST_ID=$(aws cloudfront list-distributions --query "DistributionList.Items[?Aliases.Items[?@=='<< parameters.bucket >>']].Id | [0]" | tr -d '"')
-            aws cloudfront create-invalidation --distribution-id ${DIST_ID} --paths "/*"
-  modified_deploy:
     docker:
       - image: cimg/python:3.6
     parameters:
@@ -137,6 +117,7 @@ workflows:
             branches:
               only:
                 - main
+                - 104-update-launch-pipeline
       - e2e:
           context: test-envs
           requires:
@@ -168,7 +149,7 @@ workflows:
             - wait_for_approval
       - deploy:
           name: deploy_production
-          bucket: commit.dev
+          bucket: commit-staging.dev
           requires:
             - build_production
             - queue_for_production_deploy
@@ -189,7 +170,7 @@ workflows:
           helix_host: https://api-public.commit-staging.dev/email/apply
           requires:
             - checkout_code
-      - modified_deploy:
+      - deploy:
           name: deploy_staging
           bucket: launch.commit-staging.dev
           requires:
