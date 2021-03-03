@@ -158,16 +158,16 @@ const Home = () => (
               <picture>
                 <source
                   media="(min-width:770px) and (max-width:1200px)"
-                  srcset="/platform-laptop-tablet.png"
+                  srcSet="/platform-laptop-tablet.png"
                 />
                 <source
                   media="(min-width:1201px)"
-                  srcset="/platform-laptop-desktop.png"
+                  srcSet="/platform-laptop-desktop.png"
                 />
                 <img
                   src="/platform-laptop-mobile.png"
                   alt="Unicorn Pool Float"
-                  class={styles.platformImage}
+                  className={styles.platformImage}
                 />
               </picture>
             </div>
@@ -187,11 +187,11 @@ const Home = () => (
               <picture>
                 <source
                   media="(min-width:770px) and (max-width:1200px)"
-                  srcset="/opportunities-laptop-tablet.png"
+                  srcSet="/opportunities-laptop-tablet.png"
                 />
                 <source
                   media="(min-width:1201px)"
-                  srcset="/opportunities-laptop-desktop.png"
+                  srcSet="/opportunities-laptop-desktop.png"
                 />
                 <img
                   src="/opportunities-laptop-mobile.png"
@@ -200,7 +200,7 @@ const Home = () => (
                 />
               </picture>
             </div>
-            <div class={styles.opportunitiesColumnRight}>
+            <div className={styles.opportunitiesColumnRight}>
               <Heading variant={h3} className={styles.platformTitle}>
                 Opportunities
               </Heading>
