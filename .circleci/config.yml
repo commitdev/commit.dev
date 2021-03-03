@@ -117,7 +117,6 @@ workflows:
             branches:
               only:
                 - main
-                - 104-update-launch-pipeline
       - e2e:
           context: test-envs
           requires:
@@ -149,7 +148,7 @@ workflows:
             - wait_for_approval
       - deploy:
           name: deploy_production
-          bucket: commit-staging.dev
+          bucket: commit.dev
           requires:
             - build_production
             - queue_for_production_deploy
