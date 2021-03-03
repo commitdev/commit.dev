@@ -1,3 +1,6 @@
+import React from 'react'
+
+import { rem } from 'polished'
 import { string } from 'prop-types'
 import styled from 'styled-components'
 
@@ -25,9 +28,14 @@ const Root = styled.div`
   h3 {
     font-size: 1rem;
     font-weight: 700;
-    line-height: 1.625rem;
-    margin: 1.25rem 0px;
+    line-height: ${rem('21px')};
+    height: 4rem;
+    margin: 1.25rem 0;
     text-align: center;
+
+    @media only screen and (max-width: ${MOBILE_SIZE}) {
+      height: auto;
+    }
   }
 
   p {
