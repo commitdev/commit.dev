@@ -330,6 +330,10 @@ a.heroLink {
   margin: 36px 0;
 }
 
+.platform .gridSection img {
+  width: 100%;
+}
+
 .platform .platformTitle {
   text-align: center;
   color: white;
