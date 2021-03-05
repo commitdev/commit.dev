@@ -4,6 +4,7 @@ const Input = (props) => <StyledInput {...props} />
 
 const StyledInput = styled.input`
   width: 100%;
+  height: 50px;
   border: 0;
   padding: 6px 24px;
   background: rgba(236, 236, 236, 0.1);
@@ -14,8 +15,11 @@ const StyledInput = styled.input`
   font-size: 18px;
   line-height: 36px;
   text-align: left;
-  color: inherit;
-  font-family: inherit;
+  color: #ffffff;
+
+  ::placeholder {
+    opacity: 0.3;
+  }
 
   :focus {
     outline: none;

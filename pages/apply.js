@@ -2,11 +2,7 @@ import styled from 'styled-components'
 
 import { Heading, SiteHeader, Form } from 'components'
 import { ContentRoot } from 'components/layout'
-import {
-  MOBILE_SIZE,
-  TABLET_LARGE_SIZE,
-  TABLET_SMALL_SIZE,
-} from 'styles/constants'
+import { MOBILE_SIZE, TABLET_LARGE_SIZE } from 'styles/constants'
 
 const HeroSection = styled.section`
   display: flex;
@@ -37,7 +33,7 @@ const Content = styled.div`
 const HeroContent = styled.div`
   display: flex;
   flex-direction: row;
-  @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -56,15 +52,16 @@ const HeroHeading = styled(Heading)`
   margin-right: 2rem;
   line-height: 96px;
 
-  @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     text-align: center;
+
+    line-height: 64px;
+    margin-right: 0px;
+    margin-bottom: 2rem;
   }
 
   @media only screen and (max-width: ${MOBILE_SIZE}) {
     max-width: initial;
-    line-height: 64px;
-    margin-right: 0px;
-    margin-bottom: 2rem;
   }
 `
 
