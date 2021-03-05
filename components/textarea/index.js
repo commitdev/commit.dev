@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 const StyledTextArea = styled.textarea`
   width: 100%;
+  height: 174px;
   border: 0;
   padding: 24px;
   background: rgba(236, 236, 236, 0.1);
@@ -12,12 +13,15 @@ const StyledTextArea = styled.textarea`
   font-size: 16px;
   line-height: 24px;
   text-align: left;
-  color: inherit;
-  font-family: inherit;
+  color: #ffffff;
 
   resize: vertical;
   width: 100%;
   height: 10rem;
+
+  ::placeholder {
+    opacity: 0.3;
+  }
 
   :focus {
     outline: none;
