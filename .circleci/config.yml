@@ -22,7 +22,7 @@ jobs:
           root: *workspace
           paths:
             - .
-  test_lint:
+  lint:
     docker:
       - image: *build_image
     working_directory: *workspace
@@ -89,6 +89,29 @@ jobs:
           command: npm run e2e
       - store_artifacts:
           path: /home/circleci/project/.screenshots
+  e2e_local:
+    docker:
+      - image: cimg/node:14.14-browsers
+    working_directory: *workspace
+    steps:
+      - attach_workspace:
+          at: *workspace
+      - run:
+          name: Serve site locally
+          command: npx serve out -p 3000
+          background: true
+      # wait for the server to start responding.
+      - run:
+          name: Wait for server to connect
+          shell: /bin/sh
+          command: wget --spider --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 20 http://localhost:3000
+      - run:
+          name: Running landing page e2e test against local build
+          environment:
+            COMMIT_DEV_HOST: http://localhost:3000
+          command: npm run e2e
+      - store_artifacts:
+          path: /home/circleci/project/.screenshots
 
 workflows:
   version: 2
@@ -101,7 +124,7 @@ workflows:
               ignore:
                 - main
                 - launch
-      - test_lint:
+      - lint:
           requires:
             - checkout_code
       - build:
@@ -109,6 +132,10 @@ workflows:
           helix_host: ''
           requires:
             - checkout_code
+      - e2e_local:
+          context: test-envs
+          requires:
+            - build_feature
 
   main:
     jobs:
@@ -117,10 +144,6 @@ workflows:
             branches:
               only:
                 - main
-      - e2e:
-          context: test-envs
-          requires:
-            - checkout_code
       - build:
           name: build_staging
           helix_host: https://api-public.commit-staging.dev/email/apply
@@ -131,6 +154,10 @@ workflows:
           bucket: commit-staging.dev
           requires:
             - build_staging
+      - e2e:
+          context: test-envs
+          requires:
+            - deploy_staging
       - build:
           name: build_production
           helix_host: https://api-public.commit.dev/email/apply
@@ -160,10 +187,6 @@ workflows:
             branches:
               only:
                 - launch
-      - e2e:
-          context: test-envs
-          requires:
-            - checkout_code
       - build:
           name: build_feature
           helix_host: https://api-public.commit-staging.dev/email/apply
@@ -174,3 +197,7 @@ workflows:
           bucket: launch.commit-staging.dev
           requires:
             - build_feature
+      - e2e:
+          context: test-envs
+          requires:
+            - deploy_staging
