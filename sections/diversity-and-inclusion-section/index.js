@@ -4,7 +4,6 @@ import { rem } from 'polished'
 import styled from 'styled-components'
 
 import { Heading, Text } from 'components'
-import { useIsMaxScreenSize } from 'helpers/hooks'
 import { TABLET_LARGE_SIZE } from 'styles/constants'
 
 const IMAGE_BREAKPOINT = '839px'
@@ -70,47 +69,43 @@ const StyledHeading = styled(Heading)`
   }
 `
 
-const DiversityAndInclusionSection = () => {
-  const isCompactScreen = useIsMaxScreenSize(IMAGE_BREAKPOINT)
-
-  return (
-    <section>
-      <Container>
-        <Picture>
-          <source
-            media="(min-width:770px) and (max-width:1200px)"
-            srcSet="/painted-hand-tablet.png"
-          />
-          <source
-            media="(min-width:1201px)"
-            srcSet="/painted-hand-desktop.png"
-          />
-          <img
-            src="/painted-hand-mobile.png"
-            alt="Unicorn Pool Float"
-          />
-        </Picture>
-        <TextContainer>
-          <TextWrapper>
+const DiversityAndInclusionSection = () => (
+  <section>
+    <Container>
+      <Picture>
+        <source
+          media="(min-width:770px) and (max-width:1200px)"
+          srcSet="/painted-hand-tablet.png"
+        />
+        <source
+          media="(min-width:1201px)"
+          srcSet="/painted-hand-desktop.png"
+        />
+        <img
+          src="/painted-hand-mobile.png"
+          alt="Unicorn Pool Float"
+        />
+      </Picture>
+      <TextContainer>
+        <TextWrapper>
           <StyledHeading variant={h2}>Diversity & Inclusion</StyledHeading>
-            <Text>
-              It’s incredibly important to everyone at Commit that the community
-              is an inclusive and equitable workplace. We are remote-first,
-              meaning that we don’t have an office and many of the engineers work
-              on an asynchronous time schedule, which facilitates parents or
-              people who need to tackle various priorities in life.
-            </Text>
-            <Text>
-              While we are small, and at the very beginning of this journey to
-              have a diverse workforce that is truly representative of our
-              society, we aim to break the mold for tech companies and shed
-              typical stereotypes and biases.
-            </Text>
-          </TextWrapper>
-        </TextContainer>
-      </Container>
-    </section>
+          <Text>
+            It’s incredibly important to everyone at Commit that the community
+            is an inclusive and equitable workplace. We are remote-first,
+            meaning that we don’t have an office and many of the engineers work
+            on an asynchronous time schedule, which facilitates parents or
+            people who need to tackle various priorities in life.
+          </Text>
+          <Text>
+            While we are small, and at the very beginning of this journey to
+            have a diverse workforce that is truly representative of our
+            society, we aim to break the mold for tech companies and shed
+            typical stereotypes and biases.
+          </Text>
+        </TextWrapper>
+      </TextContainer>
+    </Container>
+  </section>
   )
-}
 
 export default DiversityAndInclusionSection
