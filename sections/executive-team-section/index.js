@@ -123,8 +123,10 @@ const ExecutiveTeamSection = () => {
   const isCompactScreen = useIsMaxScreenSize(TABLET_SMALL_SIZE)
   const [showAllPeople, setShowAllPeople] = useState(false)
 
-  const peopleToShow =
-    isCompactScreen && showAllPeople ? people : people.slice(0, 2)
+  let peopleToShow = people
+  if (isCompactScreen) {
+    peopleToShow = showAllPeople ? people : people.slice(0, 2)
+  }
 
   return (
     <StyledSection>
