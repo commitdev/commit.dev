@@ -286,7 +286,7 @@ a.heroLink {
 /* Platform styles */
 
 .platform {
-  padding: 84px 0px 130px 0px;
+  padding: 140px 0px 130px 0px;
   background: linear-gradient(49.1deg, #0f1011 26.79%, #010242 86.47%);
 }
 
@@ -301,12 +301,14 @@ a.heroLink {
 }
 
 .platform .platformTopRow p {
-  margin-top: 24px;
   font-family: Lato;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding-top: 24px;
 }
 
 .platform .platformFlex {
