@@ -123,7 +123,6 @@ const Form = () => {
           />
           <Button
             {...{
-              'data-test-id': 'submitApplicationButton',
               onClick,
             }}
           >

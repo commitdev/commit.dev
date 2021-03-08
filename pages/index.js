@@ -34,7 +34,7 @@ const Home = () => (
             Commit is designing the future of work and we're putting Engineers
             at the center.
           </Text>
-          <ApplyLink data-test-id='applyButton'>Apply to Join Us</ApplyLink>
+          <ApplyLink>Apply to Join Us</ApplyLink>
         </div>
         <div className={styles.heroSvg}>
           <BracketSvg />
@@ -148,9 +148,10 @@ const Home = () => (
             The Commit Platform
           </Heading>
           <Text sectionText>
-            The Commit Platform replaces the technical interview with deep backgrounds, 
-            matches Software Engineers with relevant startups, and connect Engineers 
-            with peers for interest sharing or technical support.
+            The Commit Platform replaces the technical interview with deep
+            backgrounds, matches Software Engineers with relevant startups, and
+            connect Engineers with peers for interest sharing or technical
+            support.
           </Text>
         </div>
         <div className={styles.platformFlex}>
@@ -174,11 +175,12 @@ const Home = () => (
             </div>
             <div className={styles.profileColumnRight}>
               <Heading variant={h3} className={styles.platformTitle}>
-                Platform profile 
+                Platform profile
               </Heading>
               <Text sectionText className={styles.platformDescription}>
-                Get the latest community events, news and updates. Most importantly, begin to look for startup 
-                opportunities recommended specifically for you. This is also where engineers begin to 
+                Get the latest community events, news and updates. Most
+                importantly, begin to look for startup opportunities recommended
+                specifically for you. This is also where engineers begin to
                 connect with their peers and join interest-based groups.
               </Text>
             </div>
@@ -267,4 +269,3 @@ const Home = () => (
 )
 
 export default Home
-
