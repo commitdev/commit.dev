@@ -136,16 +136,6 @@ workflows:
           context: test-envs
           requires:
             - build_feature
-      # e2e failing in ci only debugging
-      - deploy:
-          name: deploy_staging
-          bucket: launch.commit-staging.dev
-          requires:
-            - build_feature
-      - e2e:
-          context: test-envs
-          requires:
-            - deploy_staging
 
   main:
     jobs:
