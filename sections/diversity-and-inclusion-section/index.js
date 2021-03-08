@@ -4,7 +4,6 @@ import { rem } from 'polished'
 import styled from 'styled-components'
 
 import { Heading, Text } from 'components'
-import { useIsMaxScreenSize } from 'helpers/hooks'
 import { TABLET_LARGE_SIZE } from 'styles/constants'
 
 const IMAGE_BREAKPOINT = '839px'
@@ -14,24 +13,17 @@ const { h2 } = Heading.VARIANT
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  height: 534px;
   @media only screen and (max-width: ${IMAGE_BREAKPOINT}) {
     flex-direction: column-reverse;
     height: auto;
   }
 `
 
-const ImageContainer = styled.div`
-  width: 50%;
-  @media only screen and (max-width: ${IMAGE_BREAKPOINT}) {
+const Picture = styled.picture`
+  img {
     width: 100%;
+    height: 100%;
   }
-`
-
-const Image = styled.img`
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
 `
 
 const TextContainer = styled.div`
@@ -42,6 +34,7 @@ const TextContainer = styled.div`
   flex-shrink: 1;
   padding: ${rem('101px')} ${rem('80px')} ${rem('101px')} ${rem('70px')};
   background: linear-gradient(61.68deg, #ff68ba 2.29%, #edc281 100.63%);
+  justify-content: center;
 
   @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     align-items: center;
@@ -52,6 +45,16 @@ const TextContainer = styled.div`
     align-items: center;
     padding: ${rem('84px')} ${rem('36px')};
     width: 100%;
+  }
+`
+
+const TextWrapper = styled.div`
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
+    max-width: 350px;
+  }
+
+  p {
+    text-align: center;
   }
 `
 
@@ -66,23 +69,25 @@ const StyledHeading = styled(Heading)`
   }
 `
 
-const DiversityAndInclusionSection = () => {
-  const isCompactScreen = useIsMaxScreenSize(IMAGE_BREAKPOINT)
-
-  return (
-    <section>
-      <Container>
-        <ImageContainer>
-          <Image
-            src={
-              isCompactScreen
-                ? '/sharon-mccutcheon-multi-coloured-hand-paint-wide.jpeg'
-                : '/sharon-mccutcheon-multi-coloured-hand-paint-tall.jpeg'
-            }
-            alt="Hand with multi-colored paint on it."
-          />
-        </ImageContainer>
-        <TextContainer>
+const DiversityAndInclusionSection = () => (
+  <section>
+    <Container>
+      <Picture>
+        <source
+          media="(min-width:770px) and (max-width:1200px)"
+          srcSet="/painted-hand-tablet.png"
+        />
+        <source
+          media="(min-width:1201px)"
+          srcSet="/painted-hand-desktop.png"
+        />
+        <img
+          src="/painted-hand-mobile.png"
+          alt="Unicorn Pool Float"
+        />
+      </Picture>
+      <TextContainer>
+        <TextWrapper>
           <StyledHeading variant={h2}>Diversity & Inclusion</StyledHeading>
           <Text>
             It’s incredibly important to everyone at Commit that the community
@@ -97,10 +102,10 @@ const DiversityAndInclusionSection = () => {
             society, we aim to break the mold for tech companies and shed
             typical stereotypes and biases.
           </Text>
-        </TextContainer>
-      </Container>
-    </section>
+        </TextWrapper>
+      </TextContainer>
+    </Container>
+  </section>
   )
-}
 
 export default DiversityAndInclusionSection
