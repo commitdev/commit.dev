@@ -1,17 +1,12 @@
 import styled from 'styled-components'
 
-import { Text, ApplyLink, SiteLinks } from 'components'
-import GitHubSvg from 'public/logo-github.svg'
-import LinkedInSvg from 'public/logo-linkedin.svg'
-import TwitterSvg from 'public/logo-twitter.svg'
+import { Text, ApplyLink, SiteLinks, SocialIcons } from 'components'
 import {
   TABLET_LARGE_SIZE,
   MOBILE_SIZE,
   TABLET_SMALL_SIZE,
   COLOR_VARIATIONS,
 } from 'styles/constants'
-
-import SocialLink from './social-link'
 
 const FooterContainer = styled.footer`
   padding: 150px 0 0 0;
@@ -84,7 +79,7 @@ const CommitLogo = styled.img`
   height: 40px;
 `
 
-const SocialLinks = styled.div`
+const SocialIconsContainer = styled.div`
   position: relative;
   left: 30px;
   @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
@@ -124,17 +119,9 @@ const Footer = (props) => (
     </FlexSection>
     <BottomContainer>
       <CommitLogo alt="Commit logo" src="/commit-logo.svg" />
-      <SocialLinks>
-        <SocialLink href="https://github.com/commitdev/">
-          <GitHubSvg />
-        </SocialLink>
-        <SocialLink href="https://www.linkedin.com/company/commitdev/mycompany/">
-          <LinkedInSvg />
-        </SocialLink>
-        <SocialLink href="https://twitter.com/commitdev">
-          <TwitterSvg />
-        </SocialLink>
-      </SocialLinks>
+      <SocialIconsContainer>
+        <SocialIcons />
+      </SocialIconsContainer>
       <SiteLinksContainer variation={COLOR_VARIATIONS.dark}>
         <SiteLinks />
       </SiteLinksContainer>

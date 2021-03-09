@@ -5,7 +5,7 @@ import { bool, func, string, oneOf } from 'prop-types'
 import ReactDOM from 'react-dom'
 import styled, { css } from 'styled-components'
 
-import { SiteLinks } from 'components'
+import { SiteLinks, SocialIcons } from 'components'
 import { usePrevious, useIsMaxScreenSize } from 'helpers/hooks'
 import { TABLET_SMALL_SIZE, COLOR_VARIATIONS } from 'styles/constants'
 
@@ -13,6 +13,8 @@ import HamburgerMenu from './hamburger-menu'
 import Logo from './logo'
 
 const NAV_ID = 'site-navigation-small'
+
+const { large: SOCIAL_ICON_SIZE_LARGE } = SocialIcons.SIZE
 
 const NavOverlayRoot = styled.div`
   position: fixed;
@@ -70,15 +72,22 @@ const Nav = styled.nav`
     font-size: ${rem('48px')};
     line-height: ${rem('58.51px')};
     font-weight: 800;
-
-    &:first-of-type {
-      margin-top: 16px;
-    }
   }
 `
 const BurgerMenu = styled(HamburgerMenu)`
   margin-top: auto;
   margin-bottom: auto;
+`
+
+const SocialIconsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 84px;
+
+  a {
+    margin: 0;
+    margin-left: 32px;
+  }
 `
 
 const NavOverlay = React.forwardRef(
@@ -99,6 +108,9 @@ const NavOverlay = React.forwardRef(
           </FauxHeader>
           <Nav>
             <SiteLinks closeMenu={closeMenu} />
+            <SocialIconsContainer>
+              <SocialIcons size={SOCIAL_ICON_SIZE_LARGE} />
+            </SocialIconsContainer>
           </Nav>
         </NavOverlayRoot>,
         document.querySelector('body'),
