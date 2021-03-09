@@ -194,7 +194,7 @@ workflows:
             - checkout_code
       - deploy:
           name: deploy_staging
-          bucket: launch.commit-staging.dev
+          bucket: commit-staging.dev
           requires:
             - build_feature
       - e2e:
