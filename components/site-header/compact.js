@@ -5,7 +5,8 @@ import { bool, func, string, oneOf } from 'prop-types'
 import ReactDOM from 'react-dom'
 import styled, { css } from 'styled-components'
 
-import { SiteLinks, SocialIcons } from 'components'
+import { SiteLinks } from 'components'
+import SocialIcons from 'components/social-icons'
 import { usePrevious, useIsMaxScreenSize } from 'helpers/hooks'
 import { TABLET_SMALL_SIZE, COLOR_VARIATIONS } from 'styles/constants'
 
