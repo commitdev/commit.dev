@@ -21,6 +21,7 @@ const StyledLink = styled.a`
   text-transform: uppercase;
   text-decoration-line: none;
   font-family: inherit;
+  white-space: nowrap;
 
   :hover {
     background: linear-gradient(
