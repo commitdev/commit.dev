@@ -159,16 +159,20 @@ const Home = () => (
             <div className={styles.profileColumnLeft}>
               <picture>
                 <source
-                  media="(min-width:770px) and (max-width:1200px)"
-                  srcSet="/platform-laptop-tablet.png"
+                  media="(min-width:1201px)"
+                  srcSet="/platform-profile-large.png"
                 />
                 <source
-                  media="(min-width:1201px)"
-                  srcSet="/platform-laptop-desktop.png"
+                  media="(min-width:1024px) and (max-width:1200px)"
+                  srcSet="/platform-profile-desktop.png"
+                />
+                <source
+                  media="(min-width:770px) and (max-width:1023px)"
+                  srcSet="/platform-profile-tablet.png"
                 />
                 <img
-                  src="/platform-laptop-mobile.png"
-                  alt="Unicorn Pool Float"
+                  src="/platform-profile-mobile.png"
+                  alt="Screenshot of Commit's Engineering Parnter profile page"
                   className={styles.platformImage}
                 />
               </picture>
@@ -189,16 +193,20 @@ const Home = () => (
             <div className={styles.opportunitiesColumnLeft}>
               <picture>
                 <source
-                  media="(min-width:770px) and (max-width:1200px)"
-                  srcSet="/opportunities-laptop-tablet.png"
+                  media="(min-width:1201px)"
+                  srcSet="/platform-opportunities-large.png"
                 />
                 <source
-                  media="(min-width:1201px)"
-                  srcSet="/opportunities-laptop-desktop.png"
+                  media="(min-width:1024px) and (max-width:1200px)"
+                  srcSet="/platform-opportunities-desktop.png"
+                />
+                <source
+                  media="(min-width:770px) and (max-width:1023px)"
+                  srcSet="/platform-opportunities-tablet.png"
                 />
                 <img
-                  src="/opportunities-laptop-mobile.png"
-                  alt="Unicorn Pool Float"
+                  src="/platform-opportunities-mobile.png"
+                  alt="Screenshot of Commit's recommended opportunities page"
                   className={styles.platformImage}
                 />
               </picture>
