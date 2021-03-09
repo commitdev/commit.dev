@@ -5,12 +5,11 @@ import { bool, func, string, oneOf } from 'prop-types'
 import ReactDOM from 'react-dom'
 import styled, { css } from 'styled-components'
 
+import { SiteLinks } from 'components'
 import { usePrevious, useIsMaxScreenSize } from 'helpers/hooks'
-import { TABLET_SMALL_SIZE } from 'styles/constants'
+import { TABLET_SMALL_SIZE, COLOR_VARIATIONS } from 'styles/constants'
 
-import { COLOR_VARIATIONS } from './constants'
 import HamburgerMenu from './hamburger-menu'
-import Links from './links'
 import Logo from './logo'
 
 const NAV_ID = 'site-navigation-small'
@@ -99,7 +98,7 @@ const NavOverlay = React.forwardRef(
             />
           </FauxHeader>
           <Nav>
-            <Links closeMenu={closeMenu} />
+            <SiteLinks closeMenu={closeMenu} />
           </Nav>
         </NavOverlayRoot>,
         document.querySelector('body'),

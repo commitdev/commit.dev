@@ -4,9 +4,7 @@ import { bool, func, string, oneOf } from 'prop-types'
 import styled, { css } from 'styled-components'
 
 import { NOOP } from 'helpers/utils'
-import { TABLET_SMALL_SIZE } from 'styles/constants'
-
-import { COLOR_VARIATIONS } from './constants'
+import { TABLET_SMALL_SIZE, COLOR_VARIATIONS } from 'styles/constants'
 
 const HamburgerButton = styled.button`
   display: none;
