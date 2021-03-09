@@ -25,9 +25,6 @@ const Links = ({ closeMenu }) => (
     <Anchor href="https://blog.commit.dev/" target="_blank" rel="noreferrer">
       BLOG
     </Anchor>
-    <Anchor href="https://blog.commit.dev/" target="_blank" rel="noreferrer">
-      STARTUPS
-    </Anchor>
   </>
 )
 
