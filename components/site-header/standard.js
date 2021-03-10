@@ -1,10 +1,8 @@
 import { oneOf } from 'prop-types'
 import styled from 'styled-components'
 
-import { TABLET_SMALL_SIZE } from 'styles/constants'
-
-import { COLOR_VARIATIONS } from './constants'
-import Links from './links'
+import { SiteLinks } from 'components'
+import { TABLET_SMALL_SIZE, COLOR_VARIATIONS } from 'styles/constants'
 
 const Nav = styled.nav`
   a {
@@ -18,7 +16,7 @@ const Nav = styled.nav`
 
 const Standard = ({ variation }) => (
   <Nav variation={variation}>
-    <Links />
+    <SiteLinks />
   </Nav>
 )
 

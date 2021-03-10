@@ -2,10 +2,9 @@ import { rem } from 'polished'
 import { oneOf } from 'prop-types'
 import styled from 'styled-components'
 
-import { TABLET_SMALL_SIZE } from 'styles/constants'
+import { TABLET_SMALL_SIZE, COLOR_VARIATIONS } from 'styles/constants'
 
 import CompactMenu from './compact'
-import { COLOR_VARIATIONS } from './constants'
 import Logo from './logo'
 import StandardMenu from './standard'
 

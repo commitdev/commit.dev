@@ -4,9 +4,7 @@ import { oneOf, func } from 'prop-types'
 import styled from 'styled-components'
 
 import { NOOP } from 'helpers/utils'
-import { TABLET_SMALL_SIZE } from 'styles/constants'
-
-import { COLOR_VARIATIONS } from './constants'
+import { TABLET_SMALL_SIZE, COLOR_VARIATIONS } from 'styles/constants'
 
 const LogoImg = styled.img`
   width: ${rem('212px')};

@@ -16,8 +16,7 @@ const Anchor = styled.a`
   }
 `
 
-// TODO: update links once pages exist
-const Links = ({ closeMenu }) => (
+const SiteLinks = ({ closeMenu }) => (
   <>
     <Link href="/about" passHref>
       <Anchor onClick={closeMenu}>ABOUT</Anchor>
@@ -28,12 +27,12 @@ const Links = ({ closeMenu }) => (
   </>
 )
 
-Links.propTypes = {
+SiteLinks.propTypes = {
   closeMenu: func,
 }
 
-Links.defaultProps = {
+SiteLinks.defaultProps = {
   closeMenu: NOOP,
 }
 
-export default Links
+export default SiteLinks
