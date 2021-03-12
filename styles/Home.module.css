@@ -288,6 +288,13 @@ a.heroLink {
 .platform {
   padding: 140px 0px 130px 0px;
   background: linear-gradient(49.1deg, #0f1011 26.79%, #010242 86.47%);
+  --text-width: 750px;
+}
+
+@media only screen and (max-width: 770px) {
+  .platform {
+    --text-width: 400px;
+  }
 }
 
 .platform .platformContainer {
@@ -306,7 +313,7 @@ a.heroLink {
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-  max-width: 450px;
+  max-width: var(--text-width);
   margin: 0 auto;
   padding-top: 24px;
 }
@@ -318,17 +325,27 @@ a.heroLink {
 }
 
 .platform h2.platformHeading {
-  font-size: 2rem;
-  line-height: 2.5rem;
+  font-size: 3rem;
+  letter-spacing: 0.3rem;
+  line-height: 3.625rem;
   text-align: center;
   color: transparent;
   background: linear-gradient(234.45deg, #12c6ff 0%, #6184c9 68.23%);
   background-clip: text;
 }
 
+@media only screen and (max-width: 449px) {
+  .platform h2.platformHeading {
+    font-size: 1.75rem;
+    letter-spacing: initial;
+    line-height: 2.125rem;
+  }
+}
+
 .platform .gridSection {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+  column-gap: 0;
   margin: 36px 0;
 }
 
@@ -344,12 +361,13 @@ a.heroLink {
 }
 
 .platform .platformDescription {
-  margin: 0;
+  margin: 0 auto;
   font-family: Lato;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
+  max-width: var(--text-width);
 }
 
 .platform .profileColumnLeft {
@@ -364,7 +382,7 @@ a.heroLink {
   .platform .gridSection {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    column-gap: 72px;
+    column-gap: 0;
     max-width: 100%;
     margin: 0 -36px;
     width: 100%;
@@ -386,7 +404,7 @@ a.heroLink {
     justify-content: center;
     align-items: flex-start;
     max-width: 430px;
-    margin: 0 auto;
+    margin: 0 auto 0 24px;
   }
 
   .platform .profileColumnRight p {
@@ -406,9 +424,9 @@ a.heroLink {
     flex-direction: column;
     justify-content: center;
     max-width: 430px;
-    margin: 0 auto;
+    margin: 0 24px 0 auto;
   }
-  
+
   .platform .opportunitiesColumnRight h3 {
     color: white;
     text-transform: uppercase;
