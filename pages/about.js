@@ -1,5 +1,4 @@
-import { CompanyLogo, Heading, Text, Footer, SiteHeader } from 'components'
-import { ContentRoot } from 'components/layout'
+import { CompanyLogo, Heading, Text, Footer, Page } from 'components'
 import {
   DiversityAndInclusionSection,
   ExecutiveTeamSection,
@@ -10,9 +9,8 @@ import styles from 'styles/about.module.css'
 const { small: SMALL_LOGO } = CompanyLogo.SIZE
 
 const About = () => (
-  <ContentRoot>
+  <Page>
     <section className={`${styles.hero}`}>
-      <SiteHeader variation={SiteHeader.VARIATIONS.light} />
       <div className={`${styles.sectionContent}`}>
         <div className={styles.heroContent}>
           <Heading className={styles.heroHeading}>
@@ -85,7 +83,7 @@ const About = () => (
       </LogoSection>
     </section>
     <Footer />
-  </ContentRoot>
+  </Page>
 )
 
 export default About

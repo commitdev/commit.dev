@@ -1,5 +1,4 @@
 import { rem } from 'polished'
-import { oneOf } from 'prop-types'
 import styled from 'styled-components'
 
 import { TABLET_SMALL_SIZE, COLOR_VARIATIONS } from 'styles/constants'
@@ -11,41 +10,36 @@ import StandardMenu from './standard'
 const StyledHeader = styled.header`
   position: sticky;
   top: 0;
-  font-size: ${rem('18px')};
+  z-index: 100;
+  font-size: ${rem('16px')};
   font-weight: 500;
-  line-height: ${rem('36px')};
   letter-spacing: 0em;
   text-align: left;
+  background-color: rgba(255, 255, 255, 0.25);
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  margin: ${rem('32px')} ${rem('48px')} 0;
+  padding: ${rem('14px')} ${rem('54px')};
   @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
     line-height: 0.5;
-    margin: ${rem('24px')} ${rem('24px')} 0;
+    padding: ${rem('24px')};
   }
 `
 
-const SiteHeader = ({ variation }) => (
+const SiteHeader = () => (
   <StyledHeader>
-    <Logo variation={variation} />
-    <StandardMenu variation={variation} />
-    <CompactMenu variation={variation} />
+    <Logo variation={COLOR_VARIATIONS.light} />
+    <StandardMenu variation={COLOR_VARIATIONS.light} />
+    <CompactMenu variation={COLOR_VARIATIONS.light} />
   </StyledHeader>
 )
 
 SiteHeader.VARIATIONS = COLOR_VARIATIONS
 
-SiteHeader.propTypes = {
-  variation: oneOf(
-    Object.keys(COLOR_VARIATIONS).map((k) => COLOR_VARIATIONS[k]),
-  ),
-}
+SiteHeader.propTypes = {}
 
-SiteHeader.defaultProps = {
-  variation: COLOR_VARIATIONS.dark,
-}
+SiteHeader.defaultProps = {}
 
 export default SiteHeader

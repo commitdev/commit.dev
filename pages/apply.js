@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-import { Heading, SiteHeader, Form } from 'components'
-import { ContentRoot } from 'components/layout'
+import { Heading, Form, Page } from 'components'
 import { MOBILE_SIZE, TABLET_LARGE_SIZE } from 'styles/constants'
 
 const HeroSection = styled.section`
@@ -66,9 +65,8 @@ const HeroHeading = styled(Heading)`
 `
 
 const Apply = () => (
-  <ContentRoot>
+  <Page>
     <HeroSection>
-      <SiteHeader />
       <Content>
         <HeroContent>
           <HeroHeadingContainer>
@@ -78,7 +76,7 @@ const Apply = () => (
         </HeroContent>
       </Content>
     </HeroSection>
-  </ContentRoot>
+  </Page>
 )
 
 export default Apply
