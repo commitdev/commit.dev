@@ -35,6 +35,7 @@ const TextContainer = styled.div`
   padding: ${rem('101px')} ${rem('80px')} ${rem('101px')} ${rem('70px')};
   background: linear-gradient(61.68deg, #ff68ba 2.29%, #edc281 100.63%);
   justify-content: center;
+  align-items: center;
 
   @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     align-items: center;
@@ -49,8 +50,10 @@ const TextContainer = styled.div`
 `
 
 const TextWrapper = styled.div`
+  max-width: 575px;
+
   @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
-    max-width: 350px;
+    max-width: 500px;
   }
 
   p {
@@ -77,14 +80,8 @@ const DiversityAndInclusionSection = () => (
           media="(min-width:770px) and (max-width:1200px)"
           srcSet="/painted-hand-tablet.png"
         />
-        <source
-          media="(min-width:1201px)"
-          srcSet="/painted-hand-desktop.png"
-        />
-        <img
-          src="/painted-hand-mobile.png"
-          alt="Unicorn Pool Float"
-        />
+        <source media="(min-width:1201px)" srcSet="/painted-hand-desktop.png" />
+        <img src="/painted-hand-mobile.png" alt="Unicorn Pool Float" />
       </Picture>
       <TextContainer>
         <TextWrapper>
@@ -106,6 +103,6 @@ const DiversityAndInclusionSection = () => (
       </TextContainer>
     </Container>
   </section>
-  )
+)
 
 export default DiversityAndInclusionSection

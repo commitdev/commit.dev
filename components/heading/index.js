@@ -50,7 +50,7 @@ const StyledHeading2 = styled.h2`
   font-size: ${rem('36px')};
   font-weight: 800;
   line-height: ${rem('44px')};
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.3rem;
   text-transform: uppercase;
   margin: 0;
 
@@ -58,6 +58,7 @@ const StyledHeading2 = styled.h2`
     font-size: ${rem('28px')};
     line-height: ${rem('34px')};
     text-align: center;
+    letter-spacing: initial;
   }
 `
 
