@@ -1,5 +1,7 @@
 import 'styles/_vendors/reset.css'
 import 'styles/globals.css'
+import 'pretty-scatter/pretty-scatter.css'
+
 import { func, object } from 'prop-types'
 
 function MyApp({ Component, pageProps }) {
