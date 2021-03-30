@@ -15,7 +15,7 @@ const StyledHeader = styled.header`
   font-weight: 500;
   letter-spacing: 0em;
   text-align: left;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.5);
 
   display: flex;
   align-items: center;
