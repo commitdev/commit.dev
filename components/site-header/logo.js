@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { rem } from 'polished'
 import { oneOf, func } from 'prop-types'
 import styled from 'styled-components'
 
@@ -7,8 +6,7 @@ import { NOOP } from 'helpers/utils'
 import { TABLET_SMALL_SIZE, COLOR_VARIATIONS } from 'styles/constants'
 
 const LogoImg = styled.img`
-  width: ${rem('212px')};
-
+  height: 40px;
   @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
     display: none;
   }

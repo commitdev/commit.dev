@@ -5,7 +5,6 @@ const ContentRoot = styled.div`
   flex-direction: column;
   min-height: 100vh;
   min-width: 320px;
-  overflow: hidden;
   padding: 0px;
   margin: 0px;
 `
