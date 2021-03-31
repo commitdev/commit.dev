@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { rem } from 'polished'
+import { string } from 'prop-types'
 import styled from 'styled-components'
 
 import { MOBILE_SIZE } from 'styles/constants'
@@ -52,12 +53,17 @@ const StyledLink = styled.a`
   }
 `
 
-const ApplyLink = (props) => (
+const ApplyLink = ({displayedText, ...props}) => (
   <Link href="/apply" passHref>
     <StyledLink rel="noopener" {...props}>
-      <span>Apply to Join Us</span>
+      <span>{displayedText}</span>
     </StyledLink>
   </Link>
 )
+
+ApplyLink.propTypes = {
+  displayedText: string,
+}
+
 
 export default ApplyLink
