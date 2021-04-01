@@ -3,6 +3,7 @@ import {
   DiversityAndInclusionSection,
   ExecutiveTeamSection,
   LogoSection,
+  OpensourceSection,
 } from 'sections'
 import styles from 'styles/about.module.css'
 
@@ -81,6 +82,7 @@ const About = () => (
           size={SMALL_LOGO}
         />
       </LogoSection>
+      <OpensourceSection />
     </section>
     <Footer />
   </Page>

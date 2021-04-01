@@ -1,0 +1,46 @@
+import React from 'react'
+
+import { rem } from 'polished'
+import { string } from 'prop-types'
+import styled from 'styled-components'
+
+import { TABLET_SMALL_SIZE } from 'styles/constants'
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  padding: 32px 26px;
+
+  @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
+    padding: 21px 18px;
+  }
+`
+
+const Avatar = styled.img`
+  border-radius: 100%;
+  width: 80px;
+`
+
+const Name = styled.div`
+  font-size: ${rem('14px')};
+  font-weight: 500;
+  padding-top: 10px;
+  text-align: center;
+`
+
+const TeamAvatar = ({ name, src }) => (
+  <Container>
+    <Avatar src={src} alt={`${name}`} />
+    <Name>{name}</Name>
+  </Container>
+)
+
+TeamAvatar.propTypes = {
+  name: string.isRequired,
+  src: string.isRequired,
+}
+
+export default TeamAvatar
