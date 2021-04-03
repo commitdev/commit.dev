@@ -53,17 +53,26 @@ const StyledLink = styled.a`
   }
 `
 
-const ApplyLink = ({displayedText, ...props}) => (
-  <Link href="/apply" passHref>
+const LinkButton = ({href, text, ...props}) => (
+  <Link {...{href, text}} passHref>
     <StyledLink rel="noopener" {...props}>
-      <span>{displayedText}</span>
+      <span>{text}</span>
     </StyledLink>
   </Link>
 )
 
-ApplyLink.propTypes = {
-  displayedText: string,
+LinkButton.propTypes = {
+  href: string.isRequired,
+  text: string.isRequired,
 }
 
+const ApplyLink = ({ href = '/apply', text = 'Join the waitlist', ...props } ) => (
+  <LinkButton {...{href, text, ...props}} />
+)
 
-export default ApplyLink
+ApplyLink.propTypes = {
+  href: string,
+  text: string,
+}
+
+export { ApplyLink }

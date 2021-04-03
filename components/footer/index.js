@@ -115,7 +115,7 @@ const Footer = (props) => (
   <FooterContainer {...props}>
     <FlexSection>
       <Text>Interested in Taking Control of your Career?</Text>
-      <StyledApplyLink displayedText="Apply to Join Us" />
+      <StyledApplyLink />
     </FlexSection>
     <BottomContainer>
       <CommitLogo alt="Commit logo" src="/commit-logo.svg" />

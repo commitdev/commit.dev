@@ -32,7 +32,7 @@ const Home = () => (
             Commit is designing the future of work and we're putting Engineers
             at the center.
           </Text>
-          <ApplyLink displayedText="Apply to Join Us" />
+          <ApplyLink />
         </div>
         <div className={styles.heroSvg}>
           <BracketSvg />
