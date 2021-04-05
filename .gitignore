@@ -5,6 +5,7 @@
 .env.production.local
 .env.test.local
 .vercel
+/.idea/
 /.next/
 /build
 /coverage

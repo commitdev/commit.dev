@@ -28,7 +28,7 @@ const Home = () => (
             Until now, your growth was dependent on your company.
             <span className={styles.heroTextExtra}>We changed that.</span>
           </Text>
-          <ApplyLink>Join the waitlist</ApplyLink>
+          <ApplyLink />
           <Text className={styles.heroTagline}> </Text>
         </div>
         <div className={styles.heroSvg}>
