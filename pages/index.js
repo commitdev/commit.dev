@@ -5,7 +5,6 @@ import {
   Footer,
   Testimonials,
   Heading,
-  HighlightedText,
   Page,
   Text,
 } from 'components'
@@ -24,15 +23,13 @@ const Home = () => (
     <section className={`${styles.hero} ${styles.dark}`}>
       <div className={`${styles.sectionContent}`}>
         <div className={styles.heroContent}>
-          <Heading className={styles.heroHeading}>
-            We are the community for{' '}
-            <HighlightedText>remote-first</HighlightedText> Software Engineers
-          </Heading>
+          <Heading className={styles.heroHeading}>Refactor your career</Heading>
           <Text sectionText className={styles.heroText}>
-            Commit is designing the future of work and we're putting Engineers
-            at the center.
+            Until now, your growth was dependent on your company.
+            <span className={styles.heroTextExtra}>We changed that.</span>
           </Text>
-          <ApplyLink>Apply to Join Us</ApplyLink>
+          <ApplyLink>Join the waitlist</ApplyLink>
+          <Text className={styles.heroTagline}> </Text>
         </div>
         <div className={styles.heroSvg}>
           <BracketSvg />
