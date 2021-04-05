@@ -67,11 +67,6 @@
   overflow: hidden;
   min-height: 946px;
 }
-.heroSvg {
-  position: absolute;
-  right: 0;
-  top: 180px;
-}
 .heroContent {
   max-width: 50rem;
 }
@@ -85,6 +80,7 @@ h1.heroHeading {
   margin-bottom: 3.5rem;
 }
 p.heroText {
+  color: #ffffff;
   font-family: Montserrat;
   font-size: 1.5rem;
   font-weight: 600;
@@ -94,7 +90,6 @@ p.heroText {
   text-align: left;
 }
 .heroTextExtra {
-  color: #ffffff;
   display: block;
 }
 a.heroLink {
@@ -106,10 +101,10 @@ p.heroTagline {
   font-family: Montserrat;
   font-style: normal;
   font-weight: 600;
-  font-size: 32px;
-  line-height: 39px;
-  height: 39px;
-  width: 535px;
+  font-size: 24px;
+  line-height: 30px;
+  height: 30px;
+  width: 400px;
   margin-top: 150px;
 }
 p.heroTagline:after {
@@ -285,7 +280,7 @@ p.heroTagline:after {
   }
   p.heroTagline {
     font-size: 18px;
-    line-height: 22px;
+    line-height: 20px;
     margin-top: 128px;
   }
 }

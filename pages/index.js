@@ -8,7 +8,6 @@ import {
   Page,
   Text,
 } from 'components'
-import BracketSvg from 'public/bracket.svg'
 import ConnectSvg from 'public/connect.svg'
 import ElevateSvg from 'public/elevate.svg'
 import ExploreSvg from 'public/explore.svg'
@@ -29,9 +28,6 @@ const Home = () => (
           </Text>
           <ApplyLink />
           <Text className={styles.heroTagline}> </Text>
-        </div>
-        <div className={styles.heroSvg}>
-          <BracketSvg />
         </div>
       </div>
     </section>
