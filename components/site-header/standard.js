@@ -8,6 +8,8 @@ const Nav = styled.nav`
   a {
     color: ${(p) =>
       p.variation === COLOR_VARIATIONS.dark ? '#ffffff' : '#010242'};
+
+    transition: color 200ms ease-in-out;
   }
   @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
     display: none;
