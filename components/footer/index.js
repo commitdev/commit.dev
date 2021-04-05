@@ -20,11 +20,12 @@ const FooterContainer = styled.footer`
 
   p {
     font-family: Montserrat;
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1.875rem;
-    letter-spacing: 0em;
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 2.75rem;
+    letter-spacing: 0.1em;
     text-align: center;
+    text-transform: uppercase;
     margin-bottom: 4rem;
 
     @media only screen and (max-width: ${MOBILE_SIZE}) {
@@ -64,7 +65,7 @@ const FlexSection = styled.div`
 const BottomContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 0 48px 48px;
 
   @media only screen and (max-width: ${MOBILE_SIZE}) {
@@ -114,7 +115,7 @@ const SiteLinksContainer = styled.div`
 const Footer = (props) => (
   <FooterContainer {...props}>
     <FlexSection>
-      <Text>Interested in Taking Control of your Career?</Text>
+      <Text>Let’s get started</Text>
       <StyledApplyLink />
     </FlexSection>
     <BottomContainer>

@@ -96,7 +96,7 @@ LinkButton.propTypes = {
   text: string.isRequired,
 }
 
-const ApplyLink = ({ href = '/apply', text = 'Apply to join us', ...props } ) => (
+const ApplyLink = ({ href = '/apply', text = 'Join the waitlist', ...props } ) => (
   <LinkButton {...{href, text, ...props}} />
 )
 
