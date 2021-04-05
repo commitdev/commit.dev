@@ -8,7 +8,6 @@ import {
   Page,
   Text,
 } from 'components'
-import BracketSvg from 'public/bracket.svg'
 import ConnectSvg from 'public/connect.svg'
 import ElevateSvg from 'public/elevate.svg'
 import ExploreSvg from 'public/explore.svg'
