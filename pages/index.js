@@ -30,9 +30,6 @@ const Home = () => (
           <ApplyLink />
           <Text className={styles.heroTagline}> </Text>
         </div>
-        <div className={styles.heroSvg}>
-          <BracketSvg />
-        </div>
       </div>
     </section>
     <section className={styles.features}>
