@@ -12,7 +12,6 @@ import BracketSvg from 'public/bracket.svg'
 import ConnectSvg from 'public/connect.svg'
 import ElevateSvg from 'public/elevate.svg'
 import ExploreSvg from 'public/explore.svg'
-import QuotesSvg from 'public/quotation-marks.svg'
 import { LogoSection } from 'sections'
 import styles from 'styles/Home.module.css'
 
@@ -231,7 +230,6 @@ const Home = () => (
         <Heading variant={h2} className={styles.testimonialsHeading}>
           What Our Engineering Partners Have to Say
         </Heading>
-        <QuotesSvg />
         <Testimonials className={styles.testimonialsCarousel} />
       </div>
     </section>

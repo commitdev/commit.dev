@@ -603,7 +603,7 @@ p.heroTagline:after {
 .testimonials .testimonialsHeading {
   text-align: center;
 
-  margin: 0 0 4rem;
+  margin: 0 0 2rem;
   max-width: 51rem;
 }
 .testimonials .testimonialsHeading:first-of-type {
