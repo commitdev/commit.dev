@@ -3,9 +3,9 @@ import {
   ArticlePreview,
   CompanyLogo,
   Footer,
-  Testimonials,
   Heading,
   Page,
+  Testimonials,
   Text,
 } from 'components'
 import ConnectSvg from 'public/connect.svg'
@@ -14,7 +14,9 @@ import ExploreSvg from 'public/explore.svg'
 import { LogoSection } from 'sections'
 import styles from 'styles/Home.module.css'
 
-const { h2, h3 } = Heading.VARIANT
+import PlatformSection from '../sections/platform-section'
+
+const { h2 } = Heading.VARIANT
 
 const Home = () => (
   <Page>
@@ -131,96 +133,7 @@ const Home = () => (
         </div>
       </div>
     </section>
-    <section className={styles.platform}>
-      <div className={styles.platformContainer}>
-        <div className={styles.platformTopRow}>
-          <Heading variant={h2} className={styles.platformHeading}>
-            The Commit Platform
-          </Heading>
-          <Text sectionText>
-            The Commit Platform replaces the technical interview with deep
-            backgrounds, matches Software Engineers with relevant startups, and
-            connect Engineers with peers for interest sharing or technical
-            support.
-          </Text>
-        </div>
-        <div className={styles.platformFlex}>
-          <div className={styles.gridSection}>
-            <div className={styles.profileColumnLeft}>
-              <picture>
-                <source
-                  media="(min-width:1201px)"
-                  srcSet="/platform-profile-large.png"
-                />
-                <source
-                  media="(min-width:1024px) and (max-width:1200px)"
-                  srcSet="/platform-profile-desktop.png"
-                />
-                <source
-                  media="(min-width:770px) and (max-width:1023px)"
-                  srcSet="/platform-profile-tablet.png"
-                />
-                <img
-                  src="/platform-profile-mobile.png"
-                  alt="Screenshot of Commit's Engineering Parnter profile page"
-                  className={styles.platformImage}
-                />
-              </picture>
-            </div>
-            <div className={styles.profileColumnRight}>
-              <Heading variant={h3} className={styles.platformTitle}>
-                Platform profile
-              </Heading>
-              <Text sectionText className={styles.platformDescription}>
-                Get the latest community events, news and updates. Most
-                importantly, begin to look for startup opportunities recommended
-                specifically for you. This is also where engineers begin to
-                connect with their peers and join interest-based groups.
-              </Text>
-            </div>
-          </div>
-          <div className={`${styles.gridSection} ${styles.opportunitiesRow}`}>
-            <div className={styles.opportunitiesColumnLeft}>
-              <picture>
-                <source
-                  media="(min-width:1201px)"
-                  srcSet="/platform-opportunities-large.png"
-                />
-                <source
-                  media="(min-width:1024px) and (max-width:1200px)"
-                  srcSet="/platform-opportunities-desktop.png"
-                />
-                <source
-                  media="(min-width:770px) and (max-width:1023px)"
-                  srcSet="/platform-opportunities-tablet.png"
-                />
-                <img
-                  src="/platform-opportunities-mobile.png"
-                  alt="Screenshot of Commit's recommended opportunities page"
-                  className={styles.platformImage}
-                />
-              </picture>
-            </div>
-            <div className={styles.opportunitiesColumnRight}>
-              <Heading variant={h3} className={styles.platformTitle}>
-                Opportunities
-              </Heading>
-              <Text sectionText className={styles.platformDescription}>
-                Commit engineers don't apply to startups. Instead, startups
-                apply to our engineers.
-                <br />
-                <br />
-                Our team works tirelessly to match engineers with the top
-                opportunities based on their skill set, interests, and career
-                goals. Engineers can browse new recommendations one by one, and
-                dig into each individual opportunities, with detailed and
-                insightful information we've gathered.
-              </Text>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <PlatformSection />
     <section className={styles.testimonials}>
       <div className={styles.flexSection}>
         <Heading variant={h2} className={styles.testimonialsHeading}>

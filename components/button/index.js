@@ -83,8 +83,8 @@ const StyledLink = styled.a`
   }
 `
 
-const LinkButton = ({href, text, ...props}) => (
-  <Link {...{href, text}} passHref>
+const LinkButton = ({ href, text, ...props }) => (
+  <Link {...{ href, text }} passHref>
     <StyledLink rel="noopener" {...props}>
       <span>{text}</span>
     </StyledLink>
@@ -96,9 +96,11 @@ LinkButton.propTypes = {
   text: string.isRequired,
 }
 
-const ApplyLink = ({ href = '/apply', text = 'Apply to join us', ...props } ) => (
-  <LinkButton {...{href, text, ...props}} />
-)
+const ApplyLink = ({
+  href = '/apply',
+  text = 'Apply to join us',
+  ...props
+}) => <LinkButton {...{ href, text, ...props }} />
 
 ApplyLink.propTypes = {
   href: string,
