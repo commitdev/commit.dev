@@ -55,19 +55,33 @@ const StyledLink = styled.a`
   white-space: nowrap;
 
   :hover {
-    background: linear-gradient(
-      90.03deg,
-      rgba(255, 104, 186, 0.25) 0.39%,
-      rgba(237, 194, 129, 0.25) 99.97%
-    );
+    background: transparent;
+    position: relative;
+    //border: red solid 3px;
+    background-image: linear-gradient(90.03deg, #ff68ba 0.39%, #edc281 99.97%);
     color: white;
     span {
       display: none;
     }
     :before {
-      content: 'apply ( join ) ;';
+      content: 'print ( join ) ;';
+      position: relative;
+      z-index: 2;
+    }
+    :after {
+      z-index: 1;
+      background: #100c1c;
+      border-radius: 48px;
+      content: '';
+      position: absolute;
+      display: block;
+      top: 3px;
+      bottom: 3px;
+      left: 3px;
+      right: 3px;
     }
   }
+
 
   :active,
   :focus {
