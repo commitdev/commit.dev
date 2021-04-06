@@ -2,7 +2,7 @@ import { rem } from 'polished'
 import { string } from 'prop-types'
 import styled from 'styled-components'
 
-import { TABLET_LARGE_SIZE, MOBILE_SIZE } from 'styles/constants'
+import { MOBILE_SIZE } from 'styles/constants'
 
 const VARIANT = Object.freeze({
   h2: 'h2',
@@ -28,21 +28,11 @@ Heading.propTypes = {
 
 const StyledHeading1 = styled.h1`
   font-family: Montserrat;
-  font-size: ${rem('64px')};
+  font-size: ${rem('48px')};
   font-weight: 800;
-  line-height: ${rem('80px')};
+  line-height: ${rem('60px')};
   letter-spacing: 0rem;
   margin: 0;
-
-  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
-    font-size: ${rem('48px')};
-    line-height: ${rem('60px')};
-  }
-
-  @media only screen and (max-width: ${MOBILE_SIZE}) {
-    font-size: ${rem('32px')};
-    line-height: ${rem('40px')};
-  }
 `
 
 const StyledHeading2 = styled.h2`

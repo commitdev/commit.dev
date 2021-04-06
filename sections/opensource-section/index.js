@@ -114,9 +114,7 @@ const OpensourceSection = () => {
           <StyledText>
             Feel free to checkout commit.dev’s github&nbsp;
             <Link href="https://github.com/commitdev" passHref>
-              <PinkLink>
-                Here
-              </PinkLink>
+              <PinkLink>Here</PinkLink>
             </Link>
           </StyledText>
         </TextContent>

@@ -5,15 +5,12 @@ import {
   Footer,
   Testimonials,
   Heading,
-  HighlightedText,
   Page,
   Text,
 } from 'components'
-import BracketSvg from 'public/bracket.svg'
 import ConnectSvg from 'public/connect.svg'
 import ElevateSvg from 'public/elevate.svg'
 import ExploreSvg from 'public/explore.svg'
-import QuotesSvg from 'public/quotation-marks.svg'
 import { LogoSection } from 'sections'
 import styles from 'styles/Home.module.css'
 
@@ -24,18 +21,13 @@ const Home = () => (
     <section className={`${styles.hero} ${styles.dark}`}>
       <div className={`${styles.sectionContent}`}>
         <div className={styles.heroContent}>
-          <Heading className={styles.heroHeading}>
-            We are the community for{' '}
-            <HighlightedText>remote-first</HighlightedText> Software Engineers
-          </Heading>
+          <Heading className={styles.heroHeading}>Refactor your career</Heading>
           <Text sectionText className={styles.heroText}>
-            Commit is designing the future of work and we're putting Engineers
-            at the center.
+            Until now, your growth was dependent on your company.
+            <span className={styles.heroTextExtra}>We changed that.</span>
           </Text>
           <ApplyLink />
-        </div>
-        <div className={styles.heroSvg}>
-          <BracketSvg />
+          <Text className={styles.heroTagline}> </Text>
         </div>
       </div>
     </section>
@@ -234,7 +226,6 @@ const Home = () => (
         <Heading variant={h2} className={styles.testimonialsHeading}>
           What Our Engineering Partners Have to Say
         </Heading>
-        <QuotesSvg />
         <Testimonials className={styles.testimonialsCarousel} />
       </div>
     </section>
