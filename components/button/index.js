@@ -55,9 +55,7 @@ const StyledLink = styled.a`
   white-space: nowrap;
 
   :hover {
-    background: transparent;
     position: relative;
-    //border: red solid 3px;
     background-image: linear-gradient(90.03deg, #ff68ba 0.39%, #edc281 99.97%);
     color: white;
     span {
@@ -70,7 +68,7 @@ const StyledLink = styled.a`
     }
     :after {
       z-index: 1;
-      background: #100c1c;
+      background: ${props => props.onHoverBackground || '#100c1c'};
       border-radius: 48px;
       content: '';
       position: absolute;
@@ -110,7 +108,7 @@ LinkButton.propTypes = {
   text: string.isRequired,
 }
 
-const ApplyLink = ({ href = '/apply', text = 'Apply to join us', ...props } ) => (
+const ApplyLink = ({ href = '/apply', text = 'Join the waitlist', ...props } ) => (
   <LinkButton {...{href, text, ...props}} />
 )
 
