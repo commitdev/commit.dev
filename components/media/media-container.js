@@ -20,11 +20,14 @@ const MediaContainer = styled.div`
     object-fit: cover;
     transform: translate3d(0, 0, 0);
     transition: transform 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
 
-    &.lazyloaded {
-      transition: transform 500ms cubic-bezier(0.165, 0.84, 0.44, 1),
-        opacity 500ms;
-    }
+  object.lazyloaded,
+  iframe.lazyloaded,
+  video.lazyloaded,
+  img.lazyloaded {
+    transition: transform 500ms cubic-bezier(0.165, 0.84, 0.44, 1),
+      opacity 500ms;
   }
 `
 
