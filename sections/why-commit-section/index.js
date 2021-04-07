@@ -90,6 +90,6 @@ const WhyCommitSection = () => (
       </ReasonsToJoin>
     </div>
   </Container>
-  )
+)
 
 export default WhyCommitSection

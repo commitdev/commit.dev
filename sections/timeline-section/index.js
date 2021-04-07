@@ -107,12 +107,12 @@ const TimelineSection = () => (
       <div>
         <Date>2021</Date>
         <Label>
-          We aim to hire <BoldPink>500 Engineers</BoldPink> with an emphasis
-          on <BoldPink>diversity</BoldPink>
+          We aim to hire <BoldPink>500 Engineers</BoldPink> with an emphasis on{' '}
+          <BoldPink>diversity</BoldPink>
         </Label>
       </div>
     </Item>
   </List>
-  )
+)
 
 export default TimelineSection
