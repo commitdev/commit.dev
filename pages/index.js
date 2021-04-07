@@ -154,32 +154,32 @@ const Home = () => (
       <CompanyLogo
         url="https://www.procurify.com/"
         alt="Procurify logo"
-        logoSrc="/procurify.png"
+        name="procurify.png"
       />
       <CompanyLogo
         url="https://www.vidyard.com/"
         alt="Vidyard logo"
-        logoSrc="/vidyard.png"
+        name="vidyard.png"
       />
       <CompanyLogo
         url="https://www.planworth.co/"
         alt="Planworth logo"
-        logoSrc="/planworth.png"
+        name="planworth.png"
       />
       <CompanyLogo
         url="https://www.dapperlabs.com/"
         alt="Dapper logo"
-        logoSrc="/dapper.png"
+        name="dapper.png"
       />
       <CompanyLogo
         url="https://www.usepatch.com/"
         alt="Patch logo"
-        logoSrc="/patch.png"
+        name="patch.png"
       />
       <CompanyLogo
         url="https://www.plastiq.com/"
         alt="Plastiq logo"
-        logoSrc="/plastiq.png"
+        name="plastiq.png"
       />
     </LogoSection>
     <Footer />

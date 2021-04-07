@@ -5,6 +5,7 @@ import { CaretLeft, CaretRight } from 'phosphor-react'
 import { rem } from 'polished'
 import styled from 'styled-components'
 
+import { StaticImage } from 'components'
 import { MOBILE_SIZE, TABLET_LARGE_SIZE } from 'styles/constants'
 
 import Slide from './slide'
@@ -113,8 +114,12 @@ const Testimonials = () => {
         <ul className="glide__slides">
           <li className="glide__slide">
             <Slide
-              imgSrc="/testimonial-1.jpg"
-              imgAlt="Clara Tsang"
+              media={
+                <StaticImage
+                  name="testimonials/testimonial-1.jpg"
+                  alt="Clara Tsang"
+                />
+              }
               heading="Clara Tsang"
               subHeading="Commit Engineering Partner"
               text="Commit offers me a flexible working situation where I get to work on a wide spread of projects to build my career. It’s an amazing opportunity to learn from such a great community of engineers and choose from projects and technologies that actually interest me and can lead to exciting long term opportunities."
@@ -122,8 +127,12 @@ const Testimonials = () => {
           </li>
           <li className="glide__slide">
             <Slide
-              imgSrc="/testimonial-2.jpg"
-              imgAlt="Bill Monkman"
+              media={
+                <StaticImage
+                  name="testimonials/testimonial-2.jpg"
+                  alt="Bill Monkman"
+                />
+              }
               heading="Bill Monkman"
               subHeading="Commit Engineering Partner"
               text="I joined Commit to work with inspiring engineers and to help my renew my focus on what I'm most interested in working on."
@@ -131,8 +140,12 @@ const Testimonials = () => {
           </li>
           <li className="glide__slide">
             <Slide
-              imgSrc="/testimonial-3.jpg"
-              imgAlt="Sim Brar"
+              media={
+                <StaticImage
+                  name="testimonials/testimonial-3.jpg"
+                  alt="Sim Brar"
+                />
+              }
               heading="Sim Brar"
               subHeading="Commit Engineering Partner"
               text="Commit is the perfect place to make a career transition. I can try new startups without the time suck of interviews or blotches on my resume. I also avoid the financial risks and admin of going on my own as a freelancer"
