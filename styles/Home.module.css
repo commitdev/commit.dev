@@ -63,10 +63,7 @@
 }
 
 /* Hero Styles */
-.hero {
-  overflow: hidden;
-  min-height: 946px;
-}
+.hero {}
 .heroContent {
   max-width: 50rem;
 }

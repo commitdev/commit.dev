@@ -12,7 +12,7 @@ import {
 import ConnectSvg from 'public/connect.svg'
 import ElevateSvg from 'public/elevate.svg'
 import ExploreSvg from 'public/explore.svg'
-import { LogoSection } from 'sections'
+import { WhatsRight, LogoSection } from 'sections'
 import styles from 'styles/Home.module.css'
 
 import PlatformSection from '../sections/platform-section'
@@ -22,7 +22,7 @@ const { h2 } = Heading.VARIANT
 const Home = () => (
   <Page>
     <section className={`${styles.hero} ${styles.dark}`}>
-      <div className={`${styles.sectionContent}`}>
+      <div className={styles.sectionContent}>
         <div className={styles.heroContent}>
           <Heading className={styles.heroHeading}>Refactor your career</Heading>
           <Text sectionText className={styles.heroText}>
@@ -34,6 +34,7 @@ const Home = () => (
         </div>
       </div>
     </section>
+    <WhatsRight />
     <section className={styles.features}>
       <div className={styles.featuresTransition} />
       <div className={styles.gridSection}>

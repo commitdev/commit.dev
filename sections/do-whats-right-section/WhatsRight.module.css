@@ -1,0 +1,238 @@
+/* Shared Styles */
+.dark {
+  color: #ffffff;
+  background: linear-gradient(68.66deg, #0f1011 0%, #010242 100%);
+}
+
+/* Do What's Right For the Engineer section */
+section.whatsRight {
+  position: relative;
+}
+
+div.whatsRightContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 175px;
+}
+
+h2.whatsRightHeading {
+  color: #fff;
+  line-height: 2.1em;
+  text-transform: uppercase;
+  width: 410px;
+  padding-right: 103px;
+}
+
+span.whatsRightHeadingHighlight {
+  position: relative;
+  display: block;
+  color: #ff86c6;
+}
+
+span.whatsRightHeadingHighlight:after {
+  position: absolute;
+  top: 50%;
+  left: 175px;
+  width: 164px;
+  height: 2px;
+  background-color: #ff86c6;
+  content: '';
+}
+
+div.whatsRightItems {
+  flex-basis: 100%;
+  margin-top: 188px;
+}
+
+div.whatsRightItem {
+  position: relative;
+  padding-left: 95px;
+  padding-bottom: 72px;
+}
+
+div.whatsRightItem:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #ff86c6;
+  content: '';
+}
+
+div.whatsRightItem:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #ff86c6;
+  content: '';
+}
+
+div.whatsRightItem:last-of-type:after {
+  background-color: transparent;
+}
+
+div.whatsRightItem > * {
+  position: relative;
+  top: -0.5em;
+}
+
+h3.whatsRightItemHeading {
+  color: #fff;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+p.whatsRightItemText {
+  color: #8493b0;
+  font-size: 21px;
+  line-height: 1.5em;
+}
+
+@media only screen and (min-width: 1024px) {
+  section.whatsRight {
+    padding: 440px 0 160px;
+  }
+  section.whatsRightAnimateOnce:before {
+    position: absolute;
+    top: -30px;
+    left: 514px;
+    width: 2px;
+    height: 0;
+    background-color: #ff86c6;
+    content: '';
+    animation: whatsRightFirstLineAnimation 3.5s linear 0s 1 forwards;
+  }
+  section span.whatsRightHeadingHighlight:after {
+    width: 0;
+  }
+  section.whatsRightAnimateOnce span.whatsRightHeadingHighlight:after {
+    animation: whatsRightLeftBranchAnimation 0.75s linear 3s 1 forwards;
+  }
+  section div.whatsRightItem:before {
+    width: 0;
+  }
+  section.whatsRightAnimateOnce div.whatsRightItem:nth-of-type(1):before {
+    animation: whatsRightTreeBranchAnimation 0.25s linear 3.25s 1 forwards;
+  }
+  section.whatsRightAnimateOnce div.whatsRightItem:nth-of-type(2):before {
+    animation: whatsRightTreeBranchAnimation 0.25s linear 3.85s 1 forwards;
+  }
+  section.whatsRightAnimateOnce div.whatsRightItem:nth-of-type(3):before {
+    animation: whatsRightTreeBranchAnimation 0.25s linear 4.25s 1 forwards;
+  }
+  section div.whatsRightItem:after {
+    height: 0%;
+  }
+  section.whatsRightAnimateOnce div.whatsRightItem:nth-of-type(1):after {
+    animation: whatsRightTreeTrunkAnimation 0.5s linear 3.25s 1 forwards;
+  }
+  section.whatsRightAnimateOnce div.whatsRightItem:nth-of-type(2):after {
+    animation: whatsRightTreeTrunkAnimation 0.5s linear 3.75s 1 forwards;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  section.whatsRight {
+    padding: 410px 8% 390px;
+  }
+  div.whatsRightContent {
+    margin: 0 auto;
+  }
+  p.whatsRightItemText {
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  section.whatsRight {
+    padding: 190px 8% 165px;
+  }
+  div.whatsRightContent {
+    flex-direction: column;
+    margin: 0;
+  }
+  h2.whatsRightHeading {
+    font-size: 48px;
+    line-height: 1.6em;
+    text-align: left;
+  }
+  div.whatsRightItems {
+    margin-top: 85px;
+  }
+  span.whatsRightHeadingHighlight:after,
+  div.whatsRightItem:before,
+  div.whatsRightItem:after {
+    display: none;
+    background-color: transparent;
+  }
+  div.whatsRightItem {
+    padding-bottom: 48px;
+  }
+  div.whatsRightItem > * {
+    position: unset;
+    top: 0;
+  }
+  div.whatsRightItem {
+    padding-left: 0;
+  }
+  h3.whatsRightItemHeading {
+    font-size: 28px;
+    text-align: left;
+  }
+  p.whatsRightItemText {
+    text-align: left;
+  }
+}
+
+@keyframes whatsRightFirstLineAnimation {
+  0% {
+    background-color: #ff86c6;
+    height: 0;
+  }
+  80% {
+    background-color: #ff86c6;
+    height: 658px;
+  }
+  95% {
+    background-color: #ff86c6;
+    height: 658px;
+  }
+  100% {
+    display: none;
+    background-color: transparent;
+    height: 658px;
+  }
+}
+
+@keyframes whatsRightLeftBranchAnimation {
+  0% {
+    width: 0;
+    left: 339px;
+  }
+  100% {
+    width: 164px;
+    left: 175px;
+  }
+}
+@keyframes whatsRightTreeBranchAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 50px;
+  }
+}
+@keyframes whatsRightTreeTrunkAnimation {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
