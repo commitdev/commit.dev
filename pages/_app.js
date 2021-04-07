@@ -4,7 +4,7 @@ import 'pretty-scatter/pretty-scatter.css'
 
 import { func, object } from 'prop-types'
 
-import { GlobalMediaStyles } from '../components/media'
+import { GlobalMediaStyles } from '../components'
 
 function MyApp({ Component, pageProps }) {
   return (

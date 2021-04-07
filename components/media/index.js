@@ -23,4 +23,5 @@ export { Video } from './video'
 export { StaticVideo } from './static-video'
 export { BackgroundVideo } from './background-video'
 export { StaticBackgroundVideo } from './static-background-video'
+export { MediaContainer } from './media-container'
 export { GlobalMediaStyles }

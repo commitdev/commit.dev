@@ -7,6 +7,7 @@ import {
   Page,
   Testimonials,
   Text,
+  StaticImage,
 } from 'components'
 import ConnectSvg from 'public/connect.svg'
 import ElevateSvg from 'public/elevate.svg'
@@ -73,8 +74,12 @@ const Home = () => (
       </Heading>
       <div className={styles.gridSection}>
         <ArticlePreview
-          imgSrc="/person-looking-at-monitor.jpeg"
-          imgAlt="Person looking at computer monitor"
+          media={
+            <StaticImage
+              name="person-looking-at-monitor.jpeg"
+              alt="Person looking at computer monitor"
+            />
+          }
           heading="My job at Commit is to create an incredible experience for engineers"
           text="One August in the 1990s, I drove across Canada, with a good friend.
           I have so many fond memories of the journey: our debates about how
@@ -82,16 +87,19 @@ const Home = () => (
           link="https://blog.commit.dev/articles/b5i3amkjq2nz7y4apq4jsfd66hudu8"
         />
         <ArticlePreview
-          imgSrc="/lillian-liang.jpeg"
-          imgAlt="Lillian Liang"
+          media={<StaticImage name="lillian-liang.jpeg" alt="Lillian Liang" />}
           heading="Lillian Liang, Plastiq Inc."
           text="Lillian Liang is a Commit engineer who joined Plastiq earlier this
           year. We talked to her about her journey to Commit and Plastiq..."
           link="https://blog.commit.dev/articles/committed-to-success-lillian-liang-plastiq-inc"
         />
         <ArticlePreview
-          imgSrc="/monolith-diagram.png"
-          imgAlt="Monolith architecture"
+          media={
+            <StaticImage
+              name="monolith-diagram.png"
+              alt="Monolith architecture"
+            />
+          }
           heading="Streaming out the monolith"
           text="As a monolithic code base builds up over time, it can become harder
           and harder to maintain, and more difficult to extract data from,
@@ -146,32 +154,32 @@ const Home = () => (
       <CompanyLogo
         url="https://www.procurify.com/"
         alt="Procurify logo"
-        logoSrc="/procurify.png"
+        name="procurify.png"
       />
       <CompanyLogo
         url="https://www.vidyard.com/"
         alt="Vidyard logo"
-        logoSrc="/vidyard.png"
+        name="vidyard.png"
       />
       <CompanyLogo
         url="https://www.planworth.co/"
         alt="Planworth logo"
-        logoSrc="/planworth.png"
+        name="planworth.png"
       />
       <CompanyLogo
         url="https://www.dapperlabs.com/"
         alt="Dapper logo"
-        logoSrc="/dapper.png"
+        name="dapper.png"
       />
       <CompanyLogo
         url="https://www.usepatch.com/"
         alt="Patch logo"
-        logoSrc="/patch.png"
+        name="patch.png"
       />
       <CompanyLogo
         url="https://www.plastiq.com/"
         alt="Plastiq logo"
-        logoSrc="/plastiq.png"
+        name="plastiq.png"
       />
     </LogoSection>
     <Footer />

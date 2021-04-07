@@ -1,7 +1,14 @@
 import { Video } from './video'
 
-function BackgroundVideo(props) {
-  return <Video muted data-autoplay="" loop playsinline {...props} />
+const backgroundVideoProps = {
+  muted: true,
+  'data-autoplay': '',
+  loop: true,
+  playsInline: true,
 }
 
-export { BackgroundVideo }
+function BackgroundVideo(props) {
+  return <Video {...backgroundVideoProps} {...props} />
+}
+
+export { BackgroundVideo, backgroundVideoProps }

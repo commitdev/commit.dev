@@ -35,50 +35,49 @@ const About = () => (
         <CompanyLogo
           url="https://www.hootsuite.com/"
           alt="Hootsuite logo"
-          logoSrc="/hootsuite.png"
+          name="hootsuite.png"
           size={SMALL_LOGO}
         />
         <CompanyLogo
           url="https://www.amazon.com/"
-          r
           alt="Amazon logo"
-          logoSrc="/amazon.png"
+          name="amazon.png"
           size={SMALL_LOGO}
         />
         <CompanyLogo
           url="https://www.paypal.com/"
           alt="PayPal logo"
-          logoSrc="/paypal.png"
+          name="paypal.png"
           size={SMALL_LOGO}
         />
         <CompanyLogo
           url="https://www.bench.co/"
           alt="Bench logo"
-          logoSrc="/bench.png"
+          name="bench.png"
           size={SMALL_LOGO}
         />
         <CompanyLogo
           url="https://www.intel.com/"
           alt="Intel logo"
-          logoSrc="/intel.png"
+          name="intel.png"
           size={SMALL_LOGO}
         />
         <CompanyLogo
           url="https://www.verisign.com/"
           alt="Verisign logo"
-          logoSrc="/verisign.png"
+          name="verisign.png"
           size={SMALL_LOGO}
         />
         <CompanyLogo
           url="https://www.cisco.com/"
           alt="Cisco logo"
-          logoSrc="/cisco.png"
+          name="cisco.png"
           size={SMALL_LOGO}
         />
         <CompanyLogo
           url="https://www.opendns.com/"
           alt="OpenDNS logo"
-          logoSrc="/opendns.png"
+          name="opendns.png"
           size={SMALL_LOGO}
         />
       </LogoSection>
