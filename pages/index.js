@@ -11,7 +11,7 @@ import {
 import ConnectSvg from 'public/connect.svg'
 import ElevateSvg from 'public/elevate.svg'
 import ExploreSvg from 'public/explore.svg'
-import { LogoSection } from 'sections'
+import { LogoSection, TimelineSection, WhyCommitSection } from 'sections'
 import styles from 'styles/Home.module.css'
 
 const { h2, h3 } = Heading.VARIANT
@@ -98,76 +98,8 @@ const Home = () => (
         />
       </div>
       <hr className={styles.sectionSeparator} />
-      <ol className={styles.timeline}>
-        <li className={styles.timelineItem}>
-          <div>
-            <Text className={styles.date} sectionText>
-              2019
-            </Text>
-            <Text className={styles.event}>Founded by Software Engineers</Text>
-          </div>
-        </li>
-        <li className={styles.timelineItem}>
-          <div>
-            <Text className={styles.date} sectionText>
-              2020
-            </Text>
-            <Text className={styles.event}>
-              We grew <span className={styles.boldPink}>370%</span>
-            </Text>
-          </div>
-        </li>
-        <li className={styles.timelineItem}>
-          <div>
-            <Text className={styles.date} sectionText>
-              2021
-            </Text>
-            <Text className={styles.event}>
-              We aim to hire{' '}
-              <span className={styles.boldPink}>500 Engineers</span> with an
-              emphasis on <span className={styles.boldPink}>diversity</span>
-            </Text>
-          </div>
-        </li>
-      </ol>
-      <div className={styles.whyCommit}>
-        <div>
-          <div className={styles.videoWrapper}>
-            <iframe
-              src="https://www.youtube.com/embed/pIbkW6wMqrw"
-              title="Why joining Commit?"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </div>
-        <div>
-          <p className={styles.isCommitRight}>
-            Is Commit right for you? Today, we’re hyper-focused on solving
-            challenges for Senior Startup Engineers. If any of these qualities
-            resonate with you, we're the right partner for your career:
-          </p>
-          <ul className={styles.reasonsToJoin}>
-            <li>
-              Obsessed with building impactful products that customers love to
-              use
-            </li>
-            <li>Strong believer in using MVP to validate ideas</li>
-            <li>
-              Can build products rapidly without significant sacrifice on
-              quality
-            </li>
-            <li>
-              Love the autonomy and ambiguity of working at early stage startups
-            </li>
-            <li>
-              Have a tech stack that’s suitable for joining or starting early
-              technical teams{' '}
-            </li>
-          </ul>
-        </div>
-      </div>
+      <TimelineSection />
+      <WhyCommitSection />
     </section>
     <section className={`${styles.about} ${styles.grey}`}>
       <div className={styles.flexSection}>
