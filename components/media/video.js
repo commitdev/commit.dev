@@ -41,8 +41,4 @@ Video.propTypes = {
   className: string,
 }
 
-function BackgroundVideo(props) {
-  return <Video muted data-autoplay="" loop playsinline {...props} />
-}
-
-export { Video, BackgroundVideo }
+export { Video }

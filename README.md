@@ -4,9 +4,11 @@ Marketing website for Commit (commit.dev)
 ### Importing static images
 
 **1)** Place the image you want to display in the `/static/` folder
-**2)** Display the image with [`<Image>`](./components/media/image.js) component:
+**2)** Display the image with [`<StaticImage>`](./components/media/static-image.js) component:
 ```jsx
-<Image {...getStaticImage('my-image-name.png')} alt="My image" />
+import { StaticImage } from 'components'
+
+<StaticImage name="my-image-name.png" alt="My image" />
 ```
 
 Images are automatically generated at build time and lazy-loaded at run time.
@@ -34,9 +36,11 @@ Processing ~/path/to/video.mov (13.4 MB)...
  -- generated static/videos/video.mp4 (1.28 MB)
 ```
 
-**3)** Use generated files with [`<BackgroundVideo>`](./components/media/video.js) component:
+**3)** Use generated files with [`<StaticBackgroundVideo>`](./components/media/background-video.js) component:
 ```jsx
-<BackgroundVideo {...getStaticVideo('video')} alt="My background video" />
+import { StaticBackgroundVideo } from 'components'
+
+<StaticBackgroundVideo name="video" alt="My background video" />
 ```
 
 Videos are lazy-loaded at run time.
