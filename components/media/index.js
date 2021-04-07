@@ -17,6 +17,10 @@ const GlobalMediaStyles = createGlobalStyle`
   ${lazyStyles}
 `
 
-export { default as Image } from './image'
-export { Video, BackgroundVideo } from './video'
+export { Image } from './image'
+export { StaticImage } from './static-image'
+export { Video } from './video'
+export { StaticVideo } from './static-video'
+export { BackgroundVideo } from './background-video'
+export { StaticBackgroundVideo } from './static-background-video'
 export { GlobalMediaStyles }

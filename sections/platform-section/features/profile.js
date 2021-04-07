@@ -1,9 +1,7 @@
 import React from 'react'
 
-import { Text, Heading } from 'components'
+import { Text, Heading, StaticBackgroundVideo } from 'components'
 
-import { BackgroundVideo } from '../../../components/media'
-import { getStaticVideo } from '../../../helpers/get-static-video'
 import { StyledFeaturesListItem } from '../styled-features-list-item'
 
 function ProfileFeature(props) {
@@ -11,8 +9,8 @@ function ProfileFeature(props) {
     <StyledFeaturesListItem
       {...props}
       media={
-        <BackgroundVideo
-          {...getStaticVideo('profile')}
+        <StaticBackgroundVideo
+          name="profile"
           alt="Screenshot of Commit's Opportunities page"
         />
       }
