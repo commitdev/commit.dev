@@ -62,12 +62,6 @@
   }
 }
 
-hr.sectionSeparator {
-  width: calc(100% - 40px);
-  margin: 6rem 0;
-  border-color: #000;
-}
-
 /* Hero Styles */
 .hero {
   overflow: hidden;

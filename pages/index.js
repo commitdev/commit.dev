@@ -13,6 +13,7 @@ import ElevateSvg from 'public/elevate.svg'
 import ExploreSvg from 'public/explore.svg'
 import { LogoSection, TimelineSection, WhyCommitSection } from 'sections'
 import styles from 'styles/Home.module.css'
+import { SectionSeparator } from '../components'
 
 const { h2, h3 } = Heading.VARIANT
 
@@ -97,7 +98,7 @@ const Home = () => (
           link="https://blog.commit.dev/articles/streaming-out-the-monolith"
         />
       </div>
-      <hr className={styles.sectionSeparator} />
+      <SectionSeparator />
       <TimelineSection />
       <WhyCommitSection />
     </section>
