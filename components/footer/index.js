@@ -20,10 +20,11 @@ const FooterContainer = styled.footer`
 
   p {
     font-family: Montserrat;
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1.875rem;
-    letter-spacing: 0em;
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 2.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     text-align: center;
     margin-bottom: 4rem;
 
@@ -114,8 +115,8 @@ const SiteLinksContainer = styled.div`
 const Footer = (props) => (
   <FooterContainer {...props}>
     <FlexSection>
-      <Text>Interested in Taking Control of your Career?</Text>
-      <StyledApplyLink />
+      <Text>Let’s get started</Text>
+      <StyledApplyLink hoverBackground='#100c2c' />
     </FlexSection>
     <BottomContainer>
       <CommitLogo alt="Commit logo" src="/commit-logo.svg" />
