@@ -68,7 +68,7 @@ const StyledLink = styled.a`
     }
     :after {
       z-index: 1;
-      background: ${props => props.onHoverBackground || '#100c1c'};
+      background: ${props => props.hoverBackground || '#100c1c'};
       border-radius: 48px;
       content: '';
       position: absolute;
