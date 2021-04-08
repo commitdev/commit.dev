@@ -2,12 +2,14 @@ import { rem } from 'polished'
 import { string } from 'prop-types'
 import styled from 'styled-components'
 
-import { Heading, Text } from 'components'
+import { Heading, Text, MediaContainer } from 'components'
 import {
   TABLET_SMALL_SIZE,
   TABLET_LARGE_SIZE,
   MOBILE_SIZE,
 } from 'styles/constants'
+
+import { children } from '../../helpers/prop-types'
 
 const IMG_WIDTH = '280px'
 const IMG_HEIGHT = '200px'
@@ -75,18 +77,16 @@ const Content = styled.div`
     }
   }
 `
-
-const Img = styled.img`
+const SlideMediaContainer = styled(MediaContainer)`
   min-width: ${IMG_WIDTH};
   max-width: ${IMG_WIDTH};
   min-height: ${IMG_HEIGHT};
   max-height: ${IMG_HEIGHT};
-  object-fit: cover;
 `
 
-const Slide = ({ imgSrc, imgAlt, heading, subHeading, text, ...props }) => (
+const Slide = ({ media, heading, subHeading, text, ...props }) => (
   <Root {...props}>
-    <Img src={imgSrc} alt={imgAlt} />
+    <SlideMediaContainer>{media}</SlideMediaContainer>
     <Content>
       <Heading variant={Heading.VARIANT.h3}>
         {heading}
@@ -98,8 +98,7 @@ const Slide = ({ imgSrc, imgAlt, heading, subHeading, text, ...props }) => (
 )
 
 Slide.propTypes = {
-  imgSrc: string,
-  imgAlt: string,
+  media: children,
   heading: string,
   subHeading: string,
   text: string,

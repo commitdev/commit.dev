@@ -3,25 +3,33 @@ import {
   ArticlePreview,
   CompanyLogo,
   Footer,
-  Testimonials,
   Heading,
   Page,
+  Testimonials,
   Text,
+  StaticImage,
 } from 'components'
 import ConnectSvg from 'public/connect.svg'
 import ElevateSvg from 'public/elevate.svg'
 import ExploreSvg from 'public/explore.svg'
-import { LogoSection, TimelineSection, WhyCommitSection } from 'sections'
+import {
+  WhatsRight,
+  LogoSection,
+  TimelineSection,
+  WhyCommitSection,
+} from 'sections'
 import styles from 'styles/Home.module.css'
 
 import { SectionSeparator } from '../components'
+import PlatformSection from '../sections/platform-section'
 
-const { h2, h3 } = Heading.VARIANT
+
+const { h2 } = Heading.VARIANT
 
 const Home = () => (
   <Page>
     <section className={`${styles.hero} ${styles.dark}`}>
-      <div className={`${styles.sectionContent}`}>
+      <div className={styles.sectionContent}>
         <div className={styles.heroContent}>
           <Heading className={styles.heroHeading}>Refactor your career</Heading>
           <Text sectionText className={styles.heroText}>
@@ -33,6 +41,7 @@ const Home = () => (
         </div>
       </div>
     </section>
+    <WhatsRight />
     <section className={styles.features}>
       <div className={styles.featuresTransition} />
       <div className={styles.gridSection}>
@@ -73,8 +82,12 @@ const Home = () => (
       </Heading>
       <div className={styles.gridSection}>
         <ArticlePreview
-          imgSrc="/person-looking-at-monitor.jpeg"
-          imgAlt="Person looking at computer monitor"
+          media={
+            <StaticImage
+              name="person-looking-at-monitor.jpeg"
+              alt="Person looking at computer monitor"
+            />
+          }
           heading="My job at Commit is to create an incredible experience for engineers"
           text="One August in the 1990s, I drove across Canada, with a good friend.
           I have so many fond memories of the journey: our debates about how
@@ -82,16 +95,19 @@ const Home = () => (
           link="https://blog.commit.dev/articles/b5i3amkjq2nz7y4apq4jsfd66hudu8"
         />
         <ArticlePreview
-          imgSrc="/lillian-liang.jpeg"
-          imgAlt="Lillian Liang"
+          media={<StaticImage name="lillian-liang.jpeg" alt="Lillian Liang" />}
           heading="Lillian Liang, Plastiq Inc."
           text="Lillian Liang is a Commit engineer who joined Plastiq earlier this
           year. We talked to her about her journey to Commit and Plastiq..."
           link="https://blog.commit.dev/articles/committed-to-success-lillian-liang-plastiq-inc"
         />
         <ArticlePreview
-          imgSrc="/monolith-diagram.png"
-          imgAlt="Monolith architecture"
+          media={
+            <StaticImage
+              name="monolith-diagram.png"
+              alt="Monolith architecture"
+            />
+          }
           heading="Streaming out the monolith"
           text="As a monolithic code base builds up over time, it can become harder
           and harder to maintain, and more difficult to extract data from,
@@ -136,96 +152,7 @@ const Home = () => (
         </div>
       </div>
     </section>
-    <section className={styles.platform}>
-      <div className={styles.platformContainer}>
-        <div className={styles.platformTopRow}>
-          <Heading variant={h2} className={styles.platformHeading}>
-            The Commit Platform
-          </Heading>
-          <Text sectionText>
-            The Commit Platform replaces the technical interview with deep
-            backgrounds, matches Software Engineers with relevant startups, and
-            connect Engineers with peers for interest sharing or technical
-            support.
-          </Text>
-        </div>
-        <div className={styles.platformFlex}>
-          <div className={styles.gridSection}>
-            <div className={styles.profileColumnLeft}>
-              <picture>
-                <source
-                  media="(min-width:1201px)"
-                  srcSet="/platform-profile-large.png"
-                />
-                <source
-                  media="(min-width:1024px) and (max-width:1200px)"
-                  srcSet="/platform-profile-desktop.png"
-                />
-                <source
-                  media="(min-width:770px) and (max-width:1023px)"
-                  srcSet="/platform-profile-tablet.png"
-                />
-                <img
-                  src="/platform-profile-mobile.png"
-                  alt="Screenshot of Commit's Engineering Parnter profile page"
-                  className={styles.platformImage}
-                />
-              </picture>
-            </div>
-            <div className={styles.profileColumnRight}>
-              <Heading variant={h3} className={styles.platformTitle}>
-                Platform profile
-              </Heading>
-              <Text sectionText className={styles.platformDescription}>
-                Get the latest community events, news and updates. Most
-                importantly, begin to look for startup opportunities recommended
-                specifically for you. This is also where engineers begin to
-                connect with their peers and join interest-based groups.
-              </Text>
-            </div>
-          </div>
-          <div className={`${styles.gridSection} ${styles.opportunitiesRow}`}>
-            <div className={styles.opportunitiesColumnLeft}>
-              <picture>
-                <source
-                  media="(min-width:1201px)"
-                  srcSet="/platform-opportunities-large.png"
-                />
-                <source
-                  media="(min-width:1024px) and (max-width:1200px)"
-                  srcSet="/platform-opportunities-desktop.png"
-                />
-                <source
-                  media="(min-width:770px) and (max-width:1023px)"
-                  srcSet="/platform-opportunities-tablet.png"
-                />
-                <img
-                  src="/platform-opportunities-mobile.png"
-                  alt="Screenshot of Commit's recommended opportunities page"
-                  className={styles.platformImage}
-                />
-              </picture>
-            </div>
-            <div className={styles.opportunitiesColumnRight}>
-              <Heading variant={h3} className={styles.platformTitle}>
-                Opportunities
-              </Heading>
-              <Text sectionText className={styles.platformDescription}>
-                Commit engineers don't apply to startups. Instead, startups
-                apply to our engineers.
-                <br />
-                <br />
-                Our team works tirelessly to match engineers with the top
-                opportunities based on their skill set, interests, and career
-                goals. Engineers can browse new recommendations one by one, and
-                dig into each individual opportunities, with detailed and
-                insightful information we've gathered.
-              </Text>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <PlatformSection />
     <section className={styles.testimonials}>
       <div className={styles.flexSection}>
         <Heading variant={h2} className={styles.testimonialsHeading}>
@@ -238,32 +165,32 @@ const Home = () => (
       <CompanyLogo
         url="https://www.procurify.com/"
         alt="Procurify logo"
-        logoSrc="/procurify.png"
+        name="procurify.png"
       />
       <CompanyLogo
         url="https://www.vidyard.com/"
         alt="Vidyard logo"
-        logoSrc="/vidyard.png"
+        name="vidyard.png"
       />
       <CompanyLogo
         url="https://www.planworth.co/"
         alt="Planworth logo"
-        logoSrc="/planworth.png"
+        name="planworth.png"
       />
       <CompanyLogo
         url="https://www.dapperlabs.com/"
         alt="Dapper logo"
-        logoSrc="/dapper.png"
+        name="dapper.png"
       />
       <CompanyLogo
         url="https://www.usepatch.com/"
         alt="Patch logo"
-        logoSrc="/patch.png"
+        name="patch.png"
       />
       <CompanyLogo
         url="https://www.plastiq.com/"
         alt="Plastiq logo"
-        logoSrc="/plastiq.png"
+        name="plastiq.png"
       />
     </LogoSection>
     <Footer />

@@ -1,3 +1,4 @@
+export * from './media'
 export { default as ArticlePreview } from './article-preview'
 export { Button, ApplyLink } from './button'
 export { default as CompanyLogo } from './company-logo'

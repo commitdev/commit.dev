@@ -1,8 +1,9 @@
 import React from 'react'
 
 import { oneOf, string } from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
+import { StaticImage } from 'components'
 import { TABLET_LARGE_SIZE, MOBILE_SIZE } from 'styles/constants'
 
 const SIZE = Object.freeze({
@@ -18,15 +19,19 @@ const SIZE_PERCENT = Object.freeze({
 const getSize = (variant) => SIZE_PERCENT[variant] ?? SIZE_PERCENT.large
 
 const Anchor = styled.a`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: ${(props) => getSize(props.size) / 100};
-  max-width: ${(props) => getSize(props.size)}%;
   min-width: 180px;
   padding: 36px;
-
   margin: 0;
+  opacity: 0.5;
+  transition: opacity 200ms ease-in-out;
+  ${(props) => css`
+    flex: 0 0 ${getSize(props.size)}%;
+    max-width: ${getSize(props.size)}%;
+  `}
+
+  :hover {
+    opacity: 0.75;
+  }
 
   @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     padding: 12px;
@@ -40,17 +45,9 @@ const Anchor = styled.a`
   }
 `
 
-const StyledImg = styled.img`
-  max-width: 100%;
-  opacity: 0.5;
-  :hover {
-    opacity: 0.75;
-  }
-`
-
-const CompanyLogo = ({ url, logoSrc, alt, size }) => (
+const CompanyLogo = ({ url, size, name, alt }) => (
   <Anchor href={url} rel="noopener noreferrer" size={size}>
-    <StyledImg alt={alt} src={logoSrc} />
+    <StaticImage alt={alt} name={`logos/${name}`} />
   </Anchor>
 )
 
@@ -60,7 +57,7 @@ CompanyLogo.defaultProps = {
 
 CompanyLogo.propTypes = {
   url: string.isRequired,
-  logoSrc: string.isRequired,
+  name: string.isRequired,
   alt: string.isRequired,
   size: oneOf(Object.values(SIZE)),
 }

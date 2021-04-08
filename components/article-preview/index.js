@@ -5,7 +5,9 @@ import { string } from 'prop-types'
 import styled from 'styled-components'
 
 import { Heading, Text } from 'components'
-import { TABLET_SMALL_SIZE, MOBILE_SIZE } from 'styles/constants'
+import { MOBILE_SIZE, TABLET_SMALL_SIZE } from 'styles/constants'
+
+import { children } from '../../helpers/prop-types'
 
 const Root = styled.div`
   grid-column: span 4;
@@ -63,10 +65,10 @@ const Root = styled.div`
   }
 `
 
-const ArticlePreivew = ({ imgSrc, imgAlt, heading, text, link, ...props }) => (
+const ArticlePreivew = ({ media, heading, text, link, ...props }) => (
   <Root {...props}>
     <a href={link} rel="noopener">
-      <img alt={imgAlt} src={imgSrc} />
+      {media}
       <Heading variant={Heading.VARIANT.h3}>{heading}</Heading>
       <Text>{text}</Text>
     </a>
@@ -74,8 +76,7 @@ const ArticlePreivew = ({ imgSrc, imgAlt, heading, text, link, ...props }) => (
 )
 
 ArticlePreivew.propTypes = {
-  imgSrc: string,
-  imgAlt: string,
+  media: children,
   heading: string,
   text: string,
   link: string,
