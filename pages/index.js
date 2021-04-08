@@ -12,10 +12,17 @@ import {
 import ConnectSvg from 'public/connect.svg'
 import ElevateSvg from 'public/elevate.svg'
 import ExploreSvg from 'public/explore.svg'
-import { WhatsRight, LogoSection } from 'sections'
+import {
+  WhatsRight,
+  LogoSection,
+  TimelineSection,
+  WhyCommitSection,
+} from 'sections'
 import styles from 'styles/Home.module.css'
 
+import { SectionSeparator } from '../components'
 import PlatformSection from '../sections/platform-section'
+
 
 const { h2 } = Heading.VARIANT
 
@@ -108,6 +115,9 @@ const Home = () => (
           link="https://blog.commit.dev/articles/streaming-out-the-monolith"
         />
       </div>
+      <SectionSeparator />
+      <TimelineSection />
+      <WhyCommitSection />
     </section>
     <section className={`${styles.about} ${styles.grey}`}>
       <div className={styles.flexSection}>
