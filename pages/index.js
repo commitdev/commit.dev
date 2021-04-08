@@ -14,6 +14,7 @@ import ElevateSvg from 'public/elevate.svg'
 import ExploreSvg from 'public/explore.svg'
 import {
   WhatsRight,
+  HowItWorks,
   LogoSection,
   TimelineSection,
   WhyCommitSection,
@@ -22,7 +23,6 @@ import styles from 'styles/Home.module.css'
 
 import { SectionSeparator } from '../components'
 import PlatformSection from '../sections/platform-section'
-
 
 const { h2 } = Heading.VARIANT
 
@@ -76,6 +76,7 @@ const Home = () => (
         </div>
       </div>
     </section>
+    <HowItWorks />
     <section className={styles.articles}>
       <Heading variant={h2} className={styles.articlesHeading}>
         Featured Articles
