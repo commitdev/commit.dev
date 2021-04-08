@@ -13,6 +13,7 @@ import ConnectSvg from 'public/connect.svg'
 import ElevateSvg from 'public/elevate.svg'
 import ExploreSvg from 'public/explore.svg'
 import {
+  EngineersWhoJoinedSection,
   WhatsRight,
   LogoSection,
   TimelineSection,
@@ -153,6 +154,7 @@ const Home = () => (
       </div>
     </section>
     <PlatformSection />
+    <EngineersWhoJoinedSection />
     <section className={styles.testimonials}>
       <div className={styles.flexSection}>
         <Heading variant={h2} className={styles.testimonialsHeading}>
