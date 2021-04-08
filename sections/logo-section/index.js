@@ -1,98 +1,65 @@
 import React from 'react'
 
-import { string, arrayOf, element } from 'prop-types'
+import { arrayOf, element } from 'prop-types'
 import styled from 'styled-components'
 
-import { Heading, Text } from 'components'
+import { Heading } from 'components'
 import { FlexSectionContent } from 'components/layout'
-import {
-  TABLET_LARGE_SIZE,
-  TABLET_SMALL_SIZE,
-  MOBILE_SIZE,
-} from 'styles/constants'
 
 const { h2 } = Heading.VARIANT
 
 const StyledSection = styled.section`
-  padding: 140px 0;
+  padding: 5rem 1.25rem;
   background: #e8edf4;
-
-  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
-    padding: 80px 0;
-  }
-
-  @media only screen and (max-width: ${MOBILE_SIZE}) {
-    padding: 64px 0px;
-  }
 `
 
-const LogoContainer = styled.div`
+const StyledFlexSectionContent = styled(FlexSectionContent)`
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  margin: 60px 120px 0;
-
-  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
-    margin: 60px 10% 0;
-  }
-
-  @media only screen and (max-width: ${MOBILE_SIZE}) {
-    margin: 18px 0 0 0;
-  }
 `
 
 const StyledHeading = styled(Heading)`
+  max-width: 50rem;
+  font-weight: 400;
+  text-transform: none;
+  line-height: 3.5rem;
   text-align: center;
-  @media only screen and (max-width: ${MOBILE_SIZE}) {
-    margin-bottom: 2.625rem;
-  }
 `
 
-const Container = styled.div`
+const LogoContainer = styled.div`
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 5.75rem;
 `
 
-const TextContent = styled.div`
-  width: 585px;
-
-  @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
-    width: 430px;
-  }
-
-  @media only screen and (max-width: ${MOBILE_SIZE}) {
-    width: 342px;
-  }
-`
-
-const StyledText = styled(Text)`
-  margin: 24px 0;
+const Explanation = styled.p`
+  margin-top: 6.5rem;
   text-align: center;
+  font-family: 'Lato';
+  line-height: 1.25rem;
 `
 
-const LogoSection = ({ title, description, children }) => (
+const LogoSection = ({ children }) => (
   <StyledSection>
-    <FlexSectionContent>
-      <Container>
-        <TextContent>
-          <StyledHeading variant={h2}>{title}</StyledHeading>
-          {description && <StyledText>{description}</StyledText>}
-        </TextContent>
-      </Container>
+    <StyledFlexSectionContent>
+      <StyledHeading variant={h2}>
+        We only let the most promising startups on our platform<sup>*</sup>
+      </StyledHeading>
       <LogoContainer>{children}</LogoContainer>
-    </FlexSectionContent>
+      <Explanation>
+        <sup>*</sup>We partner with startups that are on track to become
+        category leading public companies, with cultures that prioritize
+        engineering satisfaction and learning
+      </Explanation>
+    </StyledFlexSectionContent>
   </StyledSection>
 )
 
-LogoSection.defaultProps = { title: '', description: '' }
-
 LogoSection.propTypes = {
-  title: string,
-  description: string,
   children: arrayOf(element),
 }
 
