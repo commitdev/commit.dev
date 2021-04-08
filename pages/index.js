@@ -1,7 +1,7 @@
 import {
   ApplyLink,
   ArticlePreview,
-  CompanyLogo,
+  Logo,
   Footer,
   Heading,
   Page,
@@ -161,33 +161,20 @@ const Home = () => (
         <Testimonials className={styles.testimonialsCarousel} />
       </div>
     </section>
-    <LogoSection title="Who We Work With">
-      <CompanyLogo
+    <LogoSection>
+      <Logo
         url="https://www.procurify.com/"
         alt="Procurify logo"
         name="procurify.png"
       />
-      <CompanyLogo
-        url="https://www.vidyard.com/"
-        alt="Vidyard logo"
-        name="vidyard.png"
-      />
-      <CompanyLogo
-        url="https://www.planworth.co/"
-        alt="Planworth logo"
-        name="planworth.png"
-      />
-      <CompanyLogo
+      <Logo url="https://certn.co/" alt="Certn logo" name="certn.png" />
+      <Logo
         url="https://www.dapperlabs.com/"
         alt="Dapper logo"
         name="dapper.png"
       />
-      <CompanyLogo
-        url="https://www.usepatch.com/"
-        alt="Patch logo"
-        name="patch.png"
-      />
-      <CompanyLogo
+      <Logo url="https://www.usepatch.com/" alt="Patch logo" name="patch.png" />
+      <Logo
         url="https://www.plastiq.com/"
         alt="Plastiq logo"
         name="plastiq.png"
