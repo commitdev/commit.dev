@@ -4,9 +4,8 @@ import { rem } from 'polished'
 import { string } from 'prop-types'
 import styled from 'styled-components'
 
-import { TABLET_SMALL_SIZE } from 'styles/constants'
-
-const WIDTH = rem('160px')
+import { MediaContainer, StaticImage } from 'components'
+import { TABLET_LARGE_SIZE, TABLET_SMALL_SIZE } from 'styles/constants'
 
 const Container = styled.div`
   display: flex;
@@ -14,22 +13,44 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   align-self: flex-start;
-  padding: ${rem('32px')};
+  text-align: center;
+  margin-bottom: ${rem('65px')};
+  max-width: 50%;
+  flex: 0 0 50%;
 
-  @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
-    padding: ${rem('32px')} ${rem('10px')};
+  @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
+    max-width: 25%;
+    flex: 0 0 25%;
+    margin-bottom: ${rem('80px')};
+  }
+
+  @media only screen and (min-width: ${TABLET_LARGE_SIZE}) {
+    max-width: 20%;
+    flex: 0 0 20%;
+    margin-bottom: ${rem('84px')};
   }
 `
 
-const Avatar = styled.img`
+const AvatarContainer = styled(MediaContainer)`
+  width: 100%;
+  max-width: 160px;
+
+  @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
+    max-width: 140px;
+  }
+`
+
+const Avatar = styled(MediaContainer)`
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
   border-radius: 100%;
-  width: ${WIDTH};
+  overflow: hidden;
 `
 
 const Name = styled.div`
   font-size: 18px;
   font-weight: 600;
-
   padding-top: ${rem('24px')};
 `
 
@@ -41,12 +62,15 @@ const Position = styled.span`
   text-transform: capitalize;
   text-align: center;
   line-height: ${rem('18px')};
-  max-width: ${WIDTH};
 `
 
 const ExecutiveAvatar = ({ name, postion, src }) => (
   <Container>
-    <Avatar src={src} alt={`${name}: ${postion}`} />
+    <AvatarContainer>
+      <Avatar>
+        <StaticImage name={src} alt={`${name}: ${postion}`} />
+      </Avatar>
+    </AvatarContainer>
     <Name>{name}</Name>
     <Position>{postion}</Position>
   </Container>

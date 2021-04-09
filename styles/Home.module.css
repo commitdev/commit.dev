@@ -373,58 +373,6 @@ p.heroTagline:after {
   }
 }
 
-/* About styles */
-.about {
-  padding: 140px 0px;
-}
-.about .flexSection {
-  flex-direction: row;
-}
-.about h2.aboutHeading {
-  font-size: 2.625rem;
-  line-height: 3.125rem;
-  margin-left: 17%;
-}
-.about .aboutDescription {
-  margin-left: 24px;
-  margin-right: 17%;
-}
-.about .aboutDescription p:first-of-type {
-  margin-top: 0;
-}
-.about .aboutDescription p:last-of-type {
-  margin-bottom: 0;
-}
-
-@media only screen and (max-width: 1023px) {
-  .about {
-    padding: 120px 0px;
-  }
-  .about .flexSection {
-    flex-direction: column;
-    align-items: center;
-  }
-  .about h2.aboutHeading {
-    margin-left: 0;
-    margin-bottom: 2.25rem;
-    text-align: center;
-  }
-  .about .aboutDescription {
-    margin-left: 17%;
-  }
-}
-
-@media only screen and (max-width: 449px) {
-  .about {
-    padding: 84px 0px;
-  }
-  .about .aboutDescription {
-    font-size: 1rem;
-    line-height: 1.625rem;
-    margin: 0;
-  }
-}
-
 /* Testimonials styles */
 .testimonials {
   padding: 124px 0px 98px;

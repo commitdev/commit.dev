@@ -15,7 +15,8 @@ import ExploreSvg from 'public/explore.svg'
 import {
   EngineersWhoJoinedSection,
   WhatsRight,
-  LogoSection,
+  HowItWorks,
+  SpSection,
   TimelineSection,
   WhyCommitSection,
 } from 'sections'
@@ -23,7 +24,6 @@ import styles from 'styles/Home.module.css'
 
 import { SectionSeparator } from '../components'
 import PlatformSection from '../sections/platform-section'
-
 
 const { h2 } = Heading.VARIANT
 
@@ -77,6 +77,7 @@ const Home = () => (
         </div>
       </div>
     </section>
+    <HowItWorks />
     <section className={styles.articles}>
       <Heading variant={h2} className={styles.articlesHeading}>
         Featured Articles
@@ -120,39 +121,6 @@ const Home = () => (
       <TimelineSection />
       <WhyCommitSection />
     </section>
-    <section className={`${styles.about} ${styles.grey}`}>
-      <div className={styles.flexSection}>
-        <Heading variant={h2} className={styles.aboutHeading}>
-          How it Works
-        </Heading>
-        <div className={styles.aboutDescription}>
-          <Text>
-            Commit provides the space for Software Engineers to build
-            relationships, experience growth at their own pace and establish a
-            deeper network. We hire remote-first Engineers who want to eliminate
-            the risk and the friction of finding and working for startups in
-            Silicon Valley.
-          </Text>
-          <Text>
-            Commit Engineers are matched with startup projects on a three month
-            basis, and if there is a fit with the startup, we facilitate the
-            transition to full time at that company. Otherwise, there is no
-            obligation to join and you can get matched with a new startup
-            instead.
-          </Text>
-          <Text>
-            While at Commit, we provide coaching opportunities, professional
-            development and internal projects to help develop our own open
-            source platforms.
-          </Text>
-          <Text>
-            Even after Commit Engineers ‘graduate’ to startups, they remain a
-            member of the Community so they can continue to tap into the
-            knowledge base and join craft, skills or interest based groups.
-          </Text>
-        </div>
-      </div>
-    </section>
     <PlatformSection />
     <EngineersWhoJoinedSection />
     <section className={styles.testimonials}>
@@ -163,7 +131,7 @@ const Home = () => (
         <Testimonials className={styles.testimonialsCarousel} />
       </div>
     </section>
-    <LogoSection>
+    <SpSection>
       <Logo
         url="https://www.procurify.com/"
         alt="Procurify logo"
@@ -181,7 +149,7 @@ const Home = () => (
         alt="Plastiq logo"
         name="plastiq.png"
       />
-    </LogoSection>
+    </SpSection>
     <Footer />
   </Page>
 )
