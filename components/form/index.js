@@ -4,7 +4,7 @@ import { CheckCircle } from 'phosphor-react'
 import { rem } from 'polished'
 import styled from 'styled-components'
 
-import { Button, Input, Text, TextArea } from 'components'
+import { Button, Input, MultiSelect, Text, TextArea } from 'components'
 import { TABLET_SMALL_SIZE } from 'styles/constants'
 
 const FormContainer = styled.div`
@@ -31,23 +31,30 @@ const Form = () => {
     email: '',
     info: '',
     name: '',
+    resources: null,
   })
 
   const onChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
 
+  const onMultiSelect = (e) => {
+    setState({...state, resources: e })
+  }
+
   const onClick = async (e) => {
     e.preventDefault()
     setHasErrors(false)
     try {
+      // Convert to a readable string for the Google Sheet
+      const parsedResources = state.resources ? state.resources.map( res => res.label).join(', ') : null
       const res = await fetch(process.env.NEXT_PUBLIC_HELIX_HOST, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(state),
+        body: JSON.stringify({...state, resources: parsedResources }),
       })
       if (res.status !== 200) {
         return setHasErrors(true)
@@ -112,8 +119,24 @@ const Form = () => {
               value: state.email,
             }}
           />
+          <MultiSelect {... {
+            name: 'selectResources',
+            onChange: onMultiSelect,
+            value: state.resources,
+            options: [
+              { value: 'angellist', label: 'AngelList' },
+              { value: 'blog', label: 'Blog' },
+              { value: 'event', label: 'Event' },
+              { value: 'linkedin', label: 'LinkedIn' },
+              { value: 'linkedin_connection', label: 'LinkedIn Connection' },
+              { value: 'twitter', label: 'Twitter' },
+              { value: 'wordofmouth', label: 'Word of Mouth' },
+              { value: 'youtube', label: 'YouTube' },
+            ],
+          }} />
           <TextArea
             {...{
+              maxlength: 1024,
               name: 'info',
               onChange,
               placeholder:
