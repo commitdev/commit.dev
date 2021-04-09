@@ -4,14 +4,12 @@ import styled from 'styled-components'
 
 import { Heading } from 'components'
 import { FlexSectionContent } from 'components/layout'
-
-import { TABLET_LARGE_SIZE } from 'styles/constants'
-
 import AiMlVcSearchEngine from 'public/ai-ml-vc-search-engine.svg'
 import BurndownChart from 'public/burndown-chart.svg'
 import HealthcareSecurity from 'public/healthcare-security.svg'
 import NegativeEmissions from 'public/negative-emissions.svg'
 import TopShot from 'public/top-shot.svg'
+import { TABLET_LARGE_SIZE } from 'styles/constants'
 
 const { h2 } = Heading.VARIANT
 
@@ -88,11 +86,15 @@ const EngineersWhoJoinedSection = () => (
         </Project>
         <Project>
           <HealthcareSecurity title="Security Infrastructure for Healthcare logo" />
-          <ProjectName>The Security Infrastructure for Healthcare system</ProjectName>
+          <ProjectName>
+            The Security Infrastructure for Healthcare system
+          </ProjectName>
         </Project>
         <Project>
           <AiMlVcSearchEngine title="AI/ML search engine for Venture Capitals logo" />
-          <ProjectName>The AI/ML based startup research engine for Venture Capitals</ProjectName>
+          <ProjectName>
+            The AI/ML based startup research engine for Venture Capitals
+          </ProjectName>
         </Project>
       </Projects>
     </StyledFlexSectionContent>
