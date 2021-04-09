@@ -15,7 +15,7 @@ const nextConfig = {
     enrichedConfig.resolve.alias.static = path.join(__dirname, 'static')
     enrichedConfig.module.rules.push({
       test: /\.svg$/,
-      use: ['@svgr/webpack'],
+      use: ['@svgr/webpack?+titleProp'],
     })
 
     return enrichedConfig

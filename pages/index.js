@@ -9,10 +9,8 @@ import {
   Text,
   StaticImage,
 } from 'components'
-import ConnectSvg from 'public/connect.svg'
-import ElevateSvg from 'public/elevate.svg'
-import ExploreSvg from 'public/explore.svg'
 import {
+  EngineersWhoJoinedSection,
   WhatsRight,
   HowItWorks,
   SpSection,
@@ -42,40 +40,25 @@ const Home = () => (
       </div>
     </section>
     <WhatsRight />
-    <section className={styles.features}>
-      <div className={styles.featuresTransition} />
-      <div className={styles.gridSection}>
-        <div className={styles.feature}>
-          <ConnectSvg />
-          <Heading variant={h2} className={styles.featureHeading}>
-            Connect
-          </Heading>
-          <Text>
-            Build meaningful relationships in a distributed community of
-            Software Engineers
-          </Text>
-        </div>
-        <div className={styles.feature}>
-          <ExploreSvg />
-          <Heading variant={h2} className={styles.featureHeading}>
-            Explore
-          </Heading>
-          <Text>
-            Build your network in a distributed community of Software Engineers
-          </Text>
-        </div>
-        <div className={styles.feature}>
-          <ElevateSvg />
-          <Heading variant={h2} className={styles.featureHeading}>
-            Elevate
-          </Heading>
-          <Text>
-            Refine or expand your expertise through hands-on projects,
-            peer-to-peer coaching & professional development opportunities
-          </Text>
-        </div>
-      </div>
-    </section>
+    <SpSection>
+      <Logo
+        url="https://www.procurify.com/"
+        alt="Procurify logo"
+        name="procurify.png"
+      />
+      <Logo url="https://certn.co/" alt="Certn logo" name="certn.png" />
+      <Logo
+        url="https://www.dapperlabs.com/"
+        alt="Dapper logo"
+        name="dapper.png"
+      />
+      <Logo url="https://www.usepatch.com/" alt="Patch logo" name="patch.png" />
+      <Logo
+        url="https://www.plastiq.com/"
+        alt="Plastiq logo"
+        name="plastiq.png"
+      />
+    </SpSection>
     <HowItWorks />
     <section className={styles.articles}>
       <Heading variant={h2} className={styles.articlesHeading}>
@@ -121,6 +104,7 @@ const Home = () => (
       <WhyCommitSection />
     </section>
     <PlatformSection />
+    <EngineersWhoJoinedSection />
     <section className={styles.testimonials}>
       <div className={styles.flexSection}>
         <Heading variant={h2} className={styles.testimonialsHeading}>
@@ -129,25 +113,6 @@ const Home = () => (
         <Testimonials className={styles.testimonialsCarousel} />
       </div>
     </section>
-    <SpSection>
-      <Logo
-        url="https://www.procurify.com/"
-        alt="Procurify logo"
-        name="procurify.png"
-      />
-      <Logo url="https://certn.co/" alt="Certn logo" name="certn.png" />
-      <Logo
-        url="https://www.dapperlabs.com/"
-        alt="Dapper logo"
-        name="dapper.png"
-      />
-      <Logo url="https://www.usepatch.com/" alt="Patch logo" name="patch.png" />
-      <Logo
-        url="https://www.plastiq.com/"
-        alt="Plastiq logo"
-        name="plastiq.png"
-      />
-    </SpSection>
     <Footer />
   </Page>
 )
