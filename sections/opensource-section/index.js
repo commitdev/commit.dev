@@ -87,9 +87,10 @@ const people = [
   { name: 'Tim R', src: 'team/timr.jpeg' },
   { name: 'Tim W', src: 'team/timw.jpeg' },
   { name: 'Julie', src: 'team/julie.jpeg' },
-  { name: 'Ashley', src: 'team/ashley.jpeg' },
-  { name: 'Anita', src: 'team/anita.png' },
-  { name: 'Simon', src: 'team/simon.jpeg' },
+  { name: 'Andrew', src: 'team/andrew.jpeg' },
+  { name: 'Alex', src: 'team/alex.jpeg' },
+  { name: 'Chris', src: 'team/chris.jpeg' },
+  { name: 'Alessandro', src: 'team/alessandro.jpeg' },
 ]
 
 const OpensourceSection = () => {
