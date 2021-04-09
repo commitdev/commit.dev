@@ -9,9 +9,6 @@ import {
   Text,
   StaticImage,
 } from 'components'
-import ConnectSvg from 'public/connect.svg'
-import ElevateSvg from 'public/elevate.svg'
-import ExploreSvg from 'public/explore.svg'
 import {
   EngineersWhoJoinedSection,
   WhatsRight,
@@ -62,40 +59,6 @@ const Home = () => (
         name="plastiq.png"
       />
     </SpSection>
-    <section className={styles.features}>
-      <div className={styles.featuresTransition} />
-      <div className={styles.gridSection}>
-        <div className={styles.feature}>
-          <ConnectSvg />
-          <Heading variant={h2} className={styles.featureHeading}>
-            Connect
-          </Heading>
-          <Text>
-            Build meaningful relationships in a distributed community of
-            Software Engineers
-          </Text>
-        </div>
-        <div className={styles.feature}>
-          <ExploreSvg />
-          <Heading variant={h2} className={styles.featureHeading}>
-            Explore
-          </Heading>
-          <Text>
-            Build your network in a distributed community of Software Engineers
-          </Text>
-        </div>
-        <div className={styles.feature}>
-          <ElevateSvg />
-          <Heading variant={h2} className={styles.featureHeading}>
-            Elevate
-          </Heading>
-          <Text>
-            Refine or expand your expertise through hands-on projects,
-            peer-to-peer coaching & professional development opportunities
-          </Text>
-        </div>
-      </div>
-    </section>
     <HowItWorks />
     <section className={styles.articles}>
       <Heading variant={h2} className={styles.articlesHeading}>
