@@ -3,7 +3,7 @@ import React from 'react'
 import { arrayOf, element } from 'prop-types'
 import styled from 'styled-components'
 
-import { Heading } from 'components'
+import { Heading, RowContainer } from 'components'
 import { FlexSectionContent } from 'components/layout'
 
 const { h2 } = Heading.VARIANT
@@ -27,12 +27,7 @@ const StyledHeading = styled(Heading)`
   text-align: center;
 `
 
-const LogoContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
+const LogoContainer = styled(RowContainer)`
   margin-top: 5.75rem;
 `
 
@@ -43,7 +38,7 @@ const Explanation = styled.p`
   line-height: 1.25rem;
 `
 
-const LogoSection = ({ children }) => (
+const SpSection = ({ children }) => (
   <StyledSection>
     <StyledFlexSectionContent>
       <StyledHeading variant={h2}>
@@ -59,8 +54,8 @@ const LogoSection = ({ children }) => (
   </StyledSection>
 )
 
-LogoSection.propTypes = {
+SpSection.propTypes = {
   children: arrayOf(element),
 }
 
-export default LogoSection
+export default SpSection
