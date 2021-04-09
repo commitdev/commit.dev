@@ -10,7 +10,7 @@ function OpportunitiesFeature(props) {
       {...props}
       media={
         <StaticBackgroundVideo
-          name="community"
+          name="opportunities"
           alt="Screenshot of Commit's Opportunities page"
         />
       }
