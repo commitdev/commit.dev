@@ -2,9 +2,27 @@ import React from 'react'
 
 import styled from 'styled-components'
 
-import { TABLET_LARGE_SIZE } from 'styles/constants'
+import { TABLET_LARGE_SIZE, MOBILE_SIZE } from 'styles/constants'
 
 const timelineColour = '#8493B0'
+
+const StyledSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8rem auto 0;
+  padding: 0 20px;
+
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @media only screen and (max-width: ${MOBILE_SIZE}) {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+`
 
 const List = styled.ol`
   list-style-type: none;
@@ -88,31 +106,33 @@ const BoldPink = styled.span`
 `
 
 const TimelineSection = () => (
-  <List>
-    <Item>
-      <div>
-        <Date>2019</Date>
-        <Label>Founded by Software Engineers</Label>
-      </div>
-    </Item>
-    <Item>
-      <div>
-        <Date>2020</Date>
-        <Label>
-          We grew <BoldPink>370%</BoldPink>
-        </Label>
-      </div>
-    </Item>
-    <Item>
-      <div>
-        <Date>2021</Date>
-        <Label>
-          We aim to hire <BoldPink>500 Engineers</BoldPink> with an emphasis on{' '}
-          <BoldPink>diversity</BoldPink>
-        </Label>
-      </div>
-    </Item>
-  </List>
+  <StyledSection>
+    <List>
+      <Item>
+        <div>
+          <Date>2019</Date>
+          <Label>Founded by Software Engineers</Label>
+        </div>
+      </Item>
+      <Item>
+        <div>
+          <Date>2020</Date>
+          <Label>
+            We grew <BoldPink>370%</BoldPink>
+          </Label>
+        </div>
+      </Item>
+      <Item>
+        <div>
+          <Date>2021</Date>
+          <Label>
+            We aim to hire <BoldPink>500 Engineers</BoldPink> with an emphasis
+            on <BoldPink>diversity</BoldPink>
+          </Label>
+        </div>
+      </Item>
+    </List>
+  </StyledSection>
 )
 
 export default TimelineSection

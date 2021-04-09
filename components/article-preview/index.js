@@ -5,17 +5,12 @@ import { string } from 'prop-types'
 import styled from 'styled-components'
 
 import { Heading, Text, MediaContainer } from 'components'
-import { MOBILE_SIZE, TABLET_SMALL_SIZE } from 'styles/constants'
+import { GridItem } from 'components/layout'
+import { MOBILE_SIZE } from 'styles/constants'
 
 import { children } from '../../helpers/prop-types'
 
-const Root = styled.div`
-  grid-column: span 4;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-
+const Root = styled(GridItem)`
   a {
     color: inherit;
     text-decoration: none;
@@ -40,23 +35,6 @@ const Root = styled.div`
     text-align: center;
     margin: 0;
   }
-
-  @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
-    margin-bottom: 4.5rem;
-
-    &:last-of-type {
-      grid-column: 3 / span 4;
-      margin-bottom: 0;
-    }
-  }
-
-  @media only screen and (max-width: ${MOBILE_SIZE}) {
-    grid-column: 1 / span 1;
-
-    &:last-of-type {
-      grid-column: 1 / span 1;
-    }
-  }
 `
 
 const StyledMediaContainer = styled(MediaContainer)`
@@ -64,7 +42,7 @@ const StyledMediaContainer = styled(MediaContainer)`
   height: 200px;
 `
 
-const ArticlePreivew = ({ media, heading, text, link, ...props }) => (
+const ArticlePreview = ({ media, heading, text, link, ...props }) => (
   <Root {...props}>
     <a href={link} rel="noopener">
       <StyledMediaContainer>{media}</StyledMediaContainer>
@@ -74,11 +52,11 @@ const ArticlePreivew = ({ media, heading, text, link, ...props }) => (
   </Root>
 )
 
-ArticlePreivew.propTypes = {
+ArticlePreview.propTypes = {
   media: children,
   heading: string,
   text: string,
   link: string,
 }
 
-export default ArticlePreivew
+export default ArticlePreview
