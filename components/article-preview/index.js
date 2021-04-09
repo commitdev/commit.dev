@@ -4,7 +4,7 @@ import { rem } from 'polished'
 import { string } from 'prop-types'
 import styled from 'styled-components'
 
-import { Heading, Text } from 'components'
+import { Heading, Text, MediaContainer } from 'components'
 import { MOBILE_SIZE, TABLET_SMALL_SIZE } from 'styles/constants'
 
 import { children } from '../../helpers/prop-types'
@@ -15,12 +15,6 @@ const Root = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
-  img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
 
   a {
     color: inherit;
@@ -65,10 +59,15 @@ const Root = styled.div`
   }
 `
 
+const StyledMediaContainer = styled(MediaContainer)`
+  width: 100%;
+  height: 200px;
+`
+
 const ArticlePreivew = ({ media, heading, text, link, ...props }) => (
   <Root {...props}>
     <a href={link} rel="noopener">
-      {media}
+      <StyledMediaContainer>{media}</StyledMediaContainer>
       <Heading variant={Heading.VARIANT.h3}>{heading}</Heading>
       <Text>{text}</Text>
     </a>

@@ -22,8 +22,14 @@ h2.whatsRightHeading {
   color: #fff;
   line-height: 2.1em;
   text-transform: uppercase;
-  width: 410px;
-  padding-right: 103px;
+  max-width: 410px;
+}
+
+@media only screen and (min-width: 1024px) {
+  h2.whatsRightHeading {
+    width: 410px;
+    padding-right: 103px;
+  }
 }
 
 span.whatsRightHeadingHighlight {
