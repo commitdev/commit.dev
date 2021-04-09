@@ -20,6 +20,7 @@ const { large: SOCIAL_ICON_SIZE_LARGE } = SocialIcons.SIZE
 const NavOverlayRoot = styled.div`
   position: fixed;
   display: none;
+  z-index: 110;
   width: 100%;
   height: 0px;
   top: 0;
@@ -138,16 +139,14 @@ const Compact = ({ variation }) => {
 
   const openMenu = () => {
     if (process.browser) {
-      const Root = document.getElementById('__next')
-      Root.setAttribute('hidden', 'true')
+      document.body.setAttribute('style', 'overflow: hidden;')
     }
     setIsOpen(true)
   }
 
   const closeMenu = () => {
     if (process.browser) {
-      const Root = document.getElementById('__next')
-      Root.removeAttribute('hidden')
+      document.body.removeAttribute('style')
     }
     setIsOpen(false)
   }
