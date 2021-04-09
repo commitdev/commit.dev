@@ -80,16 +80,16 @@ const AvatarList = styled.div`
 `
 
 const people = [
-  { name: 'Jason', src: '/jason.jpeg' },
-  { name: 'Adrian', src: '/adrian.jpeg' },
-  { name: 'Djordje', src: '/djordje.jpeg' },
-  { name: 'Jayd', src: '/jayd.jpeg' },
-  { name: 'Tim R', src: '/timr.jpeg' },
-  { name: 'Tim W', src: '/timw.jpeg' },
-  { name: 'Julie', src: '/julie.jpeg' },
-  { name: 'Ashley', src: '/ashley.jpeg' },
-  { name: 'Anita', src: '/anita.png' },
-  { name: 'Simon', src: '/simon.jpeg' },
+  { name: 'Jason', src: 'team/jason.jpeg' },
+  { name: 'Adrian', src: 'team/adrian.jpeg' },
+  { name: 'Djordje', src: 'team/djordje.jpeg' },
+  { name: 'Jayd', src: 'team/jayd.jpeg' },
+  { name: 'Tim R', src: 'team/timr.jpeg' },
+  { name: 'Tim W', src: 'team/timw.jpeg' },
+  { name: 'Julie', src: 'team/julie.jpeg' },
+  { name: 'Ashley', src: 'team/ashley.jpeg' },
+  { name: 'Anita', src: 'team/anita.png' },
+  { name: 'Simon', src: 'team/simon.jpeg' },
 ]
 
 const OpensourceSection = () => {

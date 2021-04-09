@@ -4,6 +4,7 @@ import { rem } from 'polished'
 import { string } from 'prop-types'
 import styled from 'styled-components'
 
+import { MediaContainer, StaticImage } from 'components'
 import { TABLET_SMALL_SIZE } from 'styles/constants'
 
 const Container = styled.div`
@@ -19,9 +20,10 @@ const Container = styled.div`
   }
 `
 
-const Avatar = styled.img`
+const Avatar = styled(MediaContainer)`
   border-radius: 100%;
   width: 80px;
+  height: 80px;
 `
 
 const Name = styled.div`
@@ -33,7 +35,9 @@ const Name = styled.div`
 
 const TeamAvatar = ({ name, src }) => (
   <Container>
-    <Avatar src={src} alt={`${name}`} />
+    <Avatar>
+      <StaticImage name={src} alt={`${name}`} />
+    </Avatar>
     <Name>{name}</Name>
   </Container>
 )
