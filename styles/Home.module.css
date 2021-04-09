@@ -2,6 +2,7 @@
 .sectionContent {
   margin: 0 auto;
   padding: 0 120px;
+  overflow-x: hidden;
 }
 .gridSection {
   display: grid;
@@ -101,7 +102,7 @@ p.heroTagline {
   font-size: 24px;
   line-height: 30px;
   height: 30px;
-  width: 400px;
+  max-width: 400px;
   margin-top: 150px;
 }
 p.heroTagline:after {
