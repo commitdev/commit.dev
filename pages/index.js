@@ -43,6 +43,25 @@ const Home = () => (
       </div>
     </section>
     <WhatsRight />
+    <SpSection>
+      <Logo
+        url="https://www.procurify.com/"
+        alt="Procurify logo"
+        name="procurify.png"
+      />
+      <Logo url="https://certn.co/" alt="Certn logo" name="certn.png" />
+      <Logo
+        url="https://www.dapperlabs.com/"
+        alt="Dapper logo"
+        name="dapper.png"
+      />
+      <Logo url="https://www.usepatch.com/" alt="Patch logo" name="patch.png" />
+      <Logo
+        url="https://www.plastiq.com/"
+        alt="Plastiq logo"
+        name="plastiq.png"
+      />
+    </SpSection>
     <section className={styles.features}>
       <div className={styles.featuresTransition} />
       <div className={styles.gridSection}>
@@ -131,25 +150,6 @@ const Home = () => (
         <Testimonials className={styles.testimonialsCarousel} />
       </div>
     </section>
-    <SpSection>
-      <Logo
-        url="https://www.procurify.com/"
-        alt="Procurify logo"
-        name="procurify.png"
-      />
-      <Logo url="https://certn.co/" alt="Certn logo" name="certn.png" />
-      <Logo
-        url="https://www.dapperlabs.com/"
-        alt="Dapper logo"
-        name="dapper.png"
-      />
-      <Logo url="https://www.usepatch.com/" alt="Patch logo" name="patch.png" />
-      <Logo
-        url="https://www.plastiq.com/"
-        alt="Plastiq logo"
-        name="plastiq.png"
-      />
-    </SpSection>
     <Footer />
   </Page>
 )
