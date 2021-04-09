@@ -3,7 +3,6 @@ import {
   DiversityAndInclusionSection,
   EpBuiltStartupsSection,
   ExecutiveTeamSection,
-  LogoSection,
   OpensourceSection,
 } from 'sections'
 import styles from 'styles/about.module.css'
