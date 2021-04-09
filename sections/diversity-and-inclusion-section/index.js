@@ -29,29 +29,29 @@ const Container = styled.div`
     grid-template-columns: 100%;
     grid-template-rows: 50% 50%;
     height: 100%;
-  }  
+  }
 `
 
 const Picture = styled.picture`
-img {
-  width: 100%;
-  height: auto;
- }
+  img {
+    width: 100%;
+    height: auto;
+  }
 
-@media only screen and (min-width: ${TABLET_IMAGE_BREAKPOINT}) and (max-width: ${TABLET_LARGE_SIZE}) {
- img {
-   width: auto;
-   height: 100%;
- } 
-} 
+  @media only screen and (min-width: ${TABLET_IMAGE_BREAKPOINT}) and (max-width: ${TABLET_LARGE_SIZE}) {
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
 
-@media only screen and (max-width: ${TABLET_IMAGE_BREAKPOINT}) {
- grid-row-start: 2;
- img {
-   height: 100%;
-   width: 100%;  
- }
-}
+  @media only screen and (max-width: ${TABLET_IMAGE_BREAKPOINT}) {
+    grid-row-start: 2;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
 `
 
 const TextContainer = styled.div`
@@ -63,15 +63,15 @@ const TextContainer = styled.div`
   width: 100%;
   height: ${HEIGHT};
 
-  padding: ${rem('101px')} ${rem('80px')} ${rem('101px')} ${rem('70px')};
+  padding: ${rem('101px')} 7% ${rem('101px')} 7%;
   background: linear-gradient(61.68deg, #ff68ba 2.29%, #edc281 100.63%);
   justify-content: center;
   align-items: center;
 
   @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
-    padding: ${rem('48px')} ${rem('24px')};
+    padding: ${rem('70px')} ${rem('24px')};
   }
-  
+
   @media only screen and (max-width: ${TABLET_IMAGE_BREAKPOINT}) {
     grid-row-start: 1;
     height: 100%;
@@ -84,8 +84,8 @@ const TextWrapper = styled.div`
 
   @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     max-width: 500px;
-  }  
-  
+  }
+
   p {
     text-align: center;
   }
@@ -102,19 +102,19 @@ const StyledHeading = styled(Heading)`
   }
 `
 
-const TabletImage = styled.source.attrs(props => ({
+const TabletImage = styled.source.attrs((props) => ({
   media: `(min-width: ${TABLET_IMAGE_BREAKPOINT}) and (max-width:${DESKTOP_IMAGE_BREAKPOINT})`,
-  srcSet: "/painted-hand-tablet.png"
+  srcSet: '/painted-hand-tablet.png',
 }))``
 
-const DesktopImage = styled.source.attrs(props => ({
+const DesktopImage = styled.source.attrs((props) => ({
   media: `(min-width:${DESKTOP_IMAGE_BREAKPOINT})`,
-  srcSet: "/painted-hand-desktop.png"
+  srcSet: '/painted-hand-desktop.png',
 }))``
 
-const MobileImage = styled.img.attrs(props => ({
-  src: "/painted-hand-mobile.png",
-  alt: "Inclusive community"  
+const MobileImage = styled.img.attrs((props) => ({
+  src: '/painted-hand-mobile.png',
+  alt: 'Inclusive community',
 }))``
 
 const DiversityAndInclusionSection = () => (
