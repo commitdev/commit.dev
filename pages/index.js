@@ -15,7 +15,7 @@ import ExploreSvg from 'public/explore.svg'
 import {
   WhatsRight,
   HowItWorks,
-  LogoSection,
+  SpSection,
   TimelineSection,
   WhyCommitSection,
 } from 'sections'
@@ -129,7 +129,7 @@ const Home = () => (
         <Testimonials className={styles.testimonialsCarousel} />
       </div>
     </section>
-    <LogoSection>
+    <SpSection>
       <Logo
         url="https://www.procurify.com/"
         alt="Procurify logo"
@@ -147,7 +147,7 @@ const Home = () => (
         alt="Plastiq logo"
         name="plastiq.png"
       />
-    </LogoSection>
+    </SpSection>
     <Footer />
   </Page>
 )

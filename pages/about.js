@@ -1,6 +1,7 @@
 import { CompanyLogo, Heading, Text, Footer, Page } from 'components'
 import {
   DiversityAndInclusionSection,
+  EpBuiltStartupsSection,
   ExecutiveTeamSection,
   LogoSection,
   OpensourceSection,
@@ -28,10 +29,7 @@ const About = () => (
       </div>
       <DiversityAndInclusionSection />
       <ExecutiveTeamSection />
-      <LogoSection
-        title="Our Software Engineers"
-        description="We’ve built successful startups, we’ve built large scale systems, we know what it takes to balance speed and quality. We’re creative, we’re entrepreneurial, we apply lean startup and agile best practices to projects we’re passionate about."
-      >
+      <EpBuiltStartupsSection>
         <CompanyLogo
           url="https://www.hootsuite.com/"
           alt="Hootsuite logo"
@@ -80,7 +78,7 @@ const About = () => (
           name="opendns.png"
           size={SMALL_LOGO}
         />
-      </LogoSection>
+      </EpBuiltStartupsSection>
       <OpensourceSection />
     </section>
     <Footer />
