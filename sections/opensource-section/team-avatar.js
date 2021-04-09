@@ -21,6 +21,7 @@ const Container = styled.div`
 `
 
 const Avatar = styled(MediaContainer)`
+  transform: translateZ(0);
   border-radius: 100%;
   width: 80px;
   height: 80px;

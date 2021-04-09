@@ -31,6 +31,7 @@ const MediaInner = styled.div`
   display: block;
   overflow: hidden;
   border-radius: 1rem;
+  transform: translateZ(0);
 
   @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
     margin-left: ${MEDIA_MARGIN_TABLET_SMALL};
