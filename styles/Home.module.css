@@ -283,32 +283,6 @@ p.heroTagline:after {
   }
 }
 
-/* Articles Styles */
-.articles {
-  padding: 0px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 124px 0px;
-}
-.articles .articlesHeading {
-  margin: 0 24px 3rem 24px;
-  text-align: center;
-}
-
-@media only screen and (max-width: 1023px) {
-  .articles {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width: 449px) {
-  .articles {
-    margin-top: 36px;
-    margin-bottom: 79px;
-  }
-}
-
 /* Testimonials styles */
 .testimonials {
   padding: 124px 0px 98px;

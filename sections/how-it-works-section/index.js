@@ -14,7 +14,7 @@ const StyledSection = styled.section`
   }
 
   @media only screen and (max-width: ${MOBILE_SIZE}) {
-    margin: 142px 16px 108px;
+    margin: 142px 16px 0;
   }
 `
 
@@ -49,6 +49,7 @@ const HowItWorksItem = styled(GridItem)`
 
 const HowItWorksItemHeading = styled(Heading)`
   margin: 1.5rem 0 1rem;
+  text-align: center;
   text-transform: uppercase;
 `
 

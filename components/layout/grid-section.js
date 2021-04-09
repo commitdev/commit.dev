@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-import { TABLET_LARGE_SIZE, MOBILE_SIZE } from 'styles/constants'
+import {
+  TABLET_LARGE_SIZE,
+  TABLET_SMALL_SIZE,
+  MOBILE_SIZE,
+} from 'styles/constants'
 
 const GridSection = styled.div`
   display: grid;
@@ -13,8 +17,12 @@ const GridSection = styled.div`
     column-gap: 24px;
   }
 
+  @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
   @media only screen and (max-width: ${MOBILE_SIZE}) {
-    display: block;
+    grid-template-columns: 1fr;
   }
 `
 
