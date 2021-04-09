@@ -103,16 +103,19 @@ const StyledHeading = styled(Heading)`
 `
 
 const TabletImage = styled.source.attrs((props) => ({
+  ...props,
   media: `(min-width: ${TABLET_IMAGE_BREAKPOINT}) and (max-width:${DESKTOP_IMAGE_BREAKPOINT})`,
   srcSet: '/painted-hand-tablet.png',
 }))``
 
 const DesktopImage = styled.source.attrs((props) => ({
+  ...props,
   media: `(min-width:${DESKTOP_IMAGE_BREAKPOINT})`,
   srcSet: '/painted-hand-desktop.png',
 }))``
 
 const MobileImage = styled.img.attrs((props) => ({
+  ...props,
   src: '/painted-hand-mobile.png',
   alt: 'Inclusive community',
 }))``
