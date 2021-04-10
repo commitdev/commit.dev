@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { fontSmoothingAntialiased } from '../../styles/font-smoothing'
+
 const StyledTextArea = styled.textarea`
   width: 100%;
   height: 174px;
@@ -19,8 +21,11 @@ const StyledTextArea = styled.textarea`
   width: 100%;
   height: 10rem;
 
+  ${fontSmoothingAntialiased}
+
   ::placeholder {
-    opacity: 0.3;
+    opacity: 0.7;
+    color: #ffffff;
   }
 
   :focus {

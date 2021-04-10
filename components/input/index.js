@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { fontSmoothingAntialiased } from '../../styles/font-smoothing'
+
 const Input = (props) => <StyledInput {...props} />
 
 const StyledInput = styled.input`
@@ -16,9 +18,11 @@ const StyledInput = styled.input`
   line-height: 36px;
   text-align: left;
   color: #ffffff;
+  ${fontSmoothingAntialiased}
 
   ::placeholder {
-    opacity: 0.3;
+    opacity: 0.7;
+    color: #ffffff;
   }
 
   :focus {
