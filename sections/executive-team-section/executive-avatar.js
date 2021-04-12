@@ -34,6 +34,7 @@ const Container = styled.div`
 const AvatarContainer = styled(MediaContainer)`
   width: 100%;
   max-width: 160px;
+  padding: 0 5px;
 
   @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
     max-width: 140px;
