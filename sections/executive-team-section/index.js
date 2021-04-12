@@ -37,7 +37,7 @@ const AvatarList = styled.div`
   justify-content: center;
   margin: 0 auto;
   max-width: ${rem('1240px')};
-  padding: 0 ${rem('35px')};
+  padding: 0 ${rem('26px')};
 
   @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
     padding: 0 ${rem('40px')};
