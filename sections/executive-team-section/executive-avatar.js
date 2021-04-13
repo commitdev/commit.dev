@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import { MediaContainer, StaticImage } from 'components'
 import { TABLET_LARGE_SIZE, TABLET_SMALL_SIZE } from 'styles/constants'
 
-const CONTAINER_MARGIN_BOTTOM_TABLET_LARGE = 84;
+const CONTAINER_MARGIN_BOTTOM_TABLET_LARGE = 84
 
 const Container = styled.div`
   display: flex;
