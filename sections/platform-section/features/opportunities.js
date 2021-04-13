@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { Text, Heading, StaticBackgroundVideo } from 'components'
+import { Heading, StaticBackgroundVideo } from 'components'
 
+import { FeatureText } from '../feature-text'
 import { StyledFeaturesListItem } from '../styled-features-list-item'
 
 function OpportunitiesFeature(props) {
@@ -16,20 +17,20 @@ function OpportunitiesFeature(props) {
       }
     >
       <Heading variant={Heading.VARIANT.h3}>Opportunities</Heading>
-      <Text>
+      <FeatureText>
         Browse personalized startup recommendations selected for you by our
         team.
-      </Text>
-      <Text>
+      </FeatureText>
+      <FeatureText>
         Deep dive into individual opportunities with detailed background
         information and specific insights we've gathered by critically assessing
         their business.
-      </Text>
-      <Text>Schedule meetings with company leaders to learn more.</Text>
-      <Text>
+      </FeatureText>
+      <FeatureText>Schedule meetings with company leaders to learn more.</FeatureText>
+      <FeatureText>
         Start a three month pilot project to gauge mutual fit, move on to
         another pilot if it’s not right for you.
-      </Text>
+      </FeatureText>
     </StyledFeaturesListItem>
   )
 }

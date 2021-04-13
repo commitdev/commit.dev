@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { Text, Heading, StaticBackgroundVideo } from 'components'
+import { Heading, StaticBackgroundVideo } from 'components'
 
+import { FeatureText } from '../feature-text'
 import { StyledFeaturesListItem } from '../styled-features-list-item'
 
 function ProfileFeature(props) {
@@ -16,14 +17,14 @@ function ProfileFeature(props) {
       }
     >
       <Heading variant={Heading.VARIANT.h3}>Platform profile</Heading>
-      <Text>
+      <FeatureText>
         Your profile provides deep backgrounds that include your experience,
         skill sets, projects, blog posts and preferences.
-      </Text>
-      <Text>
+      </FeatureText>
+      <FeatureText>
         Let others know which technologies you want to work with and skills you
         want to learn.
-      </Text>
+      </FeatureText>
     </StyledFeaturesListItem>
   )
 }

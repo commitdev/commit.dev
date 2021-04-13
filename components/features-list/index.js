@@ -2,7 +2,11 @@ import { rem } from 'polished'
 import { arrayOf, shape, string } from 'prop-types'
 import styled from 'styled-components'
 
-import { TABLET_LARGE_SIZE, TABLET_SMALL_SIZE } from 'styles/constants'
+import {
+  TABLET_LARGE_SIZE,
+  TABLET_SMALL_SIZE,
+  DESKTOP_ONLY,
+} from 'styles/constants'
 
 import { children } from '../../helpers/prop-types'
 import { fontSmoothingAntialiased } from '../../styles/font-smoothing'
@@ -89,7 +93,7 @@ const ContentInner = styled.div`
     padding: 0 ${rem(48)};
   }
 
-  @media only screen and (min-width: ${TABLET_LARGE_SIZE}) {
+  ${DESKTOP_ONLY} {
     padding: 0 ${rem(110)};
   }
 `
