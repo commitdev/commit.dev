@@ -72,6 +72,10 @@ jobs:
           arguments: '--content-type "text/html"'
           from: out/about
           to: 's3://<< parameters.bucket >>'
+      - aws-s3/copy:
+          arguments: '--content-type "text/html"'
+          from: out/apply
+          to: 's3://<< parameters.bucket >>'
       - run:
           name: Invalidate Cloudfront
           command: |
