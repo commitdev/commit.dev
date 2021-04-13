@@ -14,10 +14,10 @@ import { people } from './people'
 const { h2 } = Heading.VARIANT
 
 const StyledSection = styled.section`
-  padding: ${rem('100px')} 0;
+  padding: ${rem(140)} 0 ${rem(140 - 84)};
 
   @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
-    padding: ${rem('124px')} 0;
+    padding: ${rem(124)} 0;
   }
 `
 
@@ -88,7 +88,7 @@ const ExecutiveTeamSection = () => {
 
   return (
     <StyledSection>
-      <StyledHeading variant={h2}>Our Executive Team</StyledHeading>
+      <StyledHeading variant={h2}>Our Leadership Team</StyledHeading>
       <AvatarList>
         {peopleToShow.map((person) => (
           <ExecutiveAvatar {...person} key={person.name} />
