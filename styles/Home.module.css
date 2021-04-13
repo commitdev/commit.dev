@@ -74,18 +74,10 @@
 .testimonials .testimonialsHeading {
   text-align: center;
 
-  margin: 0 0 2rem;
+  margin: 0;
   max-width: 51rem;
-}
-.testimonials .testimonialsHeading:first-of-type {
-  margin-top: 0;
 }
 .testimonials .testimonialsCarousel {
   margin-top: 4rem;
 }
 
-@media only screen and (max-width: 449px) {
-  .testimonials .testimonialsHeading {
-    margin-bottom: 2.625rem;
-  }
-}

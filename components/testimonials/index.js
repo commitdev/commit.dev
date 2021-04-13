@@ -18,8 +18,16 @@ const DOT_SIZE_MOBILE = rem('24px')
 const CARET_SIZE = rem('37px')
 
 const Root = styled.div`
-  margin-top: ${rem('64px')};
+  margin-top: ${rem('42px')};
   cursor: default;
+
+  @media only screen and (min-width: ${MOBILE_SIZE}) {
+    margin-top: ${rem('64px')};
+  }
+
+  @media only screen and (min-width: ${TABLET_LARGE_SIZE}) {
+    margin-top: ${rem('84px')};
+  }
 `
 
 const Track = styled.div`
