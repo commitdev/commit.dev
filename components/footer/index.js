@@ -116,7 +116,10 @@ const Footer = (props) => (
   <FooterContainer {...props}>
     <FlexSection>
       <Text>Let’s get started</Text>
-      <StyledApplyLink hoverBackground='#100c2c' />
+      <StyledApplyLink
+        hoverBackground='#100c2c'
+        customWidth='330px'
+      />
     </FlexSection>
     <BottomContainer>
       <CommitLogo alt="Commit logo" src="/commit-logo.svg" />
