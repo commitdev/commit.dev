@@ -44,7 +44,7 @@ const Home = () => (
     <section className={styles.testimonials}>
       <div className={styles.flexSection}>
         <Heading variant={h2} className={styles.testimonialsHeading}>
-          What Our Engineering Partners Have to Say
+          What Our Engineering Partners Have to&nbsp;Say
         </Heading>
         <Testimonials className={styles.testimonialsCarousel} />
       </div>
