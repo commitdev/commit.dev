@@ -102,14 +102,16 @@ const WhyCommitSection = () => (
       <div>
         <IsCommitRight>
           Is Commit right for you? Today, we’re hyper-focused on solving
-          challenges for Senior Startup Engineers. If any of these qualities
-          resonate with you, we're the right partner for your career:
+          challenges for Senior Startup Engineers. We’re the right partner for
+          you if you resonate with the following:
         </IsCommitRight>
         <ReasonsToJoin>
           <li>
             Obsessed with building impactful products that customers love to use
           </li>
-          <li>Strong believer in using MVP to validate ideas</li>
+          <li>
+            Strong believer in using MVP to validate ideas
+          </li>
           <li>
             Can build products rapidly without significant sacrifice on quality
           </li>
@@ -119,6 +121,9 @@ const WhyCommitSection = () => (
           <li>
             Have a tech stack that’s suitable for joining or starting early
             technical teams{' '}
+          </li>
+          <li>
+            Have a learner’s mentality and open to collaboration
           </li>
         </ReasonsToJoin>
       </div>
