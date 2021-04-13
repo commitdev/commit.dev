@@ -1,16 +1,8 @@
+import { Logo, Footer, Heading, Page, Testimonials } from 'components'
 import {
-  ApplyLink,
-  Logo,
-  Footer,
-  Heading,
-  Page,
-  Testimonials,
-  Text,
-} from 'components'
-import {
+  HomeHero,
   EngineersWhoJoinedSection,
   FeaturedArticles,
-  WhatsRight,
   HowItWorks,
   SpSection,
   PlatformSection,
@@ -23,20 +15,7 @@ const { h2 } = Heading.VARIANT
 
 const Home = () => (
   <Page>
-    <section className={`${styles.hero} ${styles.dark}`}>
-      <div className={styles.sectionContent}>
-        <div className={styles.heroContent}>
-          <Heading className={styles.heroHeading}>Refactor your career</Heading>
-          <Text sectionText className={styles.heroText}>
-            Until now, your growth was dependent on your company.
-            <span className={styles.heroTextExtra}>We changed that.</span>
-          </Text>
-          <ApplyLink />
-          <Text className={styles.heroTagline}> </Text>
-        </div>
-      </div>
-    </section>
-    <WhatsRight />
+    <HomeHero />
     <SpSection>
       <Logo
         url="https://www.procurify.com/"
