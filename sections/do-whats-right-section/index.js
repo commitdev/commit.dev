@@ -60,13 +60,14 @@ const WhatsRightContent = styled.div`
 const SectionHeading = styled(Heading)`
   color: #fff;
   font-size: ${rem('48px')};
-  line-height: 2.1;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
   text-align: left;
   text-transform: uppercase;
   max-width: ${rem('305px')};
 
   ${HORIZONTAL_LAYOUT} {
-    margin-right: ${rem('70px')};
+    margin-right: ${rem('91px')};
   }
 
   ${DESKTOP_ONLY} {
@@ -84,8 +85,8 @@ const HeadingHighlight = styled.span`
     :after {
       position: absolute;
       top: 50%;
-      left: 240px;
-      width: 133px;
+      left: 220px;
+      width: 154px;
       height: 2px;
       background-color: ${COLORS.pink};
       content: '';
@@ -104,7 +105,7 @@ const Items = styled.div`
 
   ${HORIZONTAL_LAYOUT} {
     flex-basis: 200%;
-    margin-top: ${rem('250px')};
+    margin-top: ${rem('190px')};
   }
 `
 
@@ -165,6 +166,7 @@ const ItemHeading = styled(Heading)`
   color: #fff;
   text-transform: uppercase;
   font-size: ${rem('28px')};
+  letter-spacing: 0.1em;
   text-align: left;
 
   ${TABLET_AND_DESKTOP} {

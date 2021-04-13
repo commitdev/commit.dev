@@ -27,11 +27,11 @@
   }
   80% {
     background-color: #ff86c6;
-    height: 722px;
+    height: 663px;
   }
   95% {
     background-color: #ff86c6;
-    height: 722px;
+    height: 663px;
   }
   100% {
     display: none;
@@ -45,8 +45,8 @@
     width: 0;
   }
   100% {
-    left: 240px;
-    width: 133px;
+    left: 220px;
+    width: 153px;
   }
 }
 @keyframes whatsRightTreeBranchAnimation {
