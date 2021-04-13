@@ -18,7 +18,7 @@ const StyledButton = styled.button`
   font-size: ${rem('24px')};
   line-height: ${rem('29px')};
   text-align: center;
-  color: #010242;
+  color: #000;
   cursor: pointer;
   text-transform: uppercase;
   font-family: inherit;
@@ -39,7 +39,7 @@ const StyledLink = styled.a`
   display: block;
   background: #ff68ba;
   background: linear-gradient(90.03deg, #ff68ba 0.39%, #edc281 99.97%);
-  width: 316px;
+  width: ${props => props.customWidth ? rem(props.customWidth) : rem('316px')};
   padding: ${rem('15px')} ${rem('42px')};
   border: 0;
   border-radius: 48px;
@@ -47,7 +47,7 @@ const StyledLink = styled.a`
   font-size: ${rem('24px')};
   line-height: ${rem('29px')};
   text-align: center;
-  color: #010242;
+  color: #000;
   cursor: pointer;
   text-transform: uppercase;
   text-decoration-line: none;
