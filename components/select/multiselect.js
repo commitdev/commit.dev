@@ -21,8 +21,7 @@ const selectStyles = {
     fontFamily: 'lato',
     fontWeight: '400',
     fontSize: '15px',
-    opacity: '0.7 !important',
-    color: '#fff',
+    opacity: '0.3 !important',
   }),
   menu: styles => ({
     ...styles,
@@ -30,13 +29,8 @@ const selectStyles = {
   }),
   valueContainer: (styles) => ({
     ...styles,
-    lineHeight: '36px',
     overflow: 'inherit',
     padding: '0 0 0 0',
-    '@media only screen and (max-width: 1023px)': {
-      ...styles['@media only screen and (max-width: 1023px)'],
-      lineHeight: '140%',
-    },
   }),
   multiValue: (styles) => ({
     ...styles,
@@ -84,7 +78,7 @@ const MultiSelect = ({ options, ...props}) => (
     closeMenuOnSelect={false}
     styles={selectStyles}
     options={options}
-  />
+    />
 )
 
 MultiSelect.propTypes = {
