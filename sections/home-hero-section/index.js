@@ -10,6 +10,7 @@ import {
   TABLET_LARGE_ONLY,
   DESKTOP_ONLY,
   TABLET_LARGE_AND_DESKTOP,
+  COLORS,
 } from 'styles/constants'
 
 import { HeroHeading } from '../../components/heading'
@@ -107,8 +108,10 @@ const HeroApplyLink = styled(ApplyLink)`
 `
 
 const HeroTagLine = styled(Typist)`
+  color: ${COLORS.shipCoveBlue};
+  font-weight: 600;
   margin-bottom: 2em;
-
+  
   ${MOBILE_ONLY} {
     font-size: ${rem('20px')};
   }
@@ -130,7 +133,7 @@ const HomeHero = () => (
         <HeroApplyLink />
         <StyledText as="div">
           <HeroTagLine
-            startDelay={5000}
+            startDelay={2500}
             avgTypingDelay={75}
             stdTypingDelay={20}
           >

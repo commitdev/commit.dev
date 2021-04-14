@@ -41,12 +41,12 @@
 
 @keyframes whatsRightLeftBranchAnimation {
   0% {
-    left: 373px;
+    left: 380px;
     width: 0;
   }
   100% {
     left: 220px;
-    width: 153px;
+    width: 160px;
   }
 }
 @keyframes whatsRightTreeBranchAnimation {
