@@ -7,6 +7,8 @@ import styled from 'styled-components'
 import { MediaContainer, StaticImage } from 'components'
 import { TABLET_LARGE_SIZE, TABLET_SMALL_SIZE } from 'styles/constants'
 
+const CONTAINER_MARGIN_BOTTOM_TABLET_LARGE = 84
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -27,7 +29,7 @@ const Container = styled.div`
   @media only screen and (min-width: ${TABLET_LARGE_SIZE}) {
     max-width: 20%;
     flex: 0 0 20%;
-    margin-bottom: ${rem('84px')};
+    margin-bottom: ${rem(CONTAINER_MARGIN_BOTTOM_TABLET_LARGE)};
   }
 `
 
@@ -85,4 +87,5 @@ ExecutiveAvatar.propTypes = {
   src: string.isRequired,
 }
 
+export { CONTAINER_MARGIN_BOTTOM_TABLET_LARGE }
 export default ExecutiveAvatar

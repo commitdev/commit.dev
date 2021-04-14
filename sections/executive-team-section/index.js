@@ -8,16 +8,18 @@ import { useIsMaxScreenSize } from 'helpers/hooks'
 import { TABLET_LARGE_SIZE, TABLET_SMALL_SIZE } from 'styles/constants'
 
 import ChevronSvg from '../../static/icons/chevron.svg'
-import ExecutiveAvatar from './executive-avatar'
+import ExecutiveAvatar, {
+  CONTAINER_MARGIN_BOTTOM_TABLET_LARGE,
+} from './executive-avatar'
 import { people } from './people'
 
 const { h2 } = Heading.VARIANT
 
 const StyledSection = styled.section`
-  padding: ${rem('100px')} 0;
+  padding: ${rem(140)} 0 ${rem(140 - CONTAINER_MARGIN_BOTTOM_TABLET_LARGE)};
 
   @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
-    padding: ${rem('124px')} 0;
+    padding: ${rem(124)} 0;
   }
 `
 
@@ -88,7 +90,7 @@ const ExecutiveTeamSection = () => {
 
   return (
     <StyledSection>
-      <StyledHeading variant={h2}>Our Executive Team</StyledHeading>
+      <StyledHeading variant={h2}>Our Leadership Team</StyledHeading>
       <AvatarList>
         {peopleToShow.map((person) => (
           <ExecutiveAvatar {...person} key={person.name} />
