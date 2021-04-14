@@ -16,7 +16,7 @@ const StyledSection = styled.section`
   padding: 0 20px;
 
   @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
-    margin: 4.5rem 0 8rem;
+    margin: 3.5rem 0 8rem;
   }
 
   @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
@@ -24,7 +24,7 @@ const StyledSection = styled.section`
   }
 
   @media only screen and (max-width: ${MOBILE_SIZE}) {
-    margin: 2.5rem 16px 9rem;
+    margin: 3rem 16px 9rem;
   }
 `
 
@@ -75,11 +75,13 @@ const Iframe = styled.iframe`
 const IsCommitRight = styled.p`
   font-weight: 700;
   line-height: 1.5rem;
+  margin-bottom: 1.5em;
 `
 
 const ReasonsToJoin = styled.ul`
   list-style-type: none;
   font-weight: 400;
+  line-height: 1.4rem;
 
   > * {
     margin-top: 1.1rem;
