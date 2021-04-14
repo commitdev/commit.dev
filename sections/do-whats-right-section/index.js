@@ -42,14 +42,14 @@ const WhatsRightContent = styled.div`
   }
 
   ${DESKTOP_ONLY} {
-    margin-top: ${rem('388px')};
+    margin-top: ${rem('385px')};
     padding: 0 ${rem('20px')};
 
     /* vertical pink line extending down from flashing cursor */
     :before {
       position: absolute;
       top: -471px;
-      left: 423px;
+      left: 430px;
       width: 2px;
       height: 0;
       background-color: ${COLORS.pink};
@@ -69,7 +69,7 @@ const SectionHeading = styled(SectionHeadingBold)`
   }
 
   ${HORIZONTAL_LAYOUT} {
-    margin-right: ${rem('91px')};
+    margin-right: ${rem('98px')};
   }
 
   ${DESKTOP_ONLY} {
@@ -88,7 +88,7 @@ const HeadingHighlight = styled.span`
       position: absolute;
       top: 50%;
       left: 220px;
-      width: 154px;
+      width: 160px;
       height: 2px;
       background-color: ${COLORS.pink};
       content: '';
@@ -195,7 +195,7 @@ const WhatsRight = () => {
   useEffect(() => {
     const typingAnimationTimer = setTimeout(() => {
       setHasWaitedForTypingAnimation(true)
-    }, 8000)
+    }, 5000)
     return () => {
       clearTimeout(typingAnimationTimer)
     }

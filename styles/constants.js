@@ -18,7 +18,8 @@ export const TABLET_AND_DESKTOP = `@media only screen and (min-width: ${MOBILE_P
 export const TABLET_LARGE_AND_DESKTOP = `@media only screen and (min-width: ${TABLET_SMALL_PIXELS + 0.1 + 'px'})`
 
 export const COLORS = Object.freeze({
-  pink: '#ff86c6'
+  pink: '#ff86c6',
+  shipCoveBlue: '#8493B0'
 })
 
 const COLOR_VARIATIONS = Object.freeze({
