@@ -5,10 +5,15 @@ import { rem } from 'polished'
 import styled from 'styled-components'
 
 import { Button, Input, MultiSelect, Text, TextArea } from 'components'
-import { TABLET_SMALL_SIZE } from 'styles/constants'
 
 const FormContainer = styled.div`
   max-width: 480px;
+`
+
+const SuccessHeaderContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 `
 
 const SuccessHeader = styled.h2`
@@ -16,12 +21,7 @@ const SuccessHeader = styled.h2`
   font-weight: bold;
   font-size: 24px;
   line-height: 36px;
-  margin-left: ${rem('60px')};
-  margin-top: ${rem('-40px')};
-
-  @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
-    margin: 0;
-  }
+  margin-left: ${rem('15px')};
 `
 
 const SpinningSpinnerGap = styled(SpinnerGap)`
@@ -101,14 +101,16 @@ const Form = () => {
   const renderForm = () =>
     isFormSubmitted === true ? (
       <FormContainer>
-        <CheckCircle
-          {...{
-            color: '#FF68BA',
-            size: rem('37px'),
-            weight: 'fill',
-          }}
-        />
-        <SuccessHeader>Application Sent!</SuccessHeader>
+        <SuccessHeaderContainer>
+          <CheckCircle
+            {...{
+              color: '#FF68BA',
+              size: rem('37px'),
+              weight: 'fill',
+            }}
+          />
+          <SuccessHeader>Application Sent!</SuccessHeader>
+        </SuccessHeaderContainer>
         <Text successText>
           Look out for your inbox! Someone from Commit will be in touch with
           you.
