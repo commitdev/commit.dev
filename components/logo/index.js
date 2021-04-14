@@ -9,6 +9,7 @@ const Anchor = styled.a`
   min-width: 11.25rem;
   opacity: 0.5;
   transition: opacity 200ms ease-in-out;
+  display: block;
 
   :hover {
     opacity: 0.75;
@@ -16,7 +17,7 @@ const Anchor = styled.a`
 `
 
 const Logo = ({ url, name, alt }) => (
-  <Anchor href={url} rel="noopener noreferrer">
+  <Anchor href={url} rel="noopener noreferrer" target="_blank">
     <StaticImage alt={alt} name={`logos/${name}`} />
   </Anchor>
 )

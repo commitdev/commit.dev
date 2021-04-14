@@ -6,6 +6,7 @@ const StyledImage = styled.img`
   display: block;
   width: 100%;
   height: auto;
+  transform: translateZ(0);
 
   :not([src]) {
     visibility: hidden;
