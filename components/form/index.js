@@ -173,6 +173,7 @@ const Form = () => {
           <Button
             {...{
               onClick,
+              disabled: isFormWaiting,
             }}
           >
             {isFormWaiting === false ? (
