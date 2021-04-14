@@ -21,6 +21,7 @@ const StyledSection = styled.section`
 
   @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
     margin: 2.5rem 0 9rem;
+  }
 
   @media only screen and (max-width: ${MOBILE_SIZE}) {
     margin: 2.5rem 16px 9rem;
@@ -91,7 +92,8 @@ const WhyCommitSection = () => (
       <div>
         <VideoWrapper>
           <Iframe
-            src="https://www.youtube.com/embed/pIbkW6wMqrw"
+            data-src="https://www.youtube.com/embed/pIbkW6wMqrw"
+            className="lazyload"
             title="Why joining Commit?"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -109,9 +111,7 @@ const WhyCommitSection = () => (
           <li>
             Obsessed with building impactful products that customers love to use
           </li>
-          <li>
-            Strong believer in using MVP to validate ideas
-          </li>
+          <li>Strong believer in using MVP to validate ideas</li>
           <li>
             Can build products rapidly without significant sacrifice on quality
           </li>
@@ -122,9 +122,7 @@ const WhyCommitSection = () => (
             Have a tech stack that’s suitable for joining or starting early
             technical teams{' '}
           </li>
-          <li>
-            Have a learner’s mentality and open to collaboration
-          </li>
+          <li>Have a learner’s mentality and open to collaboration</li>
         </ReasonsToJoin>
       </div>
     </Container>
