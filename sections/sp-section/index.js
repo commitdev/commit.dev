@@ -33,19 +33,22 @@ const LogosContainer = styled(RowContainer)`
   }
 `
 
+const MIN_LOGO_WIDTH = rem(198)
+
 const LogoContainer = styled.div`
   max-width: 50%;
   flex: 0 0 50%;
   padding: 0 1rem;
 
   @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
+    padding: 0;
     max-width: 33.33%;
     flex: 0 0 33.33%;
   }
 
   @media only screen and (min-width: ${TABLET_LARGE_SIZE}) {
-    max-width: 160px;
-    min-width: 160px;
+    max-width: ${MIN_LOGO_WIDTH};
+    min-width: ${MIN_LOGO_WIDTH};
     flex: 1;
   }
 `

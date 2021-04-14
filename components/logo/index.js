@@ -6,10 +6,11 @@ import styled from 'styled-components'
 import { StaticImage } from 'components'
 
 const Anchor = styled.a`
-  min-width: 11.25rem;
   opacity: 0.5;
   transition: opacity 200ms ease-in-out;
   display: block;
+  position: relative;
+  width: 100%;
 
   :hover {
     opacity: 0.75;

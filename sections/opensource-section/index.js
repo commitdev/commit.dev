@@ -24,7 +24,7 @@ const StyledSection = styled.section`
 `
 
 const TextContent = styled.div`
-  width: 770px;
+  max-width: 770px;
   padding: 40px 70px 70px;
   margin: 0 auto;
   text-align: center;
@@ -34,19 +34,14 @@ const TextContent = styled.div`
   }
 
   @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
-    width: 430px;
-    padding: 0 0 40px;
+    max-width: 430px;
+    padding: 0 16px 40px;
   }
 
   @media only screen and (max-width: ${MOBILE_SIZE}) {
-    width: 342px;
-    padding: 0 0 40px;
+    max-width: 342px;
+    padding: 0 16px 40px;
   }
-`
-
-const StyledHeading = styled(SectionHeadingBold)`
-  text-align: center;
-  line-height: 1.5;
 `
 
 const StyledText = styled(Text)`
@@ -105,7 +100,7 @@ const OpensourceSection = () => {
     <StyledSection>
       <FlexSectionContent>
         <TextContent>
-          <StyledHeading>Commit.dev as Opensource</StyledHeading>
+          <SectionHeadingBold>Commit.dev as Opensource</SectionHeadingBold>
           <StyledText>
             Our commit.dev website runs as an opensource project within Commit
             where engineers are free to work on the website as they wish and

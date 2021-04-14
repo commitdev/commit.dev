@@ -1,7 +1,6 @@
 export * from './media'
 export { default as ArticlePreview } from './article-preview'
 export { ApplyLink, Button } from './button'
-export { default as CompanyLogo } from './company-logo'
 export { default as Footer } from './footer'
 export { default as Form } from './form'
 export { default as HighlightedText } from './highlighted-text'
