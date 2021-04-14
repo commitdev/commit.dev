@@ -1,10 +1,11 @@
 import React from 'react'
 
-import { arrayOf, element } from 'prop-types'
+import { rem } from 'polished'
 import styled from 'styled-components'
 
-import { RowContainer } from 'components'
+import { Logo, RowContainer } from 'components'
 import { FlexSectionContent } from 'components/layout'
+import { TABLET_SMALL_SIZE } from 'styles/constants'
 
 import { SectionHeadingBold } from '../../components/heading'
 
@@ -31,13 +32,29 @@ const StyledText = styled.div`
   text-align: center;
   font-family: 'Lato';
   line-height: 1.625rem;
+  margin-right: -1rem;
+  margin-left: -1rem;
 `
 
-const LogoContainer = styled(RowContainer)`
+const LogosContainer = styled(RowContainer)`
   margin-top: 3rem;
 `
 
-const EpBuiltStartupsSection = ({ children }) => (
+const MIN_LOGO_WIDTH = rem(125)
+
+const LogoContainer = styled.div`
+  padding: 1rem;
+  min-width: ${MIN_LOGO_WIDTH};
+  flex: 0 0 50%;
+  max-width: 50%;
+
+  @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+`
+
+const EpBuiltStartupsSection = () => (
   <StyledSection>
     <StyledFlexSectionContent>
       <StyledHeading>Our Software Engineers</StyledHeading>
@@ -47,13 +64,62 @@ const EpBuiltStartupsSection = ({ children }) => (
         entrepreneurial, we apply lean startup and agile best practices to
         projects we’re passionate about.
       </StyledText>
-      <LogoContainer>{children}</LogoContainer>
+      <LogosContainer>
+        <LogoContainer>
+          <Logo
+            url="https://www.hootsuite.com/"
+            alt="Hootsuite logo"
+            name="hootsuite.png"
+          />
+        </LogoContainer>
+        <LogoContainer>
+          <Logo
+            url="https://www.amazon.com/"
+            alt="Amazon logo"
+            name="amazon.png"
+          />
+        </LogoContainer>
+        <LogoContainer>
+          <Logo
+            url="https://www.paypal.com/"
+            alt="PayPal logo"
+            name="paypal.png"
+          />
+        </LogoContainer>
+        <LogoContainer>
+          <Logo url="https://www.bench.co/" alt="Bench logo" name="bench.png" />
+        </LogoContainer>
+        <LogoContainer>
+          <Logo
+            url="https://www.intel.com/"
+            alt="Intel logo"
+            name="intel.png"
+          />
+        </LogoContainer>
+        <LogoContainer>
+          <Logo
+            url="https://www.verisign.com/"
+            alt="Verisign logo"
+            name="verisign.png"
+          />
+        </LogoContainer>
+        <LogoContainer>
+          <Logo
+            url="https://www.cisco.com/"
+            alt="Cisco logo"
+            name="cisco.png"
+          />
+        </LogoContainer>
+        <LogoContainer>
+          <Logo
+            url="https://www.opendns.com/"
+            alt="OpenDNS logo"
+            name="opendns.png"
+          />
+        </LogoContainer>
+      </LogosContainer>
     </StyledFlexSectionContent>
   </StyledSection>
 )
-
-EpBuiltStartupsSection.propTypes = {
-  children: arrayOf(element),
-}
 
 export default EpBuiltStartupsSection
