@@ -1,17 +1,15 @@
-import { Logo, Footer, Heading, Page, Testimonials } from 'components'
+import { Footer, Logo, Page } from 'components'
 import {
-  HomeHero,
   EngineersWhoJoinedSection,
   FeaturedArticles,
+  HomeHero,
   HowItWorks,
-  SpSection,
   PlatformSection,
+  SpSection,
+  TestimonialsSection,
   TimelineSection,
   WhyCommitSection,
 } from 'sections'
-import styles from 'styles/Home.module.css'
-
-const { h2 } = Heading.VARIANT
 
 const Home = () => (
   <Page>
@@ -41,14 +39,7 @@ const Home = () => (
     <WhyCommitSection />
     <PlatformSection />
     <EngineersWhoJoinedSection />
-    <section className={styles.testimonials}>
-      <div className={styles.flexSection}>
-        <Heading variant={h2} className={styles.testimonialsHeading}>
-          What Our Engineering Partners Have to&nbsp;Say
-        </Heading>
-        <Testimonials className={styles.testimonialsCarousel} />
-      </div>
-    </section>
+    <TestimonialsSection />
     <Footer />
   </Page>
 )

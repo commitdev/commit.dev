@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { Heading, StaticBackgroundVideo } from 'components'
+import { StaticBackgroundVideo } from 'components'
 
+import { SubHeadingBold } from '../../../components/heading'
 import { FeatureText } from '../feature-text'
 import { StyledFeaturesListItem } from '../styled-features-list-item'
 
@@ -16,7 +17,7 @@ function CommunityFeature(props) {
         />
       }
     >
-      <Heading variant={Heading.VARIANT.h3}>Community</Heading>
+      <SubHeadingBold>Community</SubHeadingBold>
       <FeatureText>
         Connect with other Startup Engineers to share knowledge and resources
         and to expand your network.

@@ -2,7 +2,7 @@ import { rem } from 'polished'
 import { string } from 'prop-types'
 import styled from 'styled-components'
 
-import { Heading, Text, MediaContainer } from 'components'
+import { Text, MediaContainer } from 'components'
 import {
   TABLET_SMALL_SIZE,
   TABLET_LARGE_SIZE,
@@ -10,6 +10,7 @@ import {
 } from 'styles/constants'
 
 import { children } from '../../helpers/prop-types'
+import { SubHeading } from '../heading'
 
 const IMG_WIDTH = '280px'
 const IMG_HEIGHT = '200px'
@@ -37,22 +38,6 @@ const Content = styled.div`
   flex-direction: column;
   margin-left: 24px;
 
-  h3 {
-    font-size: ${rem('24px')};
-    line-height: ${rem('24px')};
-    font-weight: 700;
-    margin-bottom: 0;
-
-    strong {
-      display: block;
-      font-weight: 700;
-      font-size: ${rem('16px')};
-      line-height: ${rem('26px')};
-      color: #657594;
-      margin-top: ${rem('12px')};
-    }
-  }
-
   p {
     margin-top: ${rem('12px')};
     text-align: left;
@@ -67,11 +52,6 @@ const Content = styled.div`
   @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
     align-items: center;
 
-    h3 {
-      text-align: center;
-      margin-top: ${rem('16px')};
-    }
-
     p {
       text-align: center;
     }
@@ -84,14 +64,34 @@ const SlideMediaContainer = styled(MediaContainer)`
   max-height: ${IMG_HEIGHT};
 `
 
+const SlideHeading = styled(SubHeading)`
+  text-align: center;
+  margin-top: ${rem(16)};
+
+  && {
+    font-size: ${rem(24)};
+  }
+
+  @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
+    text-align: left;
+  }
+`
+
+const SlideSubHeading = styled(SubHeading)`
+  && {
+    font-size: ${rem(16)};
+    line-height: 1.6;
+    color: #657594;
+    margin-top: ${rem(12)};
+  }
+`
+
 const Slide = ({ media, heading, subHeading, text, ...props }) => (
   <Root {...props}>
     <SlideMediaContainer>{media}</SlideMediaContainer>
     <Content>
-      <Heading variant={Heading.VARIANT.h3}>
-        {heading}
-        <strong>{subHeading}</strong>
-      </Heading>
+      <SlideHeading>{heading}</SlideHeading>
+      <SlideSubHeading as="p">{subHeading}</SlideSubHeading>
       <Text>{text}</Text>
     </Content>
   </Root>

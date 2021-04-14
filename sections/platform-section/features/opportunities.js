@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { Heading, StaticBackgroundVideo } from 'components'
+import { StaticBackgroundVideo } from 'components'
 
+import { SubHeadingBold } from '../../../components/heading'
 import { FeatureText } from '../feature-text'
 import { StyledFeaturesListItem } from '../styled-features-list-item'
 
@@ -16,7 +17,7 @@ function OpportunitiesFeature(props) {
         />
       }
     >
-      <Heading variant={Heading.VARIANT.h3}>Opportunities</Heading>
+      <SubHeadingBold>Opportunities</SubHeadingBold>
       <FeatureText>
         Browse personalized startup recommendations selected for you by our
         team.
@@ -26,7 +27,9 @@ function OpportunitiesFeature(props) {
         information and specific insights we've gathered by critically assessing
         their business.
       </FeatureText>
-      <FeatureText>Schedule meetings with company leaders to learn more.</FeatureText>
+      <FeatureText>
+        Schedule meetings with company leaders to learn more.
+      </FeatureText>
       <FeatureText>
         Start a three month pilot project to gauge mutual fit, move on to
         another pilot if it’s not right for you.

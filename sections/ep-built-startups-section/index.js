@@ -3,10 +3,10 @@ import React from 'react'
 import { arrayOf, element } from 'prop-types'
 import styled from 'styled-components'
 
-import { Heading, RowContainer } from 'components'
+import { RowContainer } from 'components'
 import { FlexSectionContent } from 'components/layout'
 
-const { h2 } = Heading.VARIANT
+import { SectionHeadingBold } from '../../components/heading'
 
 const StyledSection = styled.section`
   padding: 7.5rem 1.25rem 6.5rem;
@@ -19,13 +19,10 @@ const StyledFlexSectionContent = styled(FlexSectionContent)`
   align-items: center;
 `
 
-const StyledHeading = styled(Heading)`
+const StyledHeading = styled(SectionHeadingBold)`
   max-width: 50rem;
-  font-weight: 800;
-  text-transform: none;
-  line-height: 3.5rem;
+  margin: 0 auto;
   text-align: center;
-  text-transform: uppercase;
 `
 
 const StyledText = styled.div`
@@ -43,7 +40,7 @@ const LogoContainer = styled(RowContainer)`
 const EpBuiltStartupsSection = ({ children }) => (
   <StyledSection>
     <StyledFlexSectionContent>
-      <StyledHeading variant={h2}>Our Software Engineers</StyledHeading>
+      <StyledHeading>Our Software Engineers</StyledHeading>
       <StyledText>
         We’ve built successful startups, we’ve built large scale systems, we
         know what it takes to balance speed and quality. We’re creative, we’re

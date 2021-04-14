@@ -1,12 +1,15 @@
 import React from 'react'
 
+import { rem } from 'polished'
 import { arrayOf, element } from 'prop-types'
 import styled from 'styled-components'
 
-import { Heading, RowContainer } from 'components'
+import { RowContainer } from 'components'
 import { FlexSectionContent } from 'components/layout'
+import { TABLET_SMALL_SIZE } from 'styles/constants'
 
-const { h2 } = Heading.VARIANT
+import { SectionHeading } from '../../components/heading'
+import SectionHeadingContainer from '../../components/section-heading-container'
 
 const StyledSection = styled.section`
   padding: 5rem 1.25rem;
@@ -19,16 +22,12 @@ const StyledFlexSectionContent = styled(FlexSectionContent)`
   align-items: center;
 `
 
-const StyledHeading = styled(Heading)`
-  max-width: 50rem;
-  font-weight: 400;
-  text-transform: none;
-  line-height: 3.5rem;
-  text-align: center;
-`
-
 const LogoContainer = styled(RowContainer)`
-  margin-top: 5.75rem;
+  margin-top: ${rem(56)};
+
+  @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
+    margin-top: ${rem(92)};
+  }
 `
 
 const Explanation = styled.p`
@@ -41,9 +40,11 @@ const Explanation = styled.p`
 const SpSection = ({ children }) => (
   <StyledSection>
     <StyledFlexSectionContent>
-      <StyledHeading variant={h2}>
-        We only let the most promising startups on our platform<sup>*</sup>
-      </StyledHeading>
+      <SectionHeadingContainer>
+        <SectionHeading>
+          We only let the most promising startups on our platform<sup>*</sup>
+        </SectionHeading>
+      </SectionHeadingContainer>
       <LogoContainer>{children}</LogoContainer>
       <Explanation>
         <sup>*</sup>We partner with startups that are on track to become

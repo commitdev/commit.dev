@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { rem } from 'polished'
 import styled from 'styled-components'
 
-import { Heading, Text } from 'components'
+import { Text } from 'components'
 import {
   TABLET_SMALL_ONLY,
   TABLET_LARGE_ONLY,
@@ -12,6 +12,7 @@ import {
   COLORS,
 } from 'styles/constants'
 
+import { SectionHeadingBold } from '../../components/heading'
 import useIsScrolledFromTop from '../../helpers/hooks/use-is-scrolled-from-top'
 import styles from './WhatsRight.module.css'
 
@@ -57,14 +58,15 @@ const WhatsRightContent = styled.div`
   }
 `
 
-const SectionHeading = styled(Heading)`
+const SectionHeading = styled(SectionHeadingBold)`
   color: #fff;
-  font-size: ${rem('48px')};
-  line-height: 1.6;
-  letter-spacing: 0.05em;
-  text-align: left;
-  text-transform: uppercase;
   max-width: ${rem('305px')};
+
+  && {
+    font-size: ${rem('48px')};
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+  }
 
   ${HORIZONTAL_LAYOUT} {
     margin-right: ${rem('91px')};
@@ -162,12 +164,13 @@ const Item = styled.div`
   }
 `
 
-const ItemHeading = styled(Heading)`
+const ItemHeading = styled(SectionHeadingBold)`
   color: #fff;
-  text-transform: uppercase;
-  font-size: ${rem('28px')};
-  letter-spacing: 0.1em;
-  text-align: left;
+
+  && {
+    font-size: ${rem('28px')};
+    letter-spacing: 0.1em;
+  }
 
   ${TABLET_AND_DESKTOP} {
     font-size: ${rem('32px')};
@@ -208,7 +211,7 @@ const WhatsRight = () => {
       }
     `}
     >
-      <SectionHeading variant={Heading.VARIANT.h2}>
+      <SectionHeading>
         We do what's
         <HeadingHighlight className={styles.whatsRightHeadingHighlight}>
           right
@@ -217,15 +220,15 @@ const WhatsRight = () => {
       </SectionHeading>
       <Items>
         <Item className={styles.whatsRightItem}>
-          <ItemHeading variant={Heading.VARIANT.h3}>Stable</ItemHeading>
+          <ItemHeading>Stable</ItemHeading>
           <ItemText>We hire you while you try out different startups</ItemText>
         </Item>
         <Item className={styles.whatsRightItem}>
-          <ItemHeading variant={Heading.VARIANT.h3}>Streamlined</ItemHeading>
+          <ItemHeading>Streamlined</ItemHeading>
           <ItemText>Our team vets high-potential startups for you</ItemText>
         </Item>
         <Item className={styles.whatsRightItem}>
-          <ItemHeading variant={Heading.VARIANT.h3}>Researched</ItemHeading>
+          <ItemHeading>Researched</ItemHeading>
           <ItemText>No more technical interviews</ItemText>
         </Item>
       </Items>

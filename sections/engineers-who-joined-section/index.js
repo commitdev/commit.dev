@@ -2,7 +2,6 @@ import React from 'react'
 
 import styled from 'styled-components'
 
-import { Heading } from 'components'
 import { FlexSectionContent } from 'components/layout'
 import AiMlVcSearchEngine from 'public/ai-ml-vc-search-engine.svg'
 import BurndownChart from 'public/burndown-chart.svg'
@@ -11,7 +10,8 @@ import NegativeEmissions from 'public/negative-emissions.svg'
 import TopShot from 'public/top-shot.svg'
 import { TABLET_LARGE_SIZE } from 'styles/constants'
 
-const { h2 } = Heading.VARIANT
+import { SectionHeading } from '../../components/heading'
+import SectionHeadingContainer from '../../components/section-heading-container'
 
 const StyledSection = styled.section`
   padding: 7.5rem 1.25rem 8.75rem;
@@ -22,14 +22,6 @@ const StyledFlexSectionContent = styled(FlexSectionContent)`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
-
-const StyledHeading = styled(Heading)`
-  max-width: 50rem;
-  font-weight: 400;
-  text-transform: none;
-  line-height: 3.5rem;
-  text-align: center;
 `
 
 const Projects = styled.ul`
@@ -68,9 +60,11 @@ const ProjectName = styled.span`
 const EngineersWhoJoinedSection = () => (
   <StyledSection>
     <StyledFlexSectionContent>
-      <StyledHeading variant={h2}>
-        Startup Engineers who joined Commit have built:
-      </StyledHeading>
+      <SectionHeadingContainer>
+        <SectionHeading>
+          Startup Engineers who joined Commit have built:
+        </SectionHeading>
+      </SectionHeadingContainer>
       <Projects>
         <Project>
           <TopShot title="Top Shot logo" />

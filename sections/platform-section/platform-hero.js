@@ -3,13 +3,12 @@ import React from 'react'
 import { linearGradient, rem } from 'polished'
 import styled from 'styled-components'
 
-import { Heading, Text } from 'components'
+import { Text } from 'components'
 import { TABLET_SMALL_SIZE } from 'styles/constants'
 
+import { SectionHeadingBold } from '../../components/heading'
 import { fontSmoothingAntialiased } from '../../styles/font-smoothing'
 import { rowStyles } from './row-styles'
-
-const { h2 } = Heading.VARIANT
 
 const PLATFORM_HEADING_GRAD = linearGradient({
   colorStops: ['#12c6ff 0%', '#6184c9 68.23%'],
@@ -17,9 +16,8 @@ const PLATFORM_HEADING_GRAD = linearGradient({
   fallback: '#12c6ff',
 })
 
-const PlatformHeroHeading = styled(Heading)`
+const PlatformHeroHeading = styled(SectionHeadingBold)`
   font-size: ${rem('28px')};
-  line-height: 1.2;
   text-align: center;
   color: transparent;
   ${PLATFORM_HEADING_GRAD}
@@ -28,7 +26,6 @@ const PlatformHeroHeading = styled(Heading)`
 
   @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
     font-size: ${rem('48px')};
-    letter-spacing: 0.1em;
   }
 `
 
@@ -54,9 +51,7 @@ const PlatformHeroContainer = styled.div`
 function PlatformHero(props) {
   return (
     <PlatformHeroContainer {...props}>
-      <PlatformHeroHeading variant={h2}>
-        The Commit Platform
-      </PlatformHeroHeading>
+      <PlatformHeroHeading>The Commit Platform</PlatformHeroHeading>
       <PlatformHeroText sectionText>
         The Commit platform reinvents how passionate Startup Engineers grow
         their craft and their careers. It’s not a job board or an online resume,

@@ -3,10 +3,10 @@ import React from 'react'
 import { rem } from 'polished'
 import styled from 'styled-components'
 
-import { Heading, MediaContainer, StaticImage, Text } from 'components'
+import { MediaContainer, StaticImage, Text } from 'components'
 import { MOBILE_SIZE, TABLET_LARGE_SIZE } from 'styles/constants'
 
-const { h2 } = Heading.VARIANT
+import { SectionHeadingBold } from '../../components/heading'
 
 const Container = styled.div`
   @media only screen and (min-width: ${TABLET_LARGE_SIZE}) {
@@ -46,7 +46,7 @@ const TextWrapper = styled.div`
   margin: 0 auto;
 `
 
-const StyledHeading = styled(Heading)`
+const StyledHeading = styled(SectionHeadingBold)`
   text-align: center;
   margin-bottom: ${rem('32px')};
 
@@ -64,7 +64,7 @@ const DiversityAndInclusionSection = () => (
     <Container>
       <TextContainer>
         <TextWrapper>
-          <StyledHeading variant={h2}>Diversity &amp; Inclusion</StyledHeading>
+          <StyledHeading>Diversity &amp; Inclusion</StyledHeading>
           <StyledText>
             It’s incredibly important to everyone at Commit that the community
             is an inclusive and equitable workplace. We are remote-first,
