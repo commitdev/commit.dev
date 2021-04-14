@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { CheckCircle } from 'phosphor-react'
+import { CheckCircle, SpinnerGap } from 'phosphor-react'
 import { rem } from 'polished'
 import styled from 'styled-components'
 
@@ -24,8 +24,25 @@ const SuccessHeader = styled.h2`
   }
 `
 
+const SpinningSpinnerGap = styled(SpinnerGap)`
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`
+
 const Form = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+  const [isFormWaiting, setIsFormWaiting] = useState(false)
   const [hasErrors, setHasErrors] = useState(false)
   const [state, setState] = useState({
     email: '',
@@ -39,31 +56,38 @@ const Form = () => {
   }
 
   const onMultiSelect = (e) => {
-    setState({...state, resources: e })
+    setState({ ...state, resources: e })
   }
 
   const onClick = async (e) => {
     e.preventDefault()
-    setHasErrors(false)
-    try {
-      // Convert to a readable string for the Google Sheet
-      const parsedResources = state.resources ? state.resources.map( res => res.label).join(', ') : null
-      const res = await fetch(process.env.NEXT_PUBLIC_HELIX_HOST, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({...state, resources: parsedResources }),
-      })
-      if (res.status !== 200) {
+    if (!isFormWaiting) {
+      setIsFormWaiting(true)
+      setHasErrors(false)
+      try {
+        // Convert to a readable string for the Google Sheet
+        const parsedResources = state.resources
+          ? state.resources.map((res) => res.label).join(', ')
+          : null
+        const res = await fetch(process.env.NEXT_PUBLIC_HELIX_HOST, {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ ...state, resources: parsedResources }),
+        })
+        setIsFormWaiting(false)
+        if (res.status !== 200) {
+          return setHasErrors(true)
+        }
+        setIsFormSubmitted(true)
+        return res.json()
+      } catch (err) {
         return setHasErrors(true)
       }
-      setIsFormSubmitted(true)
-      return res.json()
-    } catch (err) {
-      return setHasErrors(true)
     }
+    return false
   }
 
   useEffect(() => {
@@ -119,21 +143,23 @@ const Form = () => {
               value: state.email,
             }}
           />
-          <MultiSelect {... {
-            name: 'selectResources',
-            onChange: onMultiSelect,
-            value: state.resources,
-            options: [
-              { value: 'angellist', label: 'AngelList' },
-              { value: 'blog', label: 'Blog' },
-              { value: 'event', label: 'Event' },
-              { value: 'linkedin', label: 'LinkedIn' },
-              { value: 'linkedin_connection', label: 'LinkedIn Connection' },
-              { value: 'twitter', label: 'Twitter' },
-              { value: 'wordofmouth', label: 'Word of Mouth' },
-              { value: 'youtube', label: 'YouTube' },
-            ],
-          }} />
+          <MultiSelect
+            {...{
+              name: 'selectResources',
+              onChange: onMultiSelect,
+              value: state.resources,
+              options: [
+                { value: 'angellist', label: 'AngelList' },
+                { value: 'blog', label: 'Blog' },
+                { value: 'event', label: 'Event' },
+                { value: 'linkedin', label: 'LinkedIn' },
+                { value: 'linkedin_connection', label: 'LinkedIn Connection' },
+                { value: 'twitter', label: 'Twitter' },
+                { value: 'wordofmouth', label: 'Word of Mouth' },
+                { value: 'youtube', label: 'YouTube' },
+              ],
+            }}
+          />
           <TextArea
             {...{
               maxlength: 1024,
@@ -149,7 +175,17 @@ const Form = () => {
               onClick,
             }}
           >
-            Apply To Join
+            {isFormWaiting === false ? (
+              'Apply To Join'
+            ) : (
+              <SpinningSpinnerGap
+                {...{
+                  color: '#000',
+                  size: rem('22px'),
+                  weight: 'bold',
+                }}
+              />
+            )}
           </Button>
         </form>
       </FormContainer>
