@@ -17,15 +17,18 @@ const PLATFORM_HEADING_GRAD = linearGradient({
 })
 
 const PlatformHeroHeading = styled(SectionHeadingBold)`
-  font-size: ${rem('28px')};
   text-align: center;
   color: transparent;
   ${PLATFORM_HEADING_GRAD}
   -webkit-background-clip: text;
   background-clip: text;
 
-  @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
-    font-size: ${rem('48px')};
+  && {
+    font-size: ${rem('28px')};
+
+    @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
+      font-size: ${rem('48px')};
+    }
   }
 `
 
