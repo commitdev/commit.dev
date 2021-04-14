@@ -93,34 +93,28 @@ const SocialIconsContainer = styled.div`
 `
 
 const NavOverlay = React.forwardRef(
-  ({ id, isOpen, closeMenu, ...props }, ref) => {
-    // Must check for process.browser; Without this, document is undefined because document is not available when nextjs renders this server side
-    if (process.browser) {
-      return ReactDOM.createPortal(
-        <NavOverlayRoot id={id} isOpen={isOpen} {...props}>
-          <FauxHeader>
-            <Logo closeMenu={closeMenu} />
-            <BurgerMenu
-              isOpen={isOpen}
-              handleClick={closeMenu}
-              ariaControlsId={id}
-              ref={ref}
-              className="close"
-            />
-          </FauxHeader>
-          <Nav>
-            <SiteLinks closeMenu={closeMenu} />
-            <SocialIconsContainer>
-              <SocialIcons size={SOCIAL_ICON_SIZE_LARGE} />
-            </SocialIconsContainer>
-          </Nav>
-        </NavOverlayRoot>,
-        document.querySelector('body'),
-      )
-    }
-
-    return null
-  },
+  ({ id, isOpen, closeMenu, ...props }, ref) =>
+    ReactDOM.createPortal(
+      <NavOverlayRoot id={id} isOpen={isOpen} {...props}>
+        <FauxHeader>
+          <Logo closeMenu={closeMenu} />
+          <BurgerMenu
+            isOpen={isOpen}
+            handleClick={closeMenu}
+            ariaControlsId={id}
+            ref={ref}
+            className="close"
+          />
+        </FauxHeader>
+        <Nav>
+          <SiteLinks closeMenu={closeMenu} />
+          <SocialIconsContainer>
+            <SocialIcons size={SOCIAL_ICON_SIZE_LARGE} />
+          </SocialIconsContainer>
+        </Nav>
+      </NavOverlayRoot>,
+      document.querySelector('body'),
+    ),
 )
 
 NavOverlay.propTypes = {
@@ -130,6 +124,7 @@ NavOverlay.propTypes = {
 }
 
 const Compact = ({ variation }) => {
+  const [showNavOverlay, setShowNavOverlay] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const isCompactScreen = useIsMaxScreenSize(TABLET_SMALL_SIZE)
   const OpenButtonRef = React.createRef()
@@ -179,6 +174,11 @@ const Compact = ({ variation }) => {
     }
   }, [isCompactScreen])
 
+  useEffect(() => {
+    // Must check for process.browser; Without this, document is undefined because document is not available when nextjs renders this server side
+    setShowNavOverlay(!!process.browser)
+  }, [])
+
   return (
     <>
       <BurgerMenu
@@ -189,12 +189,14 @@ const Compact = ({ variation }) => {
         ref={OpenButtonRef}
         className="open"
       />
-      <NavOverlay
-        id={NAV_ID}
-        isOpen={isOpen}
-        closeMenu={closeMenu}
-        ref={CloseButtonRef}
-      />
+      {showNavOverlay && (
+        <NavOverlay
+          id={NAV_ID}
+          isOpen={isOpen}
+          closeMenu={closeMenu}
+          ref={CloseButtonRef}
+        />
+      )}
     </>
   )
 }

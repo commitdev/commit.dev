@@ -127,7 +127,7 @@ const HomeHero = () => (
           <HeroTextExtra>We changed that.</HeroTextExtra>
         </HeroText>
         <HeroApplyLink />
-        <StyledText>
+        <StyledText as="div">
           <HeroTagLine
             startDelay={5000}
             avgTypingDelay={75}
