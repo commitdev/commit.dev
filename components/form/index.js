@@ -5,6 +5,7 @@ import { rem } from 'polished'
 import styled from 'styled-components'
 
 import { Button, Input, MultiSelect, Text, TextArea } from 'components'
+import { MOBILE_ONLY } from 'styles/constants'
 
 const FormContainer = styled.div`
   max-width: 480px;
@@ -14,6 +15,10 @@ const SuccessHeaderContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
+  ${MOBILE_ONLY} {
+    justify-content: center;
+  }
 `
 
 const SuccessHeader = styled.h2`
