@@ -13,20 +13,13 @@
   flex-direction: row;
 }
 
-.heroHeading {
-  max-width: 500px;
-  margin-right: 2rem;
-  line-height: 6rem;
-  font-size: 3rem;
-  font-weight: 800;
-  letter-spacing: 0;
-}
-
 .heroHeadingContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 500px;
+  margin-right: 2rem;
 }
 
 .heroSection {
@@ -51,9 +44,8 @@
     align-items: center;
   }
 
-  .heroHeading {
+  .heroHeadingContainer {
     text-align: center;
-    line-height: 4rem;
     margin-right: 0;
     margin-bottom: 2rem;
   }
@@ -63,9 +55,5 @@
 @media only screen and (max-width: 449px) {
   .content {
     margin: 140px 1rem;
-  }
-
-  .heroHeading {
-    max-width: initial;
   }
 }

@@ -2,7 +2,7 @@ import { rem } from 'polished'
 import Typist from 'react-typist'
 import styled from 'styled-components'
 
-import { ApplyLink, Heading, Text } from 'components'
+import { ApplyLink, Text } from 'components'
 import { WhatsRight } from 'sections'
 import 'react-typist/dist/Typist.css'
 import {
@@ -11,6 +11,8 @@ import {
   DESKTOP_ONLY,
   TABLET_LARGE_AND_DESKTOP,
 } from 'styles/constants'
+
+import { HeroHeading } from '../../components/heading'
 
 const DarkSection = styled.section`
   color: #ffffff;
@@ -36,12 +38,13 @@ const HeroContent = styled.div`
   max-width: 50rem;
 `
 
-const StyledHeading = styled(Heading)`
-  font-size: ${rem('48px')};
-  line-height: 1.25;
-  text-align: left;
+const StyledHeading = styled(HeroHeading)`
   margin-top: ${rem('224px')};
   margin-bottom: 0.75em;
+
+  && {
+    font-size: ${rem('48px')};
+  }
 
   ${TABLET_LARGE_ONLY} {
     margin-top: ${rem('478px')};
@@ -119,9 +122,7 @@ const HomeHero = () => (
   <DarkSection>
     <StyledSection>
       <HeroContent>
-        <StyledHeading variant={Heading.VARIANT.h2}>
-          Refactor your career
-        </StyledHeading>
+        <StyledHeading>Refactor your career</StyledHeading>
         <HeroText>
           Until now, your growth was dependent on your company.
           <HeroTextExtra>We changed that.</HeroTextExtra>

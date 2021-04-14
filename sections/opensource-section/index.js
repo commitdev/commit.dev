@@ -4,7 +4,7 @@ import Link from 'next/link'
 import PrettyScatter from 'pretty-scatter'
 import styled from 'styled-components'
 
-import { Heading, Text } from 'components'
+import { Text } from 'components'
 import { FlexSectionContent } from 'components/layout'
 import {
   TABLET_LARGE_SIZE,
@@ -12,9 +12,8 @@ import {
   MOBILE_SIZE,
 } from 'styles/constants'
 
+import { SectionHeadingBold } from '../../components/heading'
 import TeamAvatar from './team-avatar'
-
-const { h2 } = Heading.VARIANT
 
 const StyledSection = styled.section`
   padding: 124px 0 100px;
@@ -45,8 +44,9 @@ const TextContent = styled.div`
   }
 `
 
-const StyledHeading = styled((props) => <Heading {...props} />)`
+const StyledHeading = styled(SectionHeadingBold)`
   text-align: center;
+  line-height: 1.5;
 `
 
 const StyledText = styled(Text)`
@@ -105,7 +105,7 @@ const OpensourceSection = () => {
     <StyledSection>
       <FlexSectionContent>
         <TextContent>
-          <StyledHeading variant={h2}>Commit.dev as Opensource</StyledHeading>
+          <StyledHeading>Commit.dev as Opensource</StyledHeading>
           <StyledText>
             Our commit.dev website runs as an opensource project within Commit
             where engineers are free to work on the website as they wish and

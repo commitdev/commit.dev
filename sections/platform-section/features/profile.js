@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { Heading, StaticBackgroundVideo } from 'components'
+import { StaticBackgroundVideo } from 'components'
 
+import { SubHeadingBold } from '../../../components/heading'
 import { FeatureText } from '../feature-text'
 import { StyledFeaturesListItem } from '../styled-features-list-item'
 
@@ -16,7 +17,7 @@ function ProfileFeature(props) {
         />
       }
     >
-      <Heading variant={Heading.VARIANT.h3}>Platform profile</Heading>
+      <SubHeadingBold>Platform profile</SubHeadingBold>
       <FeatureText>
         Your profile provides deep backgrounds that include your experience,
         skill sets, projects, blog posts and preferences.

@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 
-import { Text, ApplyLink, SiteLinks, SocialIcons } from 'components'
+import { ApplyLink, SiteLinks, SocialIcons } from 'components'
 import {
   TABLET_LARGE_SIZE,
   MOBILE_SIZE,
   TABLET_SMALL_SIZE,
   COLOR_VARIATIONS,
 } from 'styles/constants'
+
+import { SectionHeadingBold } from '../heading'
 
 const FooterContainer = styled.footer`
   padding: 150px 0 0 0;
@@ -16,21 +18,6 @@ const FooterContainer = styled.footer`
 
   @media only screen and (max-width: ${MOBILE_SIZE}) {
     padding: 98px 0 48px;
-  }
-
-  p {
-    font-family: Montserrat;
-    font-size: 2.25rem;
-    font-weight: 800;
-    line-height: 2.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 4rem;
-
-    @media only screen and (max-width: ${MOBILE_SIZE}) {
-      margin-bottom: 3rem;
-    }
   }
 `
 
@@ -112,14 +99,17 @@ const SiteLinksContainer = styled.div`
   }
 `
 
+const FooterHeading = styled(SectionHeadingBold)`
+  text-align: center;
+  color: #fff;
+  margin-bottom: 4rem;
+`
+
 const Footer = (props) => (
   <FooterContainer {...props}>
     <FlexSection>
-      <Text>Let’s get started</Text>
-      <StyledApplyLink
-        hoverBackground='#100c2c'
-        customWidth='330px'
-      />
+      <FooterHeading>Let’s get started</FooterHeading>
+      <StyledApplyLink hoverBackground="#100c2c" customWidth="330px" />
     </FlexSection>
     <BottomContainer>
       <CommitLogo alt="Commit logo" src="/commit-logo.svg" />

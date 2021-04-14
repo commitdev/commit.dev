@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
-import { ArticlePreview, Heading, StaticImage } from 'components'
+import { ArticlePreview, StaticImage } from 'components'
 import { GridSection } from 'components/layout'
 import { TABLET_LARGE_SIZE, MOBILE_SIZE } from 'styles/constants'
+
+import { SectionHeadingBold } from '../../components/heading'
 
 const StyledSection = styled.section`
   margin: 165px auto 0;
@@ -17,7 +19,7 @@ const StyledSection = styled.section`
   }
 `
 
-const FeaturedArticlesHeading = styled(Heading)`
+const FeaturedArticlesHeading = styled(SectionHeadingBold)`
   text-align: center;
   margin: 0 24px 3rem 24px;
 `
@@ -37,9 +39,7 @@ const FeaturedArticlesItems = styled(GridSection)`
 
 const FeaturedArticles = () => (
   <StyledSection>
-    <FeaturedArticlesHeading variant={Heading.VARIANT.h2}>
-      Featured Articles
-    </FeaturedArticlesHeading>
+    <FeaturedArticlesHeading>Featured Articles</FeaturedArticlesHeading>
     <FeaturedArticlesItems>
       <ArticlePreview
         media={

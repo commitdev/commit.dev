@@ -1,67 +1,69 @@
 import { rem } from 'polished'
-import { string } from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-import { MOBILE_SIZE } from 'styles/constants'
+import { TABLET_SMALL_SIZE, TABLET_LARGE_SIZE } from 'styles/constants'
 
-const VARIANT = Object.freeze({
-  h2: 'h2',
-  h3: 'h3',
-})
-
-const Heading = ({ variant, ...props }) => {
-  switch (variant) {
-    case VARIANT.h2:
-      return <StyledHeading2 {...props} />
-    case VARIANT.h3:
-      return <StyledHeading3 {...props} />
-    default:
-      return <StyledHeading1 {...props} />
-  }
-}
-
-Heading.VARIANT = VARIANT
-
-Heading.propTypes = {
-  variant: string,
-}
-
-const StyledHeading1 = styled.h1`
+const commonHeadingStyles = css`
   font-family: Montserrat;
-  font-size: ${rem('48px')};
-  font-weight: 800;
-  line-height: ${rem('60px')};
-  letter-spacing: 0rem;
-  margin: 0;
 `
 
-const StyledHeading2 = styled.h2`
-  font-family: Montserrat;
-  font-size: ${rem('36px')};
+const HeroHeading = styled.h1`
+  ${commonHeadingStyles}
   font-weight: 800;
-  line-height: ${rem('44px')};
-  letter-spacing: 0.3rem;
+  font-size: ${rem(32)};
+  line-height: 1.3;
+
+  @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
+    font-size: ${rem(48)};
+  }
+
+  @media only screen and (min-width: ${TABLET_LARGE_SIZE}) {
+    font-size: ${rem(64)};
+  }
+`
+
+const SectionHeading = styled.h2`
+  font-weight: 400;
+  font-size: ${rem(24)};
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+
+  @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
+    font-size: ${rem(36)};
+  }
+`
+
+const SectionHeadingBold = styled.h2`
+  font-weight: 800;
   text-transform: uppercase;
-  margin: 0;
+  font-size: ${rem(28)};
+  line-height: 1.2;
+  letter-spacing: 0.1em;
 
-  @media only screen and (max-width: ${MOBILE_SIZE}) {
-    font-size: ${rem('28px')};
-    line-height: ${rem('34px')};
-    text-align: center;
-    letter-spacing: initial;
+  @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
+    font-size: ${rem(36)};
   }
 `
 
-const StyledHeading3 = styled.h3`
-  font-family: Montserrat;
-  font-size: ${rem('24px')};
+const SubHeading = styled.h3`
   font-weight: 700;
-  line-height: ${rem('24px')};
-  margin: 0;
-
-  @media only screen and (max-width: ${MOBILE_SIZE}) {
-    text-align: center;
-  }
+  font-size: ${rem(16)};
+  line-height: 1.3;
+  letter-spacing: 0.05em;
 `
 
-export default Heading
+const SubHeadingBold = styled.h3`
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: ${rem(24)};
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+`
+
+export {
+  HeroHeading,
+  SectionHeading,
+  SectionHeadingBold,
+  SubHeading,
+  SubHeadingBold,
+}

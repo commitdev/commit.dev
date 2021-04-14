@@ -1,9 +1,11 @@
 import { rem } from 'polished'
 import styled from 'styled-components'
 
-import { Heading, Text } from 'components'
+import { Text } from 'components'
 import { GridItem, GridSection } from 'components/layout'
 import { TABLET_LARGE_SIZE, MOBILE_SIZE } from 'styles/constants'
+
+import { SectionHeadingBold, SubHeadingBold } from '../../components/heading'
 
 const StyledSection = styled.section`
   margin: 165px auto 0;
@@ -18,7 +20,7 @@ const StyledSection = styled.section`
   }
 `
 
-const HowItWorksHeading = styled(Heading)`
+const HowItWorksHeading = styled(SectionHeadingBold)`
   text-align: center;
   margin-bottom: ${rem('64px')};
 `
@@ -47,10 +49,9 @@ const HowItWorksItem = styled(GridItem)`
   }
 `
 
-const HowItWorksItemHeading = styled(Heading)`
+const HowItWorksItemHeading = styled(SubHeadingBold)`
   margin: 1.5rem 0 1rem;
   text-align: center;
-  text-transform: uppercase;
 `
 
 const HowItWorksItemText = styled(Text)`
@@ -59,32 +60,24 @@ const HowItWorksItemText = styled(Text)`
 
 const HowItWorks = () => (
   <StyledSection>
-    <HowItWorksHeading variant={Heading.VARIANT.h2}>
-      How It Works
-    </HowItWorksHeading>
+    <HowItWorksHeading>How It Works</HowItWorksHeading>
     <HowItWorksItems>
       <HowItWorksItem>
-        <HowItWorksItemHeading variant={Heading.VARIANT.h3}>
-          Join Commit
-        </HowItWorksItemHeading>
+        <HowItWorksItemHeading>Join Commit</HowItWorksItemHeading>
         <HowItWorksItemText>
           View your personalized startup matches, collaborate with other Startup
           Engineers, and get career support through coaching and resources
         </HowItWorksItemText>
       </HowItWorksItem>
       <HowItWorksItem>
-        <HowItWorksItemHeading variant={Heading.VARIANT.h3}>
-          Start a Pilot
-        </HowItWorksItemHeading>
+        <HowItWorksItemHeading>Start a Pilot</HowItWorksItemHeading>
         <HowItWorksItemText>
           Start shipping code with a startup you’re passionate about without
           committing long term
         </HowItWorksItemText>
       </HowItWorksItem>
       <HowItWorksItem>
-        <HowItWorksItemHeading variant={Heading.VARIANT.h3}>
-          Join a Startup
-        </HowItWorksItemHeading>
+        <HowItWorksItemHeading>Join a Startup</HowItWorksItemHeading>
         <HowItWorksItemText>
           Join the ideal startup permanently, and collaborate with the Commit
           community for technical support &amp; more

@@ -3,17 +3,15 @@ import React, { useState } from 'react'
 import { rem } from 'polished'
 import styled from 'styled-components'
 
-import { Heading } from 'components'
 import { useIsMaxScreenSize } from 'helpers/hooks'
 import { TABLET_LARGE_SIZE, TABLET_SMALL_SIZE } from 'styles/constants'
 
+import { SectionHeadingBold } from '../../components/heading'
 import ChevronSvg from '../../static/icons/chevron.svg'
 import ExecutiveAvatar, {
   CONTAINER_MARGIN_BOTTOM_TABLET_LARGE,
 } from './executive-avatar'
 import { people } from './people'
-
-const { h2 } = Heading.VARIANT
 
 const StyledSection = styled.section`
   padding: ${rem(140)} 0 ${rem(140 - CONTAINER_MARGIN_BOTTOM_TABLET_LARGE)};
@@ -23,7 +21,7 @@ const StyledSection = styled.section`
   }
 `
 
-const StyledHeading = styled((props) => <Heading {...props} />)`
+const StyledHeading = styled(SectionHeadingBold)`
   text-align: center;
   margin-bottom: ${rem('42px')};
 
@@ -90,7 +88,7 @@ const ExecutiveTeamSection = () => {
 
   return (
     <StyledSection>
-      <StyledHeading variant={h2}>Our Leadership Team</StyledHeading>
+      <StyledHeading>Our Leadership Team</StyledHeading>
       <AvatarList>
         {peopleToShow.map((person) => (
           <ExecutiveAvatar {...person} key={person.name} />
