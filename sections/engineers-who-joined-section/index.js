@@ -8,7 +8,7 @@ import BurndownChart from 'public/burndown-chart.svg'
 import HealthcareSecurity from 'public/healthcare-security.svg'
 import NegativeEmissions from 'public/negative-emissions.svg'
 import TopShot from 'public/top-shot.svg'
-import { TABLET_LARGE_SIZE } from 'styles/constants'
+import { TABLET_SMALL_SIZE, TABLET_LARGE_SIZE } from 'styles/constants'
 
 import { SectionHeading } from '../../components/heading'
 import SectionHeadingContainer from '../../components/section-heading-container'
@@ -30,8 +30,12 @@ const Projects = styled.ul`
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-top: 5.75rem;
+  margin-top: 0.75rem;
   list-style-type: none;
+
+  @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
+    margin-top: 5.75rem;
+  }
 `
 
 const Project = styled.li`
