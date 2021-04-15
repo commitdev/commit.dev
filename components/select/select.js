@@ -21,7 +21,7 @@ const selectStyles = {
     fontFamily: 'lato',
     fontWeight: '400',
     fontSize: '15px',
-    opacity: '0.7 !important',
+    opacity: '0.7',
     color: '#fff',
   }),
   menu: styles => ({
