@@ -4,7 +4,7 @@ import { CheckCircle, SpinnerGap } from 'phosphor-react'
 import { rem } from 'polished'
 import styled from 'styled-components'
 
-import { Button, Input, MultiSelect, Text, TextArea } from 'components'
+import { Button, Input, Select, Text, TextArea } from 'components'
 import { MOBILE_ONLY } from 'styles/constants'
 
 const FormContainer = styled.div`
@@ -60,7 +60,7 @@ const Form = () => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
 
-  const onMultiSelect = (e) => {
+  const onSelect = (e) => {
     setState({ ...state, resources: e })
   }
 
@@ -150,10 +150,10 @@ const Form = () => {
               value: state.email,
             }}
           />
-          <MultiSelect
+          <Select
             {...{
               name: 'selectResources',
-              onChange: onMultiSelect,
+              onChange: onSelect,
               value: state.resources,
               options: [
                 { value: 'angellist', label: 'AngelList' },
