@@ -14,16 +14,16 @@ import { TABLET_SMALL_SIZE, TABLET_LARGE_SIZE } from 'styles/constants'
 import { HeroHeading } from '../components/heading'
 
 const AboutHeroHeading = styled(HeroHeading)`
-  margin-top: ${rem(140)};
+  margin-top: ${rem(230)};
   margin-bottom: 3rem;
 
   @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
-    margin-top: ${rem(180)};
+    margin-top: ${rem(280)};
     margin-bottom: 4.25rem;
   }
 
   @media only screen and (min-width: ${TABLET_LARGE_SIZE}) {
-    margin-top: ${rem(200)};
+    margin-top: ${rem(300)};
     margin-bottom: 4.5rem;
   }
 `
