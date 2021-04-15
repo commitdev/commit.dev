@@ -60,6 +60,7 @@ const Content = styled.div`
     font-size: ${rem('24px')};
     line-height: 1.2;
     letter-spacing: 0.1em;
+    text-align: left;
     text-transform: uppercase;
   }
 
@@ -68,6 +69,7 @@ const Content = styled.div`
     font-weight: 600;
     font-size: ${rem('18px')};
     line-height: 1.5;
+    text-align: left;
   }
 
   @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
