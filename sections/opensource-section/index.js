@@ -80,12 +80,11 @@ const people = [
   { name: 'Djordje', src: 'team/djordje.jpeg' },
   { name: 'Jayd', src: 'team/jayd.jpeg' },
   { name: 'Tim R', src: 'team/timr.jpeg' },
-  { name: 'Tim W', src: 'team/timw.jpeg' },
-  { name: 'Julie', src: 'team/julie.jpeg' },
   { name: 'Andrew', src: 'team/andrew.jpeg' },
   { name: 'Alex', src: 'team/alex.jpeg' },
   { name: 'Chris', src: 'team/chris.jpeg' },
   { name: 'Alessandro', src: 'team/alessandro.jpeg' },
+  { name: 'Robyn', src: 'team/robyn.jpeg' },
 ]
 
 const OpensourceSection = () => {
