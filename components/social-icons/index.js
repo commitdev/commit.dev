@@ -28,7 +28,7 @@ const SocialIcons = ({ size }) => (
         size={size}
       />
     </SocialLink>
-    <SocialLink href="https://www.linkedin.com/company/commitdev/mycompany/">
+    <SocialLink href="https://www.linkedin.com/company/commitdev/">
       <StyledImg
         alt="Commit's LinkedIn company page"
         src="/logo-linkedin.svg"

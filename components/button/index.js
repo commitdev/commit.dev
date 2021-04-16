@@ -35,17 +35,17 @@ const StyledButton = styled.button`
   }
 `
 
-const StyledLink = styled.a`
+const StyledApplyLink = styled.a`
   display: block;
   background: #ff68ba;
   background: linear-gradient(90.03deg, #ff68ba 0.39%, #edc281 99.97%);
-  width: ${props => props.customWidth ? rem(props.customWidth) : rem('316px')};
+  width: ${props => props.customWidth ? rem(props.customWidth) : rem('256px')};
   padding: ${rem('15px')} ${rem('42px')};
   border: 0;
   border-radius: 48px;
   font-weight: bold;
-  font-size: ${rem('24px')};
-  line-height: ${rem('29px')};
+  font-size: ${rem('18px')};
+  line-height: ${rem('30px')};
   text-align: center;
   color: #000;
   cursor: pointer;
@@ -80,7 +80,6 @@ const StyledLink = styled.a`
     }
   }
 
-
   :active,
   :focus {
     opacity: 0.7;
@@ -88,28 +87,18 @@ const StyledLink = styled.a`
   }
 
   @media only screen and (max-width: ${MOBILE_SIZE}) {
-    font-size: ${rem('18px')};
-    line-height: ${rem('22px')};
-    padding: ${rem('16px')};
+    font-size: ${rem('16px')};
+    line-height: ${rem('20px')};
     width: 100%;
   }
 `
 
-const LinkButton = ({ href, text, ...props }) => (
+const ApplyLink = ({ href = '/apply', text = 'Join the waitlist', ...props }) => (
   <Link {...{ href, text }} passHref>
-    <StyledLink rel="noopener" {...props}>
+    <StyledApplyLink rel="noopener" {...props}>
       <span>{text}</span>
-    </StyledLink>
+    </StyledApplyLink>
   </Link>
-)
-
-LinkButton.propTypes = {
-  href: string.isRequired,
-  text: string.isRequired,
-}
-
-const ApplyLink = ({ href = '/apply', text = 'Join the waitlist', ...props } ) => (
-  <LinkButton {...{href, text, ...props}} />
 )
 
 ApplyLink.propTypes = {

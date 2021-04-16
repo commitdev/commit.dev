@@ -3,7 +3,7 @@ import React from 'react'
 import { linearGradient, rem } from 'polished'
 import styled from 'styled-components'
 
-import { TABLET_LARGE_SIZE, TABLET_SMALL_SIZE } from 'styles/constants'
+import { TABLET_SMALL_SIZE } from 'styles/constants'
 
 import FeaturesList from '../../components/features-list'
 import CommunityFeature from './features/community'
@@ -22,11 +22,7 @@ const PlatformContainer = styled.section`
   ${PLATFORM_BACKGROUND_GRAD}
 
   @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
-    padding: ${rem('140px')} 0;
-  }
-
-  @media only screen and (min-width: ${TABLET_LARGE_SIZE}) {
-    padding: ${rem('164px')} 0;
+    padding: ${rem('194px')} 0;
   }
 `
 

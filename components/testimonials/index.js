@@ -15,7 +15,7 @@ import '@glidejs/glide/dist/css/glide.theme.min.css'
 
 const DOT_SIZE = rem('18px')
 const DOT_SIZE_MOBILE = rem('24px')
-const CARET_SIZE = rem('37px')
+const CARET_SIZE = rem('50px')
 
 const Root = styled.div`
   margin-top: ${rem('42px')};

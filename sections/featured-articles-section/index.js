@@ -7,7 +7,7 @@ import { TABLET_LARGE_SIZE, MOBILE_SIZE } from 'styles/constants'
 import { SectionHeadingBold } from '../../components/heading'
 
 const StyledSection = styled.section`
-  margin: 165px auto 0;
+  margin: 122px auto 0;
   padding: 0 20px;
 
   @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {

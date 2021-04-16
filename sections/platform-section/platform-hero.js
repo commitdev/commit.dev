@@ -34,8 +34,8 @@ const PlatformHeroHeading = styled(SectionHeadingBold)`
 
 const PlatformHeroText = styled(Text)`
   font-weight: 600;
-  font-size: ${rem('21px')};
-  line-height: 1.5;
+  font-size: ${rem('18px')};
+  line-height: 1.75;
   margin: 0 auto;
   padding: ${rem('24px')} 0 0 0;
   max-width: ${rem('790px')};
