@@ -39,7 +39,8 @@ const StyledApplyLink = styled.a`
   display: block;
   background: #ff68ba;
   background: linear-gradient(90.03deg, #ff68ba 0.39%, #edc281 99.97%);
-  width: ${props => props.customWidth ? rem(props.customWidth) : rem('256px')};
+  width: ${(props) =>
+    props.customWidth ? rem(props.customWidth) : rem('256px')};
   padding: ${rem('15px')} ${rem('42px')};
   border: 0;
   border-radius: 48px;
@@ -68,7 +69,7 @@ const StyledApplyLink = styled.a`
     }
     :after {
       z-index: 1;
-      background: ${props => props.hoverBackground || '#100c1c'};
+      background: ${(props) => props.hoverBackground || '#100c1c'};
       border-radius: 48px;
       content: '';
       position: absolute;
@@ -93,7 +94,11 @@ const StyledApplyLink = styled.a`
   }
 `
 
-const ApplyLink = ({ href = '/apply', text = 'Join the waitlist', ...props }) => (
+const ApplyLink = ({
+  href = '/apply',
+  text = 'Join the waitlist',
+  ...props
+}) => (
   <Link {...{ href, text }} passHref>
     <StyledApplyLink rel="noopener" {...props}>
       <span>{text}</span>

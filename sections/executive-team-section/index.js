@@ -4,7 +4,11 @@ import { rem } from 'polished'
 import styled from 'styled-components'
 
 import { useIsMaxScreenSize } from 'helpers/hooks'
-import { TABLET_LARGE_SIZE, TABLET_SMALL_SIZE } from 'styles/constants'
+import {
+  TABLET_LARGE_SIZE,
+  TABLET_SMALL_SIZE,
+  MOBILE_ONLY,
+} from 'styles/constants'
 
 import { SectionHeadingBold } from '../../components/heading'
 import ChevronSvg from '../../static/icons/chevron.svg'
@@ -18,6 +22,10 @@ const StyledSection = styled.section`
 
   @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     padding: ${rem(124)} 0;
+  }
+
+  ${MOBILE_ONLY} {
+    padding: ${rem(124)} ${rem(16)};
   }
 `
 
