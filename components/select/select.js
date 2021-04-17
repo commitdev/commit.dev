@@ -1,4 +1,5 @@
-import { array } from 'prop-types'
+import { Field } from 'formik'
+import { array, func } from 'prop-types'
 import Select from 'react-select'
 
 const selectStyles = {
@@ -76,19 +77,34 @@ const selectStyles = {
   },
 }
 
-const MultiSelect = ({ options, ...props }) => (
-  <Select
-    {...props}
-    isMulti
-    placeholder="What Commit resources have you seen prior to applying?"
-    closeMenuOnSelect={false}
-    styles={selectStyles}
-    options={options}
-  />
-)
+const MultiSelect = ({ options, ...props }) => {
+  const handleChange = (value) => {
+    props.onChange('resources', value)
+  }
+
+  const handleBlur = () => {
+    props.onBlur('resources', true)
+  }
+
+  return (
+    <Field
+      {...props}
+      as={Select}
+      isMulti
+      placeholder='What Commit resources have you seen prior to applying?'
+      closeMenuOnSelect={false}
+      styles={selectStyles}
+      options={options}
+      onChange={handleChange}
+      onBlur={handleBlur}
+    />
+  )
+}
 
 MultiSelect.propTypes = {
   options: array.isRequired,
+  onChange: func.isRequired,
+  onBlur: func.isRequired,
 }
 
 export default MultiSelect
