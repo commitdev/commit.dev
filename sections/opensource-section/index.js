@@ -107,10 +107,11 @@ const OpensourceSection = () => {
             are the faces behind the creation of the website.
           </StyledText>
           <StyledText>
-            Feel free to checkout commit.dev’s github&nbsp;
+            Feel free to check out our&nbsp;
             <Link href="https://github.com/commitdev" passHref>
-              <PinkLink>Here</PinkLink>
+              <PinkLink>GitHub</PinkLink>
             </Link>
+            !
           </StyledText>
         </TextContent>
         <AvatarList className="pretty-scatter">

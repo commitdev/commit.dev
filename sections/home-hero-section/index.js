@@ -90,13 +90,6 @@ const HeroTextExtra = styled.span`
 
 const HeroApplyLink = styled(ApplyLink)`
   margin-bottom: 5.3em;
-  font-size: 1.125em;
-  line-height: 1.375em;
-
-  ${MOBILE_ONLY} {
-    max-width: 100%;
-    min-width: 100%;
-  }
 
   ${TABLET_LARGE_ONLY} {
     margin-bottom: 8.5em;

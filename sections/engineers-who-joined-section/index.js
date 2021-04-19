@@ -14,7 +14,7 @@ import { SectionHeading } from '../../components/heading'
 import SectionHeadingContainer from '../../components/section-heading-container'
 
 const StyledSection = styled.section`
-  padding: 7.5rem 1.25rem 8.75rem;
+  padding: 8.5rem 1.25rem;
   background: #e8edf4;
 `
 
@@ -52,7 +52,6 @@ const Project = styled.li`
 
 const ProjectName = styled.span`
   font-family: 'Lato';
-  font-weight: 600;
   line-height: 1.25rem;
   margin-top: 2rem;
 
@@ -85,7 +84,7 @@ const EngineersWhoJoinedSection = () => (
         <Project>
           <HealthcareSecurity title="Security Infrastructure for Healthcare logo" />
           <ProjectName>
-            The Security Infrastructure for Healthcare system
+            The Security Infrastructure for Healthcare systems
           </ProjectName>
         </Project>
         <Project>

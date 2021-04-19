@@ -2,7 +2,7 @@ import { rem } from 'polished'
 import { string } from 'prop-types'
 import styled from 'styled-components'
 
-import { Text, MediaContainer } from 'components'
+import { MediaContainer } from 'components'
 import {
   TABLET_SMALL_SIZE,
   TABLET_LARGE_SIZE,
@@ -86,13 +86,22 @@ const SlideSubHeading = styled(SubHeading)`
   }
 `
 
+const SlideText = styled(SubHeading)`
+  && {
+    font-size: ${rem(16)};
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: ${rem(16)};
+  }
+`
+
 const Slide = ({ media, heading, subHeading, text, ...props }) => (
   <Root {...props}>
     <SlideMediaContainer>{media}</SlideMediaContainer>
     <Content>
       <SlideHeading>{heading}</SlideHeading>
       <SlideSubHeading as="p">{subHeading}</SlideSubHeading>
-      <Text>{text}</Text>
+      <SlideText>{text}</SlideText>
     </Content>
   </Root>
 )

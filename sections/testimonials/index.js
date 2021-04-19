@@ -6,7 +6,7 @@ import SectionHeadingContainer from '../../components/section-heading-container'
 import Testimonials from '../../components/testimonials'
 
 const Section = styled.section`
-  padding: 124px 0px 98px;
+  padding: 160px 0px 150px;
 `
 
 const Container = styled(SectionContainer)`

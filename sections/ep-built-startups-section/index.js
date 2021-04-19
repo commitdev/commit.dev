@@ -32,8 +32,6 @@ const StyledText = styled.div`
   text-align: center;
   font-family: 'Lato';
   line-height: 1.625rem;
-  margin-right: -1rem;
-  margin-left: -1rem;
 `
 
 const LogosContainer = styled(RowContainer)`

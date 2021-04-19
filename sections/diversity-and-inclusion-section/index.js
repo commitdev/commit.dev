@@ -4,12 +4,12 @@ import { rem } from 'polished'
 import styled from 'styled-components'
 
 import { MediaContainer, StaticImage, Text } from 'components'
-import { MOBILE_SIZE, TABLET_LARGE_SIZE } from 'styles/constants'
+import { MOBILE_SIZE, TABLET_SMALL_SIZE } from 'styles/constants'
 
 import { SectionHeadingBold } from '../../components/heading'
 
 const Container = styled.div`
-  @media only screen and (min-width: ${TABLET_LARGE_SIZE}) {
+  @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
     display: grid;
     grid-template-columns: 50% 50%;
   }
@@ -23,7 +23,7 @@ const ImageContainer = styled(MediaContainer)`
     padding-bottom: 70%;
   }
 
-  @media only screen and (min-width: ${TABLET_LARGE_SIZE}) {
+  @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
     grid-row-start: 1;
     height: auto;
     min-height: ${rem('534px')};
@@ -50,7 +50,7 @@ const StyledHeading = styled(SectionHeadingBold)`
   text-align: center;
   margin-bottom: ${rem('32px')};
 
-  @media only screen and (min-width: ${TABLET_LARGE_SIZE}) {
+  @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
     margin-bottom: ${rem('26px')};
   }
 `

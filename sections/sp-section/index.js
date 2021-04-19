@@ -11,7 +11,7 @@ import { SectionHeading } from '../../components/heading'
 import SectionHeadingContainer from '../../components/section-heading-container'
 
 const StyledSection = styled.section`
-  padding: 5rem 1.25rem;
+  padding: 8rem 1.25rem 4rem 1.25rem;
   background: #e8edf4;
 `
 
@@ -57,7 +57,6 @@ const Explanation = styled.p`
   margin-top: ${rem(94)};
   text-align: center;
   font-family: 'Lato';
-  line-height: 1.25rem;
 
   @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
     margin-top: ${rem(104)};

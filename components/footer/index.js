@@ -17,13 +17,12 @@ const FooterContainer = styled.footer`
   background: linear-gradient(68.66deg, #0f1011 0%, #010242 100%);
 
   @media only screen and (max-width: ${MOBILE_SIZE}) {
-    padding: 98px 0 48px;
+    padding: 150px 0 48px;
   }
 `
 
 const StyledApplyLink = styled(ApplyLink)`
-  max-width: 23.75rem;
-  margin-bottom: 200px;
+  margin-bottom: 160px;
 
   @media only screen and (max-width: ${MOBILE_SIZE}) {
     margin-bottom: 124px;
@@ -100,16 +99,18 @@ const SiteLinksContainer = styled.div`
 `
 
 const FooterHeading = styled(SectionHeadingBold)`
-  text-align: center;
-  color: #fff;
   margin-bottom: 4rem;
+
+  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
+    font-size: 24px;
+  }
 `
 
 const Footer = (props) => (
   <FooterContainer {...props}>
     <FlexSection>
       <FooterHeading>Let’s get started</FooterHeading>
-      <StyledApplyLink hoverBackground="#100c2c" customWidth="330px" />
+      <StyledApplyLink hoverBackground="#100c2c" />
     </FlexSection>
     <BottomContainer>
       <CommitLogo alt="Commit logo" src="/commit-logo.svg" />
