@@ -43,7 +43,7 @@
   }
 }
 
-@media only screen and (max-width: 677px) {
+@media only screen and (max-width: 768px) {
   .gridSection {
     grid-template-columns: repeat(8, 1fr);
   }

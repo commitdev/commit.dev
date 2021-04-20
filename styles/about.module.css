@@ -37,7 +37,7 @@
   }
 }
 
-@media only screen and (max-width: 677px) {
+@media only screen and (max-width: 768px) {
   .gridSection {
     grid-template-columns: repeat(8, 1fr);
   }
@@ -58,22 +58,19 @@
 }
 
 /* Hero Styles */
-.hero {
-  overflow: hidden;
-  min-height: 946px;
-}
 .heroContent {
-  max-width: 50rem;
+  max-width: 70rem;
+  width: 80%;
+  margin-top: 320px;
+  margin-bottom: 8.75rem;
 }
 .hero .sectionContent {
   display: flex;
-  padding-right: 0px;
   justify-content: space-between;
 }
 h1.heroHeading {
   font-size: 4rem;
   line-height: 4.75rem;
-  margin-top: 200px;
   margin-bottom: 4.5rem;
 }
 p.heroText {
@@ -81,46 +78,35 @@ p.heroText {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 2.25rem;
-  margin-bottom: 8.75rem;
   text-align: left;
 }
 
 @media only screen and (max-width: 1023px) {
   .heroContent {
-    width: 75%;
+    width: 100%;
+    margin-top: 250px;
+    margin-bottom: 9.75rem;
   }
   h1.heroHeading {
     font-size: 3rem;
     line-height: 3.75rem;
-    margin-top: 180px;
     margin-bottom: 4.25rem;
-  }
-  p.heroText {
-    margin-bottom: 9.75rem;
   }
 }
 
 @media only screen and (max-width: 449px) {
-  .hero {
-    min-height: 820px;
-  }
-  .hero .sectionContent {
-    padding: 0 36px;
-  }
   .heroContent {
-    width: initial;
+    margin-bottom: 5rem;
   }
   h1.heroHeading {
     font-size: 2rem;
     line-height: 3rem;
-    margin-top: 140px;
     margin-bottom: 3rem;
   }
   p.heroText {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 500;
     line-height: 2rem;
     margin-top: 0;
-    margin-bottom: 4rem;
   }
 }

@@ -41,12 +41,14 @@ const Projects = styled.ul`
 const Project = styled.li`
   display: flex;
   flex-direction: column;
-  max-width: 11rem;
+  width: 20%;
+  padding: 0 18px;
   align-items: center;
   text-align: center;
 
-  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
+  @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
     margin-top: 3rem;
+    width: 100%;
   }
 `
 
@@ -57,6 +59,10 @@ const ProjectName = styled.span`
 
   @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     margin-top: 0;
+  }
+
+  @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
+    max-width: 280px;
   }
 `
 

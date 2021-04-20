@@ -27,6 +27,8 @@ const FeaturedArticlesHeading = styled(SectionHeadingBold)`
 const FeaturedArticlesItems = styled(GridSection)`
   border-bottom: 1px solid #000;
   padding-bottom: 110px;
+  max-width: 1200px;
+  margin: auto;
 
   @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     padding-bottom: 124px;

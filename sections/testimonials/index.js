@@ -12,6 +12,7 @@ const Section = styled.section`
 const Container = styled(SectionContainer)`
   flex-direction: column;
   align-items: center;
+  max-width: none;
 `
 
 const Heading = styled(SectionHeadingBold)`

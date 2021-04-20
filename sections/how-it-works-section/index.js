@@ -29,14 +29,7 @@ const HowItWorksItems = styled(GridSection)`
   counter-reset: howitworks;
   border-bottom: 1px solid #000;
   padding-bottom: 110px;
-
-  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
-    padding-bottom: 124px;
-  }
-
-  @media only screen and (max-width: ${MOBILE_SIZE}) {
-    padding-bottom: 142px;
-  }
+  max-width: 1200px;
 `
 
 const HowItWorksItem = styled(GridItem)`
