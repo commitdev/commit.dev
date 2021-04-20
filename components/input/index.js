@@ -1,10 +1,11 @@
+import { Field } from 'formik'
 import styled from 'styled-components'
 
 import { fontSmoothingAntialiased } from '../../styles/font-smoothing'
 
 const Input = (props) => <StyledInput {...props} />
 
-const StyledInput = styled.input`
+const StyledInput = styled(Field)`
   width: 100%;
   height: 50px;
   border: 0;

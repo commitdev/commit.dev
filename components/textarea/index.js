@@ -1,8 +1,9 @@
+import { Field } from 'formik'
 import styled from 'styled-components'
 
 import { fontSmoothingAntialiased } from '../../styles/font-smoothing'
 
-const StyledTextArea = styled.textarea`
+const StyledTextArea = styled(Field)`
   width: 100%;
   height: 174px;
   border: 0;
@@ -33,6 +34,6 @@ const StyledTextArea = styled.textarea`
   }
 `
 
-const TextArea = (props) => <StyledTextArea {...props} />
+const TextArea = (props) => <StyledTextArea as='textarea' {...props} />
 
 export default TextArea

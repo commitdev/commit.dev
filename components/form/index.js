@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react'
 
+import { Formik, Form } from 'formik'
 import { CheckCircle, SpinnerGap } from 'phosphor-react'
 import { rem } from 'polished'
 import styled from 'styled-components'
+import * as Yup from 'yup'
 
 import { Button, Input, Select, Text, TextArea } from 'components'
 import { MOBILE_ONLY } from 'styles/constants'
+
+import ErrorMessage from './error'
 
 const FormContainer = styled.div`
   max-width: 480px;
@@ -45,42 +49,63 @@ const SpinningSpinnerGap = styled(SpinnerGap)`
   }
 `
 
-const Form = () => {
+const ApplicationValidationSchema = Yup.object().shape({
+  name: Yup.string()
+    .required('Please fill out this empty field'),
+  email: Yup.string()
+    .email('The email you input seems to be invalid. Please enter a valid email')
+    .required('Please fill out this empty field'),
+  resources: Yup.array().of(
+    Yup.object().shape({
+      value: Yup.string(),
+      label: Yup.string(),
+    }),
+  )
+    .min(1, 'Please select at least one option')
+    .required(),
+  info: Yup.string()
+    .max(250, 'Please limit your response to 250 characters'),
+})
+
+const SelectOptions = [
+  { value: 'angellist', label: 'AngelList' },
+  { value: 'blog', label: 'Blog' },
+  { value: 'event', label: 'Event' },
+  { value: 'linkedin', label: 'LinkedIn' },
+  { value: 'linkedin_connection', label: 'LinkedIn Connection' },
+  { value: 'twitter', label: 'Twitter' },
+  { value: 'wordofmouth', label: 'Word of Mouth' },
+  { value: 'youtube', label: 'YouTube' },
+]
+
+const initialValues = {
+  email: '',
+  name: '',
+  resources: [],
+  info: '',
+}
+
+const ApplicationForm = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
   const [isFormWaiting, setIsFormWaiting] = useState(false)
   const [hasErrors, setHasErrors] = useState(false)
-  const [state, setState] = useState({
-    email: '',
-    info: '',
-    name: '',
-    resources: null,
-  })
 
-  const onChange = (e) => {
-    setState({ ...state, [e.target.name]: e.target.value })
-  }
-
-  const onSelect = (e) => {
-    setState({ ...state, resources: e })
-  }
-
-  const onClick = async (e) => {
-    e.preventDefault()
+  const onClick = async (values) => {
     if (!isFormWaiting) {
       setIsFormWaiting(true)
       setHasErrors(false)
       try {
         // Convert to a readable string for the Google Sheet
-        const parsedResources = state.resources
-          ? state.resources.map((res) => res.label).join(', ')
-          : null
+        const parsedResources = values.resources
+          ? values.resources.map((res) => res.label).join(', ')
+          : ''
         const res = await fetch(process.env.NEXT_PUBLIC_HELIX_HOST, {
           method: 'POST',
           headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ ...state, resources: parsedResources }),
+          body: JSON.stringify({ ...values, resources: parsedResources }),
         })
         setIsFormWaiting(false)
         if (res.status !== 200) {
@@ -129,77 +154,93 @@ const Form = () => {
       <FormContainer>
         {hasErrors && (
           <Text errorText>
-            Woops, the application failed to send. Please try again.
+            Whoops, the application failed to send. Please try again.
           </Text>
         )}
-        <form>
-          <Input
-            {...{
-              name: 'name',
-              onChange,
-              placeholder: 'Name',
-              value: state.name,
-            }}
-          />
-          <Input
-            {...{
-              name: 'email',
-              onChange,
-              placeholder: 'E-mail',
-              type: 'email',
-              value: state.email,
-            }}
-          />
-          <Select
-            {...{
-              name: 'selectResources',
-              onChange: onSelect,
-              value: state.resources,
-              options: [
-                { value: 'angellist', label: 'AngelList' },
-                { value: 'blog', label: 'Blog' },
-                { value: 'event', label: 'Event' },
-                { value: 'linkedin', label: 'LinkedIn' },
-                { value: 'linkedin_connection', label: 'LinkedIn Connection' },
-                { value: 'twitter', label: 'Twitter' },
-                { value: 'wordofmouth', label: 'Word of Mouth' },
-                { value: 'youtube', label: 'YouTube' },
-              ],
-            }}
-          />
-          <TextArea
-            {...{
-              maxlength: 1024,
-              name: 'info',
-              onChange,
-              placeholder:
-                'Let us know where to learn more about you\n(Ex. Website, blog, youtube, etc)',
-              value: state.info,
-            }}
-          />
-          <Button
-            {...{
-              onClick,
-              disabled: isFormWaiting,
-            }}
-          >
-            {isFormWaiting === false ? (
-              'Apply To Join'
-            ) : (
-              <SpinningSpinnerGap
+        <Formik
+          initialValues={initialValues}
+          validationSchema={ApplicationValidationSchema}
+          onSubmit={onClick}
+        >
+          {({
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            setFieldValue,
+            setFieldTouched,
+          }) => (
+            <Form>
+              {errors.name && touched.name ? (
+                <ErrorMessage message={errors.name} />
+              ) : null}
+              <Input
                 {...{
-                  color: '#000',
-                  size: rem('22px'),
-                  weight: 'bold',
+                  id: 'name',
+                  name: 'name',
+                  placeholder: 'Name',
                 }}
               />
-            )}
-          </Button>
-        </form>
+              {errors.email && touched.email ? (
+                <ErrorMessage message={errors.email} />
+              ) : null}
+              <Input
+                {...{
+                  id: 'email',
+                  name: 'email',
+                  placeholder: 'E-mail',
+                  type: 'email',
+                }}
+              />
+              {errors.resources && touched.resources ? (
+                <ErrorMessage message={errors.resources} />
+              ) : null}
+              <Select
+                {...{
+                  instanceId: 'resources',
+                  name: 'resources',
+                  onChange: setFieldValue,
+                  onBlur: setFieldTouched,
+                  options: SelectOptions,
+                }}
+              />
+              {errors.info && touched.info ? (
+                <ErrorMessage message={errors.info} />
+              ) : null}
+              <TextArea
+                {...{
+                  name: 'info',
+                  as: 'textarea',
+                  onChange: handleChange,
+                  onBlur: handleBlur,
+                  placeholder: 'Let us know where to learn more about you\n(Ex. Website, blog, youtube, etc)',
+                }}
+              />
+              <Button
+                {...{
+                  type: 'submit',
+                  disabled: isFormWaiting,
+                }}
+              >
+                {isFormWaiting === false ? (
+                  'Apply To Join'
+                ) : (
+                  <SpinningSpinnerGap
+                    {...{
+                      color: '#000',
+                      size: rem('22px'),
+                      weight: 'bold',
+                    }}
+                  />
+                )}
+              </Button>
+            </Form>
+          )}
+        </Formik>
       </FormContainer>
     )
 
   return renderForm()
 }
 
-export default Form
+export default ApplicationForm
