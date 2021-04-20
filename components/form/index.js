@@ -121,7 +121,7 @@ const Form = () => {
           you.
         </Text>
         <Text successText>
-          In the meantime take a look at some{' '}
+          In the meantime, take a look at some{' '}
           <a href="https://blog.commit.dev/">blog posts</a> from our engineers.
         </Text>
       </FormContainer>

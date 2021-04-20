@@ -17,7 +17,7 @@ const IMG_HEIGHT = '200px'
 
 const Root = styled.div`
   display: flex;
-  margin: 0 17%;
+  margin: 0 140px;
 
   @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     margin: 0 10%;
@@ -51,6 +51,7 @@ const Content = styled.div`
 
   @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
     align-items: center;
+    margin-top: ${rem(16)};
 
     p {
       text-align: center;
@@ -66,7 +67,6 @@ const SlideMediaContainer = styled(MediaContainer)`
 
 const SlideHeading = styled(SubHeading)`
   text-align: center;
-  margin-top: ${rem(16)};
 
   && {
     font-size: ${rem(24)};
@@ -82,15 +82,14 @@ const SlideSubHeading = styled(SubHeading)`
     font-size: ${rem(16)};
     line-height: 1.6;
     color: #657594;
-    margin-top: ${rem(12)};
   }
 `
 
-const SlideText = styled(SubHeading)`
+const SlideText = styled.p`
   && {
     font-size: ${rem(16)};
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.75;
     margin-top: ${rem(16)};
   }
 `

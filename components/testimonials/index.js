@@ -20,6 +20,7 @@ const CARET_SIZE = rem('50px')
 const Root = styled.div`
   margin-top: ${rem('42px')};
   cursor: default;
+  max-width: 1240px;
 
   @media only screen and (min-width: ${MOBILE_SIZE}) {
     margin-top: ${rem('64px')};

@@ -6,6 +6,7 @@ import { GridItem, GridSection } from 'components/layout'
 import { TABLET_LARGE_SIZE, MOBILE_SIZE } from 'styles/constants'
 
 import { SectionHeadingBold, SubHeadingBold } from '../../components/heading'
+import { TABLET_SMALL_SIZE } from '../../styles/constants'
 
 const StyledSection = styled.section`
   margin: 165px auto 0;
@@ -29,14 +30,7 @@ const HowItWorksItems = styled(GridSection)`
   counter-reset: howitworks;
   border-bottom: 1px solid #000;
   padding-bottom: 110px;
-
-  @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
-    padding-bottom: 124px;
-  }
-
-  @media only screen and (max-width: ${MOBILE_SIZE}) {
-    padding-bottom: 142px;
-  }
+  max-width: 1200px;
 `
 
 const HowItWorksItem = styled(GridItem)`

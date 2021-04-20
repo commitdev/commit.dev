@@ -16,7 +16,7 @@ const FooterContainer = styled.footer`
   background: #000000;
   background: linear-gradient(68.66deg, #0f1011 0%, #010242 100%);
 
-  @media only screen and (max-width: ${MOBILE_SIZE}) {
+  @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
     padding: 150px 0 48px;
   }
 `
@@ -24,7 +24,7 @@ const FooterContainer = styled.footer`
 const StyledApplyLink = styled(ApplyLink)`
   margin-bottom: 160px;
 
-  @media only screen and (max-width: ${MOBILE_SIZE}) {
+  @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
     margin-bottom: 124px;
   }
 `
@@ -32,7 +32,6 @@ const StyledApplyLink = styled(ApplyLink)`
 const FlexSection = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   max-width: 1240px;
   margin: 0 auto;
@@ -49,12 +48,13 @@ const FlexSection = styled.div`
 `
 
 const BottomContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 0 48px 48px;
 
-  @media only screen and (max-width: ${MOBILE_SIZE}) {
+  @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -67,14 +67,17 @@ const CommitLogo = styled.img`
 `
 
 const SocialIconsContainer = styled.div`
-  position: relative;
-  left: 30px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  width: fit-content;
+
   @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
-    left: -18px;
   }
-  @media only screen and (max-width: ${MOBILE_SIZE}) {
-    margin-top: 58px;
-    left: auto;
+  @media only screen and (max-width: ${TABLET_SMALL_SIZE}) {
+    position: initial;
+    margin: 58px 0 0 0;
   }
 `
 
@@ -88,6 +91,14 @@ const SiteLinksContainer = styled.div`
     font-size: 16px;
     line-height: 36px;
 
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
     @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
       margin: 0 12px;
     }
@@ -99,7 +110,8 @@ const SiteLinksContainer = styled.div`
 `
 
 const FooterHeading = styled(SectionHeadingBold)`
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+  text-align: center;
 
   @media only screen and (max-width: ${TABLET_LARGE_SIZE}) {
     font-size: 24px;

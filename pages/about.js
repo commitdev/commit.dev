@@ -13,29 +13,14 @@ import { TABLET_SMALL_SIZE, TABLET_LARGE_SIZE } from 'styles/constants'
 
 import { HeroHeading } from '../components/heading'
 
-const AboutHeroHeading = styled(HeroHeading)`
-  margin-top: ${rem(230)};
-  margin-bottom: 3rem;
-
-  @media only screen and (min-width: ${TABLET_SMALL_SIZE}) {
-    margin-top: ${rem(280)};
-    margin-bottom: 4.25rem;
-  }
-
-  @media only screen and (min-width: ${TABLET_LARGE_SIZE}) {
-    margin-top: ${rem(300)};
-    margin-bottom: 4.5rem;
-  }
-`
-
 const About = () => (
   <Page>
     <section className={`${styles.hero}`}>
       <div className={`${styles.sectionContent}`}>
         <div className={styles.heroContent}>
-          <AboutHeroHeading>
+          <h1 className={styles.heroHeading}>
             Commit is the remote-first community for Software Engineers.
-          </AboutHeroHeading>
+          </h1>
           <Text sectionText className={styles.heroText}>
             We’re designing a future of work that puts Engineers first. To that
             end, we provide professional development, peer-to-peer support, and

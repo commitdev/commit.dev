@@ -2,7 +2,7 @@ import { array } from 'prop-types'
 import Select from 'react-select'
 
 const selectStyles = {
-  control: styles => ({
+  control: (styles) => ({
     ...styles,
     backgroundColor: 'rgba(236, 236, 236, 0.1)',
     width: '100%',
@@ -16,15 +16,16 @@ const selectStyles = {
     fontSize: '14px',
     textAlign: 'left',
   }),
-  placeholder: styles => ({
+  placeholder: (styles) => ({
     ...styles,
     fontFamily: 'lato',
     fontWeight: '400',
     fontSize: '15px',
     opacity: '0.7',
     color: '#fff',
+    lineHeight: '140%',
   }),
-  menu: styles => ({
+  menu: (styles) => ({
     ...styles,
     backgroundColor: 'rgba(32,28,68, 0.8)',
   }),
@@ -35,7 +36,6 @@ const selectStyles = {
     padding: '0 0 0 0',
     '@media only screen and (max-width: 1023px)': {
       ...styles['@media only screen and (max-width: 1023px)'],
-      lineHeight: '140%',
     },
   }),
   multiValue: (styles) => ({
@@ -54,7 +54,7 @@ const selectStyles = {
   multiValueRemove: (styles) => ({
     ...styles,
     ':hover': {
-      color:'#aaa',
+      color: '#aaa',
       backgroundColor: 'transparent',
     },
   }),
@@ -66,9 +66,9 @@ const selectStyles = {
         backgroundColor: '#452643',
       },
     }
-    if ( isFocused ) {
+    if (isFocused) {
       optionsStyles.backgroundColor = '#0a0b24'
-    } else if ( isSelected ) {
+    } else if (isSelected) {
       optionsStyles.color = '#fff'
       optionsStyles.backgroundColor = 'transparent'
     }
@@ -76,11 +76,11 @@ const selectStyles = {
   },
 }
 
-const MultiSelect = ({ options, ...props}) => (
+const MultiSelect = ({ options, ...props }) => (
   <Select
     {...props}
     isMulti
-    placeholder='What Commit resources have you seen prior to applying?'
+    placeholder="What Commit resources have you seen prior to applying?"
     closeMenuOnSelect={false}
     styles={selectStyles}
     options={options}
