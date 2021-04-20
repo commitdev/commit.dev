@@ -91,8 +91,10 @@ const MultiSelect = ({ options, ...props }) => {
       {...props}
       as={Select}
       isMulti
-      placeholder='What Commit resources have you seen prior to applying?'
+      placeholder="What Commit resources have you seen prior to applying?"
       closeMenuOnSelect={false}
+      blurInputOnSelect={false}
+      isSearchable={false}
       styles={selectStyles}
       options={options}
       onChange={handleChange}
