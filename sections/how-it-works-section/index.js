@@ -6,7 +6,6 @@ import { GridItem, GridSection } from 'components/layout'
 import { TABLET_LARGE_SIZE, MOBILE_SIZE } from 'styles/constants'
 
 import { SectionHeadingBold, SubHeadingBold } from '../../components/heading'
-import { TABLET_SMALL_SIZE } from '../../styles/constants'
 
 const StyledSection = styled.section`
   margin: 165px auto 0;

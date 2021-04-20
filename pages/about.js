@@ -1,6 +1,3 @@
-import { rem } from 'polished'
-import styled from 'styled-components'
-
 import { Text, Footer, Page } from 'components'
 import {
   DiversityAndInclusionSection,
@@ -9,9 +6,6 @@ import {
   OpensourceSection,
 } from 'sections'
 import styles from 'styles/about.module.css'
-import { TABLET_SMALL_SIZE, TABLET_LARGE_SIZE } from 'styles/constants'
-
-import { HeroHeading } from '../components/heading'
 
 const About = () => (
   <Page>

@@ -5,7 +5,6 @@ import styled from 'styled-components'
 
 import { Text, MediaContainer } from 'components'
 import { GridItem } from 'components/layout'
-import { TABLET_SMALL_SIZE } from 'styles/constants'
 
 import { children } from '../../helpers/prop-types'
 import { SubHeading } from '../heading'
