@@ -136,6 +136,13 @@ const Item = styled.div`
       content: '';
     }
 
+    @-moz-document url-prefix() {
+      :before,
+      :after {
+        top: 2px;
+      }
+    }
+
     /* horizontal pink line to left of each heading */
     :before {
       width: 50px;

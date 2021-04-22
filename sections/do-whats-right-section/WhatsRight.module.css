@@ -1,6 +1,13 @@
 .whatsRightAnimateOnce:before {
   animation: whatsRightFirstLineAnimation 3.5s linear 0s 1 forwards;
 }
+
+@-moz-document url-prefix() {
+  .whatsRightAnimateOnce:before {
+    animation: whatsRightFirstLineAnimationFirefox 3.5s linear 0s 1 forwards;
+  }
+}
+
 .whatsRightAnimateOnce .whatsRightHeadingHighlight:after {
   animation: whatsRightLeftBranchAnimation 0.75s linear 3s 1 forwards;
 }
@@ -34,7 +41,24 @@
     height: 663px;
   }
   100% {
-    display: none;
+    background-color: transparent;
+  }
+}
+
+@keyframes whatsRightFirstLineAnimationFirefox {
+  0% {
+    background-color: #ff86c6;
+    height: 0;
+  }
+  80% {
+    background-color: #ff86c6;
+    height: 665px;
+  }
+  95% {
+    background-color: #ff86c6;
+    height: 665px;
+  }
+  100% {
     background-color: transparent;
   }
 }
