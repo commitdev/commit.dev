@@ -63,6 +63,11 @@ const ApplicationValidationSchema = Yup.object().shape({
   )
     .min(1, 'Please select at least one option')
     .required(),
+  other: Yup.string()
+    .when('resources', {
+      is: resources => resources && resources.find((res) => res.value === 'other'),
+      then: Yup.string().max(50, 'Please limit it to 50 characters'),
+    }),
   info: Yup.string()
     .max(250, 'Please limit your response to 250 characters'),
 })
@@ -76,36 +81,46 @@ const SelectOptions = [
   { value: 'twitter', label: 'Twitter' },
   { value: 'wordofmouth', label: 'Word of Mouth' },
   { value: 'youtube', label: 'YouTube' },
+  { value: 'other', label: 'Other...' },
 ]
 
 const initialValues = {
   email: '',
   name: '',
   resources: [],
+  other: '',
   info: '',
+}
+
+const parseValues = (values) => {
+  const parsedValues = values
+  const resources = parsedValues.resources ?
+    parsedValues.resources.map((resource) => (resource.value === 'other' ? parsedValues.other : resource.label)).join(', ')
+    :
+    // Should not return empty string. This field is required, if resources = '', an error has occurred
+    ''
+  return { ...parsedValues, resources}
 }
 
 const ApplicationForm = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
   const [isFormWaiting, setIsFormWaiting] = useState(false)
   const [hasErrors, setHasErrors] = useState(false)
+  const [hideOther, setHideOther] = useState(true)
 
   const onClick = async (values) => {
     if (!isFormWaiting) {
       setIsFormWaiting(true)
       setHasErrors(false)
       try {
-        // Convert to a readable string for the Google Sheet
-        const parsedResources = values.resources
-          ? values.resources.map((res) => res.label).join(', ')
-          : ''
+        const parsedVales = parseValues(values)
         const res = await fetch(process.env.NEXT_PUBLIC_HELIX_HOST, {
           method: 'POST',
           headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ ...values, resources: parsedResources }),
+          body: JSON.stringify(parsedVales),
         })
         setIsFormWaiting(false)
         if (res.status !== 200) {
@@ -133,11 +148,9 @@ const ApplicationForm = () => {
       <FormContainer>
         <SuccessHeaderContainer>
           <CheckCircle
-            {...{
-              color: '#FF68BA',
-              size: rem('37px'),
-              weight: 'fill',
-            }}
+            color='#FF68BA'
+            size={rem('37px')}
+            weight='fill'
           />
           <SuccessHeader>Application Sent!</SuccessHeader>
         </SuccessHeaderContainer>
@@ -175,62 +188,65 @@ const ApplicationForm = () => {
                 <ErrorMessage message={errors.name} />
               ) : null}
               <Input
-                {...{
-                  id: 'name',
-                  name: 'name',
-                  placeholder: 'Name',
-                }}
+                id='name'
+                name='name'
+                placeholder='Name'
               />
               {errors.email && touched.email ? (
                 <ErrorMessage message={errors.email} />
               ) : null}
               <Input
-                {...{
-                  id: 'email',
-                  name: 'email',
-                  placeholder: 'E-mail',
-                  type: 'email',
-                }}
+                id='email'
+                name='email'
+                placeholder='E-mail'
+                type='email'
               />
               {errors.resources && touched.resources ? (
                 <ErrorMessage message={errors.resources} />
               ) : null}
               <Select
-                {...{
-                  instanceId: 'resources',
-                  name: 'resources',
-                  onChange: setFieldValue,
-                  onBlur: setFieldTouched,
-                  options: SelectOptions,
-                }}
+                instanceId='resources'
+                name='resources'
+                onChange={(e, value) => {
+                  if (value && value.find( (res) => res.value === 'other') ) {
+                    setHideOther(false)
+                  } else {
+                    setHideOther(true)}setFieldValue(e,value)
+                  }
+                }
+                onBlur={setFieldTouched}
+                options={SelectOptions}
+              />
+              {!hideOther && errors.other && touched.other ? (
+                <ErrorMessage message={errors.other} />
+              ) : null}
+              <Input
+                id='other'
+                name='other'
+                placeholder='Please describe the other resource(s)'
+                type={hideOther ? 'hidden' : 'text'}
               />
               {errors.info && touched.info ? (
                 <ErrorMessage message={errors.info} />
               ) : null}
               <TextArea
-                {...{
-                  name: 'info',
-                  as: 'textarea',
-                  onChange: handleChange,
-                  onBlur: handleBlur,
-                  placeholder: 'Let us know where to learn more about you\n(Ex. Website, blog, youtube, etc)',
-                }}
+                name='info'
+                as='textarea'
+                onChange={handleChange}
+                onBlur={handleBlur}
+                placeholder='Let us know where to learn more about you\n(Ex. Website, blog, youtube, etc)'
               />
               <Button
-                {...{
-                  type: 'submit',
-                  disabled: isFormWaiting,
-                }}
+                type='submit'
+                disabled={isFormWaiting}
               >
                 {isFormWaiting === false ? (
                   'Apply To Join'
                 ) : (
                   <SpinningSpinnerGap
-                    {...{
-                      color: '#000',
-                      size: rem('22px'),
-                      weight: 'bold',
-                    }}
+                    color='#000'
+                    size={rem('22px')}
+                    weight='bold'
                   />
                 )}
               </Button>
