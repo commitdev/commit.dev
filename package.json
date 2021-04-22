@@ -34,11 +34,13 @@
     "eslint-plugin-unicorn": "^26.0.1",
     "file-loader": "^6.2.0",
     "fluent-ffmpeg": "^2.1.2",
+    "husky": "^6.0.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^9.0.0",
     "jest": "^26.6.3",
     "jest-puppeteer": "^4.4.0",
+    "lint-staged": "^10.5.4",
     "next-compose-plugins": "^2.2.1",
     "next-optimized-images": "^2.6.2",
     "next-videos": "^1.4.0",
@@ -63,7 +65,14 @@
     "format": "prettier-eslint --eslint-config-path ./.eslintrc.js --write $PWD'/**/*.js'",
     "lint": "eslint .",
     "convert-video": "./scripts/convert-video.js --dest static/videos",
-    "start": "next start"
+    "start": "next start",
+    "prepare": "husky install"
   },
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "lint-staged": {
+    "*.js": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
+  }
 }
