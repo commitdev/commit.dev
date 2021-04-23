@@ -36,7 +36,7 @@ const StyledHeader = styled.header`
   }
 `
 
-const pagesWithDarkHeroDict = ['/', '/apply']
+const pagesWithDarkHeroDict = ['/']
 
 const usePageWithDarkHero = () => {
   const router = useRouter()
