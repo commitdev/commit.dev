@@ -65,14 +65,13 @@ const StyledApplyLink = styled.button`
   }
 `
 
-const openTypeform = () => (
+const openTypeform = () =>
   createPopup('czZWb1bn', {
     size: 75,
   }).open()
-)
 
 const ApplyLink = ({ text = 'Join the waitlist', ...props }) => (
-  <StyledApplyLink {...props} onClick={openTypeform}>
+  <StyledApplyLink {...props} type="applicationButton" onClick={openTypeform}>
     <span>{text}</span>
   </StyledApplyLink>
 )
