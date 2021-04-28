@@ -78,7 +78,7 @@ const ApplicationValidationSchema = Yup.object().shape({
   other: Yup.string().when('resources', {
     is: (resources) =>
       resources && resources.find((res) => res.value === 'other'),
-    then: Yup.string().max(50, 'Please limit it to 50 characters'),
+    then: Yup.string().max(50, 'Please limit it to 50 characters').required('Please describe the other resource'),
   }),
   info: Yup.string().max(250, 'Please limit your response to 250 characters'),
 })
