@@ -1,18 +1,26 @@
+import { Formik, Form } from 'formik'
 import { CheckCircle } from 'phosphor-react'
 import { rem } from 'polished'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import Button from '../button'
-import { FadeIn, FadeOut } from '../fade'
-import Input from '../input'
-import { Loader, LoaderContainer } from '../loader'
-import Text from '../text'
-import TextArea from '../textarea'
+import * as Yup from 'yup'
+import {
+  Button,
+  FadeIn,
+  FadeOut,
+  Input,
+  Loader,
+  LoaderContainer,
+  Select,
+  Text,
+  TextArea,
+} from 'components'
+import ErrorMessage from './error'
 
 const FormContainer = styled.div`
   width: 33vw;
   @media only screen and (max-width: 1023px) {
-    width: auto;
+    width: 100%;
   }
   height: 100vh;
 `
@@ -39,32 +47,80 @@ const SuccessHeaderContainer = styled.div`
   }
 `
 
-const Form = () => {
+const SelectOptions = [
+  { value: 'angellist', label: 'AngelList' },
+  { value: 'blog', label: 'Blog' },
+  { value: 'event', label: 'Event' },
+  { value: 'linkedin', label: 'LinkedIn' },
+  { value: 'linkedin_connection', label: 'LinkedIn Connection' },
+  { value: 'twitter', label: 'Twitter' },
+  { value: 'wordofmouth', label: 'Word of Mouth' },
+  { value: 'youtube', label: 'YouTube' },
+  { value: 'other', label: 'Other...' },
+]
+
+const ApplicationValidationSchema = Yup.object().shape({
+  name: Yup.string().required('Please fill out this empty field'),
+  email: Yup.string()
+    .email(
+      'The email you input seems to be invalid. Please enter a valid email',
+    )
+    .required('Please fill out this empty field'),
+  resources: Yup.array()
+    .of(
+      Yup.object().shape({
+        value: Yup.string(),
+        label: Yup.string(),
+      }),
+    )
+    .min(1, 'Please select at least one option')
+    .required(),
+  other: Yup.string().when('resources', {
+    is: (resources) =>
+      resources && resources.find((res) => res.value === 'other'),
+    then: Yup.string().max(50, 'Please limit it to 50 characters'),
+  }),
+  info: Yup.string().max(250, 'Please limit your response to 250 characters'),
+})
+
+const initialValues = {
+  email: '',
+  name: '',
+  resources: [],
+  other: '',
+  info: '',
+}
+
+const parseValues = (values) => {
+  const parsedValues = values
+  const resources = parsedValues.resources
+    ? parsedValues.resources
+        .map((resource) =>
+          resource.value === 'other' ? parsedValues.other : resource.label,
+        )
+        .join(', ')
+    : '' // Should not return empty string. This field is required, if resources = '', an error has occurred
+  return { ...parsedValues, resources }
+}
+
+const ApplicationForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(true)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [hasErrors, setHasErrors] = useState(false)
-  const [state, setState] = useState({
-    email: '',
-    info: '',
-    name: '',
-  })
+  const [hideOther, setHideOther] = useState(true)
 
-  const onChange = (e) => {
-    setState({ ...state, [e.target.name]: e.target.value })
-  }
-
-  const onClick = async (e) => {
-    e.preventDefault()
+  const onClick = async (values) => {
     setIsSubmitting(true)
     setHasErrors(false)
     try {
+      const parsedVales = parseValues(values)
       const res = await fetch(process.env.NEXT_PUBLIC_HELIX_HOST, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(state),
+        body: JSON.stringify(parsedVales),
       })
       if (res.status === 200) {
         setIsSubmitted(true)
@@ -119,43 +175,78 @@ const Form = () => {
           <Loader show={isSubmitting} />
           {!isSubmitted && (
             <FadeOut show={!isSubmitting}>
-              <form>
-                <Input
-                  {...{
-                    name: 'name',
-                    onChange,
-                    placeholder: 'Name',
-                    value: state.name,
-                  }}
-                />
-                <Input
-                  {...{
-                    name: 'email',
-                    onChange,
-                    placeholder: 'E-mail',
-                    type: 'email',
-                    value: state.email,
-                  }}
-                />
-                <TextArea
-                  {...{
-                    name: 'info',
-                    onChange,
-                    placeholder:
-                      'Let us know where to learn more about you\n(Ex. Website, blog, youtube, etc)',
-                    value: state.info,
-                  }}
-                />
-                <Button
-                  {...{
-                    'data-test-id': 'button',
-                    disabled: isSubmitting,
-                    onClick,
-                  }}
-                >
-                  Apply To Join
-                </Button>
-              </form>
+              <Formik
+                initialValues={initialValues}
+                validationSchema={ApplicationValidationSchema}
+                onSubmit={onClick}
+              >
+                {({
+                  errors,
+                  touched,
+                  handleChange,
+                  handleBlur,
+                  setFieldValue,
+                  setFieldTouched,
+                }) => (
+                  <Form>
+                    {errors.name && touched.name ? (
+                      <ErrorMessage message={errors.name} />
+                    ) : null}
+                    <Input id="name" name="name" placeholder="Name" />
+                    {errors.email && touched.email ? (
+                      <ErrorMessage message={errors.email} />
+                    ) : null}
+                    <Input
+                      id="email"
+                      name="email"
+                      placeholder="E-mail"
+                      type="email"
+                    />
+                    {errors.resources && touched.resources ? (
+                      <ErrorMessage message={errors.resources} />
+                    ) : null}
+                    <Select
+                      instanceId="resources"
+                      name="resources"
+                      onChange={(e, value) => {
+                        setHideOther(
+                          !value.find((res) => res.value === 'other'),
+                        )
+                        setFieldValue(e, value)
+                      }}
+                      onBlur={setFieldTouched}
+                      options={SelectOptions}
+                    />
+                    {!hideOther && errors.other && touched.other ? (
+                      <ErrorMessage message={errors.other} />
+                    ) : null}
+                    <Input
+                      id="other"
+                      name="other"
+                      placeholder="Please describe the other resource(s)"
+                      type={hideOther ? 'hidden' : 'text'}
+                    />
+                    {errors.info && touched.info ? (
+                      <ErrorMessage message={errors.info} />
+                    ) : null}
+                    <TextArea
+                      name="info"
+                      as="textarea"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      placeholder="Let us know where to learn more about you\n(Ex. Website, blog, youtube, etc)"
+                    />
+                    <Button
+                      {...{
+                        'data-test-id': 'button',
+                        disabled: isSubmitting,
+                      }}
+                    >
+                      Apply To Join
+                    </Button>
+                  </Form>
+                )}
+              </Formik>
             </FadeOut>
           )}
         </LoaderContainer>
@@ -166,4 +257,4 @@ const Form = () => {
   return renderForm()
 }
 
-export default Form
+export default ApplicationForm

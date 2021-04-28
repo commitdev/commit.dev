@@ -1,6 +1,7 @@
+import { Field } from 'formik'
 import styled from 'styled-components'
 
-const StyledTextArea = styled.textarea`
+const StyledTextArea = styled(Field)`
   width: 100%;
   border: 0;
   padding: 1.2rem 2rem;
