@@ -1,5 +1,5 @@
 # commit.dev
-Marketing website for Commit (commit.dev)
+Marketing website for Commit (commit.dev).
 
 ### Importing static images
 
