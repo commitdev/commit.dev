@@ -234,7 +234,7 @@ const ApplicationForm = () => {
                       as="textarea"
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      placeholder="Let us know where to learn more about you\n(Ex. Website, blog, youtube, etc)"
+                      placeholder='Let us know where to learn more about you &#10;(Ex. Website, blog, youtube, etc)'
                     />
                     <Button
                       {...{
