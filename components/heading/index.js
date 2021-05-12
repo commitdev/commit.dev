@@ -13,6 +13,8 @@ const Heading = ({ variant, ...props }) => {
       return <StyledHeading2 {...props} />
     case VARIANT.h3:
       return <StyledHeading3 {...props} />
+    case VARIANT.h4:
+      return <StyledHeading4 {...props} />
     default:
       return <StyledHeading1 {...props} />
   }
@@ -48,6 +50,11 @@ const StyledHeading2 = styled.h2`
 
 const StyledHeading3 = styled.h3`
   font-weight: 500;
+  font-size: ${rem('18px')};
+`
+
+const StyledHeading4 = styled.h3`
+  font-weight: 1000;
   font-size: ${rem('18px')};
 `
 
